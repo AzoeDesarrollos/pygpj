@@ -5,12 +5,17 @@ import os
 import csv
 from funciones import *
 
+csv.register_dialect('myCSV',delimiter=';')
+
 # Set Up
 def leerCSV (archivo):
-    temp = csv.reader(open(archivo))
-    for t in temp:
-        CSV = t
-    return CSV
+    arch = csv.reader(open(archivo),dialect='myCSV')
+    temp = []
+    for t in arch:
+        temp.append(t)
+    if len(temp) == 1:
+        temp = temp[0]
+    return temp
 
 def claseas (clase):
     hab_cls = {'Brb':(1,14,17,20,22,36,38,40,41),'Brd':(1,2,5,6,7,8,9,10,11,12,13,14,16,19,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,39,41),'Clr':(1,5,6,8,23,26,30,32,35,37),'Drd':(1,3,5,6,8,14,20,22,23,33,37,38,40,44),'Exp':(1,3,4,5,13,14,20,21,22,23,28,29,33,36,37,38,40,41,43,44),'Gue':(1,17,20,22,23,36,40,41),'Hcr':(1,5,6,10,23,26),'Mag':(1,5,6,7,23,26,27,28,29,30,31,32,33,34,35),'Mnj':(1,2,3,5,8,11,12,13,14,16,21,22,23,24,26,35,36,41),'Pld':(1,2,5,8,20,23,34,35,37,40),'Pcr':(0,1,4,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,31,36,39,41,42,43)}
@@ -21,25 +26,31 @@ def claseas (clase):
 
 def RepDot(lista_de_dotes,dtD):
     lasdotes = []
+    nom = lista_de_dotes[0]
+    pre = lista_de_dotes[1]
+    des = lista_de_dotes[2]
     ldt = []
     while dtD > 0:
         dt = input('Dote: ').rstrip(' ').capitalize()
-        while dt not in lista_de_dotes:
+        while dt not in nom:
             print ('Por favor, escribe la dote correctamente\n')
             dt = input('Dote: ').rstrip(' ').capitalize()
-        if DOTES.index(dt) in lasdotes:
-            if DOTES.index(dt) in dt_S:
-                dtD -=1
-                lasdotes.append(dotes.index(dt))
-                ldt.append(dt)
-            elif DOTES.index(dt) in dt_ns:
-                print ('Puedes elegir esta dote multiples veces, pero sus efectos no se apilan')
-            else:
-                print ('No puedes elegir esa dotes dos veces, elige otra\n')
-        else:
-            dtD -=1
-            lasdotes.append(DOTES.index(dt))
-            ldt.append(dt)
+        if input('\n¿Desea conocer información sobre esta dote?\n').lower().startswith('s'):
+                print('\nPrerrequisitos: '+pre[nom.index(dt)]+'\n'+des[nom.index(dt)])
+                if input('\n¿Esta seguro?').lower().startswith('s'):
+                    if nom.index(dt) in lasdotes:
+                        if nom.index(dt) in dt_S:
+                            dtD -=1
+                            lasdotes.append(dotes.index(dt))
+                            ldt.append(dt)
+                        elif nom.index(dt) in dt_ns:
+                            print ('Puedes elegir esta dote multiples veces, pero sus efectos no se apilan')
+                        else:
+                            print ('No puedes elegir esa dotes dos veces, elige otra\n')
+                    else:
+                        dtD -=1
+                        lasdotes.append(nom.index(dt))
+                        ldt.append(dt)
     return lasdotes,ldt
 
 def HabMod(hab_num):
