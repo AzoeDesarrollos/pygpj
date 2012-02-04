@@ -37,37 +37,44 @@ def RepDot(lista_de_dotes,dtD):
             dt = input('Dote: ').rstrip(' ').capitalize()
         if input('\n¿Desea conocer información sobre esta dote?\n').lower().startswith('s'):
                 print('\nPrerrequisitos: '+pre[nom.index(dt)]+'\n'+des[nom.index(dt)])
-                if input('\n¿Esta seguro?').lower().startswith('s'):
-                    if nom.index(dt) in lasdotes:
-                        if nom.index(dt) in dt_S:
-                            dtD -=1
-                            lasdotes.append(dotes.index(dt))
-                            ldt.append(dt)
-                        elif nom.index(dt) in dt_ns:
-                            print ('Puedes elegir esta dote multiples veces, pero sus efectos no se apilan')
-                        else:
-                            print ('No puedes elegir esa dotes dos veces, elige otra\n')
-                    else:
-                        dtD -=1
-                        lasdotes.append(nom.index(dt))
-                        ldt.append(dt)
+        if input('\n¿Esta seguro?').lower().startswith('s'):
+            if nom.index(dt) in lasdotes:
+                if nom.index(dt) in dt_S:
+                    dtD -=1
+                    lasdotes.append(dotes.index(dt))
+                    ldt.append(dt)
+                elif nom.index(dt) in dt_ns:
+                    print ('Puedes elegir esta dote multiples veces, pero sus efectos no se apilan')
+                else:
+                    print ('No puedes elegir esa dotes dos veces, elige otra\n')
+            else:
+                dtD -=1
+                lasdotes.append(nom.index(dt))
+                ldt.append(dt)
     return lasdotes,ldt
-
-def HabMod(hab_num):
-    hab_m = (DES_mod,INT_mod,SAB_mod,SAB_mod,INT_mod,CON_mod,INT_mod,INT_mod,CAR_mod,CAR_mod,CAR_mod,DES_mod,DES_mod,DES_mod,SAB_mod,INT_mod,CAR_mod,INT_mod,INT_mod,DES_mod,DES_mod,DES_mod,FUE_mod,SAB_mod,DES_mod,CAR_mod,INT_mod,INT_mod,INT_mod,INT_mod,INT_mod,INT_mod,INT_mod,INT_mod,INT_mod,INT_mod,DES_mod,SAB_mod,SAB_mod,INT_mod,CAR_mod,FUE_mod,CAR_mod,DES_mod)
-    return rng[hab_num]+hab_m[hab_num]+rcl[hab_num]+sng[hab_num]+dts[hab_num]+obj[hab_num]
+def HabMod(mods,hab_num,FUE,DES,CON,INT,SAB,CAR):
+    mod = 0
+    temp = mods[hab_num]
+    if temp == 'FUE': mod = FUE
+    elif temp == 'DES': mod = DES
+    elif temp == 'CON': mod = CON
+    elif temp == 'INT': mod = INT
+    elif temp == 'SAB': mod = SAB
+    elif temp == 'CAR': mod = CAR
+    return rng[hab_num]+mod+rcl[hab_num]+sng[hab_num]+dts[hab_num]+obj[hab_num]
 
 Cars = ['Fuerza','Destreza','Constitución','Inteligencia','Sabiduría','Carisma']
 CARS = [0,0,0,0,0,0]
 
-rng = [i*0 for i in range(45)] # Rangos de habilidad
-dts = [i*0 for i in range(45)] # Bonificadores por dotes
-rcl = [i*0 for i in range(45)] # Bonificadores raciales
-sng = [i*0 for i in range(45)] # Bonificadores de sinergía
-obj = [i*0 for i in range(45)] # Bonificadores por objetos
-
 DOTES = leerCSV('data/dotes.csv')
 habs = leerCSV('data/habs.csv')
+hab_mods = leerCSV('data/mods.csv')
+
+rng = [i*0 for i in range(len(habs))] # Rangos de habilidad
+dts = [i*0 for i in range(len(habs))] # Bonificadores por dotes
+rcl = [i*0 for i in range(len(habs))] # Bonificadores raciales
+sng = [i*0 for i in range(len(habs))] # Bonificadores de sinergía
+obj = [i*0 for i in range(len(habs))] # Bonificadores por objetos
 
 dt_S = [51,57]
 dt_ns = [26,27,41,69,86,87,88,89]
@@ -300,14 +307,13 @@ for h in temp:
             del temp[temp.index(h)]
 
 for h in temp:
-    imprimir = imprimir+h+' +'+str(int(HabMod(habs.index(h))))+', '
+    imprimir = imprimir+h+' +'+str(HabMod(hab_mods,habs.index(h),FUE_mod,DES_mod,CON_mod,INT_mod,SAB_mod,CAR_mod))+', '
 imprimir = imprimir.rstrip(', ')+'.'
 
 #Output
 if input('Deseas Guardar este personaje?\n').lower().startswith('s'):
     nombre = input('\nNombre: ').capitalize()
-    nom = 'Personajes/'+nombre+'.txt'
-    Pj = open(nom,'w')
+    Pj = open('Personajes/'+nombre+'.txt','w')
     Pj.write('Nombre: '+nombre+'\n')
     Pj.write('Tipo y Tamaño: Humanoide '+tam_nom+' ('+subtipo+')\n')
     Pj.write('DG: '+PG[1]+' ('+str(PG[0])+' pg)\n')
@@ -318,5 +324,5 @@ if input('Deseas Guardar este personaje?\n').lower().startswith('s'):
     sleep(3)
     print('\nPersonaje Guardado')
     Pj.close()
-    print ('Gracias')
-    sleep (2)
+print ('Gracias')
+sleep (2)
