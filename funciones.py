@@ -92,15 +92,12 @@ def RepPunto(lista,Car):
             CarVal = int(entrada)
             del lista[lista.index(int(entrada))]
     return CarVal
-
+    
 def SelCla(nv_pj): # Selector de Clases
     clases = []
     temp = nv_pj
     nv = 1
-    CLASES = ('Barbaro','Bardo','Brb','Brd','Bárbaro','Clerigo','Clr','Clérigo','Drd','Druida','Exp','Explorador','Gue',
-              'Guerrero','Hcr','Hechicero','Mag','Mago','Mnj','Monje','Paladin','Paladín','Pcr','Picaro','Pld','Pícaro',
-              'barbaro','bardo','brb','brd','bárbaro','clerigo','clr','clérigo','drd','druida','exp','explorador','gue',
-              'guerrero','hcr','hechicero','mag','mago','mnj','monje','paladin','paladín','pcr','picaro','pld','pícaro')
+    CLASES = ('Barbaro','Bardo','Brb','Brd','Bárbaro','Clerigo','Clr','Clérigo','Drd','Druida','Exp','Explorador','Gue','Guerrero','Hcr','Hechicero','Mag','Mago','Mnj','Monje','Paladin','Paladín','Pcr','Picaro','Pld','Pícaro','barbaro','bardo','brb','brd','bárbaro','clerigo','clr','clérigo','drd','druida','exp','explorador','gue','guerrero','hcr','hechicero','mag','mago','mnj','monje','paladin','paladín','pcr','picaro','pld','pícaro')
     while temp > 0:
         cla = input('Nv '+str(nv)+'º: ')
         if cla not in CLASES:
@@ -140,7 +137,7 @@ def SelCla(nv_pj): # Selector de Clases
             fin_cla.append('Pcr')
     return fin_cla
 
-def ProCla(INT_mod,lista_de_clases): # Procesador de Clases y Niveles
+def ProCla(lista_de_clases): # Procesador de Clases y Niveles
     # Primero, procesaremos los niveles de clase
     temp, nv_cls = [],[]
     for clase in lista_de_clases:
@@ -191,6 +188,9 @@ def ProCla(INT_mod,lista_de_clases): # Procesador de Clases y Niveles
         else: 
             TS_Vol += 1/3
 
+    return (int(ATKb),int(TS_Fort),int(TS_Ref),int(TS_Vol))
+    
+def PuntosHab (INT_mod,lista_de_clases):
     # Ahora los puntos de habilidad
     PH = 0
     PH_nv = []
@@ -220,16 +220,18 @@ def ProCla(INT_mod,lista_de_clases): # Procesador de Clases y Niveles
                 PH *= 4
         PH_nv.append(PH)
         PH = 0
+    return PH_nv
 
+def DtsNivel(lista_de_clases):
     # Dotes por nivel
     dts = 1
     for i in range (2, len(lista_de_clases)+1):
         if i%3==0:
             dts += 1
     # de momento, el programa devuelve lo calculado hasta ahora...
-    return (int(ATKb),int(TS_Fort),int(TS_Ref),int(TS_Vol),PH_nv,dts)
+    return dts
 
-def PG (lista_de_clases,CON_Mod):
+def PG (CON_Mod,lista_de_clases):
     DG = {'Hcr':'d4','Mag':'d4','Brd':'d6','Pcr':'d6','Clr':'d8','Drd':'d8',
           'Exp':'d8','Mnj':'d8','Gue':'d10','Pld':'d10','Brb':'d12'}
     temp = []

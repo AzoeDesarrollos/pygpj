@@ -52,6 +52,7 @@ def RepDot(lista_de_dotes,dtD):
                 lasdotes.append(nom.index(dt))
                 ldt.append(dt)
     return lasdotes,ldt
+
 def HabMod(mods,hab_num,FUE,DES,CON,INT,SAB,CAR):
     mod = 0
     temp = mods[hab_num]
@@ -88,9 +89,20 @@ tamaño = {'Minúsculo':(+8,-16,+16),'Diminuto':(+4,-12,+12),'Menudo':(+2,-8,+8)
 #Inicio#
 tirs = GenTir()
 print('Sus tiradas son: '+PrepPrint(tirs))
+sleep (2)
+while input ('Desea tirar de nuevo?\n').lower().startswith('s'):
+    os.system(['clear','cls'][os.name == 'nt'])
+    tirs = GenTir()
+    print('Sus nuevas tiradas son: '+PrepPrint(tirs))
 
 print('\nSeleccione Raza (humano, enano, elfo, gnomo, mediano, semielfo o semiorco)\n')
 Raza = SelRaza()
+subtipo = Raza[2]
+tam_nom = Raza[1]
+tam_mod = tamaño[tam_nom][0]
+tam_pres = tamaño[tam_nom][1]
+tam_esc = tamaño[tam_nom][2]
+raciales = Raza[3]
 
 nv_pj = input('\nNivel del personaje?: ')
 while not nv_pj.isnumeric():
@@ -100,62 +112,16 @@ nv_pj = int(nv_pj)
 
 print('\nNiveles de clase')
 clases = SelCla(nv_pj)
+proc = ProCla(clases)
+ATKbase = proc[0]
+Fortbase = proc[1]
+Refbase = proc[2]
+Volbase = proc[3]
 
 print ('\nReparte tus puntuaciones de característica')
 for Car in Cars:
     CARS[Cars.index(Car)]=RepPunto(tirs,Car)
 
-# Procesos en el Background
-fFUE = CARS[0]+Raza[0][0]
-fDES = CARS[1]+Raza[0][1]
-fCON = CARS[2]+Raza[0][2]
-fINT = CARS[3]+Raza[0][3]
-fSAB = CARS[4]+Raza[0][4]
-fCAR = CARS[5]+Raza[0][5]
-
-FUE_mod = CarMod(fFUE)
-DES_mod = CarMod(fDES)
-CON_mod = CarMod(fCON)
-INT_mod = CarMod(fINT)
-SAB_mod = CarMod(fSAB)
-CAR_mod = CarMod(fCAR)
-
-proc = ProCla(INT_mod,clases)
-
-subtipo = Raza[2]
-tam_nom = Raza[1]
-tam_mod = tamaño[tam_nom][0]
-tam_pres = tamaño[tam_nom][1]
-tam_esc = tamaño[tam_nom][2]
-raciales = Raza[3]
-
-ATKbase = proc[0]
-Fortbase = proc[1]
-Refbase = proc[2]
-Volbase = proc[3]
-PHs = proc[4]
-velocidad = Raza[4]
-
-Iniciativa = DES_mod
-ATKFinalCC = ATKbase + FUE_mod
-ATKFinalAD = ATKbase + DES_mod
-Presa = ATKbase + FUE_mod + tam_pres
-Fort = Fortbase + CON_mod
-Ref = Refbase + DES_mod
-Vol = Volbase + SAB_mod
-PG = PG(clases,CON_mod)
-
-if Raza[2] == 'humano':
-    for i in PHs:
-        if PHs.index(i) == 0:
-            PHs[PHs.index(i)]+=4
-        else:
-            PHs[PHs.index(i)]+=1
-elif Raza[2] == 'mediano':
-    Fort += 1
-    Ref += 1
-    Vol += 1
-###############################
 lasclases = []
 temp = []
 for cla in clases:
@@ -177,6 +143,71 @@ for cla in clases:
 ## A partir de este punto, clases contiene la lista corta 'gue','gue','mag'
 ## mientras que lasclases contiene la lista con el nombre completo: 'Guerrero','Guerrero','Mago'
 
+## Aumento de Características ##
+os.system(['clear','cls'][os.name == 'nt'])
+if nv_pj >= 4:
+    print ('Tu personaje es de nivel superior a 4. Tienes'+round(nv_pj/4)+' aumentos de características')
+    for i in range(1, nv_pj+1):
+        if i%4==0:
+            punt = 1
+            for Car in Cars:
+                inpunt = input (Car+' '+str(CARS[Cars.index(Car)])+'+')
+                while int(inpunt) > punt:
+                    print ('No dispones de esos puntos')
+                    inpunt = input (Car+' '+str(CARS[Cars.index(Car)])+'+')
+                while int(inpunt) < 0:
+                    print ('No puedes restar puntos')
+                    inpunt = input (Car+' '+str(CARS[Cars.index(Car)])+'+')
+                if int(inpunt) > 0:
+                    CARS[Cars.index(Car)] += punt
+                    punt -= 1
+
+
+fFUE = CARS[0]+Raza[0][0]
+fDES = CARS[1]+Raza[0][1]
+fCON = CARS[2]+Raza[0][2]
+fINT = CARS[3]+Raza[0][3]
+fSAB = CARS[4]+Raza[0][4]
+fCAR = CARS[5]+Raza[0][5]
+
+os.system(['clear','cls'][os.name == 'nt'])
+if nv_pj > 4:
+    print('Tus puntuaciones de característica finales son:')
+    for Car in Cars:
+        print (Car+' '+str(CARS[Cars.index(Car)]+Raza[0][Cars.index(Car)]))
+
+FUE_mod = CarMod(fFUE)
+DES_mod = CarMod(fDES)
+CON_mod = CarMod(fCON)
+INT_mod = CarMod(fINT)
+SAB_mod = CarMod(fSAB)
+CAR_mod = CarMod(fCAR)
+                
+PHs = PuntosHab(INT_mod,clases)
+DotesNivel = DtsNivel(clases)
+velocidad = Raza[4]
+
+Iniciativa = DES_mod
+ATKFinalCC = ATKbase + FUE_mod
+ATKFinalAD = ATKbase + DES_mod
+Presa = ATKbase + FUE_mod + tam_pres
+Fort = Fortbase + CON_mod
+Ref = Refbase + DES_mod
+Vol = Volbase + SAB_mod
+PG = PG(CON_mod,clases)
+
+if Raza[2] == 'humano':
+    for i in PHs:
+        if PHs.index(i) == 0:
+            PHs[PHs.index(i)]+=4
+        else:
+            PHs[PHs.index(i)]+=1
+elif Raza[2] == 'mediano':
+    Fort += 1
+    Ref += 1
+    Vol += 1
+#########################################3
+        
 temp = list(range(len(PHs)))
 for i in temp:
     PH = PHs[i]
@@ -238,9 +269,9 @@ for i in temp:
 
 print('\nElige dotes')
 if Raza[2] == 'humano':
-    dotes = RepDot (DOTES,proc[5]+1)
+    dotes = RepDot (DOTES,DotesNivel+1)
 else:
-    dotes = RepDot (DOTES,proc[5])
+    dotes = RepDot (DOTES,DotesNivel)
 
 # Aplicar modificadores
 # Raciales
