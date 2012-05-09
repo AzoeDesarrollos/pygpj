@@ -18,12 +18,14 @@ def SelCla(claseprevia):
     '''Provee un selector de clases.'''
     
     if claseprevia == '':
-        print ('Elije una clase para este nivel')
+        print ('Elije una clase para este nivel', end = ': ')
+        print ('1: Bárbaro','2: Bardo','3: Clérigo','4: Druida','5: Explorador','6: Guerrero','7: Hechicero','8: Mago','9: Monje', '10: Paladín', '12: Pícaro', sep = ', ', end = '.\n')
     else:
         print ('Elije una clase para este nivel [Enter: '+claseprevia+']')
-    CLASES = ('Barbaro','Bardo','Brb','Brd','Bárbaro','Clerigo','Clr','Clérigo','Drd','Druida','Exp','Explorador','Gue','Guerrero','Hcr','Hechicero','Mag','Mago','Mnj','Monje','Paladin','Paladín','Pcr','Picaro','Pld','Pícaro','barbaro','bardo','brb','brd','bárbaro','clerigo','clr','clérigo','drd','druida','exp','explorador','gue','guerrero','hcr','hechicero','mag','mago','mnj','monje','paladin','paladín','pcr','picaro','pld','pícaro','')
+   
+    CLASES = ('Bárbaro','Barbaro','Brb','Bardo','Brd','Clérigo','Clerigo','Clr','Druida','Drd','Explorador','Exp','Guerrero','Gue','Hechicero','Hcr','Mago','Mag','Monje','Mnj','Paladín','Paladin','Pld','Pícaro','Picaro','Pcr','1','2','3','4','5','6','7','8','9','10','11','')
     while True:
-        cla = input('Clase: ')
+        cla = input('Clase: ').capitalize()
         if cla not in CLASES:
             print ('\nSeleccione una clase válida.')
         elif cla == '':
@@ -39,17 +41,17 @@ def SelCla(claseprevia):
     if cla in CLASES: Clase = cla
     elif cla.capitalize() in CLASES: Clase = cla.capitalize()
     elif cla == '': Clase = ''
-    elif cla in ('Bárbaro','bárbaro','barbaro','Barbaro'): Clase = 'Brb'
-    elif cla in ('Bardo','bardo'): Clase = 'Brd'
-    elif cla in ('Clérigo','clérigo','clerigo','Clerigo'): Clase = 'Clr'
-    elif cla in ('Druida','druida'): Clase = 'Drd'
-    elif cla in ('Explorador','explorador'): Clase = 'Exp'
-    elif cla in ('Guerrero','guerrero'): Clase = 'Gue'
-    elif cla in ('Hechicero','hechicero'): Clase = 'Hcr'
-    elif cla in ('Mago','mago'): Clase = 'Mag'
-    elif cla in ('Monje','monje'): Clase = 'Mnj'
-    elif cla in ('Paladín','paladín','paladin','Paladin'): Clase = 'Pld'
-    elif cla in ('Pícaro','pícaro','picaro','Picaro'): Clase = 'Pcr'
+    elif cla in ('Bárbaro','Barbaro','1'): Clase = 'Brb'
+    elif cla in ('Bardo','2'): Clase = 'Brd'
+    elif cla in ('Clérigo','Clerigo','3'): Clase = 'Clr'
+    elif cla in ('Druida','4'): Clase = 'Drd'
+    elif cla in ('Explorador','5'): Clase = 'Exp'
+    elif cla in ('Guerrero','6'): Clase = 'Gue'
+    elif cla in ('Hechicero','7'): Clase = 'Hcr'
+    elif cla in ('Mago','8'): Clase = 'Mag'
+    elif cla in ('Monje','9'): Clase = 'Mnj'
+    elif cla in ('Paladín','Paladin','10'): Clase = 'Pld'
+    elif cla in ('Pícaro','Picaro','11'): Clase = 'Pcr'
     return Clase
 
 def ProCla(lista_de_clases,clase,nv_cls):
@@ -107,16 +109,29 @@ def PuntHab (lista_de_clases,clase,nivel,INT_mod,subtipo):
             PH += 1
     return PH
 
-def Claseas (clase):
+def Claseas (lista_de_clases,clase,lista_de_hab):
     '''Devuelve las habilidades cláseas de la clase citada.'''
     
-    hab_cls = {'Brb':(1,14,17,20,22,36,38,40,41),'Brd':(1,2,5,6,7,8,9,10,11,12,13,14,16,19,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,39,41),'Clr':(1,5,6,8,23,26,30,32,35,37),'Drd':(1,3,5,6,8,14,20,22,23,33,37,38,40,44),'Exp':(1,3,4,5,13,14,20,21,22,23,28,29,33,36,37,38,40,41,43,44),'Gue':(1,17,20,22,23,36,40,41),'Hcr':(1,5,6,10,23,26),'Mag':(1,5,6,7,23,26,27,28,29,30,31,32,33,34,35),'Mnj':(1,2,3,5,8,11,12,13,14,16,21,22,23,24,26,35,36,41),'Pld':(1,2,5,8,20,23,34,35,37,40),'Pcr':(0,1,4,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,24,25,31,36,39,41,42,43)}
+    nom = lista_de_clases[0]
+    hab = lista_de_clases[7]
+    hab_cls = {}
+    
+    for i in range(len(nom)):
+        hab_cls[nom[i]]=hab[i]
+
+    for i in nom:
+        hab_cls[i]=hab_cls[i].split(',')
+
+    for i in range(len(nom)):
+        for j in hab_cls[nom[i]]:
+            hab_cls[nom[i]][hab_cls[nom[i]].index(j)] = int(hab_cls[nom[i]][hab_cls[nom[i]].index(j)])
+    
     cls = []
     for i in hab_cls[clase]:
-        cls.append(habs[i])
+        cls.append(lista_de_hab[i])
     return cls
 
-def RepRNG (PH,nv_cls,hab_cla,habilidades):
+def RepRNG (PH,nv_cls,hab_cla,lista_de_hab):
     '''Devuelve un diccionario con la habilidad y sus rangos.'''
     
     os.system(['clear','cls'][os.name == 'nt'])
@@ -133,7 +148,7 @@ def RepRNG (PH,nv_cls,hab_cla,habilidades):
     rng = {}
     while PH > 0:
         hab = input('\nHabilidad: ').rstrip(' ').capitalize()
-        if hab not in habilidades:
+        if hab not in lista_de_hab:
             print('Por favor, escribe la habilidad correctamente')
             hab = input('\nHabilidad: ').rstrip(' ').capitalize()
         rng[hab]=0
@@ -182,6 +197,7 @@ def HabMod(mods,hab_num,mods_de_caract):
     elif temp == 'INT': mod = mods_de_caract[3]
     elif temp == 'SAB': mod = mods_de_caract[4]
     elif temp == 'CAR': mod = mods_de_caract[5]
+    
     return rng[hab_num]+mod+rcl[hab_num]+sng[hab_num]+dts[hab_num]+obj[hab_num]
 
 def SelDot (lista_de_dotes,nivel):
@@ -212,9 +228,7 @@ def UnaCar ():
     return Car
     
 def GenTir():
-    ''''Genera las 7 tiradas y descarta la más baja.
-    
-    También, imprime la lista en un lindo formato.'''
+    ''''Genera las 7 tiradas y descarta la más baja.'''
     
     A,B,C = UnaCar(),UnaCar(),UnaCar()
     D,E,F = UnaCar(),UnaCar(),UnaCar()
@@ -222,9 +236,11 @@ def GenTir():
     TirList = [A,B,C,D,E,F,G]
     TirList.sort(reverse=True)
     del TirList[-1]
+    return TirList
     
+def PrepPrint(lista):
     imprimir = ''
-    for elemento in TirList:
+    for elemento in lista:
         imprimir = imprimir+str(elemento)+', '
     imprimir = imprimir.rstrip(', ')+'.'
     return imprimir
@@ -269,6 +285,42 @@ def CarMod(car):
     else:
         mod = (car-11)/2
     return int(mod)
+
+def AumentaCar (nivel):
+    CARS = ('FUE','DES','CON','INT','SAB','CAR','Fuerza','Destreza','Constitución','Constitucion','Inteligencia','Sabiduría','Sabiduria','Carisma')
+    if nivel % 4 == 0:
+        print ('\nEn el '+str(nivel)+'º nivel, tienes un aumento de características')
+        print ('Selecciona la característica que quieres aumentar')
+        Car = input('Característica: ')
+        while True:
+            if Car.capitalize() not in CARS:
+                if Car.upper() not in CARS:
+                    print ('La característica es inválida o inexistente')
+                    Car = input('Característica: ')
+                else:
+                    break
+            else:
+                break
+        if len(Car) > 3:
+            Car = Car.capitalize()
+            if Car in ('Fuerza'): Car = 0
+            elif Car in ('Destreza'): Car = 1
+            elif Car in ('Constitución','Constitucion'): Car = 2
+            elif Car in ('Inteligencia'): Car = 3
+            elif Car in ('Sabiduría','Sabiduria') : Car = 4
+            elif Car in ('Carisma'): Car = 5
+        else:
+            Car = Car.upper()
+            if Car == 'FUE': Car = 0
+            elif Car in 'DES': Car = 1
+            elif Car in 'CON': Car = 2
+            elif Car in 'INT': Car = 3
+            elif Car in 'SAB': Car = 4
+            elif Car in 'CAR': Car = 5
+        
+        return Car
+    else:
+        return ''
 
 def ProcApps (aptitudes):
     '''Procesa las Aptitudes Especiales en formato CSV'''
