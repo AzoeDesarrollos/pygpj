@@ -1,0 +1,7 @@
+Humano;Humano;0,0,0,0,0,0;Mediano;humano;;30'
+Elfo;Elfo;0,2,-2,0,0,0;Mediano;elfo;3b2,4b2,14b2;30'
+Enano;Enano;0,0,2,0,0,-2;Mediano;enano;1b2,4b2,39b2;20'
+Gnomo;Gnomo;-2,0,2,0,0,0;Pequeño;gnomo;1b2,14b2;20'
+Mediano;Mediano;-2,2,0,0,0,0;Pequeño;mediano;14b2,21b2,36b2,41b2;20'
+Semielfo;Semielfo;0,0,0,0,0,0;Mediano;elfo;3b1,4b1,8b2,14b1,25b2;30'
+Semiorco;Semiorco;2,0,0,2,0,-2;Mediano;orco;;30'

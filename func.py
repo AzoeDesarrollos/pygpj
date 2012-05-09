@@ -2,6 +2,7 @@
 from random import randint
 import os
 import csv
+from time import sleep
 
 def leerCSV (archivo):
     '''Lee archivos CSV y los devuelve como una lista.'''
@@ -14,18 +15,57 @@ def leerCSV (archivo):
         temp = temp[0]
     return temp
 
-def SelCla(claseprevia):
+def Alinear ():
+    Alineamientos = ('Legal bueno','Neutral bueno','Caótico bueno','Legal neutral','Neutral auténtico','Neutral bueno','Legal maligno','Neutral maligno','Caótico maligno')
+    while True:
+        aling = input ('\nEscoge un alineamiento para este personaje\n1: Legal bueno     2: Neutral bueno       3: Caótico bueno\n4: Legal neutral   5: Neutral auténtico   6: Caótico neutral\n7: Legal maligno   8: Neutral maligno     9: Caótico maligno\n\n')
+        if not aling.isnumeric():
+            if aling.capitalize() in Alineamientos:
+                aling = Alineamientos.index(aling.capitalize())
+            else:
+                print ('Escriba correctamente el alineamiento, o el numero que lo representa')
+        else:
+            aling = int (aling) -1
+        
+        if aling not in (0,1,2,3,4,5,6,7,8):
+            print ('El numero elegido no representa ningún alineamiento')
+        else:
+            print ('Has elegido que este personaje sea '+Alineamientos[aling]+'.', end= ' ')
+            if input ('¿Estas seguro? ').lower().startswith('s'):
+                return aling
+
+def SelCla(claseprevia,lista_de_clases,alineamiento):
     '''Provee un selector de clases.'''
     
+    abr = lista_de_clases[0]
+    nom = lista_de_clases[5]
+    ali = lista_de_clases[8]
+    pos = []
+    abp = []
+    for i in range(len(ali)):
+        if str(alineamiento) in ali[i]:
+            pos.append(nom[i])
+            abp.append(abr[i])
+            
+    imprimir = ''
+    numeros = []
+    for i in range(len(pos)):
+        if (i+1)%4==0:
+            imprimir += str(i)+': '+pos[i]+'\n'
+        else:
+            imprimir += str(i)+': '+pos[i]+' '
+        numeros.append(str(i))
+        
     if claseprevia == '':
-        print ('Elije una clase para este nivel', end = ': ')
-        print ('1: Bárbaro','2: Bardo','3: Clérigo','4: Druida','5: Explorador','6: Guerrero','7: Hechicero','8: Mago','9: Monje', '10: Paladín', '12: Pícaro', sep = ', ', end = '.\n')
+        print ('\nElije una clase para este nivel')
+        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
     else:
-        print ('Elije una clase para este nivel [Enter: '+claseprevia+']')
+        print ('\nElije una clase para este nivel [Enter: '+claseprevia+']')
    
-    CLASES = ('Bárbaro','Barbaro','Brb','Bardo','Brd','Clérigo','Clerigo','Clr','Druida','Drd','Explorador','Exp','Guerrero','Gue','Hechicero','Hcr','Mago','Mag','Monje','Mnj','Paladín','Paladin','Pld','Pícaro','Picaro','Pcr','1','2','3','4','5','6','7','8','9','10','11','')
+    CLASES = ['Barbaro','Clerigo','Paladin','Picaro','']+numeros+pos+abp
+    
     while True:
-        cla = input('Clase: ').capitalize()
+        cla = input('\nClase: ').capitalize()
         if cla not in CLASES:
             print ('\nSeleccione una clase válida.')
         elif cla == '':
@@ -37,21 +77,15 @@ def SelCla(claseprevia):
         else:
             break
     
-    CLASES = ('Brb','Brd','Clr','Drd','Exp','Gue','Hcr','Mag','Mnj','Pld','Pcr')
-    if cla in CLASES: Clase = cla
-    elif cla.capitalize() in CLASES: Clase = cla.capitalize()
+    if cla in abr: Clase = cla
+    elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
     elif cla == '': Clase = ''
-    elif cla in ('Bárbaro','Barbaro','1'): Clase = 'Brb'
-    elif cla in ('Bardo','2'): Clase = 'Brd'
-    elif cla in ('Clérigo','Clerigo','3'): Clase = 'Clr'
-    elif cla in ('Druida','4'): Clase = 'Drd'
-    elif cla in ('Explorador','5'): Clase = 'Exp'
-    elif cla in ('Guerrero','6'): Clase = 'Gue'
-    elif cla in ('Hechicero','7'): Clase = 'Hcr'
-    elif cla in ('Mago','8'): Clase = 'Mag'
-    elif cla in ('Monje','9'): Clase = 'Mnj'
-    elif cla in ('Paladín','Paladin','10'): Clase = 'Pld'
-    elif cla in ('Pícaro','Picaro','11'): Clase = 'Pcr'
+    elif cla == 'Barbaro': Clase = 'Brb'
+    elif cla == 'Clerigo': Clase = 'Clr'
+    elif cla == 'Paladin': Clase = 'Pld'
+    elif cla == 'Picaro': Clase = 'Pcr'
+    elif cla.isnumeric(): Clase = abp[int(cla)]
+    
     return Clase
 
 def ProCla(lista_de_clases,clase,nv_cls):
@@ -134,7 +168,6 @@ def Claseas (lista_de_clases,clase,lista_de_hab):
 def RepRNG (PH,nv_cls,hab_cla,lista_de_hab):
     '''Devuelve un diccionario con la habilidad y sus rangos.'''
     
-    os.system(['clear','cls'][os.name == 'nt'])
     print('\nTienes '+str(PH)+' puntos de habilidad para distribuir en este nivel.\n')
     b = ''
     if input('Deseas conocer tus habilidades de clase?\n').lower().startswith('s'):
@@ -208,13 +241,15 @@ def SelDot (lista_de_dotes,nivel):
     des = lista_de_dotes[2]
     if nivel in (1,3,6,9,12,15,18):
         print ('\nEn el '+str(nivel)+'º nivel, tienes una dote para elegir')
-        dt = input('\nDote: ').rstrip(' ').capitalize()
-        while dt not in nom:
-            print ('Por favor, escribe la dote correctamente\n')
+        while True:
             dt = input('\nDote: ').rstrip(' ').capitalize()
-        print ('Prerrequisitos: '+pre[nom.index(dt)]+'\n'+des[nom.index(dt)])
-        if input('\n¿Esta seguro?').lower().startswith('s'):
-            return dt
+            if dt not in nom:
+                print ('Por favor, escribe la dote correctamente\n')
+            else:
+                print ('Prerrequisitos: '+pre[nom.index(dt)]+'\n'+des[nom.index(dt)])
+            
+            if input('\n¿Esta seguro? ').lower().startswith('s'):
+                return dt
     else:
         pass
 
@@ -245,19 +280,42 @@ def PrepPrint(lista):
     imprimir = imprimir.rstrip(', ')+'.'
     return imprimir
     
-def SelRaza():
+def SelRaza(lista_de_razas):
     '''Provee un selector de razas.'''
     
+    print('\nSeleccione Raza \n1: Humano 2: Enano 3: Elfo 4: Gnomo\n5: Mediano 6: Semielfo 7: Semiorco\n')
+    
+    razas = {}
+    for R in lista_de_razas:
+        razas[R[0]]=R[1:]
+    
+    for key in razas:
+        razas[key][1] = razas[key][1].split(',')
+        for i in range(len(razas[key][1])):
+            razas[key][1][i] = int(razas[key][1][i])
+        razas[key][4] = razas[key][4].split(',')
+        for i in range(len(razas[key][4])):
+            razas[key][4][i] = razas[key][4][i].split('b')
+        for par in razas[key][4]:
+            if par == ['']:
+                pass
+            else:
+                for i in range(len(par)):
+                    par[i]=int(par[i])
+    
     raza = ''
-    razas = {'Humano':((0,0,0,0,0,0),'Mediano','humano',(),"30'"),
-             'Elfo':((0,2,-2,0,0,0),'Mediano','elfo',((3,2),(4,2),(14,2)),"30'"),
-             'Enano':((0,0,2,0,0,-2),'Mediano','enano',((1,2),(4,2),(39,2)),"20'"),
-             'Gnomo':((-2,0,2,0,0,0),'Pequeño','gnomo',((1,2),(14,2)),"20'"),
-             'Mediano':((-2,2,0,0,0,0),'Pequeño','mediano',((14,2),(21,2),(36,2),(41,2)),"20'"),
-             'Semielfo':((0,0,0,0,0,0),'Mediano','elfo',((3,1),(4,1),(8,2),(14,1),(25,2)),"30'"),
-             'Semiorco':((2,0,0,2,0,-2),'Mediano','orco',(),"30'")}
     while raza not in razas:
         raza = input('Raza: ').capitalize()
+        if raza.isnumeric():
+            if raza == '1': raza = 'Humano'
+            elif raza == '2': raza = 'Elfo'
+            elif raza == '3': raza = 'Enano'
+            elif raza == '4': raza = 'Gnomo'
+            elif raza == '5': raza = 'Mediano'
+            elif raza == '6': raza = 'Semielfo'
+            elif raza == '7': raza = 'Semiorco'
+            else:
+                print('Raza inválida, intente nuevamente\n')
         if raza not in razas:
             print('Raza inválida o error ortográfico, intente nuevamente\n')
     return razas[raza]

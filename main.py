@@ -11,6 +11,7 @@ csv.register_dialect('myCSV',delimiter=';')
 Cars = ['Fuerza','Destreza','Constitución','Inteligencia','Sabiduría','Carisma']
 CARS = [0,0,0,0,0,0]
 
+RAZAS = leerCSV('data/razas.csv')
 DOTES = leerCSV('data/dotes.csv')
 HABS = leerCSV('data/habs.csv')
 CLASES = leerCSV('data/clases.csv')
@@ -34,26 +35,26 @@ tamaño = {'Minúsculo':(+8,-16,+16),'Diminuto':(+4,-12,+12),'Menudo':(+2,-8,+8)
 tirs = GenTir()
 print('Sus tiradas son: '+PrepPrint(tirs))
 sleep (2)
-while input ('Desea tirar de nuevo?\n').lower().startswith('s'):
+while input ('¿Desea tirar de nuevo? ').lower().startswith('s'):
     os.system(['clear','cls'][os.name == 'nt'])
     tirs = GenTir()
     print('Sus tiradas son: '+PrepPrint(tirs))
 
-print('\nSeleccione Raza (humano, enano, elfo, gnomo, mediano, semielfo o semiorco)\n')
-Raza = SelRaza()
-subtipo = Raza[2]
-tam_nom = Raza[1]
+## Seleccionar Raza ##
+Raza = SelRaza(RAZAS)
+subtipo = Raza[3]
+tam_nom = Raza[2]
 tam_mod = tamaño[tam_nom][0]
 tam_pres = tamaño[tam_nom][1]
 tam_esc = tamaño[tam_nom][2]
-raciales = Raza[3]
+raciales = Raza[4]
 
 print ('\nReparte tus puntuaciones de característica')
 for Car in Cars:
     CARS[Cars.index(Car)]=RepPunto(tirs,Car)
     
 for Car in Cars:
-    CARS[Cars.index(Car)]+Raza[0][Cars.index(Car)]
+    CARS[Cars.index(Car)]+Raza[1][Cars.index(Car)]
 
 FUE_mod = CarMod(CARS[0])
 DES_mod = CarMod(CARS[1])
@@ -64,25 +65,24 @@ CAR_mod = CarMod(CARS[5])
 
 CARS_MODS = [FUE_mod,DES_mod,CON_mod,INT_mod,SAB_mod,CAR_mod]
 
-nv_pj = input('\nNivel del personaje?: ')
-while not nv_pj.isnumeric():
-    print ('\nEl nivel debe ser un NUMERO entre 1 y 20')
-    nv_pj = input('\nNivel del personaje?: ')
-nv_pj = int(nv_pj)
-
 cla = [] ## ['Gue', '', 'Mag']
 lasclases = [] ## ['Guerrero', 'Guerrero', 'Mago']
 dotes = []
 stats = [0,0,0,0]
+nv_pj = 1
+
+alini = Alinear()
+alinis = ('LB','NB','CB','LN','NN','CN','LM','NM','CM')
 
 for nivel in range(1,nv_pj+1):
     os.system(['clear','cls'][os.name == 'nt'])
-    print ('~~ '+str(nivel)+'º NIVEL ~~\n')
+    print (Raza[0],'| FUE '+str(CARS[0]),'DES '+str(CARS[1]),'CON '+str(CARS[2]),'INT '+str(CARS[3]),'SAB '+str(CARS[4]),'CAR '+str(CARS[5]), '| Al: '+alinis[alini])
+    print ('\n~~ '+str(nivel)+'º NIVEL ~~\n')
     ## Elegir Clase ##
     if nivel == 1:
-        clase = SelCla('')
+        clase = SelCla('',CLASES,alini)
     else:
-        clase = SelCla(lasclases[nivel-2])
+        clase = SelCla(lasclases[nivel-2],CLASES,alini)
     cla.append(clase)
     lasclases.append(CLASES[5][CLASES[0].index(clase)])
     for i in range(len(cla)):
@@ -100,9 +100,14 @@ for nivel in range(1,nv_pj+1):
         print ('El personaje tiene ahora '+Car+' '+str(CARS[Cars.index(Car)])+' (+'+str(CarMod(CARS[Cars.index(Car)]))+')')
     
     ## Cáculo de puntos y Asignación de Rangos de habilidad ##
+	print (Raza[0],'| FUE '+str(CARS[0]),'DES '+str(CARS[1]),'CON '+str(CARS[2]),'INT '+str(CARS[3]),'SAB '+str(CARS[4]),'CAR '+str(CARS[5]), '| Al: '+alinis[alini])
+	os.system(['clear','cls'][os.name == 'nt'])
     hab_rng = RepRNG (PuntHab (CLASES,clase,nivel,INT_mod,subtipo),cla.count(clase),Claseas(CLASES,clase,HABS[0]),HABS[0])
     for i in hab_rng:
         rng[HABS[0].index(i)] += hab_rng[i]
     
     ## Elección de Dotes ##
     dotes.append(SelDot(DOTES,nivel))
+    
+    if input('\nDesea subir de nivel? ').lower().startswith('s'):
+        nv_pj += 1    
