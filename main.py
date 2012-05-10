@@ -69,12 +69,14 @@ cla = [] ## ['Gue', '', 'Mag']
 lasclases = [] ## ['Guerrero', 'Guerrero', 'Mago']
 dotes = []
 stats = [0,0,0,0]
-nv_pj = 1
-
+nv_pj = 0
+nivel = 0
 alini = Alinear()
 alinis = ('LB','NB','CB','LN','NN','CN','LM','NM','CM')
 
-for nivel in range(1,nv_pj+1):
+while True:
+    nv_pj += 1
+    nivel += 1
     os.system(['clear','cls'][os.name == 'nt'])
     print (Raza[0],'| FUE '+str(CARS[0]),'DES '+str(CARS[1]),'CON '+str(CARS[2]),'INT '+str(CARS[3]),'SAB '+str(CARS[4]),'CAR '+str(CARS[5]), '| Al: '+alinis[alini])
     print ('\n~~ '+str(nivel)+'º NIVEL ~~\n')
@@ -96,12 +98,12 @@ for nivel in range(1,nv_pj+1):
     if Car == '':
         pass
     else:
-        CARS[Cars.index(Car)]+=1
-        print ('El personaje tiene ahora '+Car+' '+str(CARS[Cars.index(Car)])+' (+'+str(CarMod(CARS[Cars.index(Car)]))+')')
+        CARS[Car]+=1
+        print ('El personaje tiene ahora '+Cars[Car]+' '+str(CARS[Car])+' (+'+str(CarMod(CARS[Car]))+')')
     
     ## Cáculo de puntos y Asignación de Rangos de habilidad ##
-	print (Raza[0],'| FUE '+str(CARS[0]),'DES '+str(CARS[1]),'CON '+str(CARS[2]),'INT '+str(CARS[3]),'SAB '+str(CARS[4]),'CAR '+str(CARS[5]), '| Al: '+alinis[alini])
-	os.system(['clear','cls'][os.name == 'nt'])
+    os.system(['clear','cls'][os.name == 'nt'])
+    print (Raza[0],'| FUE '+str(CARS[0]),'DES '+str(CARS[1]),'CON '+str(CARS[2]),'INT '+str(CARS[3]),'SAB '+str(CARS[4]),'CAR '+str(CARS[5]), '| Al: '+alinis[alini])
     hab_rng = RepRNG (PuntHab (CLASES,clase,nivel,INT_mod,subtipo),cla.count(clase),Claseas(CLASES,clase,HABS[0]),HABS[0])
     for i in hab_rng:
         rng[HABS[0].index(i)] += hab_rng[i]
@@ -109,5 +111,5 @@ for nivel in range(1,nv_pj+1):
     ## Elección de Dotes ##
     dotes.append(SelDot(DOTES,nivel))
     
-    if input('\nDesea subir de nivel? ').lower().startswith('s'):
-        nv_pj += 1    
+    if not input('\nDesea subir de nivel? ').lower().startswith('s'):
+        break

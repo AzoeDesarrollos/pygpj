@@ -174,7 +174,7 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab):
         for hab in hab_cla:
             b = b+hab+', '
         print(b.rstrip(', ')+'.\n')
-    print ('Recuerda que cualquier habildiad transclásea cuesta dos puntos en lugar de uno.\nEscribe una habilidad y los puntos que desees invertir en ella.\n')
+    print ('Recuerda que cualquier habilidiad transclásea cuesta dos puntos en lugar de uno.\nEscribe una habilidad y los puntos que desees invertir en ella.\n')
     
     rng_max = nv_cls+3
     rng_max_tc = round(rng_max/2)
@@ -370,11 +370,11 @@ def AumentaCar (nivel):
         else:
             Car = Car.upper()
             if Car == 'FUE': Car = 0
-            elif Car in 'DES': Car = 1
-            elif Car in 'CON': Car = 2
-            elif Car in 'INT': Car = 3
-            elif Car in 'SAB': Car = 4
-            elif Car in 'CAR': Car = 5
+            elif Car == 'DES': Car = 1
+            elif Car == 'CON': Car = 2
+            elif Car == 'INT': Car = 3
+            elif Car == 'SAB': Car = 4
+            elif Car == 'CAR': Car = 5
         
         return Car
     else:
