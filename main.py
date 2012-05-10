@@ -11,7 +11,7 @@ csv.register_dialect('myCSV',delimiter=';')
 Cars = ['Fuerza','Destreza','Constitución','Inteligencia','Sabiduría','Carisma']
 CARS = [0,0,0,0,0,0]
 
-RAZAS = leerCSV('data/razas.csv')
+RAZAS = ProcRazas(leerCSV('data/razas.csv'))
 DOTES = leerCSV('data/dotes.csv')
 dt_mc = ProcDTS(leerCSV('data/dt_mc.csv'))
 HABS = leerCSV('data/habs.csv')
@@ -71,14 +71,12 @@ cla = [] ## ['Gue', '', 'Mag']
 lasclases = [] ## ['Guerrero', 'Guerrero', 'Mago']
 dotes = []
 stats = [0,0,0,0]
-nv_pj = 0
 nivel = 0
 alini = Alinear()
 alinis = ('LB','NB','CB','LN','NN','CN','LM','NM','CM')
 apps = []
 
 while True:
-    nv_pj += 1
     nivel += 1
     os.system(['clear','cls'][os.name == 'nt'])
     print (Raza[0],'| FUE '+str(CARS[0]),'DES '+str(CARS[1]),'CON '+str(CARS[2]),'INT '+str(CARS[3]),'SAB '+str(CARS[4]),'CAR '+str(CARS[5]), '| Al: '+alinis[alini])
@@ -97,10 +95,7 @@ while True:
         stats[i] += ProCla(CLASES,clase,cla.count(clase))[i]
     
     ## Aumento de Características en niveles multiplos de 4 ##
-    Car = AumentaCar(nivel)
-    if Car == '':
-        pass
-    else:
+    if nivel % 4 == 0:
         CARS[Car]+=1
         print ('El personaje tiene ahora '+Cars[Car]+' '+str(CARS[Car])+' (+'+str(CarMod(CARS[Car]))+')')
     
@@ -112,11 +107,16 @@ while True:
         rng[HABS[0].index(i)] += hab_rng[i]
     
     ## Elección de Dotes ##
-    listo = []
-    for ID in range(len(DOTES[0])):
-            if ValPreReq (ID,dt_mc,cla,nivel,dotes,rng,apps,stats,CARS):
-                listo.append(DOTES[0][ID])
-    dotes.append(SelDot(DOTES,listo,nivel))
+    if nivel in (1,3,6,9,12,15,18):
+        print ('\nEn el '+str(nivel)+'º nivel, tienes una dote para elegir')
+        listo = []
+        for ID in range(len(DOTES[0])):
+                if ValPreReq (ID,dt_mc,cla,nivel,dotes,rng,apps,stats,CARS):
+                    listo.append(DOTES[0][ID])
+        if input('\nDeseas conocer las dotes cuyos prerrequisitos están cumplidos? ').lower().startswith('s'):
+            print()
+            DTaDosCol(listo)
+        dotes.append(SelDot(DOTES,listo,nivel))
     
     if not input('\nDesea subir de nivel? ').lower().startswith('s'):
         break

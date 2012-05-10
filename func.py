@@ -17,22 +17,30 @@ def leerCSV (archivo):
 
 def Alinear ():
     Alineamientos = ('Legal bueno','Neutral bueno','Caótico bueno','Legal neutral','Neutral auténtico','Neutral bueno','Legal maligno','Neutral maligno','Caótico maligno')
+    print('\nEscoge un alineamiento para este personaje')
+    for i in range(len(Alineamientos)):
+        if (i+1)%3==0:
+            print(str(i)+': '+Alineamientos[i],end='\n')
+        elif i == 0:
+            print(str(i)+': '+Alineamientos[i],end='\t\t')
+        else:
+            print(str(i)+': '+Alineamientos[i],end='\t')
     while True:
-        aling = input ('\nEscoge un alineamiento para este personaje\n1: Legal bueno     2: Neutral bueno       3: Caótico bueno\n4: Legal neutral   5: Neutral auténtico   6: Caótico neutral\n7: Legal maligno   8: Neutral maligno     9: Caótico maligno\n\n')
-        if not aling.isnumeric():
-            if aling.capitalize() in Alineamientos:
-                aling = Alineamientos.index(aling.capitalize())
+        aling = input ('\nAlineamiento: ')
+        if aling.isnumeric():
+            aling = int(aling)
+            if aling not in range(len(Alineamientos)):
+                print('El numero elegido no representa ningún alineamiento')
             else:
-                print ('Escriba correctamente el alineamiento, o el numero que lo representa')
+                print ('Has elegido que este personaje sea '+Alineamientos[aling]+'.', end= ' ')
+                if input ('¿Estas seguro? ').lower().startswith('s'):
+                    return aling
         else:
-            aling = int (aling) -1
-        
-        if aling not in (0,1,2,3,4,5,6,7,8):
-            print ('El numero elegido no representa ningún alineamiento')
-        else:
-            print ('Has elegido que este personaje sea '+Alineamientos[aling]+'.', end= ' ')
-            if input ('¿Estas seguro? ').lower().startswith('s'):
-                return aling
+            if aling.capitalize() in Alineamientos:
+                aling = int(Alineamientos.index(aling.capitalize()))
+                print ('Has elegido que este personaje sea '+Alineamientos[aling]+'.', end= ' ')
+                if input ('¿Estas seguro? ').lower().startswith('s'):
+                    return aling
 
 def SelCla(claseprevia,lista_de_clases,alineamiento):
     '''Provee un selector de clases.'''
@@ -66,7 +74,7 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
     CLASES = ['Barbaro','Clerigo','Paladin','Picaro','']+numeros+pos+abp
     
     while True:
-        cla = input('\nClase: ').capitalize()
+        cla = input('Clase: ').capitalize()
         if cla not in CLASES:
             print ('\nSeleccione una clase válida.')
         elif cla == '':
@@ -144,23 +152,6 @@ def PuntHab (lista_de_clases,clase,nivel,INT_mod,subtipo):
             PH += 1
     return PH
 
-def ProcHabCls (lista_de_clases):
-    nom = lista_de_clases[0]
-    hab = lista_de_clases[7]
-    hab_cls = {}
-    
-    for i in range(len(nom)):
-        hab_cls[nom[i]]=hab[i]
-
-    for i in nom:
-        hab_cls[i]=hab_cls[i].split(',')
-
-    for i in range(len(nom)):
-        for j in hab_cls[nom[i]]:
-            hab_cls[nom[i]][hab_cls[nom[i]].index(j)] = int(hab_cls[nom[i]][hab_cls[nom[i]].index(j)])
-    
-    return hab_cls
-
 def Claseas (claseas,clase,lista_de_hab):
     '''Devuelve las habilidades cláseas de la clase citada.'''
     
@@ -175,52 +166,64 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     print('\nTienes '+str(PH)+' puntos de habilidad para distribuir en este nivel.\n')
     b = ''
     if input('Deseas conocer tus habilidades de clase? ').lower().startswith('s'):
-        for hab in hab_cla:
-            b = b+hab+', '
-        print(b.rstrip(', ')+'.\n')
-    print ('Recuerda que cualquier habilidad transclásea cuesta dos puntos en lugar de uno.\nEscribe una habilidad y los puntos que desees invertir en ella.\n')
+        print()
+        DTaDosCol(hab_cla)
+
+    print ('\nRecuerda que cualquier habilidad transclásea cuesta dos puntos en lugar de uno.\nEscribe una habilidad y los puntos que desees invertir en ella.\n')
     
+    rng = {}
+    for i in range(len(rangos)):
+        rng[lista_de_hab[i]] = rangos[i]
+        
     rng_max = nv_cls+3
     rng_max_tc = round(rng_max/2)
-    rng = {}
+    
     while PH > 0:
         hab = input('\nHabilidad: ').rstrip(' ').capitalize()
         while hab not in lista_de_hab:
             print('Por favor, escribe la habilidad correctamente')
             hab = input('\nHabilidad: ').rstrip(' ').capitalize()
-        rng[hab]=0
-        puntos = input('Puntos: ')
-        while not puntos.isnumeric():
-            print ('Los rangos deben ser numéricos')
+        if rng[hab] >0:
+            print (hab+' ya posee '+str(rng[hab])+' rangos.')
+       
+        while True:
             puntos = input('Puntos: ')
-        puntos = int(puntos)
-        
-        if hab not in hab_cla:
-            PH -= puntos
-            rng[hab] += puntos/2
-            print('\nPuntos restantes: '+str(PH))
-            if PH < 0:
-                print('no alcanzan los puntos')
-                PH += puntos*2
-                rng[hab] -= puntos/2
-        else:
-            if rng[hab] + puntos > rng_max:
-                print(hab+' ha alcanzado el rango máximo ('+str(rng_max)+').')
-                PH -= rng_max
-                rng[hab] += rng_max
-                print('\nPuntos restantes: '+str(PH))
-                if PH < 0:
-                    print('no alcanzan los puntos')
-                    PH += rng_max
-                    rng[habs.index(hab)] -= rng_max
+            if not puntos.isnumeric():
+                print ('Los rangos deben ser numéricos')
+            elif int(puntos) > PH:
+                print('No posees tantos puntos de habilidad')
             else:
-                PH -= puntos
-                rng[hab] += puntos
+                puntos = int(puntos)
+                break
+        
+        if hab not in hab_cla:                                     ## Habilidad Transclásea
+            print (hab+' es una habilidad transclásea')
+            if rng[hab] == rng_max_tc:
+                print (hab+' está maximizada. No se pueden agregar más rangos en este nivel')
+            else:
+                if rng[hab] + puntos >= rng_max_tc:
+                    print(hab+' ha alcanzado el rango máximo ('+str(rng_max_tc)+').')
+                    PH -= rng_max_tc - rng[hab]
+                    rng[hab] += rng_max_tc - rng[hab]
+                else:
+                    PH -= puntos
+                    rng[hab] += puntos/2
                 print('\nPuntos restantes: '+str(PH))
-                if PH < 0:
-                    print('no alcanzan los puntos')
-                    PH += puntos
-                    rng[hab] -= puntos
+                    
+        else:                                                     ## Habilidad Clásea
+            print (hab+' es una habilidad clásea')
+            if rng[hab] == rng_max:
+                print (hab+' está maximizada. No se pueden agregar más rangos en este nivel')
+            else:
+                if rng[hab] + puntos >= rng_max:
+                    print(hab+' ha alcanzado el rango máximo ('+str(rng_max)+').')
+                    PH -= rng_max - rng[hab]
+                    rng[hab] += rng_max - rng[hab]
+                else:
+                    PH -= puntos
+                    rng[hab] += puntos
+                print('\nPuntos restantes: '+str(PH))
+    
     return rng
 
 def HabcR (rangos):
@@ -281,6 +284,44 @@ def ProcDTS (mecCSV):
     general = [ID,tipo,r_cls,r_nv,r_dts,r_rng,r_app,r_stat,r_car]
     
     return general
+
+def ProcRazas (razasCSV):
+    razas = {}
+    for R in razasCSV:
+        razas[R[0]]=R[1:]
+    
+    for key in razas:
+        razas[key][1] = razas[key][1].split(',')
+        for i in range(len(razas[key][1])):
+            razas[key][1][i] = int(razas[key][1][i])
+        razas[key][4] = razas[key][4].split(',')
+        for i in range(len(razas[key][4])):
+            razas[key][4][i] = razas[key][4][i].split('b')
+        for par in razas[key][4]:
+            if par == ['']:
+                pass
+            else:
+                for i in range(len(par)):
+                    par[i]=int(par[i])
+    
+    return razas
+
+def ProcHabCls (lista_de_clases):
+    nom = lista_de_clases[0]
+    hab = lista_de_clases[7]
+    hab_cls = {}
+    
+    for i in range(len(nom)):
+        hab_cls[nom[i]]=hab[i]
+
+    for i in nom:
+        hab_cls[i]=hab_cls[i].split(',')
+
+    for i in range(len(nom)):
+        for j in hab_cls[nom[i]]:
+            hab_cls[nom[i]][hab_cls[nom[i]].index(j)] = int(hab_cls[nom[i]][hab_cls[nom[i]].index(j)])
+    
+    return hab_cls
 
 def ValPreReq (ID,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract):
     
@@ -403,23 +444,17 @@ def SelDot (lista_de_dotes,posibles,nivel):
     nom = lista_de_dotes[0]
     pre = lista_de_dotes[1]
     des = lista_de_dotes[2]
-    
-    listo = []
-    if nivel in (1,3,6,9,12,15,18):
-        print ('\nEn el '+str(nivel)+'º nivel, tienes una dote para elegir')
-        while True:
-            dt = input('\nDote: ').rstrip(' ').capitalize()
-            if dt not in nom:
-                print ('Por favor, escribe la dote correctamente\n')
-            elif dt not in posibles:
-                print ('Actualmente el personaje no cumple con los prrerequisitos para la dote seleccionada', 'Elija otra', sep = '\n')
-            else:
-                print ('Prerrequisitos: '+pre[nom.index(dt)]+'(cumplidos)\n'+des[nom.index(dt)])
-            
+    while True:
+        dt = input('\nDote: ').rstrip(' ').capitalize()
+        if dt not in nom:
+            print ('Por favor, escribe la dote correctamente\n')
+        elif dt not in posibles:
+            print ('Actualmente el personaje no cumple con los prrerequisitos para la dote seleccionada', 'Elija otra', sep = '\n')
+        else:
+            print ('Prerrequisitos: '+pre[nom.index(dt)]+'(cumplidos)\n'+des[nom.index(dt)])
+        
             if input('\n¿Esta seguro? ').lower().startswith('s'):
-                return 
-    else:
-        pass
+                return nom.index(dt)
 
 def UnaCar ():
     '''Un simple generador para una caracterítica.'''
@@ -447,32 +482,61 @@ def PrepPrint(lista):
         imprimir = imprimir+str(elemento)+', '
     imprimir = imprimir.rstrip(', ')+'.'
     return imprimir
+
+def HabDosCol (rangos):
+    c1 = []
+    c2 = []
+    cR = []
+    for i in range(len(rangos)):
+        if rangos[i] > 0:
+            cR.append(HABS[0][i])
+
+    for i in range(len(cR)):
+        if i%2 == 0:
+            c1.append(cR[i])
+        else:
+            c2.append(cR[i])
+
+    for i in range(len(c1)):
+        if len(c1[i]+' '+str(rangos[i])) > 23:
+            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t')
+        elif len(c1[i]+' '+str(rangos[i])) > 15:
+            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t')
+        else:
+            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t\t')
+
+def DTaDosCol(dotes):
+    c1 = []
+    c2 = []
     
+    for i in range(len(dotes)):
+        if i%2 == 0:
+            c1.append(dotes[i])
+        else:
+            c2.append(dotes[i])
+
+    if len(c1)>len(c2):
+        c2.append(''*(len(c1)-len(c2)))
+
+    for i in range(len(c1)):
+        if len(c1[i]) > 32:
+            print (c1[i],c2[i],sep='\t')
+        elif len(c1[i]) > 23:
+            print (c1[i],c2[i],sep='\t\t')
+        elif len(c1[i]) > 15:
+            print (c1[i],c2[i],sep='\t\t\t')
+        elif len(c1[i]) > 7:
+            print (c1[i],c2[i],sep='\t\t\t\t')
+        else:
+            print (c1[i],c2[i],sep='\t\t\t\t\t')
+
 def SelRaza(lista_de_razas):
     '''Provee un selector de razas.'''
     
     print('\nSeleccione Raza \n1: Humano 2: Enano 3: Elfo 4: Gnomo\n5: Mediano 6: Semielfo 7: Semiorco\n')
-    
-    razas = {}
-    for R in lista_de_razas:
-        razas[R[0]]=R[1:]
-    
-    for key in razas:
-        razas[key][1] = razas[key][1].split(',')
-        for i in range(len(razas[key][1])):
-            razas[key][1][i] = int(razas[key][1][i])
-        razas[key][4] = razas[key][4].split(',')
-        for i in range(len(razas[key][4])):
-            razas[key][4][i] = razas[key][4][i].split('b')
-        for par in razas[key][4]:
-            if par == ['']:
-                pass
-            else:
-                for i in range(len(par)):
-                    par[i]=int(par[i])
-    
+
     raza = ''
-    while raza not in razas:
+    while raza not in lista_de_razas:
         raza = input('Raza: ').capitalize()
         if raza.isnumeric():
             if raza == '1': raza = 'Humano'
@@ -484,12 +548,12 @@ def SelRaza(lista_de_razas):
             elif raza == '7': raza = 'Semiorco'
             else:
                 print('Raza inválida, intente nuevamente\n')
-        if raza not in razas:
+        if raza not in lista_de_razas:
             print('Raza inválida o error ortográfico, intente nuevamente\n')
-        print ('Has elegido que este personaje sea un '+razas[raza][0]+'.', end = ' ')
+        print ('Has elegido que este personaje sea un '+lista_de_razas[raza][0]+'.', end = ' ')
         if not input ('¿Estas seguro? ').lower().startswith('s'):
             raza = ''
-    return razas[raza]
+    return lista_de_razas[raza]
 
 def RepPunto(lista,Car):
     '''Ordena la distribución de valores de característica.'''
@@ -517,39 +581,37 @@ def CarMod(car):
 
 def AumentaCar (nivel):
     CARS = ('FUE','DES','CON','INT','SAB','CAR','Fuerza','Destreza','Constitución','Constitucion','Inteligencia','Sabiduría','Sabiduria','Carisma')
-    if nivel % 4 == 0:
-        print ('\nEn el '+str(nivel)+'º nivel, tienes un aumento de características')
-        print ('Selecciona la característica que quieres aumentar')
-        Car = input('Característica: ')
-        while True:
-            if Car.capitalize() not in CARS:
-                if Car.upper() not in CARS:
-                    print ('La característica es inválida o inexistente')
-                    Car = input('Característica: ')
-                else:
-                    break
+
+    print ('\nEn el '+str(nivel)+'º nivel, tienes un aumento de características')
+    print ('Selecciona la característica que quieres aumentar')
+    Car = input('Característica: ')
+    while True:
+        if Car.capitalize() not in CARS:
+            if Car.upper() not in CARS:
+                print ('La característica es inválida o inexistente')
+                Car = input('Característica: ')
             else:
                 break
-        if len(Car) > 3:
-            Car = Car.capitalize()
-            if Car in ('Fuerza'): Car = 0
-            elif Car in ('Destreza'): Car = 1
-            elif Car in ('Constitución','Constitucion'): Car = 2
-            elif Car in ('Inteligencia'): Car = 3
-            elif Car in ('Sabiduría','Sabiduria') : Car = 4
-            elif Car in ('Carisma'): Car = 5
         else:
-            Car = Car.upper()
-            if Car == 'FUE': Car = 0
-            elif Car == 'DES': Car = 1
-            elif Car == 'CON': Car = 2
-            elif Car == 'INT': Car = 3
-            elif Car == 'SAB': Car = 4
-            elif Car == 'CAR': Car = 5
-        
-        return Car
+            break
+    if len(Car) > 3:
+        Car = Car.capitalize()
+        if Car in ('Fuerza'): Car = 0
+        elif Car in ('Destreza'): Car = 1
+        elif Car in ('Constitución','Constitucion'): Car = 2
+        elif Car in ('Inteligencia'): Car = 3
+        elif Car in ('Sabiduría','Sabiduria') : Car = 4
+        elif Car in ('Carisma'): Car = 5
     else:
-        return ''
+        Car = Car.upper()
+        if Car == 'FUE': Car = 0
+        elif Car == 'DES': Car = 1
+        elif Car == 'CON': Car = 2
+        elif Car == 'INT': Car = 3
+        elif Car == 'SAB': Car = 4
+        elif Car == 'CAR': Car = 5
+    
+    return Car
 
 def ProcApps (aptitudes):
     '''Procesa las Aptitudes Especiales en formato CSV'''
