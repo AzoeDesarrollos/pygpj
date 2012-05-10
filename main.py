@@ -4,6 +4,8 @@ from time import sleep
 import os
 import csv
 from func import *
+from procs import *
+from sels import *
 
 csv.register_dialect('myCSV',delimiter=';')
 
