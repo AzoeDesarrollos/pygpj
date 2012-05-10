@@ -61,6 +61,7 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
         print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
     else:
         print ('\nElije una clase para este nivel [Enter: '+claseprevia+']')
+        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
    
     CLASES = ['Barbaro','Clerigo','Paladin','Picaro','']+numeros+pos+abp
     
@@ -143,9 +144,7 @@ def PuntHab (lista_de_clases,clase,nivel,INT_mod,subtipo):
             PH += 1
     return PH
 
-def Claseas (lista_de_clases,clase,lista_de_hab):
-    '''Devuelve las habilidades cláseas de la clase citada.'''
-    
+def ProcHabCls (lista_de_clases):
     nom = lista_de_clases[0]
     hab = lista_de_clases[7]
     hab_cls = {}
@@ -160,28 +159,33 @@ def Claseas (lista_de_clases,clase,lista_de_hab):
         for j in hab_cls[nom[i]]:
             hab_cls[nom[i]][hab_cls[nom[i]].index(j)] = int(hab_cls[nom[i]][hab_cls[nom[i]].index(j)])
     
+    return hab_cls
+
+def Claseas (claseas,clase,lista_de_hab):
+    '''Devuelve las habilidades cláseas de la clase citada.'''
+    
     cls = []
-    for i in hab_cls[clase]:
+    for i in claseas[clase]:
         cls.append(lista_de_hab[i])
     return cls
 
-def RepRNG (PH,nv_cls,hab_cla,lista_de_hab):
+def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     '''Devuelve un diccionario con la habilidad y sus rangos.'''
     
     print('\nTienes '+str(PH)+' puntos de habilidad para distribuir en este nivel.\n')
     b = ''
-    if input('Deseas conocer tus habilidades de clase?\n').lower().startswith('s'):
+    if input('Deseas conocer tus habilidades de clase? ').lower().startswith('s'):
         for hab in hab_cla:
             b = b+hab+', '
         print(b.rstrip(', ')+'.\n')
-    print ('Recuerda que cualquier habilidiad transclásea cuesta dos puntos en lugar de uno.\nEscribe una habilidad y los puntos que desees invertir en ella.\n')
+    print ('Recuerda que cualquier habilidad transclásea cuesta dos puntos en lugar de uno.\nEscribe una habilidad y los puntos que desees invertir en ella.\n')
     
     rng_max = nv_cls+3
     rng_max_tc = round(rng_max/2)
     rng = {}
     while PH > 0:
         hab = input('\nHabilidad: ').rstrip(' ').capitalize()
-        if hab not in lista_de_hab:
+        while hab not in lista_de_hab:
             print('Por favor, escribe la habilidad correctamente')
             hab = input('\nHabilidad: ').rstrip(' ').capitalize()
         rng[hab]=0
@@ -219,6 +223,28 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab):
                     rng[hab] -= puntos
     return rng
 
+def HabcR (rangos):
+    c1 = []
+    c2 = []
+    cR = []
+    for i in range(len(rangos)):
+        if rangos[i] > 0:
+            cR.append(HABS[0][i])
+
+    for i in range(len(cR)):
+        if i%2 == 0:
+            c1.append(cR[i])
+        else:
+            c2.append(cR[i])
+
+    for i in range(len(c1)):
+        if len(c1[i]+' '+str(rangos[i])) > 23:
+            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t')
+        elif len(c1[i]+' '+str(rangos[i])) > 15:
+            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t')
+        else:
+            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t\t')
+
 def HabMod(mods,hab_num,mods_de_caract):
     '''Calcula el modificador final de habilidad.'''
     
@@ -233,23 +259,165 @@ def HabMod(mods,hab_num,mods_de_caract):
     
     return rng[hab_num]+mod+rcl[hab_num]+sng[hab_num]+dts[hab_num]+obj[hab_num]
 
-def SelDot (lista_de_dotes,nivel):
+def ProcDTS (mecCSV):
+    ID,tipo,r_cls = [],[],[]
+    r_nv,r_dts,r_rng = [],[],[]
+    r_app,r_stat,r_car, = [],[],[]
+    
+    for D in mecCSV:
+        ID.append(D[0])
+        tipo.append(D[1])
+        r_cls.append(D[2])
+        r_nv.append(D[3])
+        r_dts.append(D[4])
+        r_rng.append(D[5])
+        r_app.append(D[6])
+        r_stat.append(D[7])
+        r_car.append(D[8])
+    
+    for i in range(len(ID)):
+        ID[i] = int(ID[i])
+    
+    general = [ID,tipo,r_cls,r_nv,r_dts,r_rng,r_app,r_stat,r_car]
+    
+    return general
+
+def ValPreReq (ID,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract):
+    
+    IDs = mecanicas[0]
+    tipo = mecanicas[1]
+    r_cls = mecanicas[2]
+    r_nv = mecanicas[3]
+    r_dts = mecanicas[4]
+    r_rng = mecanicas[5]
+    r_app = mecanicas[6]
+    r_stat = mecanicas[7]
+    r_car = mecanicas[8]
+    
+    valido = 0
+    
+    if tipo[ID] == 'u':
+        if ID in dotes:
+            valido = 0
+        else:
+            valido = 1
+    elif tipo[ID] == 's':
+        valido = 1
+    else:
+        valido = 0 ## provisional
+    
+    if valido == 1:
+        if r_cls[ID] == '':
+            valido = 1
+        else:
+            Req = r_cls[ID].split(' ')
+            if Req[0] in nv_cls:
+                if nv_cls.count(Req[0]) >= int(Req[1]):
+                    valido = 1
+                else:
+                    valido = 0
+
+        if valido == 1:
+            if r_nv[ID] == '':
+                valido = 1
+            else:
+                if len(nv_cls)>= int(r_nv[ID]):
+                    valido = 1
+                else:
+                    valido = 0
+
+            if valido == 1:
+                if r_dts[ID] == '':
+                    valido = 1
+                else:
+                    Reqs = r_dts[ID].split(',')
+                    for Req in Reqs:
+                        if int(Req) in dotes: ## capaz quedaria mejor un for i
+                            valido = 1
+                        else:
+                            valido = 0
+
+                if valido == 1:
+                    if r_rng[ID] == '':
+                        valido = 1
+                    else:
+                        Req = r_rng[ID].split(':')
+                        if rangos[int(Req[0])] >= int(Req[1]):
+                            valido = 1
+                        else:
+                            valido = 0
+
+                    if valido == 1:
+                        if r_app[ID] == '':
+                            valido = 1
+                        else:
+                            valido = 0 ## más que provisional...
+                        
+                        if r_stat[ID] == '':
+                            valido = 1
+                        else:
+                            Req = r_stat[ID].split(':')
+                            if Req[0] == '0': ## Requisito de ataque base
+                                if stats[0] >= int(Req[1]):
+                                    valido = 1
+                                else:
+                                    valido = 0
+                            if Req[0] == '1': ## Requisito de TS Fort
+                                if stats[1] >= int(Req[1]):
+                                    valido = 1
+                                else:
+                                    valido = 0        
+                            if Req[0] == '2': ## Requisito de TS Ref
+                                if stats[2] >= int(Req[1]):
+                                    valido = 1
+                                else:
+                                    valido = 0
+                            if Req[0] == '3': ## Requisito de TS Vol
+                                if stats[3] >= int(Req[1]):
+                                    valido = 1
+                                else:
+                                    valido = 0
+
+                        if valido == 1:
+                            if r_car[ID] == '':
+                                valido = 1
+                            else:
+                                Reqs = r_car[ID].split(',')
+                                for Req in Reqs:
+                                    car = Req.split(':')[0]
+                                    val = Req.split(':')[1]
+                                    if caract[int(car)] >= int(val):
+                                        valido = 1
+                                    else:
+                                        valido = 0
+    
+    
+    if valido == 1:
+        return True
+    else:
+        return False
+
+def SelDot (lista_de_dotes,posibles,nivel):
     '''Provee un selector de dotes.'''
     
     nom = lista_de_dotes[0]
     pre = lista_de_dotes[1]
     des = lista_de_dotes[2]
+    
+    listo = []
     if nivel in (1,3,6,9,12,15,18):
         print ('\nEn el '+str(nivel)+'º nivel, tienes una dote para elegir')
         while True:
             dt = input('\nDote: ').rstrip(' ').capitalize()
             if dt not in nom:
                 print ('Por favor, escribe la dote correctamente\n')
+            elif dt not in posibles:
+                print ('Actualmente el personaje no cumple con los prrerequisitos para la dote seleccionada', 'Elija otra', sep = '\n')
             else:
-                print ('Prerrequisitos: '+pre[nom.index(dt)]+'\n'+des[nom.index(dt)])
+                print ('Prerrequisitos: '+pre[nom.index(dt)]+'(cumplidos)\n'+des[nom.index(dt)])
             
             if input('\n¿Esta seguro? ').lower().startswith('s'):
-                return dt
+                return 
     else:
         pass
 
@@ -318,6 +486,9 @@ def SelRaza(lista_de_razas):
                 print('Raza inválida, intente nuevamente\n')
         if raza not in razas:
             print('Raza inválida o error ortográfico, intente nuevamente\n')
+        print ('Has elegido que este personaje sea un '+razas[raza][0]+'.', end = ' ')
+        if not input ('¿Estas seguro? ').lower().startswith('s'):
+            raza = ''
     return razas[raza]
 
 def RepPunto(lista,Car):

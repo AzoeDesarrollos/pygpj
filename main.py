@@ -13,8 +13,10 @@ CARS = [0,0,0,0,0,0]
 
 RAZAS = leerCSV('data/razas.csv')
 DOTES = leerCSV('data/dotes.csv')
+dt_mc = ProcDTS(leerCSV('data/dt_mc.csv'))
 HABS = leerCSV('data/habs.csv')
 CLASES = leerCSV('data/clases.csv')
+hab_cls = ProcHabCls(CLASES)
 APPS = ProcApps(leerCSV('data/apps.csv'))
 
 rng = [i*0 for i in range(len(HABS[0]))] # Rangos de habilidad
@@ -73,6 +75,7 @@ nv_pj = 0
 nivel = 0
 alini = Alinear()
 alinis = ('LB','NB','CB','LN','NN','CN','LM','NM','CM')
+apps = []
 
 while True:
     nv_pj += 1
@@ -104,12 +107,16 @@ while True:
     ## Cáculo de puntos y Asignación de Rangos de habilidad ##
     os.system(['clear','cls'][os.name == 'nt'])
     print (Raza[0],'| FUE '+str(CARS[0]),'DES '+str(CARS[1]),'CON '+str(CARS[2]),'INT '+str(CARS[3]),'SAB '+str(CARS[4]),'CAR '+str(CARS[5]), '| Al: '+alinis[alini])
-    hab_rng = RepRNG (PuntHab (CLASES,clase,nivel,INT_mod,subtipo),cla.count(clase),Claseas(CLASES,clase,HABS[0]),HABS[0])
+    hab_rng = RepRNG (PuntHab (CLASES,clase,nivel,INT_mod,subtipo),cla.count(clase),Claseas(hab_cls,clase,HABS[0]),HABS[0],rng)
     for i in hab_rng:
         rng[HABS[0].index(i)] += hab_rng[i]
     
     ## Elección de Dotes ##
-    dotes.append(SelDot(DOTES,nivel))
+    listo = []
+    for ID in range(len(DOTES[0])):
+            if ValPreReq (ID,dt_mc,cla,nivel,dotes,rng,apps,stats,CARS):
+                listo.append(DOTES[0][ID])
+    dotes.append(SelDot(DOTES,listo,nivel))
     
     if not input('\nDesea subir de nivel? ').lower().startswith('s'):
         break
