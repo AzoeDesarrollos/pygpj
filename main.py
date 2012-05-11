@@ -78,12 +78,15 @@ alini = Alinear()
 alinis = ('LB','NB','CB','LN','NN','CN','LM','NM','CM')
 apps = []
 
+barra = ''.join((Raza[0],'| FUE '+str(CARS[0]),' DES '+str(CARS[1]),' CON '+str(CARS[2]),' INT '+str(CARS[3]),' SAB '+str(CARS[4]),'| Al '+alinis[alini]))
+
 while True:
     nivel += 1
     os.system(['clear','cls'][os.name == 'nt'])
-    print (Raza[0],'| FUE '+str(CARS[0]),'DES '+str(CARS[1]),'CON '+str(CARS[2]),'INT '+str(CARS[3]),'SAB '+str(CARS[4]),'CAR '+str(CARS[5]), '| Al: '+alinis[alini])
+    print (barra)
     print ('\n~~ '+str(nivel)+'º NIVEL ~~\n')
-    ## Elegir Clase ##
+    
+    ## Elección de Clase ##
     if nivel == 1:
         clase = SelCla('',CLASES,alini)
     else:
@@ -94,22 +97,28 @@ while True:
         if cla[i] == '':
             cla[i] = cla[i-1]
     for i in range(4):
-        stats[i] += ProCla(CLASES,clase,cla.count(clase))[i]
-    
+        stats[i] += ProCla(CLASES,clase,cla.count(clase))[i] ## esta linea es ineficiente, calcula 4 veces lo mismo.
+    for i in AppClas (APPS,clase,cla.count(clase)):
+        apps.append(i)
     ## Aumento de Características en niveles multiplos de 4 ##
     if nivel % 4 == 0:
         CARS[Car]+=1
         print ('El personaje tiene ahora '+Cars[Car]+' '+str(CARS[Car])+' (+'+str(CarMod(CARS[Car]))+')')
+        sleep (2)
     
     ## Cáculo de puntos y Asignación de Rangos de habilidad ##
     os.system(['clear','cls'][os.name == 'nt'])
-    print (Raza[0],'| FUE '+str(CARS[0]),'DES '+str(CARS[1]),'CON '+str(CARS[2]),'INT '+str(CARS[3]),'SAB '+str(CARS[4]),'CAR '+str(CARS[5]), '| Al: '+alinis[alini])
+    print (barra)
     hab_rng = RepRNG (PuntHab (CLASES,clase,nivel,INT_mod,subtipo),cla.count(clase),Claseas(hab_cls,clase,HABS[0]),HABS[0],rng)
     for i in hab_rng:
-        rng[HABS[0].index(i)] += hab_rng[i]
+        rng[HABS[0].index(i)] = hab_rng[i]
+    sleep (2)
     
     ## Elección de Dotes ##
     if nivel in (1,3,6,9,12,15,18):
+    
+        os.system(['clear','cls'][os.name == 'nt'])
+        print (barra)
         print ('\nEn el '+str(nivel)+'º nivel, tienes una dote para elegir')
         listo = []
         for ID in range(len(DOTES[0])):
@@ -119,6 +128,6 @@ while True:
             print()
             DTaDosCol(listo)
         dotes.append(SelDot(DOTES,listo,nivel))
-    
+        
     if not input('\nDesea subir de nivel? ').lower().startswith('s'):
         break

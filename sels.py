@@ -1,5 +1,7 @@
 ﻿# coding=UTF-8
 from func import *
+from time import sleep
+import os
 
 def SelRaza(lista_de_razas):
     '''Provee un selector de razas.'''
@@ -93,16 +95,16 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
         numeros.append(str(i))
         
     if claseprevia == '':
-        print ('\nElije una clase para este nivel')
+        print ('Elije una clase para este nivel')
         print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
     else:
-        print ('\nElije una clase para este nivel [Enter: '+claseprevia+']')
+        print ('Elije una clase para este nivel [Enter: '+claseprevia+']')
         print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
    
     CLASES = ['Barbaro','Clerigo','Paladin','Picaro','']+numeros+pos+abp
     
     while True:
-        cla = input('Clase: ').capitalize()
+        cla = input('\nClase: ').capitalize()
         if cla not in CLASES:
             print ('\nSeleccione una clase válida.')
         elif cla == '':
@@ -110,20 +112,19 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
                 print ('\nDebe seleccionar una clase')
             else:
                 cla = claseprevia
-                break
-        else:
-            break
-    
-    if cla in abr: Clase = cla
-    elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
-    elif cla == '': Clase = ''
-    elif cla == 'Barbaro': Clase = 'Brb'
-    elif cla == 'Clerigo': Clase = 'Clr'
-    elif cla == 'Paladin': Clase = 'Pld'
-    elif cla == 'Picaro': Clase = 'Pcr'
-    elif cla.isnumeric(): Clase = abp[int(cla)]
-    
-    return Clase
+                    
+        if cla in abr: Clase = cla
+        elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
+        elif cla == '': Clase = ''
+        elif cla == 'Barbaro': Clase = 'Brb'
+        elif cla == 'Clerigo': Clase = 'Clr'
+        elif cla == 'Paladin': Clase = 'Pld'
+        elif cla == 'Picaro': Clase = 'Pcr'
+        elif cla.isnumeric(): Clase = abp[int(cla)]
+        
+        print ("Has seleccionado '"+nom[abr.index(Clase)]+"' como clase para este nivel.",end= ' ')
+        if input ('¿Estas seguro? ').lower().startswith('s'):
+            return Clase
 
 def AumentaCar (nivel):
     CARS = ('FUE','DES','CON','INT','SAB','CAR','Fuerza','Destreza','Constitución','Constitucion','Inteligencia','Sabiduría','Sabiduria','Carisma')
@@ -163,7 +164,7 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     '''Devuelve un diccionario con la habilidad y sus rangos.'''
     
     print('\nTienes '+str(PH)+' puntos de habilidad para distribuir en este nivel.\n')
-    b = ''
+    
     if input('Deseas conocer tus habilidades de clase? ').lower().startswith('s'):
         print()
         DTaDosCol(hab_cla)
@@ -175,7 +176,7 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
         rng[lista_de_hab[i]] = rangos[i]
         
     rng_max = nv_cls+3
-    rng_max_tc = round(rng_max/2)
+    rng_max_tc = rng_max/2
     
     while PH > 0:
         hab = input('\nHabilidad: ').rstrip(' ').capitalize()
@@ -200,9 +201,9 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
             if rng[hab] == rng_max_tc:
                 print (hab+' está maximizada. No se pueden agregar más rangos en este nivel')
             else:
-                if rng[hab] + puntos >= rng_max_tc:
+                if rng[hab] + (puntos/2) >= rng_max_tc:
                     print(hab+' ha alcanzado el rango máximo ('+str(rng_max_tc)+').')
-                    PH -= rng_max_tc - rng[hab]
+                    PH -= (rng_max_tc - rng[hab])*2
                     rng[hab] += rng_max_tc - rng[hab]
                 else:
                     PH -= puntos
