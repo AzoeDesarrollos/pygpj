@@ -96,8 +96,7 @@ while True:
     for i in range(len(cla)):
         if cla[i] == '':
             cla[i] = cla[i-1]
-    for i in range(4):
-        stats[i] += ProCla(CLASES,clase,cla.count(clase))[i] ## esta linea es ineficiente, calcula 4 veces lo mismo.
+    stats = ProCla(CLASES,clase,cla.count(clase),stats)
     for i in AppClas (APPS,clase,cla.count(clase)):
         apps.append(i)
     ## Aumento de Características en niveles multiplos de 4 ##
@@ -116,7 +115,6 @@ while True:
     
     ## Elección de Dotes ##
     if nivel in (1,3,6,9,12,15,18):
-    
         os.system(['clear','cls'][os.name == 'nt'])
         print (barra)
         print ('\nEn el '+str(nivel)+'º nivel, tienes una dote para elegir')
@@ -125,8 +123,7 @@ while True:
                 if ValPreReq (ID,dt_mc,cla,nivel,dotes,rng,apps,stats,CARS):
                     listo.append(DOTES[0][ID])
         if input('\nDeseas conocer las dotes cuyos prerrequisitos están cumplidos? ').lower().startswith('s'):
-            print()
-            DTaDosCol(listo)
+            Paginar(10,DTaDosCol(listo))
         dotes.append(SelDot(DOTES,listo,nivel))
         
     if not input('\nDesea subir de nivel? ').lower().startswith('s'):

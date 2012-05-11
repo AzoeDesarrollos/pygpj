@@ -1,7 +1,8 @@
 ﻿# coding=UTF-8
 from random import randint
+import os
 
-def ProCla(lista_de_clases,clase,nv_cls):
+def ProCla(lista_de_clases,clase,nv_cls,stats):
     '''Procesa la lista de clases y otiene ATKbase, y TSs.'''
     
     nom = lista_de_clases[0]
@@ -9,6 +10,7 @@ def ProCla(lista_de_clases,clase,nv_cls):
     Fort = lista_de_clases[2]
     Ref = lista_de_clases[3]
     Vol = lista_de_clases[4]
+
     if ATKb[nom.index(clase)] == 'b':
         A = 1
     elif ATKb[nom.index(clase)] == 'i':
@@ -37,7 +39,11 @@ def ProCla(lista_de_clases,clase,nv_cls):
     else:
         V = 1/3
     
-    return A,F,R,V
+    bases = [A,F,R,V]
+    for i in range(len(bases)):
+        bases[i]+=stats[i]
+    
+    return bases
 
 def PuntHab (lista_de_clases,clase,nivel,INT_mod,subtipo):
     '''Devuelve los puntos de habilidad a repartir para el nivel de clase.'''
@@ -242,6 +248,13 @@ def PrepPrint(lista):
     imprimir = imprimir.rstrip(', ')+'.'
     return imprimir
 
+def Paginar (tam_pag,lineas):
+    for i in range(len(lineas)):
+        if (i+1) % tam_pag == 0:
+            input ('\n[Presione Enter para continuar]\n')
+            os.system(['clear','cls'][os.name == 'nt'])
+        print (lineas[i])
+
 def HabDosCol (rangos):
     c1 = []
     c2 = []
@@ -269,7 +282,7 @@ def DTaDosCol(dotes):
     c2 = []
     
     for i in range(len(dotes)):
-        if i%2 == 0:
+        if i+1 <= len(dotes)/2:
             c1.append(dotes[i])
         else:
             c2.append(dotes[i])
@@ -277,17 +290,20 @@ def DTaDosCol(dotes):
     if len(c1)>len(c2):
         c2.append(''*(len(c1)-len(c2)))
 
+    lineas = []
     for i in range(len(c1)):
         if len(c1[i]) > 32:
-            print (c1[i],c2[i],sep='\t')
+            lineas.append(c1[i] +'\t'+ c2[i])
         elif len(c1[i]) > 23:
-            print (c1[i],c2[i],sep='\t\t')
+            lineas.append(c1[i] +'\t'*2+ c2[i])
         elif len(c1[i]) > 15:
-            print (c1[i],c2[i],sep='\t\t\t')
+            lineas.append(c1[i] +'\t'*3+ c2[i])
         elif len(c1[i]) > 7:
-            print (c1[i],c2[i],sep='\t\t\t\t')
+            lineas.append(c1[i] +'\t'*4+ c2[i])
         else:
-            print (c1[i],c2[i],sep='\t\t\t\t\t')
+            lineas.append(c1[i] +'\t'*5+ c2[i])
+
+    return lineas
 
 def CarMod(car):
     '''Calcula el modificador de característica.'''

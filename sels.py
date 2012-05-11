@@ -6,27 +6,34 @@ import os
 def SelRaza(lista_de_razas):
     '''Provee un selector de razas.'''
     
-    print('\nSeleccione Raza \n1: Humano 2: Enano 3: Elfo 4: Gnomo\n5: Mediano 6: Semielfo 7: Semiorco\n')
+    print('\nSeleccione Raza \n1: Humano 2: Enano 3: Elfo 4: Gnomo\n5: Mediano 6: Semielfo 7: Semiorco')
 
     raza = ''
     while raza not in lista_de_razas:
-        raza = input('Raza: ').capitalize()
+        raza = input('\nRaza: ').capitalize()
         if raza.isnumeric():
-            if raza == '1': raza = 'Humano'
+            if int(raza) not in (1,2,3,4,5,6,7):
+                print('Raza inválida, intente nuevamente\n')
+            elif raza == '1': raza = 'Humano'
             elif raza == '2': raza = 'Elfo'
             elif raza == '3': raza = 'Enano'
             elif raza == '4': raza = 'Gnomo'
             elif raza == '5': raza = 'Mediano'
             elif raza == '6': raza = 'Semielfo'
             elif raza == '7': raza = 'Semiorco'
+            print ('Has elegido que este personaje sea un '+lista_de_razas[raza][0]+'.', end = ' ')
+            if not input ('¿Estas seguro? ').lower().startswith('s'):
+                raza = ''
             else:
-                print('Raza inválida, intente nuevamente\n')
-        if raza not in lista_de_razas:
+                return lista_de_razas[raza]
+        elif raza not in lista_de_razas:
             print('Raza inválida o error ortográfico, intente nuevamente\n')
-        print ('Has elegido que este personaje sea un '+lista_de_razas[raza][0]+'.', end = ' ')
-        if not input ('¿Estas seguro? ').lower().startswith('s'):
-            raza = ''
-    return lista_de_razas[raza]
+        else:
+            print ('Has elegido que este personaje sea un '+lista_de_razas[raza][0]+'.', end = ' ')
+            if not input ('¿Estas seguro? ').lower().startswith('s'):
+                raza = ''
+            else:
+                return lista_de_razas[raza]
 
 def RepPunto(lista,Car):
     '''Ordena la distribución de valores de característica.'''
@@ -167,7 +174,7 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     
     if input('Deseas conocer tus habilidades de clase? ').lower().startswith('s'):
         print()
-        DTaDosCol(hab_cla)
+        Paginar(10,DTaDosCol(hab_cla))
 
     print ('\nRecuerda que cualquier habilidad transclásea cuesta dos puntos en lugar de uno.\nEscribe una habilidad y los puntos que desees invertir en ella.\n')
     
