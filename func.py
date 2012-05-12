@@ -118,6 +118,7 @@ def ValPreReq (ID,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract):
     r_stat = mecanicas[7]
     r_car = mecanicas[8]
     
+    ID = int(ID)
     valido = 0
     
     if tipo[ID] == 'u':
@@ -156,7 +157,7 @@ def ValPreReq (ID,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract):
                 else:
                     Reqs = r_dts[ID].split(',')
                     for Req in Reqs:
-                        if int(Req) in dotes: ## capaz quedaria mejor un for i
+                        if int(Req) in dotes:
                             valido = 1
                         else:
                             valido = 0
@@ -175,8 +176,13 @@ def ValPreReq (ID,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract):
                         if r_app[ID] == '':
                             valido = 1
                         else:
-                            valido = 0 ## más que provisional...
-                        
+                            Reqs = r_app[ID].split(',')
+                            for Req in Reqs:
+                                if int(Req) in aptitudes:
+                                    valido = 1
+                                else:
+                                    valido = 0
+                                                    
                         if r_stat[ID] == '':
                             valido = 1
                         else:
@@ -319,3 +325,51 @@ def AppClas (APPdict,clase,nv_cls):
     
     nv_cls -= 1
     return APPdict[clase][nv_cls]
+
+def ProcMecApp (APSmc,aptitud,apps_pj):
+    '''Dada una aptitud, devuelve la mecánica relacionada.'''
+
+    mecanica = APSmc[2][APSmc[0].index(aptitud)]
+    
+    if mecanica == 'u':
+        return aptitud
+    elif mecanica == 'd':
+        return ''
+    elif mecanica == 'v':
+        return aptitud+' '+str(apps_pj.count(aptitud))+'/día'
+    elif mecanica == 's':
+        return aptitud+' '+str(apps_pj.count(aptitud))+'/semana'
+    elif mecanica == 'm':
+        return aptitud+' +'+str(apps_pj.count(aptitud))
+    elif mecanica.split(':')[0] == 'r':
+        return apps_pj[apps_pj.index(mecanica.split(':')[1])]
+    elif mecanica.split(':')[0] == 'e':
+        if aptitud == 'Ataque furtivo':
+            if apps_pj.count(aptitud) == 0:
+                return aptitud+' +1d6'
+            else:
+                cantidad = apps_pj.count(aptitud)
+                return aptitud+' +'+str(cantidad)+'d6'
+                        
+        elif aptitud == 'Enemigo predliecto':
+            if apps_pj.count(aptitud) == 0:
+                return '1º +'+aptitud
+            else:
+                cantidad = apps_pj.count(aptitud)
+                return str(cantidad)+'º '+aptitud
+                        
+        elif aptitud == 'Ralentizar caída':
+            if apps_pj.count(aptitud) == 0:
+                return aptitud+" 20'"
+            elif apps_pj.count(aptitud) == 9:
+                return 'Ralentizar caída cualquier distancia'
+            else:
+                cantidad = apps_pj.count(aptitud)
+                return aptitud+' '+str(cantidad)+"0'"
+                    
+        elif aptitud == 'Reducción de daño':
+            if apps_pj.count(aptitud) == 0:
+                return aptitud+' 1/-'
+            else:
+                cantidad = apps_pj.count(aptitud)
+                return aptitud+','+str(cantidad)+'/-'

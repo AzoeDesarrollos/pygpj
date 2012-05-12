@@ -103,15 +103,15 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
         
     if claseprevia == '':
         print ('Elije una clase para este nivel')
-        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
+        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir+'\n')
     else:
         print ('Elije una clase para este nivel [Enter: '+claseprevia+']')
-        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
+        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir+'\n')
    
     CLASES = ['Barbaro','Clerigo','Paladin','Picaro','']+numeros+pos+abp
     
     while True:
-        cla = input('\nClase: ').capitalize()
+        cla = input('Clase: ').capitalize()
         if cla not in CLASES:
             print ('\nSeleccione una clase válida.')
         elif cla == '':
@@ -233,7 +233,7 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     
     return rng
 
-def SelDot (lista_de_dotes,posibles,nivel):
+def SelDot (lista_de_dotes,posibles):
     '''Provee un selector de dotes.'''
     
     nom = lista_de_dotes[0]

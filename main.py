@@ -20,6 +20,7 @@ HABS = leerCSV('data/habs.csv')
 CLASES = leerCSV('data/clases.csv')
 hab_cls = ProcHabCls(CLASES)
 APPS = ProcApps(leerCSV('data/apps.csv'))
+APs_mc = leerCSV('data/app_mc.csv')
 
 rng = [i*0 for i in range(len(HABS[0]))] # Rangos de habilidad
 dts = [i*0 for i in range(len(HABS[0]))] # Bonificadores por dotes
@@ -29,7 +30,6 @@ obj = [i*0 for i in range(len(HABS[0]))] # Bonificadores por objetos
 
 dt_S = [51,57]
 dt_ns = [26,27,41,69,86,87,88,89]
-dt_gue = [8,9,10,11,12,13,17,18,19,20,21,22,23,24,25,26,34,41,43,44,45,46,47,48,49,50,52,53,54,60,61,62,63,64,65,68,72,73,74,75,76,79,80,82,83,84,85,89]
 dt_hab = {1:[24,36],14:[22,41],16:[37,38],2:[20,40],3:[11,12],42:[0,18],52:[9,15],58:[6,42],6:[3,14],66:[4,25],7:[7,39],70:[19,43],71:[2,8],77:[10,17],82:[13,21]}
 hab_s_E = [0,6,7,17,20,21,25,26,28,29,30,31,32,33,34,35,40,42,44]
 
@@ -76,7 +76,9 @@ stats = [0,0,0,0]
 nivel = 0
 alini = Alinear()
 alinis = ('LB','NB','CB','LN','NN','CN','LM','NM','CM')
+nuevas = []
 apps = []
+aprin = []
 
 barra = ''.join((Raza[0],'| FUE '+str(CARS[0]),' DES '+str(CARS[1]),' CON '+str(CARS[2]),' INT '+str(CARS[3]),' SAB '+str(CARS[4]),'| Al '+alinis[alini]))
 
@@ -97,8 +99,24 @@ while True:
         if cla[i] == '':
             cla[i] = cla[i-1]
     stats = ProCla(CLASES,clase,cla.count(clase),stats)
-    for i in AppClas (APPS,clase,cla.count(clase)):
-        apps.append(i)
+    for aptitud in AppClas (APPS,clase,cla.count(clase)):
+        nuevas.append(aptitud)
+        for ap in nuevas:
+            e = ProcMecApp(APs_mc,ap,nuevas)
+            if e == 'd':
+                listo = []
+                for ID in CLASES[9][CLASES[0].index(clase)].split(','):
+                    if ValPreReq (ID,dt_mc,cla,nivel,dotes,rng,apps,stats,CARS):
+                        listo.append(DOTES[0][int(ID)])
+                if input('\nDeseas conocer las dotes que se te conceden por este nivel de clase? ').lower().startswith('s'):
+                    Paginar(10,DTaDosCol(listo))
+                    dotes.append(SelDot(DOTES,listo))
+            elif e == 'x':
+                pass # El selector de Aptitudes especiales todavía no está desarrollado
+            else:
+                aprin.append(e)
+        apps.append(aptitud)
+        nuevas = []
     ## Aumento de Características en niveles multiplos de 4 ##
     if nivel % 4 == 0:
         CARS[Car]+=1
@@ -124,7 +142,7 @@ while True:
                     listo.append(DOTES[0][ID])
         if input('\nDeseas conocer las dotes cuyos prerrequisitos están cumplidos? ').lower().startswith('s'):
             Paginar(10,DTaDosCol(listo))
-        dotes.append(SelDot(DOTES,listo,nivel))
+        dotes.append(SelDot(DOTES,listo))
         
     if not input('\nDesea subir de nivel? ').lower().startswith('s'):
         break
