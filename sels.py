@@ -1,8 +1,8 @@
 ﻿# coding=UTF-8
-from func import *
-from setup import *
+import func as f
+import setup as s
 from time import sleep
-from setup import DOTES,compW,ARMAS,HABS,dt_cls
+import setup
 import os
 
 def SelRaza(lista_de_razas):
@@ -123,19 +123,23 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
                 print ('\nDebe seleccionar una clase')
             else:
                 cla = claseprevia
-        else:
-            if cla in abr: Clase = cla
-            elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
-            elif cla == '': Clase = ''
-            elif cla == 'Barbaro': Clase = 'Brb'
-            elif cla == 'Clerigo': Clase = 'Clr'
-            elif cla == 'Paladin': Clase = 'Pld'
-            elif cla == 'Picaro': Clase = 'Pcr'
-            elif cla.isnumeric(): Clase = abp[int(cla)]
+        
+        if cla in abr: Clase = cla
+        elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
+        elif cla == '': Clase = ''
+        elif cla == 'Barbaro': Clase = 'Brb'
+        elif cla == 'Clerigo': Clase = 'Clr'
+        elif cla == 'Paladin': Clase = 'Pld'
+        elif cla == 'Picaro': Clase = 'Pcr'
+        elif cla.isnumeric(): Clase = abp[int(cla)]
             
-            print ("Has seleccionado '"+nom[abr.index(Clase)]+"' como clase para este nivel.",end= ' ')
-            if input ('¿Estas seguro? ').lower().startswith('s'):
-                return Clase
+        print ("Has seleccionado '"+nom[abr.index(Clase)]+"' como clase para este nivel.",end= ' ')
+        if not input ('¿Estas seguro? ').lower().startswith('s'):
+            cla = ''
+        else:
+            break
+    
+    return Clase
 
 def AumentaCar (nivel):
     CARS = ('FUE','DES','CON','INT','SAB','CAR','Fuerza','Destreza','Constitución','Constitucion','Inteligencia','Sabiduría','Sabiduria','Carisma')
@@ -178,7 +182,7 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     
     if input('Deseas conocer tus habilidades de clase? ').lower().startswith('s'):
         print()
-        Paginar(10,DTaDosCol(hab_cla))
+        f.Paginar(10,f.DTaDosCol(hab_cla))
 
     print ('\nRecuerda que cualquier habilidad transclásea cuesta dos puntos en lugar de uno.\nEscribe una habilidad y los puntos que desees invertir en ella.\n')
     
@@ -237,15 +241,15 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     input ('\n[Presione Enter para continuar]')
     return rng
 
-def SelDot (nivel,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clase,dotes_clase):
+def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clase,dotes_clase):
     '''Provee un selector de dotes.'''
     
     if spec == False:
-        print ('\nEn el '+str(nivel)+'º nivel, tienes una dote para elegir')
-        posibles = GenerarListadeAyuda(AutoDot(DOTES,[],compW,ARMAS[0],HABS[0]),DOTES)
+        print ('\nEn el '+str(s.nivel)+'º nivel, tienes una dote para elegir')
+        posibles = f.GenerarListadeAyuda(f.AutoDot(s.DOTES,[],comp_armas,ARMAS[0],lista_de_habilidades),s.DOTES)
     else:
         print ('\nComo aptitud de clase, en este nivel tienes una dote adicional para elegir')
-        posibles = GenerarListadeAyuda(AutoDot(DOTES,dt_cls[clase],compW,ARMAS[0],HABS[0]),DOTES)
+        posibles = f.GenerarListadeAyuda(f.AutoDot(s.DOTES,s.dt_cls[clase],comp_armas,ARMAS[0],lista_de_habilidades),s.DOTES)
     
     nom = lista_de_dotes[0]
     pre = lista_de_dotes[1]
@@ -263,11 +267,13 @@ def SelDot (nivel,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clas
         if dt not in nom:
             print ('Por favor, escribe la dote correctamente\n')
         elif dt not in posibles:
-            print ('Actualmente el personaje no cumple con los prrerequisitos para la dote seleccionada', 'Elija otra', sep = '\n')
+            print ('Actualmente el personaje no cumple con los prerrequisitos para la dote seleccionada', 'Elija otra', sep = '\n')
+            print ('Prerrequisitos: '+pre[nom.index(dt)])
         elif mec[nom.index(dt)] == 'u:w':
             print ('Para la dote seleccionada debes elegir un arma con la que seas competente', 'Elije una: ', sep = '\n')
-            for i in range(len(comp_armas)):
-                print (str(i)+': '+comp_armas[i])
+            for i in comp_armas:
+                if not str(nom.index(dt))+':'+str(i) in dotes_pj:
+                    print (str(i)+': '+ARMAS[0][i])
             arma = ''
             while arma == '':
                 arma = input ('\nArma: ').capitalize()
@@ -278,11 +284,11 @@ def SelDot (nivel,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clas
                     else:
                         dote = str(nom.index(dt))+':'+arma
                         print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
-                elif arma not in comp_armas:
+                elif arma not in ARMAS[0]:
                     print('La selección es incorrecta, intente nuevamente')
                     arma = ''
                 else:
-                    dote = str(nom.index(dt))+':'+str(comp_armas.index(arma))
+                    dote = str(nom.index(dt))+':'+str(ARMAS[0].index(arma))
                     print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
 
         elif mec[nom.index(dt)] == 'u:m':
@@ -349,11 +355,14 @@ def SelDot (nivel,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clas
         else:
             dote = str(nom.index(dt))
             print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
-        if input('\n¿Esta seguro? ').lower().startswith('s'):
-            return dote
+        if dote == '':
+            pass
         else:
-            dote = ''
-
+            if not input('\n¿Esta seguro? ').lower().startswith('s'):
+                dote = ''
+    
+    return dote
+    
 def SelAE (mecanicas,app_pj):
     print ('Esta aptitud especial te permite elegir una de las siguientes aptitudes.\nElije una.\n')
 
@@ -391,7 +400,7 @@ def SelAE (mecanicas,app_pj):
         return seleccion
         
 def SelTirs (tirs):
-    print('Sus tiradas son: '+PrepPrint(tirs))
+    print('Sus tiradas son: '+f.PrepPrint(tirs))
     sleep (2)
     if input ('¿Desea tirar de nuevo? ').lower().startswith('s'):
         os.system(['clear','cls'][os.name == 'nt'])

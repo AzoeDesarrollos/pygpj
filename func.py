@@ -1,7 +1,7 @@
 ﻿# coding=UTF-8
 from random import randint
 import os
-from setup import DOTES,ARMAS,HABS,CLASES,rng,compW,cla,stats,nivel,dotes,CARS,apps
+import setup as s
 
 def ProCla(lista_de_clases,clase,nv_cls,stats):
     '''Procesa la lista de clases y otiene ATKbase, y TSs.'''
@@ -160,6 +160,7 @@ def ValPreReq (ID_dote,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,carac
                 if Req[0] in nv_cls:
                     if nv_cls.count(Req[0]) >= int(Req[1]):
                         valido = 0
+                        break
                     else:
                         valido = 1
                 else:
@@ -306,7 +307,7 @@ def GenerarListadeAyuda (todas_las_dotes,DOTES):
     
     posibles = []
     for i in todas_las_dotes:
-        if ValPreReq(i,DOTES,cla,nivel,dotes,rng,apps,stats,CARS,compW):
+        if ValPreReq(i,s.DOTES,s.cla,s.nivel,s.dotes,s.rng,s.apps,s.stats,s.CARS,s.compW):
             posibles.append(i)
     
     ayuda = []
@@ -321,7 +322,7 @@ def GenerarListadeAyuda (todas_las_dotes,DOTES):
             else:
                 ayuda.append(nom[int(dt)])
     if input('\nDeseas conocer las dotes cuyos prerrequisitos están cumplidos? ').lower().startswith('s'):
-        Paginar(10,DTaDosCol(ayuda))
+        Paginar(10,ayuda)
     return ayuda
 
 def UnaCar ():

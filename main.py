@@ -2,7 +2,7 @@
 
 from time import sleep
 import os
-from setup import *
+import setup as s
 from func import *
 from procs import *
 from sels import *
@@ -10,8 +10,8 @@ from sels import *
 # barra = ''.join((Raza[0],'| FUE '+str(CARS[0]),' DES '+str(CARS[1]),' CON '+str(CARS[2]),' INT '+str(CARS[3]),' SAB '+str(CARS[4]),'| Al '+alinis[alini]))
 
 while True:
-    nivel += 1
-    if nivel == 1:
+    s.nivel += 1
+    if s.nivel == 1:
         ## Inicio ##
         tirs = GenTir()
         op = SelTirs(tirs)
@@ -20,81 +20,99 @@ while True:
             op = SelTirs(tirs)
         
         ## Seleccionar Raza ##
-        Raza = SelRaza(RAZAS)
+        Raza = SelRaza(s.RAZAS)
         subtipo = Raza[3]
         tam_nom = Raza[2]
-        tam_mod = tamaño[tam_nom][0]
-        tam_pres = tamaño[tam_nom][1]
-        tam_esc = tamaño[tam_nom][2]
+        tam_mod = s.tamaño[tam_nom][0]
+        tam_pres = s.tamaño[tam_nom][1]
+        tam_esc = s.tamaño[tam_nom][2]
         raciales = Raza[4]
         
         ## Repartir puntuaciones de característica y aplicar mods. raciales ##
         print ('\nReparte tus puntuaciones de característica')
-        for Car in Cars:
-            CARS[Cars.index(Car)]=RepPunto(tirs,Car)
+        for Car in s.Cars:
+            s.CARS[s.Cars.index(Car)]=RepPunto(tirs,Car)
 
-        for Car in Cars:
-            CARS[Cars.index(Car)]+Raza[1][Cars.index(Car)]
+        for Car in s.Cars:
+            s.CARS[s.Cars.index(Car)]+Raza[1][s.Cars.index(Car)]
         
-        CARS_mods = [CarMod(CARS[0]),CarMod(CARS[1]),CarMod(CARS[2]),CarMod(CARS[3]),CarMod(CARS[4]),CarMod(CARS[5])]
+        CARS_mods = [CarMod(s.CARS[0]),CarMod(s.CARS[1]),
+                     CarMod(s.CARS[2]),CarMod(s.CARS[3]),
+                     CarMod(s.CARS[4]),CarMod(s.CARS[5])]
 
         ## Elección de Alineamiento ##
-        alini = Alinear()
+        s.alini = Alinear()
     
     # os.system(['clear','cls'][os.name == 'nt'])
     # print (barra)
-    print ('\n~~ '+str(nivel)+'º NIVEL ~~\n')
+    print ('\n~~ '+str(s.nivel)+'º NIVEL ~~\n')
     
     ## Elección de Clase ##
-    if nivel == 1:
-        clase = SelCla('',CLASES,alini)
+    if s.nivel == 1:
+        clase = SelCla('',s.CLASES,s.alini)
     else:
-        clase = SelCla(lasclases[nivel-2],CLASES,alini)
-    compW = Competencias (ARMAS,clase,compW)
-    compA = Competencias (ARMDS,clase,compA)
-    cla.append(clase)
-    lasclases.append(CLASES[5][CLASES[0].index(clase)])
-    for i in range(len(cla)):
-        if cla[i] == '':
-            cla[i] = cla[i-1]
-    stats = ProCla(CLASES,clase,cla.count(clase),stats)
+        clase = SelCla(s.lasclases[s.nivel-2],s.CLASES,s.alini)
+    s.compW = Competencias (s.ARMAS,clase,s.compW)
+    s.compA = Competencias (s.ARMDS,clase,s.compA)
+    s.cla.append(clase)
+    s.lasclases.append(s.CLASES[5][s.CLASES[0].index(clase)])
+    for i in range(len(s.cla)):
+        if s.cla[i] == '':
+            s.cla[i] = s.cla[i-1]
+    s.stats = ProCla(s.CLASES,clase,s.cla.count(clase),s.stats)
     
-    for aptitud in AppClas (APPS,clase,cla.count(clase)):
-        nuevas.append(aptitud)
-        for ap in nuevas:
-            e = ProcMecApp(APs_mc,ap,apps)
+    for aptitud in AppClas (s.APPS,clase,s.cla.count(clase)):
+        s.nuevas.append(aptitud)
+        for ap in s.nuevas:
+            e = ProcMecApp(s.APs_mc,ap,s.apps)
             if e == 'd':
-                dotes.append(SelDot(nivel,DOTES,compW,ARMAS[0],HABS[0],True,clase,dt_cls))
+                s.dotes.append(SelDot(s.nivel,s.dotes,s.DOTES,s.compW,s.ARMAS,s.HABS[0],True,clase,s.dt_cls))
             elif e == 'x':
-                e = SelAE (APs_mc,apps)
+                e = SelAE (s.APs_mc,s.apps)
                 if e == 'd':
-                    dotes.append(SelDot(nivel,DOTES,compW,ARMAS[0],HABS[0],False,clase,dt_cls))
+                    s.dotes.append(SelDot(s.nivel,s.dotes,s.DOTES,s.compW,s.ARMAS,s.HABS[0],False,clase,s.dt_cls))
                 else:
-                    aprin.append(e)
+                    s.aprin.append(e)
             elif e == 'a':
-                dotes.append(str(DOTES[0].index(ap)))
+                s.dotes.append(str(s.DOTES[0].index(ap)))
             else:
-                aprin.append(e)
-        apps.append(aptitud) # Recuerda, luego, calcular los índices: APs_mc[0].index(aptitud)
-        nuevas = []
+                s.aprin.append(e)
+        s.apps.append(aptitud) # Recuerda, luego, calcular los índices: APs_mc[0].index(aptitud)
+        s.nuevas = []
     ## Aumento de Características en niveles multiplos de 4 ##
-    if nivel % 4 == 0:
-        CARS[Car]+=1
-        print ('El personaje tiene ahora '+Cars[Car]+' '+str(CARS[Car])+' (+'+str(CarMod(CARS[Car]))+')')
-        sleep (2)
+    if s.nivel % 4 == 0:
+        Car = AumentaCar(s.nivel)
+        s.CARS[Car]+=1
+        print ('El personaje tiene ahora '+s.Cars[Car]+' '+str(s.CARS[Car])+' (+'+str(CarMod(s.CARS[Car]))+')')
+        input ('\n[Presione Enter para continuar]\n')
     
     ## Cáculo de puntos y Asignación de Rangos de habilidad ##
     # os.system(['clear','cls'][os.name == 'nt'])
     # print (barra)
-    hab_rng = RepRNG (PuntHab (CLASES,clase,nivel,CARS_mods[3],subtipo),cla.count(clase),Claseas(hab_cls,clase,HABS[0]),HABS[0],rng)
+    hab_rng = RepRNG (PuntHab (s.CLASES,clase,s.nivel,CARS_mods[3],subtipo),
+                      s.cla.count(clase),Claseas(s.hab_cls,clase,s.HABS[0]),s.HABS[0],s.rng)
     for i in hab_rng:
-        rng[HABS[0].index(i)] = hab_rng[i]
+        s.rng[s.HABS[0].index(i)] = hab_rng[i]
     
     ## Elección de Dotes ##
-    if nivel in (1,3,6,9,12,15,18):
+    if s.nivel in (1,3,6,9,12,15,18):
         #os.system(['clear','cls'][os.name == 'nt'])
         # print (barra)
-        dotes.append(SelDot(nivel,DOTES,compW,ARMAS,HABS[0],False,clase,dt_cls))
-        
+        dote = SelDot(s.nivel,s.dotes,s.DOTES,s.compW,s.ARMAS,s.HABS[0],False,clase,s.dt_cls)
+        if dote.split(':')[0] in ('26','27'):
+            s.compW.append(int(dote.split(':')[1]))
+        elif dote.split(':')[0] == '28':
+            for i in range(len(s.ARMAS[0])):
+                if s.ARMAS[2][i] == '28':
+                    if i not in s.compW:
+                        s.compW.append(i)
+            s.compW.sort()
+        elif dote.split(':')[0] in ('29','30','31'):
+            for i in range(len(s.ARMDS[0])):
+                if s.ARMDS[2][i] == dote.split(':')[0]:
+                    if i not in s.compA:
+                        s.compA.append(i)
+            s.compA.sort()
+        s.dotes.append(dote)
     if not input('\nDesea subir de nivel? ').lower().startswith('s'):
         break

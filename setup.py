@@ -1,18 +1,18 @@
 # coding=UTF-8
 import csv
-from procs import *
+import procs as p
 csv.register_dialect('myCSV',delimiter=';')
 
-RAZAS = ProcRazas(leerCSV('data/razas.csv'))
-DOTES = leerCSV('data/dotes.csv')
-HABS = leerCSV('data/habs.csv')
-CLASES = leerCSV('data/clases.csv')
-hab_cls = ProcHabCls(CLASES)
-dt_cls = ProcDTcls (CLASES)
-APPS = ProcApps(leerCSV('data/apps.csv'))
-APs_mc = leerCSV('data/app_mc.csv')
-ARMAS = leerCSV('data/armas.csv')
-ARMDS = leerCSV('data/armd.csv')
+RAZAS = p.ProcRazas(p.leerCSV('data/razas.csv'))
+DOTES = p.leerCSV('data/dotes.csv')
+HABS = p.leerCSV('data/habs.csv')
+CLASES = p.leerCSV('data/clases.csv')
+hab_cls = p.ProcHabCls(CLASES)
+dt_cls = p.ProcDTcls (CLASES)
+APPS = p.ProcApps(p.leerCSV('data/apps.csv'))
+APs_mc = p.leerCSV('data/app_mc.csv')
+ARMAS = p.leerCSV('data/armas.csv')
+ARMDS = p.leerCSV('data/armd.csv')
 
 Cars = ['Fuerza','Destreza','Constitución','Inteligencia','Sabiduría','Carisma']
 CARS = [0,0,0,0,0,0]
@@ -33,5 +33,6 @@ dotes = []
 stats = [0,0,0,0]
 nivel = 0
 # alinis = ('LB','NB','CB','LN','NN','CN','LM','NM','CM')
+alini = ''
 nuevas,apps,aprin = [],[],[]
 compW,compA = [],[]
