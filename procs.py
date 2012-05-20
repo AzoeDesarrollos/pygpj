@@ -50,29 +50,6 @@ def ProcHabCls (lista_de_clases):
     
     return hab_cls
 
-def ProcDTS (mecCSV):
-    ID,tipo,r_cls = [],[],[]
-    r_nv,r_dts,r_rng = [],[],[]
-    r_app,r_stat,r_car, = [],[],[]
-    
-    for D in mecCSV:
-        ID.append(D[0])
-        tipo.append(D[1])
-        r_cls.append(D[2])
-        r_nv.append(D[3])
-        r_dts.append(D[4])
-        r_rng.append(D[5])
-        r_app.append(D[6])
-        r_stat.append(D[7])
-        r_car.append(D[8])
-    
-    for i in range(len(ID)):
-        ID[i] = int(ID[i])
-    
-    general = [ID,tipo,r_cls,r_nv,r_dts,r_rng,r_app,r_stat,r_car]
-    
-    return general
-
 def ProcApps (aptitudes):
     '''Procesa las Aptitudes Especiales en formato CSV'''
     
@@ -85,3 +62,16 @@ def ProcApps (aptitudes):
             AE[key][i] = AE[key][i].split(',')
 
     return AE
+
+def ProcDTcls (lista_de_clases):
+    nom = lista_de_clases[0]
+    dta = lista_de_clases[9]
+    dt_cls = {}
+    
+    for i in range(len(nom)):
+        dt_cls[nom[i]]=dta[i]
+    
+    for i in nom:
+        dt_cls[i] = dt_cls[i].split(',')
+    
+    return dt_cls

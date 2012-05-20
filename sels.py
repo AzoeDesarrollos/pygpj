@@ -1,33 +1,36 @@
 ﻿# coding=UTF-8
 from func import *
+from setup import *
 from time import sleep
+from setup import DOTES,compW,ARMAS,HABS,dt_cls
 import os
 
 def SelRaza(lista_de_razas):
     '''Provee un selector de razas.'''
     
-    print('\nSeleccione Raza \n1: Humano 2: Enano 3: Elfo 4: Gnomo\n5: Mediano 6: Semielfo 7: Semiorco')
+    print('\nSeleccione Raza \n1: Humano 2: Elfo 3: Enano 4: Gnomo\n5: Mediano 6: Semielfo 7: Semiorco')
 
     raza = ''
     while raza not in lista_de_razas:
         raza = input('\nRaza: ').capitalize()
         if raza.isnumeric():
             if int(raza) not in (1,2,3,4,5,6,7):
-                print('Raza inválida, intente nuevamente\n')
-            elif raza == '1': raza = 'Humano'
-            elif raza == '2': raza = 'Elfo'
-            elif raza == '3': raza = 'Enano'
-            elif raza == '4': raza = 'Gnomo'
-            elif raza == '5': raza = 'Mediano'
-            elif raza == '6': raza = 'Semielfo'
-            elif raza == '7': raza = 'Semiorco'
-            print ('Has elegido que este personaje sea un '+lista_de_razas[raza][0]+'.', end = ' ')
-            if not input ('¿Estas seguro? ').lower().startswith('s'):
-                raza = ''
+                print('Raza inválida, intente nuevamente')
             else:
-                return lista_de_razas[raza]
+                if raza == '1': raza = 'Humano'
+                elif raza == '2': raza = 'Elfo'
+                elif raza == '3': raza = 'Enano'
+                elif raza == '4': raza = 'Gnomo'
+                elif raza == '5': raza = 'Mediano'
+                elif raza == '6': raza = 'Semielfo'
+                elif raza == '7': raza = 'Semiorco'
+                print ('Has elegido que este personaje sea un '+lista_de_razas[raza][0]+'.', end = ' ')
+                if not input ('¿Estas seguro? ').lower().startswith('s'):
+                    raza = ''
+                else:
+                    return lista_de_razas[raza]
         elif raza not in lista_de_razas:
-            print('Raza inválida o error ortográfico, intente nuevamente\n')
+            print('Raza inválida o error ortográfico, intente nuevamente')
         else:
             print ('Has elegido que este personaje sea un '+lista_de_razas[raza][0]+'.', end = ' ')
             if not input ('¿Estas seguro? ').lower().startswith('s'):
@@ -103,15 +106,16 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
         
     if claseprevia == '':
         print ('Elije una clase para este nivel')
-        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir+'\n')
+        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
     else:
         print ('Elije una clase para este nivel [Enter: '+claseprevia+']')
-        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir+'\n')
+        print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
    
     CLASES = ['Barbaro','Clerigo','Paladin','Picaro','']+numeros+pos+abp
     
+    
     while True:
-        cla = input('Clase: ').capitalize()
+        cla = input('\nClase: ').capitalize()
         if cla not in CLASES:
             print ('\nSeleccione una clase válida.')
         elif cla == '':
@@ -119,19 +123,19 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
                 print ('\nDebe seleccionar una clase')
             else:
                 cla = claseprevia
-                    
-        if cla in abr: Clase = cla
-        elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
-        elif cla == '': Clase = ''
-        elif cla == 'Barbaro': Clase = 'Brb'
-        elif cla == 'Clerigo': Clase = 'Clr'
-        elif cla == 'Paladin': Clase = 'Pld'
-        elif cla == 'Picaro': Clase = 'Pcr'
-        elif cla.isnumeric(): Clase = abp[int(cla)]
-        
-        print ("Has seleccionado '"+nom[abr.index(Clase)]+"' como clase para este nivel.",end= ' ')
-        if input ('¿Estas seguro? ').lower().startswith('s'):
-            return Clase
+        else:
+            if cla in abr: Clase = cla
+            elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
+            elif cla == '': Clase = ''
+            elif cla == 'Barbaro': Clase = 'Brb'
+            elif cla == 'Clerigo': Clase = 'Clr'
+            elif cla == 'Paladin': Clase = 'Pld'
+            elif cla == 'Picaro': Clase = 'Pcr'
+            elif cla.isnumeric(): Clase = abp[int(cla)]
+            
+            print ("Has seleccionado '"+nom[abr.index(Clase)]+"' como clase para este nivel.",end= ' ')
+            if input ('¿Estas seguro? ').lower().startswith('s'):
+                return Clase
 
 def AumentaCar (nivel):
     CARS = ('FUE','DES','CON','INT','SAB','CAR','Fuerza','Destreza','Constitución','Constitucion','Inteligencia','Sabiduría','Sabiduria','Carisma')
@@ -230,24 +234,167 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
                     PH -= puntos
                     rng[hab] += puntos
                 print('\nPuntos restantes: '+str(PH))
-    
+    input ('\n[Presione Enter para continuar]')
     return rng
 
-def SelDot (lista_de_dotes,posibles):
+def SelDot (nivel,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clase,dotes_clase):
     '''Provee un selector de dotes.'''
+    
+    if spec == False:
+        print ('\nEn el '+str(nivel)+'º nivel, tienes una dote para elegir')
+        posibles = GenerarListadeAyuda(AutoDot(DOTES,[],compW,ARMAS[0],HABS[0]),DOTES)
+    else:
+        print ('\nComo aptitud de clase, en este nivel tienes una dote adicional para elegir')
+        posibles = GenerarListadeAyuda(AutoDot(DOTES,dt_cls[clase],compW,ARMAS[0],HABS[0]),DOTES)
     
     nom = lista_de_dotes[0]
     pre = lista_de_dotes[1]
     des = lista_de_dotes[2]
-    while True:
+    mec = lista_de_dotes[3] # Puede ser: 'u', 's', 'u:h','u:w','u:m','u:e' y, de momento, 'u:?' 
+    # 'u' y 's' no tienen implicancia (solo indican si la dote se puede repetir, o no'
+    # 'u:h' (Soltura con una habilidad) indica que debe elegirse una habilidad que NO se haya elegido antes.
+    # 'u:w' indica que debe elegirse un arma que figure dentro de las competencias en armas del personaje.
+    # 'u:m' indica que debe elegirse un arma que NO figure dentro de las competencias del personaje.
+    # 'u:e' indica que debe elegirse una escuela de magia.
+    
+    dote = ''
+    while dote == '':
         dt = input('\nDote: ').rstrip(' ').capitalize()
         if dt not in nom:
             print ('Por favor, escribe la dote correctamente\n')
         elif dt not in posibles:
             print ('Actualmente el personaje no cumple con los prrerequisitos para la dote seleccionada', 'Elija otra', sep = '\n')
-        else:
-            print ('Prerrequisitos: '+pre[nom.index(dt)]+'(cumplidos)\n'+des[nom.index(dt)])
+        elif mec[nom.index(dt)] == 'u:w':
+            print ('Para la dote seleccionada debes elegir un arma con la que seas competente', 'Elije una: ', sep = '\n')
+            for i in range(len(comp_armas)):
+                print (str(i)+': '+comp_armas[i])
+            arma = ''
+            while arma == '':
+                arma = input ('\nArma: ').capitalize()
+                if arma.isnumeric():
+                    if int(arma) not in range(len(comp_armas)):
+                        print('La selección es incorrecta, intente nuevamente')
+                        arma = ''
+                    else:
+                        dote = str(nom.index(dt))+':'+arma
+                        print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+                elif arma not in comp_armas:
+                    print('La selección es incorrecta, intente nuevamente')
+                    arma = ''
+                else:
+                    dote = str(nom.index(dt))+':'+str(comp_armas.index(arma))
+                    print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+
+        elif mec[nom.index(dt)] == 'u:m':
+            print ('Para la dote seleccionada debes elegir un arma con la que no seas competente', 'Elije una: ', sep = '\n')
+            i = 0
+            armas = []
+            for a in range(len(ARMAS[0])):
+                if ARMAS[2][a] == str(nom.index(dt)):
+                    if a not in comp_armas:                   
+                        print (str(i)+': '+ARMAS[0][a])
+                        armas.append(ARMAS[0][a])
+                        i+=1
+            arma = ''
+            while arma == '':
+                arma = input ('\nArma: ').capitalize()
+                if arma.isnumeric():
+                    if int(arma) not in range(len(armas)):
+                        print('La selección es incorrecta, intente nuevamente')
+                        arma = ''
+                    else:
+                        dote = str(nom.index(dt))+':'+arma
+                        print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+                elif arma not in armas:
+                    print('La selección es incorrecta, intente nuevamente')
+                    arma = ''
+                else:
+                    dote = str(nom.index(dt))+':'+str(armas.index(arma))
+                    print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+
+        elif mec[nom.index(dt)] == 'u:e':
+            print ('Para la dote seleccionada debes elegir una escuela de magia', 'Elije una: ', sep = '\n')
+            escuelas = 'Abjuración','Adivinación','Conjuración','Encantamiento',
+            'Evocación','Ilusión','Nigromancia','Transmutación' ## TEMPORAL y TRANSITORIA
+            for i in range(len(escuelas)):
+                print (str(i)+': '+escuelas[i])
+            esc = ''
+            while esc == '':
+                esc = input ('Escuela: ').capitalize()
+                if esc.isnumeric():
+                    if int(esc) not in range(len(escuelas)):
+                        print('La selección es incorrecta, intente nuevamente')
+                        esc = ''
+                    else:
+                        dote = str(nom.index(dt))+':'+esc
+                        print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+                elif esc not in escuelas:
+                    print('La selección es incorrecta, intente nuevamente')
+                    esc = ''
+                else:
+                    dote = str(nom.index(dt))+':'+str(escuelas.index(esc))
+                    print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
         
-            if input('\n¿Esta seguro? ').lower().startswith('s'):
-                return nom.index(dt)
-                
+        elif mec[nom.index(dt)] == 'u:h':
+            print ('Para la dote seleccionada debes elegir una habilidad', 'Elije una: ', sep = '\n')
+            hab = ''
+            while hab == '':
+                hab = input ('Habilidad: ').capitalize()
+                if hab not in lista_de_habilidades:
+                    print('La selección es incorrecta, intente nuevamente')
+                    hab = ''
+                else:
+                    dote = str(nom.index(dt))+':'+str(lista_de_habilidades.index(hab))
+                    print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+        else:
+            dote = str(nom.index(dt))
+            print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+        if input('\n¿Esta seguro? ').lower().startswith('s'):
+            return dote
+        else:
+            dote = ''
+
+def SelAE (mecanicas,app_pj):
+    print ('Esta aptitud especial te permite elegir una de las siguientes aptitudes.\nElije una.\n')
+
+    elegibles = []
+
+    for i in range(len(mecanicas[1])):
+        if mecanicas[1][i] == '3':
+            if mecanicas[0][i] not in app_pj:
+                elegibles.append(mecanicas[0][i])
+
+    for i in range(len(elegibles)):
+        if ':' in elegibles[i]:
+            tipo = elegibles[i].split(':')[1]
+            if tipo == 'Gen':
+                elegibles[i] = 'Dote general'
+
+    for i in range(len(elegibles)):
+        print (str(i)+': '+elegibles[i])
+
+    seleccion = ''
+    while seleccion == '':
+        AE = input ('\nAE: ').capitalize()
+        if AE in elegibles:
+            seleccion = AE
+        elif AE.isnumeric():
+            for i in range(len(elegibles)):
+                if i == int(AE):
+                    seleccion = elegibles[int(AE)]
+        else:
+            print ('\nSelección inválida, intente nuevamente\n')
+
+    if seleccion == 'Dote general':
+        return 'd'
+    else:
+        return seleccion
+        
+def SelTirs (tirs):
+    print('Sus tiradas son: '+PrepPrint(tirs))
+    sleep (2)
+    if input ('¿Desea tirar de nuevo? ').lower().startswith('s'):
+        os.system(['clear','cls'][os.name == 'nt'])
+        return False
+    else:
+        return True

@@ -1,6 +1,7 @@
 ﻿# coding=UTF-8
 from random import randint
 import os
+from setup import DOTES,ARMAS,HABS,CLASES,rng,compW,cla,stats,nivel,dotes,CARS,apps
 
 def ProCla(lista_de_clases,clase,nv_cls,stats):
     '''Procesa la lista de clases y otiene ATKbase, y TSs.'''
@@ -44,6 +45,23 @@ def ProCla(lista_de_clases,clase,nv_cls,stats):
         bases[i]+=stats[i]
     
     return bases
+
+def Competencias (grupo,clase,comprevia):
+    '''Actualiza las competencias en armas o armaduras del personaje.'''
+    
+    comp = []
+
+    for i in range(len(grupo[3])):
+        if clase in grupo[3][i]:
+            comp.append(i)
+
+    for item in comp:
+        if item not in comprevia:
+            comprevia.append(item)
+
+    comprevia.sort()
+    
+    return comprevia
 
 def PuntHab (lista_de_clases,clase,nivel,INT_mod,subtipo):
     '''Devuelve los puntos de habilidad a repartir para el nivel de clase.'''
@@ -106,32 +124,48 @@ def HabMod(mods,hab_num,mods_de_caract):
     
     return rng[hab_num]+mod+rcl[hab_num]+sng[hab_num]+dts[hab_num]+obj[hab_num]
 
-def ValPreReq (ID,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract):
+def ValPreReq (ID_dote,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract,comp_armas):
+
+    tipo = mecanicas[3]
+    cndr = mecanicas[4]
+    r_cls = mecanicas[5]
+    r_nv = mecanicas[6]
+    r_dts = mecanicas[7]
+    r_cmp = mecanicas[8]
+    r_rng = mecanicas[9]
+    r_app = mecanicas[10]
+    r_stat = mecanicas[11]
+    r_car = mecanicas[12]
     
-    IDs = mecanicas[0]
-    tipo = mecanicas[1]
-    r_cls = mecanicas[2]
-    r_nv = mecanicas[3]
-    r_dts = mecanicas[4]
-    r_rng = mecanicas[5]
-    r_app = mecanicas[6]
-    r_stat = mecanicas[7]
-    r_car = mecanicas[8]
+    ID = int(ID_dote.split(':')[0])
+    if len(ID_dote.split(':'))>1:
+        sub = int(ID_dote.split(':')[1])
     
-    ID = int(ID)
-    valido = 0
-    
-    if tipo[ID] == 'u':
-        if ID in dotes:
+    Req = tipo[ID].split(':')
+    if Req[0] == 'u': ## Requisito de Tipo (Presencia/Ausencia de Dotes)
+        if ID_dote in dotes:
             valido = 0
         else:
             valido = 1
-    elif tipo[ID] == 's':
+    elif Req[0] == 's':
         valido = 1
-    else:
-        valido = 0 ## provisional
     
-    if valido == 1:
+    if valido == 1: ## Consideración de Clase ('se considera que ya posee esta dote, por lo que no necesita elegirla')
+        if cndr[ID] == '':
+            valido = 1
+        else:
+            Reqs = cndr[ID].split(',')
+            for Req in Reqs:
+                Req = Req.split(' ')
+                if Req[0] in nv_cls:
+                    if nv_cls.count(Req[0]) >= int(Req[1]):
+                        valido = 0
+                    else:
+                        valido = 1
+                else:
+                    valido = 1
+    
+    if valido == 1: ## Requisito de Nivel de Clase
         if r_cls[ID] == '':
             valido = 1
         else:
@@ -141,91 +175,154 @@ def ValPreReq (ID,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract):
                     valido = 1
                 else:
                     valido = 0
+            else:
+                valido = 0
 
-        if valido == 1:
-            if r_nv[ID] == '':
+    if valido == 1: ## Requisito de Nivel de Personaje
+        if r_nv[ID] == '':
+            valido = 1
+        else:
+            if len(nv_cls)>= int(r_nv[ID]):
                 valido = 1
             else:
-                if len(nv_cls)>= int(r_nv[ID]):
+                valido = 0
+
+    if valido == 1: ## Requisito de Dotes
+        if r_dts[ID] == '':
+            valido = 1
+        else:
+            Reqs = r_dts[ID].split(',')
+            for Req in Reqs:
+                if Req in dotes:
                     valido = 1
                 else:
                     valido = 0
-
-            if valido == 1:
-                if r_dts[ID] == '':
+                        
+    if valido == 1: ## Requisito de Competencias en Armas
+        if r_cmp[ID] == '':
+            valido = 1
+        else:
+            if r_cmp[ID] == '#':
+                if sub in comp_armas:
                     valido = 1
                 else:
-                    Reqs = r_dts[ID].split(',')
-                    for Req in Reqs:
-                        if int(Req) in dotes:
-                            valido = 1
-                        else:
-                            valido = 0
-
-                if valido == 1:
-                    if r_rng[ID] == '':
+                    valido = 0
+            else:
+                Reqs = r_cmp[ID].split(',')
+                for Req in Reqs:
+                    if Req in comp_armas:
                         valido = 1
                     else:
-                        Req = r_rng[ID].split(':')
-                        if rangos[int(Req[0])] >= int(Req[1]):
-                            valido = 1
-                        else:
-                            valido = 0
-
-                    if valido == 1:
-                        if r_app[ID] == '':
-                            valido = 1
-                        else:
-                            Reqs = r_app[ID].split(',')
-                            for Req in Reqs:
-                                if int(Req) in aptitudes:
-                                    valido = 1
-                                else:
-                                    valido = 0
-                                                    
-                        if r_stat[ID] == '':
-                            valido = 1
-                        else:
-                            Req = r_stat[ID].split(':')
-                            if Req[0] == '0': ## Requisito de ataque base
-                                if stats[0] >= int(Req[1]):
-                                    valido = 1
-                                else:
-                                    valido = 0
-                            if Req[0] == '1': ## Requisito de TS Fort
-                                if stats[1] >= int(Req[1]):
-                                    valido = 1
-                                else:
-                                    valido = 0        
-                            if Req[0] == '2': ## Requisito de TS Ref
-                                if stats[2] >= int(Req[1]):
-                                    valido = 1
-                                else:
-                                    valido = 0
-                            if Req[0] == '3': ## Requisito de TS Vol
-                                if stats[3] >= int(Req[1]):
-                                    valido = 1
-                                else:
-                                    valido = 0
-
-                        if valido == 1:
-                            if r_car[ID] == '':
-                                valido = 1
-                            else:
-                                Reqs = r_car[ID].split(',')
-                                for Req in Reqs:
-                                    car = Req.split(':')[0]
-                                    val = Req.split(':')[1]
-                                    if caract[int(car)] >= int(val):
-                                        valido = 1
-                                    else:
-                                        valido = 0
+                        valido = 0
     
+    if valido == 1: ## Requisito de Rangos de Habilidad
+        if r_rng[ID] == '':
+            valido = 1
+        else:
+            Req = r_rng[ID].split(':')
+            if rangos[int(Req[0])] >= int(Req[1]):
+                valido = 1
+            else:
+                valido = 0
+
+    if valido == 1: ## Requisito de Aptitudes Especiales
+        if r_app[ID] == '':
+            valido = 1
+        else:
+            Reqs = r_app[ID].split(',')
+            for Req in Reqs:
+                if int(Req) in aptitudes:
+                    valido = 1
+                else:
+                    valido = 0
     
+    if valido == 1: ## Requisito de Ataque base y TSs
+        if r_stat[ID] == '': 
+            valido = 1
+        else:
+            Req = r_stat[ID].split(':')
+            if stats[int(Req[0])] >= int(Req[1]):
+                valido = 1
+            else:
+                valido = 0
+
+    if valido == 1: ## Requisito de Puntuaciones de Caracteristica
+        if r_car[ID] == '':
+            valido = 1
+        else:
+            Reqs = r_car[ID].split(',')
+            for Req in Reqs:
+                car = Req.split(':')[0]
+                val = Req.split(':')[1]
+                if caract[int(car)] >= int(val):
+                    valido = 1
+                else:
+                    valido = 0
+                    
     if valido == 1:
         return True
     else:
         return False
+
+def AutoDot (DOTES,dotes_de_clase,comp_armas,ARMAS,lista_de_habilidades):
+    '''Autoelige dotes como si no tuvieran prerrequisitos. '''
+
+    nom = DOTES[0]
+    pre = DOTES[1]
+    des = DOTES[2]
+    mec = DOTES[3]
+
+    escuelas = 'Abjuración','Adivinación','Conjuración','Encantamiento','Evocación','Ilusión','Nigromancia','Transmutación' ## TEMPORAL y TRANSITORIA
+    dotes = []
+    
+    if len(dotes_de_clase) > 1:
+        indexes = dotes_de_clase
+    else:
+        indexes = range(len(nom))
+    
+    for i in indexes:
+        i = int(i)
+        if mec[i] == 'u:h':
+            for h in range(len(lista_de_habilidades)):
+                dotes.append(str(i)+':'+str(h))
+        elif mec[i] == 'u:w':
+            for w in range(len(comp_armas)):
+                dotes.append(str(i)+':'+str(w))
+        elif mec[i] == 'u:m':
+            for m in range(len(ARMAS[0])):
+                if ARMAS[0][m] not in comp_armas:
+                    dotes.append(str(i)+':'+str(m))
+        elif mec[i] == 'u:e':
+            for e in range(len(escuelas)):
+                dotes.append(str(i)+':'+str(e))
+        else:
+            dotes.append(str(i))
+
+    return dotes
+
+def GenerarListadeAyuda (todas_las_dotes,DOTES):
+    nom = DOTES[0]
+    mec = DOTES[3]
+    
+    posibles = []
+    for i in todas_las_dotes:
+        if ValPreReq(i,DOTES,cla,nivel,dotes,rng,apps,stats,CARS,compW):
+            posibles.append(i)
+    
+    ayuda = []
+    for i in posibles:
+        if i.isnumeric():
+            ayuda.append(nom[int(i)])
+        elif ':' in i:
+            dt = i.split(':')[0]
+            sub = i.split(':')[1]
+            if nom[int(dt)] in ayuda:
+                pass
+            else:
+                ayuda.append(nom[int(dt)])
+    if input('\nDeseas conocer las dotes cuyos prerrequisitos están cumplidos? ').lower().startswith('s'):
+        Paginar(10,DTaDosCol(ayuda))
+    return ayuda
 
 def UnaCar ():
     '''Un simple generador para una caracterítica.'''
@@ -334,7 +431,11 @@ def ProcMecApp (APSmc,aptitud,apps_pj):
     if mecanica == 'u':
         return aptitud
     elif mecanica == 'd':
-        return ''
+        return 'd'
+    elif mecanica == 'x':
+        return 'x'
+    elif mecanica == 'a':
+        return 'a'
     elif mecanica == 'v':
         return aptitud+' '+str(apps_pj.count(aptitud))+'/día'
     elif mecanica == 's':
