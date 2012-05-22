@@ -56,7 +56,9 @@ def RepPunto(lista,Car):
 def Alinear ():
     '''Provee un selector de alineamientos.'''
     
-    Alineamientos = ('Legal bueno','Neutral bueno','Caótico bueno','Legal neutral','Neutral auténtico','Neutral bueno','Legal maligno','Neutral maligno','Caótico maligno')
+    Alineamientos = ('Legal bueno','Neutral bueno','Caótico bueno',
+                     'Legal neutral','Neutral auténtico','Neutral bueno',
+                     'Legal maligno','Neutral maligno','Caótico maligno')
     print('\nEscoge un alineamiento para este personaje')
     for i in range(len(Alineamientos)):
         if (i+1)%3==0:
@@ -142,7 +144,8 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
     return Clase
 
 def AumentaCar (nivel):
-    CARS = ('FUE','DES','CON','INT','SAB','CAR','Fuerza','Destreza','Constitución','Constitucion','Inteligencia','Sabiduría','Sabiduria','Carisma')
+    CARS = ('FUE','DES','CON','INT','SAB','CAR','Fuerza','Destreza',
+            'Constitución','Constitucion','Inteligencia','Sabiduría','Sabiduria','Carisma')
 
     print ('\nEn el '+str(nivel)+'º nivel, tienes un aumento de características')
     print ('Selecciona la característica que quieres aumentar')
@@ -182,9 +185,10 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     
     if input('Deseas conocer tus habilidades de clase? ').lower().startswith('s'):
         print()
-        f.Paginar(10,f.DTaDosCol(hab_cla))
+        f.paginar(10,f.a_dos_columnas(hab_cla))
 
-    print ('\nRecuerda que cualquier habilidad transclásea cuesta dos puntos en lugar de uno.\nEscribe una habilidad y los puntos que desees invertir en ella.\n')
+    print ('\nRecuerda que cualquier habilidad transclásea cuesta dos puntos en lugar de uno.\n'+
+           'Escribe una habilidad y los puntos que desees invertir en ella.\n')
     
     rng = {}
     for i in range(len(rangos)):
@@ -244,114 +248,106 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
 def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clase,dotes_clase):
     '''Provee un selector de dotes.'''
     
-    if spec == False:
-        print ('\nEn el '+str(s.nivel)+'º nivel, tienes una dote para elegir')
-        posibles = f.GenerarListadeAyuda(f.AutoDot(s.DOTES,[],comp_armas,ARMAS[0],lista_de_habilidades),s.DOTES)
-    else:
-        print ('\nComo aptitud de clase, en este nivel tienes una dote adicional para elegir')
-        posibles = f.GenerarListadeAyuda(f.AutoDot(s.DOTES,s.dt_cls[clase],comp_armas,ARMAS[0],lista_de_habilidades),s.DOTES)
-    
     nom = lista_de_dotes[0]
     pre = lista_de_dotes[1]
     des = lista_de_dotes[2]
-    mec = lista_de_dotes[3] # Puede ser: 'u', 's', 'u:h','u:w','u:m','u:e' y, de momento, 'u:?' 
-    # 'u' y 's' no tienen implicancia (solo indican si la dote se puede repetir, o no'
-    # 'u:h' (Soltura con una habilidad) indica que debe elegirse una habilidad que NO se haya elegido antes.
-    # 'u:w' indica que debe elegirse un arma que figure dentro de las competencias en armas del personaje.
-    # 'u:m' indica que debe elegirse un arma que NO figure dentro de las competencias del personaje.
-    # 'u:e' indica que debe elegirse una escuela de magia.
+    mec = lista_de_dotes[3]
+    
+    if spec == False:
+        print ('\nEn el '+str(s.nivel)+'º nivel, tienes una dote para elegir.\n')
+        posibles = f.GenerarListadeAyuda(f.AutoDot(s.DOTES,comp_armas,ARMAS[0],lista_de_habilidades),s.DOTES)
+    else:
+        print ('\nComo aptitud de clase, en este nivel tienes una dote adicional para elegir.\n')
+        posibles = f.GenerarListadeAyuda(f.AutoDot(s.DOTES,comp_armas,ARMAS[0],
+                                                   lista_de_habilidades,sub=s.dt_cls[clase]),s.DOTES)
+    
+    print ('Escribe el nombre de la dote elegida. Si deseas información sobre una dote en particular,',
+           'escribe <dote>?. Si deseas información sobre todas las dotes, escribe *?.',sep = '\n')
     
     dote = ''
     while dote == '':
-        dt = input('\nDote: ').rstrip(' ').capitalize()
-        if dt not in nom:
+        dt = input('\nDote: ').strip().capitalize()
+        if '?' in dt:
+            if '?' not in dt[-1]:
+                print ('Por favor, escribe el comando correctamente\n')
+            elif dt == '*?':
+                lineas = []
+                for ID in posibles:
+                    lineas.append(nom[ID]+'\nPrerrequisitos: '+pre[ID]+'\nBeneficio: '+des[ID]+'\n')
+                f.paginar(5,lineas)
+            elif dt.split('?')[0] not in nom:
+                print ('Por favor, escribe la dote correctamente\n')
+            else:
+                dt = dt.split('?')[0]
+                print (nom[nom.index(dt)])
+                if nom.index(dt) not in posibles:
+                    print ('Prerrequisitos: '+pre[nom.index(dt)]+'(no cumplidos)')
+                else:
+                    print ('Prerrequisitos: '+pre[nom.index(dt)])
+                print('Beneficio: '+des[nom.index(dt)])
+        elif dt not in nom:
             print ('Por favor, escribe la dote correctamente\n')
-        elif dt not in posibles:
-            print ('Actualmente el personaje no cumple con los prerrequisitos para la dote seleccionada', 'Elija otra', sep = '\n')
+        elif nom.index(dt) not in posibles:
+            print ('Actualmente el personaje no cumple con los prerrequisitos para la dote seleccionada',
+                   'Elija otra', sep = '\n')
             print ('Prerrequisitos: '+pre[nom.index(dt)])
+        
         elif mec[nom.index(dt)] == 'u:w':
-            print ('Para la dote seleccionada debes elegir un arma con la que seas competente', 'Elije una: ', sep = '\n')
-            for i in comp_armas:
-                if not str(nom.index(dt))+':'+str(i) in dotes_pj:
-                    print (str(i)+': '+ARMAS[0][i])
-            arma = ''
-            while arma == '':
-                arma = input ('\nArma: ').capitalize()
-                if arma.isnumeric():
-                    if int(arma) not in range(len(comp_armas)):
-                        print('La selección es incorrecta, intente nuevamente')
-                        arma = ''
-                    else:
-                        dote = str(nom.index(dt))+':'+arma
-                        print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
-                elif arma not in ARMAS[0]:
-                    print('La selección es incorrecta, intente nuevamente')
-                    arma = ''
-                else:
-                    dote = str(nom.index(dt))+':'+str(ARMAS[0].index(arma))
-                    print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
-
-        elif mec[nom.index(dt)] == 'u:m':
-            print ('Para la dote seleccionada debes elegir un arma con la que no seas competente', 'Elije una: ', sep = '\n')
-            i = 0
+            print ('Para la dote seleccionada debes elegir un arma con la que seas competente',
+                   'Elije una: ', sep = '\n')
             armas = []
-            for a in range(len(ARMAS[0])):
-                if ARMAS[2][a] == str(nom.index(dt)):
-                    if a not in comp_armas:                   
-                        print (str(i)+': '+ARMAS[0][a])
-                        armas.append(ARMAS[0][a])
-                        i+=1
-            arma = ''
-            while arma == '':
-                arma = input ('\nArma: ').capitalize()
-                if arma.isnumeric():
-                    if int(arma) not in range(len(armas)):
-                        print('La selección es incorrecta, intente nuevamente')
-                        arma = ''
-                    else:
-                        dote = str(nom.index(dt))+':'+arma
-                        print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
-                elif arma not in armas:
-                    print('La selección es incorrecta, intente nuevamente')
-                    arma = ''
-                else:
-                    dote = str(nom.index(dt))+':'+str(armas.index(arma))
-                    print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+            for i in comp_armas:
+                if  str(nom.index(dt))+':'+str(i) not in dotes_pj:
+                    armas.append(ARMAS[0][i])
+            arma = subselector('Arma',armas)
+            print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+            dote = str(nom.index(dt))+':'+str(ARMAS[0].index(armas[arma]))
+        elif mec[nom.index(dt)] == 'u:w?':
+            subs = AutoDot(lista_de_dotes,comp_armas,ARMAS[0],lista_de_habilidades,sub=[nom.index(dt)])
+            armas = []
+            for ID in subs:
+                if ValPreReq(ID,lista_de_dotes,s.cla,nivel,dotes_pj,s.rng,s.apps,s.stats,s.CARS,comp_armas):
+                    armas.append(int(ID.split(':')[1]))
+            arma = subselector('Arma',armas)
+            print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+            dote = str(nom.index(dt))+':'+str(ARMAS[0].index(armas[arma]))
+            
+        elif mec[nom.index(dt)] == 'u:m':
+            print ('Para la dote seleccionada debes elegir un arma con la que no seas competente',
+                   'Elije una: ', sep = '\n')
+            armas = []
+            for i in range(len(ARMAS[0])):
+                if ARMAS[2][i] == str(nom.index(dt)):
+                    if i not in comp_armas:
+                            if str(nom.index(dt))+':'+i not in dotes_pj:
+                                armas.append(ARMAS[0][i])
+
+            arma = subselector('Arma',armas)
+            print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+            dote = str(nom.index(dt))+':'+str(ARMAS[0].index(armas[arma]))
 
         elif mec[nom.index(dt)] == 'u:e':
             print ('Para la dote seleccionada debes elegir una escuela de magia', 'Elije una: ', sep = '\n')
-            escuelas = 'Abjuración','Adivinación','Conjuración','Encantamiento',
+            ESCUELAS = 'Abjuración','Adivinación','Conjuración','Encantamiento',
             'Evocación','Ilusión','Nigromancia','Transmutación' ## TEMPORAL y TRANSITORIA
-            for i in range(len(escuelas)):
-                print (str(i)+': '+escuelas[i])
-            esc = ''
-            while esc == '':
-                esc = input ('Escuela: ').capitalize()
-                if esc.isnumeric():
-                    if int(esc) not in range(len(escuelas)):
-                        print('La selección es incorrecta, intente nuevamente')
-                        esc = ''
-                    else:
-                        dote = str(nom.index(dt))+':'+esc
-                        print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
-                elif esc not in escuelas:
-                    print('La selección es incorrecta, intente nuevamente')
-                    esc = ''
-                else:
-                    dote = str(nom.index(dt))+':'+str(escuelas.index(esc))
-                    print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+            escuelas = []
+            for i in range(len(ESCUELAS)):
+                if str(nom.index(dt))+':'+i not in dotes_pj:
+                    escuelas.append(ESCUELAS[i])
+            esc = subselector('Escuela',escuelas)
+            print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+            dote = str(nom.index(dt))+':'+str(ESCUELAS.index(escuelas[esc]))
         
         elif mec[nom.index(dt)] == 'u:h':
             print ('Para la dote seleccionada debes elegir una habilidad', 'Elije una: ', sep = '\n')
-            hab = ''
-            while hab == '':
-                hab = input ('Habilidad: ').capitalize()
-                if hab not in lista_de_habilidades:
-                    print('La selección es incorrecta, intente nuevamente')
-                    hab = ''
-                else:
-                    dote = str(nom.index(dt))+':'+str(lista_de_habilidades.index(hab))
-                    print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+            habs = []
+            for i in range(len(lista_de_habilidades)):
+                if str(nom.index(dt))+':'+i not in dotes_pj:
+                    habs.append(lista_de_habilidades[i])
+            hab = subselector('Habilidad',habs)
+            print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
+            dote = str(nom.index(dt))+':'+str(lista_de_habilidades.index(habs[hab]))
+
         else:
             dote = str(nom.index(dt))
             print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
@@ -407,3 +403,24 @@ def SelTirs (tirs):
         return False
     else:
         return True
+
+def subselector (prompt,lista):
+    paginado = []
+    for i in range(len(lista)):
+        paginado.append(str(i)+': '+lista[i])
+    f.paginar (10,paginado)
+    
+    item = ''
+    while item == '':
+        item = input ('\n'+prompt+': ').capitalize()
+        if item.isnumeric():
+            if int(item) not in range(len(lista)):
+                print('La selección es incorrecta, intente nuevamente')
+                item = ''
+            else:
+                return int(item)
+        elif item not in lista:
+            print('La selección es incorrecta, intente nuevamente')
+            item = ''
+        else:
+            return lista.index(item)

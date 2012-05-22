@@ -64,19 +64,22 @@ while True:
     for aptitud in AppClas (s.APPS,clase,s.cla.count(clase)):
         s.nuevas.append(aptitud)
         for ap in s.nuevas:
-            e = ProcMecApp(s.APs_mc,ap,s.apps)
-            if e == 'd':
-                s.dotes.append(SelDot(s.nivel,s.dotes,s.DOTES,s.compW,s.ARMAS,s.HABS[0],True,clase,s.dt_cls))
-            elif e == 'x':
-                e = SelAE (s.APs_mc,s.apps)
+            if ap == '':
+                pass
+            else:
+                e = ProcMecApp(s.APs_mc,ap,s.apps)
                 if e == 'd':
-                    s.dotes.append(SelDot(s.nivel,s.dotes,s.DOTES,s.compW,s.ARMAS,s.HABS[0],False,clase,s.dt_cls))
+                    s.dotes.append(SelDot(s.nivel,s.dotes,s.DOTES,s.compW,s.ARMAS,s.HABS[0],True,clase,s.dt_cls))
+                elif e == 'x':
+                    e = SelAE (s.APs_mc,s.apps)
+                    if e == 'd':
+                        s.dotes.append(SelDot(s.nivel,s.dotes,s.DOTES,s.compW,s.ARMAS,s.HABS[0],False,clase,s.dt_cls))
+                    else:
+                        s.aprin.append(e)
+                elif e == 'a':
+                    s.dotes.append(str(s.DOTES[0].index(ap)))
                 else:
                     s.aprin.append(e)
-            elif e == 'a':
-                s.dotes.append(str(s.DOTES[0].index(ap)))
-            else:
-                s.aprin.append(e)
         s.apps.append(aptitud) # Recuerda, luego, calcular los índices: APs_mc[0].index(aptitud)
         s.nuevas = []
     ## Aumento de Características en niveles multiplos de 4 ##

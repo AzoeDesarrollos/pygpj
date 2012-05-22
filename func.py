@@ -125,6 +125,7 @@ def HabMod(mods,hab_num,mods_de_caract):
     return rng[hab_num]+mod+rcl[hab_num]+sng[hab_num]+dts[hab_num]+obj[hab_num]
 
 def ValPreReq (ID_dote,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract,comp_armas):
+    '''Verifica que se cumplan los prerrequisitos de la dote seleccionada.'''
 
     tipo = mecanicas[3]
     cndr = mecanicas[4]
@@ -194,10 +195,24 @@ def ValPreReq (ID_dote,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,carac
         else:
             Reqs = r_dts[ID].split(',')
             for Req in Reqs:
-                if Req in dotes:
-                    valido = 1
+                if ':' in Req:
+                    dt = Req.split(':')[0]
+                    sb = Req.split(':')[1]
+                    if sb == 'sub':
+                        if Req.split(':')[0]+':'+str(sub) in dotes:
+                            valido = 1
+                        else:
+                            valido = 0
+                    else:
+                        if Req.split(':')[0]+':'+sb in dotes:
+                            valido = 1
+                        else:
+                            valido = 0
                 else:
-                    valido = 0
+                    if Req in dotes:
+                        valido = 1
+                    else:
+                        valido = 0
                         
     if valido == 1: ## Requisito de Competencias en Armas
         if r_cmp[ID] == '':
@@ -265,21 +280,19 @@ def ValPreReq (ID_dote,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,carac
     else:
         return False
 
-def AutoDot (DOTES,dotes_de_clase,comp_armas,ARMAS,lista_de_habilidades):
+def AutoDot (DOTES,comp_armas,ARMAS,lista_de_habilidades,sub=None):
     '''Autoelige dotes como si no tuvieran prerrequisitos. '''
 
     nom = DOTES[0]
-    pre = DOTES[1]
-    des = DOTES[2]
     mec = DOTES[3]
 
     escuelas = 'Abjuración','Adivinación','Conjuración','Encantamiento','Evocación','Ilusión','Nigromancia','Transmutación' ## TEMPORAL y TRANSITORIA
     dotes = []
     
-    if len(dotes_de_clase) > 1:
-        indexes = dotes_de_clase
-    else:
+    if sub == None:
         indexes = range(len(nom))
+    else:
+        indexes = sub
     
     for i in indexes:
         i = int(i)
@@ -287,7 +300,7 @@ def AutoDot (DOTES,dotes_de_clase,comp_armas,ARMAS,lista_de_habilidades):
             for h in range(len(lista_de_habilidades)):
                 dotes.append(str(i)+':'+str(h))
         elif mec[i] == 'u:w':
-            for w in range(len(comp_armas)):
+            for w in comp_armas:
                 dotes.append(str(i)+':'+str(w))
         elif mec[i] == 'u:m':
             for m in range(len(ARMAS[0])):
@@ -306,23 +319,21 @@ def GenerarListadeAyuda (todas_las_dotes,DOTES):
     mec = DOTES[3]
     
     posibles = []
-    for i in todas_las_dotes:
-        if ValPreReq(i,s.DOTES,s.cla,s.nivel,s.dotes,s.rng,s.apps,s.stats,s.CARS,s.compW):
-            posibles.append(i)
+    for ID in todas_las_dotes:
+        if ValPreReq(ID,s.DOTES,s.cla,s.nivel,s.dotes,s.rng,s.apps,s.stats,s.CARS,s.compW):
+            posibles.append(ID)
     
     ayuda = []
     for i in posibles:
         if i.isnumeric():
-            ayuda.append(nom[int(i)])
-        elif ':' in i:
-            dt = i.split(':')[0]
-            sub = i.split(':')[1]
-            if nom[int(dt)] in ayuda:
-                pass
-            else:
-                ayuda.append(nom[int(dt)])
-    if input('\nDeseas conocer las dotes cuyos prerrequisitos están cumplidos? ').lower().startswith('s'):
-        Paginar(10,ayuda)
+            ayuda.append(int(i))
+        else:
+            ID = int(i.split(':')[0])
+            if ID not in ayuda:
+                ayuda.append(ID)
+                
+    # if input('\nDeseas conocer las dotes cuyos prerrequisitos están cumplidos? ').lower().startswith('s'):
+        # Paginar(10,a_dos_columnas(ayuda)
     return ayuda
 
 def UnaCar ():
@@ -352,7 +363,7 @@ def PrepPrint(lista):
     imprimir = imprimir.rstrip(', ')+'.'
     return imprimir
 
-def Paginar (tam_pag,lineas):
+def paginar (tam_pag,lineas):
     for i in range(len(lineas)):
         if (i+1) % tam_pag == 0:
             input ('\n[Presione Enter para continuar]\n')
@@ -381,15 +392,15 @@ def HabDosCol (rangos):
         else:
             print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t\t')
 
-def DTaDosCol(dotes):
+def a_dos_columnas(items):
     c1 = []
     c2 = []
     
-    for i in range(len(dotes)):
-        if i+1 <= len(dotes)/2:
-            c1.append(dotes[i])
+    for i in range(len(items)):
+        if i+1 <= len(items)/2:
+            c1.append(items[i])
         else:
-            c2.append(dotes[i])
+            c2.append(items[i])
 
     if len(c1)>len(c2):
         c2.append(''*(len(c1)-len(c2)))
