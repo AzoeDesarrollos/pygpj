@@ -114,18 +114,19 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
         print ('\nLas clases disponibles según el alineamiento son: \n'+imprimir)
    
     CLASES = ['Barbaro','Clerigo','Paladin','Picaro','']+numeros+pos+abp
-    
-    
+    cla = '?'
     while True:
-        cla = input('\nClase: ').capitalize()
-        if cla not in CLASES:
-            print ('\nSeleccione una clase válida.')
-        elif cla == '':
-            if claseprevia == '':
-                print ('\nDebe seleccionar una clase')
-            else:
-                cla = claseprevia
-        
+        while cla == '?':
+            cla = input('\nClase: ').capitalize()
+            if cla not in CLASES:
+                print ('\nSeleccione una clase válida.')
+                cla = '?'
+            elif cla == '':
+                if claseprevia == '':
+                    print ('\nDebe seleccionar una clase')
+                else:
+                    cla = claseprevia
+            
         if cla in abr: Clase = cla
         elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
         elif cla == '': Clase = ''
@@ -184,11 +185,10 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     print('\nTienes '+str(PH)+' puntos de habilidad para distribuir en este nivel.\n')
     
     if input('Deseas conocer tus habilidades de clase? ').lower().startswith('s'):
-        print()
-        f.paginar(10,f.a_dos_columnas(hab_cla))
+        print(f.PrepPrint(hab_cla))
 
-    print ('\nRecuerda que cualquier habilidad transclásea cuesta dos puntos en lugar de uno.\n'+
-           'Escribe una habilidad y los puntos que desees invertir en ella.\n')
+    print ('\nRecuerda que cualquier habilidad transclásea cuesta dos puntos en lugar de uno.',
+           'Escribe una habilidad, y luego los puntos de habilidad que desees invertir en','ella',sep='\n')
     
     rng = {}
     for i in range(len(rangos)):
@@ -196,25 +196,27 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
         
     rng_max = nv_cls+3
     rng_max_tc = rng_max/2
-    
+    idiomas = []
     while PH > 0:
-        hab = input('\nHabilidad: ').rstrip(' ').capitalize()
+        hab = input('\nHabilidad: ').strip(' ').capitalize()
         while hab not in lista_de_hab:
             print('Por favor, escribe la habilidad correctamente')
             hab = input('\nHabilidad: ').rstrip(' ').capitalize()
         if rng[hab] >0:
             print (hab+' ya posee '+str(rng[hab])+' rangos.')
-       
-        while True:
+        
+        puntos = ''
+        while puntos == '':
             puntos = input('Puntos: ')
             if not puntos.isnumeric():
                 print ('Los rangos deben ser numéricos')
+                puntos = ''
             elif int(puntos) > PH:
                 print('No posees tantos puntos de habilidad')
+                puntos = ''
             else:
                 puntos = int(puntos)
-                break
-        
+                        
         if hab not in hab_cla:                                     ## Habilidad Transclásea
             print (hab+' es una habilidad transclásea')
             if rng[hab] == rng_max_tc:
@@ -228,7 +230,7 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
                     PH -= puntos
                     rng[hab] += puntos/2
                 print('\nPuntos restantes: '+str(PH))
-                    
+            
         else:                                                     ## Habilidad Clásea
             print (hab+' es una habilidad clásea')
             if rng[hab] == rng_max:
@@ -242,8 +244,12 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
                     PH -= puntos
                     rng[hab] += puntos
                 print('\nPuntos restantes: '+str(PH))
+        
+        if hab == 'Hablar un idioma':
+            idiomas = NuevosIdiomas(s.IDIOMAS,s.idiomas,round(rng[hab]))
+    
     input ('\n[Presione Enter para continuar]')
-    return rng
+    return rng,idiomas
 
 def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clase,dotes_clase):
     '''Provee un selector de dotes.'''
@@ -261,8 +267,8 @@ def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,
         posibles = f.GenerarListadeAyuda(f.AutoDot(s.DOTES,comp_armas,ARMAS[0],
                                                    lista_de_habilidades,sub=s.dt_cls[clase]),s.DOTES)
     
-    print ('Escribe el nombre de la dote elegida. Si deseas información sobre una dote en particular,',
-           'escribe <dote>?. Si deseas información sobre todas las dotes, escribe *?.',sep = '\n')
+    print ('Escribe el nombre de la dote elegida. Si deseas información sobre una dote en',
+           'particular, escribe <dote>?. Si deseas información sobre todas las dotes', 'escribe *?.',sep = '\n')
     
     dote = ''
     while dote == '':
@@ -299,9 +305,11 @@ def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,
             for i in comp_armas:
                 if  str(nom.index(dt))+':'+str(i) not in dotes_pj:
                     armas.append(ARMAS[0][i])
-            arma = subselector('Arma',armas)
+            
+            arma = subselector('Arma',armas,dos_col=True)
             print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
             dote = str(nom.index(dt))+':'+str(ARMAS[0].index(armas[arma]))
+        
         elif mec[nom.index(dt)] == 'u:w?':
             subs = AutoDot(lista_de_dotes,comp_armas,ARMAS[0],lista_de_habilidades,sub=[nom.index(dt)])
             armas = []
@@ -319,10 +327,10 @@ def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,
             for i in range(len(ARMAS[0])):
                 if ARMAS[2][i] == str(nom.index(dt)):
                     if i not in comp_armas:
-                            if str(nom.index(dt))+':'+i not in dotes_pj:
+                            if str(nom.index(dt))+':'+str(i) not in dotes_pj:
                                 armas.append(ARMAS[0][i])
 
-            arma = subselector('Arma',armas)
+            arma = subselector('Arma',armas,dos_col=True)
             print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
             dote = str(nom.index(dt))+':'+str(ARMAS[0].index(armas[arma]))
 
@@ -334,7 +342,8 @@ def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,
             for i in range(len(ESCUELAS)):
                 if str(nom.index(dt))+':'+i not in dotes_pj:
                     escuelas.append(ESCUELAS[i])
-            esc = subselector('Escuela',escuelas)
+            
+            esc = subselector('Escuela',escuelas,dos_col=True)
             print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
             dote = str(nom.index(dt))+':'+str(ESCUELAS.index(escuelas[esc]))
         
@@ -342,9 +351,10 @@ def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,
             print ('Para la dote seleccionada debes elegir una habilidad', 'Elije una: ', sep = '\n')
             habs = []
             for i in range(len(lista_de_habilidades)):
-                if str(nom.index(dt))+':'+i not in dotes_pj:
+                if str(nom.index(dt))+':'+str(i) not in dotes_pj:
                     habs.append(lista_de_habilidades[i])
-            hab = subselector('Habilidad',habs)
+            
+            hab = subselector('Habilidad',habs,dos_col=True)
             print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
             dote = str(nom.index(dt))+':'+str(lista_de_habilidades.index(habs[hab]))
 
@@ -374,22 +384,9 @@ def SelAE (mecanicas,app_pj):
             tipo = elegibles[i].split(':')[1]
             if tipo == 'Gen':
                 elegibles[i] = 'Dote general'
-
-    for i in range(len(elegibles)):
-        print (str(i)+': '+elegibles[i])
-
-    seleccion = ''
-    while seleccion == '':
-        AE = input ('\nAE: ').capitalize()
-        if AE in elegibles:
-            seleccion = AE
-        elif AE.isnumeric():
-            for i in range(len(elegibles)):
-                if i == int(AE):
-                    seleccion = elegibles[int(AE)]
-        else:
-            print ('\nSelección inválida, intente nuevamente\n')
-
+    
+    seleccion = subselector('AE',elegibles)
+        
     if seleccion == 'Dote general':
         return 'd'
     else:
@@ -404,23 +401,97 @@ def SelTirs (tirs):
     else:
         return True
 
-def subselector (prompt,lista):
-    paginado = []
-    for i in range(len(lista)):
-        paginado.append(str(i)+': '+lista[i])
-    f.paginar (10,paginado)
-    
-    item = ''
-    while item == '':
-        item = input ('\n'+prompt+': ').capitalize()
-        if item.isnumeric():
-            if int(item) not in range(len(lista)):
-                print('La selección es incorrecta, intente nuevamente')
-                item = ''
+def subselector (prompt,lista,dos_col=False,vueltas=1):
+    items = []
+    pool = vueltas
+    for vuelta in range(vueltas):
+        if vuelta == 0:
+            paginado = []
+            for i in range(len(lista)):
+                paginado.append(str(i)+': '+lista[i])
+            if dos_col == False:
+                f.paginar (10,paginado)
             else:
-                return int(item)
-        elif item not in lista:
-            print('La selección es incorrecta, intente nuevamente')
+                f.paginar (10,f.a_dos_columnas(paginado))
+          
+        
+        while pool > 0:
             item = ''
-        else:
-            return lista.index(item)
+            while item == '':
+                item = input ('\n'+prompt+': ').capitalize()
+                if item.isnumeric():
+                    item = int(item)
+                    if item in items:
+                        print ('Ya ha realizado esa selección, intente nuevamente')
+                        item = ''
+                    elif item not in range(len(lista)):
+                        print('La selección es incorrecta, intente nuevamente')
+                        item = ''
+                    else:
+                        items.append(item)
+                        print ('Ha elegido '+lista[int(item)],end = ' ')
+                        pool -= 1
+                elif item not in lista:
+                    print('La selección es incorrecta, intente nuevamente')
+                    item = ''
+                elif lista.index(item) in items:
+                    print ('Ya ha realizado esa selección, intente nuevamente')
+                    item = ''
+                else:
+                    print ('Ha elegido '+item,end = ' ')
+                    items.append(lista.index(item))
+                    pool -= 1
+            if not input('¿Está seguro? ').strip().lower().startswith('s'):
+                pool += 1
+                del items[-1]
+
+    return items
+
+def SelIdiomas (IDIOMAS,CLASES,raza,clase,pool):
+    autos = []
+    adics = []
+    nom = CLASES[0]
+    idiomas_de_clase = CLASES[10]
+    for i in raza[6]:
+        autos.append(IDIOMAS[i])
+    for i in raza[7]:
+        adics.append(IDIOMAS[i])
+
+    idi_clas = idiomas_de_clase[nom.index(clase)]
+    if idi_clas != '':
+        for idi in idi_clas.split(','):
+            if IDIOMAS[int(idi)] not in adics:
+                adics.append(IDIOMAS[int(idi)])
+    print ('\nLos idiomas automáticos de tu raza son: '+f.PrepPrint(autos))
+    
+    idiomas = []
+    if pool > 0:
+        print ('\nAdemás, tu personaje puede conocer '+str(pool)+
+               ' idiomas adicionales.\nEligelos de la siguiente lista:')
+        elecs = subselector ('Idioma',adics,dos_col=True,vueltas=pool)
+        for i in elecs:
+            idiomas.append(IDIOMAS.index(adics[i]))
+    
+    for i in autos:
+        idiomas.append(IDIOMAS.index(i))
+
+    idiomas.sort()
+    return idiomas
+
+def NuevosIdiomas (IDIOMAS,idi_pj,pool):
+    lista = []
+    for i in idi_pj:
+        lista.append(IDIOMAS[i])
+    print ('Sus idiomas actuales son: '+f.PrepPrint(lista)+
+           '\nPuede elegir '+str(pool)+' idiomas nuevos, de entre los siguientes:\n')
+    posibles = []
+    for i in range(len(IDIOMAS)):
+        if i not in idi_pj:
+            posibles.append(IDIOMAS[i])
+
+    sels = subselector ('Idioma',posibles,dos_col=True,vueltas=pool)
+    for i in sels:
+        idi_pj.append(IDIOMAS.index(posibles[i]))
+    
+    idi_pj.sort()
+    return idi_pj

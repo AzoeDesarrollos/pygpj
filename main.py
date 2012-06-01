@@ -36,10 +36,10 @@ while True:
         for Car in s.Cars:
             s.CARS[s.Cars.index(Car)]+Raza[1][s.Cars.index(Car)]
         
-        CARS_mods = [CarMod(s.CARS[0]),CarMod(s.CARS[1]),
-                     CarMod(s.CARS[2]),CarMod(s.CARS[3]),
-                     CarMod(s.CARS[4]),CarMod(s.CARS[5])]
-
+        CARS_mods = [CarMod(s.CARS[0]),CarMod(s.CARS[1]),CarMod(s.CARS[2]),
+                     CarMod(s.CARS[3]),CarMod(s.CARS[4]),CarMod(s.CARS[5])]
+        
+        
         ## Elección de Alineamiento ##
         s.alini = Alinear()
     
@@ -50,6 +50,7 @@ while True:
     ## Elección de Clase ##
     if s.nivel == 1:
         clase = SelCla('',s.CLASES,s.alini)
+        s.idiomas = SelIdiomas(s.IDIOMAS,s.CLASES,Raza,clase,CARS_mods[3])
     else:
         clase = SelCla(s.lasclases[s.nivel-2],s.CLASES,s.alini)
     s.compW = Competencias (s.ARMAS,clase,s.compW)
@@ -64,9 +65,7 @@ while True:
     for aptitud in AppClas (s.APPS,clase,s.cla.count(clase)):
         s.nuevas.append(aptitud)
         for ap in s.nuevas:
-            if ap == '':
-                pass
-            else:
+            if ap != '':
                 e = ProcMecApp(s.APs_mc,ap,s.apps)
                 if e == 'd':
                     s.dotes.append(SelDot(s.nivel,s.dotes,s.DOTES,s.compW,s.ARMAS,s.HABS[0],True,clase,s.dt_cls))
@@ -94,8 +93,9 @@ while True:
     # print (barra)
     hab_rng = RepRNG (PuntHab (s.CLASES,clase,s.nivel,CARS_mods[3],subtipo),
                       s.cla.count(clase),Claseas(s.hab_cls,clase,s.HABS[0]),s.HABS[0],s.rng)
-    for i in hab_rng:
-        s.rng[s.HABS[0].index(i)] = hab_rng[i]
+    for i in hab_rng[0]:
+        s.rng[s.HABS[0].index(i)] = hab_rng[0][i]
+    s.idiomas += hab_rng[1]
     
     ## Elección de Dotes ##
     if s.nivel in (1,3,6,9,12,15,18):

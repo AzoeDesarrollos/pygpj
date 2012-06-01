@@ -23,13 +23,19 @@ def ProcRazas (razasCSV):
             razas[key][1][i] = int(razas[key][1][i])
         razas[key][4] = razas[key][4].split(',')
         for i in range(len(razas[key][4])):
-            razas[key][4][i] = razas[key][4][i].split('b')
+            razas[key][4][i] = razas[key][4][i].split(':')
         for par in razas[key][4]:
             if par == ['']:
                 pass
             else:
                 for i in range(len(par)):
                     par[i]=int(par[i])
+        razas[key][6] = razas[key][6].split(',')
+        for i in range(len(razas[key][6])):
+            razas[key][6][i] = int(razas[key][6][i])
+        razas[key][7] = razas[key][7].split(',')
+        for i in range(len(razas[key][7])):
+            razas[key][7][i] = int(razas[key][7][i])
     
     return razas
 

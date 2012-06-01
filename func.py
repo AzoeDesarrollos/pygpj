@@ -331,9 +331,7 @@ def GenerarListadeAyuda (todas_las_dotes,DOTES):
             ID = int(i.split(':')[0])
             if ID not in ayuda:
                 ayuda.append(ID)
-                
-    # if input('\nDeseas conocer las dotes cuyos prerrequisitos están cumplidos? ').lower().startswith('s'):
-        # Paginar(10,a_dos_columnas(ayuda)
+
     return ayuda
 
 def UnaCar ():
@@ -357,10 +355,17 @@ def GenTir():
     return TirList
     
 def PrepPrint(lista):
-    imprimir = ''
+    imp = ''
+    lineas = []
     for elemento in lista:
-        imprimir = imprimir+str(elemento)+', '
-    imprimir = imprimir.rstrip(', ')+'.'
+        imp += str(elemento)+', '
+        if len(imp) > 75:
+            lineas.append(imp)
+            imp = ''
+            
+    lineas.append(imp)
+    imprimir = '\n'.join(lineas).rstrip(', ')+'.'
+
     return imprimir
 
 def paginar (tam_pag,lineas):
@@ -396,15 +401,16 @@ def a_dos_columnas(items):
     c1 = []
     c2 = []
     
-    for i in range(len(items)):
-        if i+1 <= len(items)/2:
-            c1.append(items[i])
+    for i in range(1,len(items)+1):
+        if i <= len(items)/2:
+            c1.append(items[i-1])
         else:
-            c2.append(items[i])
+            c2.append(items[i-1])
 
-    if len(c1)>len(c2):
-        c2.append(''*(len(c1)-len(c2)))
-
+    if len(c1) > len(c2):
+        for i in range(len(c1)-len(c2)):
+            c2.append(' ')
+        
     lineas = []
     for i in range(len(c1)):
         if len(c1[i]) > 32:
