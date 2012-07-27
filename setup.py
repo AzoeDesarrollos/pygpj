@@ -1,38 +1,16 @@
-# coding=UTF-8
-import csv
-import procs as p
-csv.register_dialect('myCSV',delimiter=';')
+import json
 
-RAZAS = p.ProcRazas(p.leerCSV('data/razas.csv'))
-DOTES = p.leerCSV('data/dotes.csv')
-HABS = p.leerCSV('data/habs.csv')
-CLASES = p.leerCSV('data/clases.csv')
-hab_cls = p.ProcHabCls(CLASES)
-dt_cls = p.ProcDTcls (CLASES)
-IDIOMAS = p.leerCSV('data/idiomas.csv')
-APPS = p.ProcApps(p.leerCSV('data/apps.csv'))
-APs_mc = p.leerCSV('data/app_mc.csv')
-ARMAS = p.leerCSV('data/armas.csv')
-ARMDS = p.leerCSV('data/armd.csv')
+def abrir_json (archivo):
+    ex = open(archivo)
+    data = json.load(ex)
+    ex.close()
+    return data
 
-Cars = ['Fuerza','Destreza','Constitución','Inteligencia','Sabiduría','Carisma']
-CARS = [0,0,0,0,0,0]
-
-rng = [i*0 for i in range(len(HABS[0]))] # Rangos de habilidad
-dts = [i*0 for i in range(len(HABS[0]))] # Bonificadores por dotes
-rcl = [i*0 for i in range(len(HABS[0]))] # Bonificadores raciales
-sng = [i*0 for i in range(len(HABS[0]))] # Bonificadores de sinergía
-obj = [i*0 for i in range(len(HABS[0]))] # Bonificadores por objetos
-
-tamaño = {'Minúsculo':(+8,-16,+16),'Diminuto':(+4,-12,+12),'Menudo':(+2,-8,+8),'Pequeño':(+1,-4,+4),'Mediano':(+0,+0,+0),'Grande':(-1,+4,-4),'Enorme':(-2,+8,-8),'Gargantuesco':(-4,+12,-12),'Colosal':(-8,+16,-16)}
-
-cla = [] ## ['Gue', '', 'Mag']
-lasclases = [] ## ['Guerrero', 'Guerrero', 'Mago']
-dotes = []
-stats = [0,0,0,0]
-nivel = 0
-# alinis = ('LB','NB','CB','LN','NN','CN','LM','NM','CM')
-alini = ''
-nuevas,apps,aprin = [],[],[]
-compW,compA = [],[]
-idiomas = []
+RAZAS = abrir_json('data/razas.json')
+CLASES = abrir_json('data/clases.json')
+IDIOMAS = abrir_json('data/idiomas.json')
+HABS = abrir_json('data/habs.json')
+DOTES = abrir_json('data/dotes.json')
+ARMAS = abrir_json('data/armas.json')
+ARMDS = abrir_json('data/armds.json')
+APTS = abrir_json('data/apts.json')

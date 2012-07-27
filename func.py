@@ -1,39 +1,35 @@
 ﻿# coding=UTF-8
 from random import randint
+from sels import subselector , SelDot
 import os
 import setup as s
+import prsnj as p
 
-def ProCla(lista_de_clases,clase,nv_cls,stats):
-    '''Procesa la lista de clases y otiene ATKbase, y TSs.'''
+def procesar_clase(Clase,nv_cls,stats):
+    '''Procesa la lista de clases y obtiene ATKbase, y TSs.'''
     
-    nom = lista_de_clases[0]
-    ATKb = lista_de_clases[1]
-    Fort = lista_de_clases[2]
-    Ref = lista_de_clases[3]
-    Vol = lista_de_clases[4]
-
-    if ATKb[nom.index(clase)] == 'b':
+    if Clase['ATKb'] == 'b':
         A = 1
-    elif ATKb[nom.index(clase)] == 'i':
+    elif Clase['ATKb'] == 'i':
         A = 3/4
     else:
         A = 1/2
     
-    if Fort[nom.index(clase)] == 'b':
+    if Clase['Fort'] == 'b':
         F = 1/2
         if nv_cls == 1:
             F += 2
     else:
         F = 1/3
     
-    if Ref[nom.index(clase)] == 'b':
+    if Clase['Ref'] == 'b':
         R = 1/2
         if nv_cls == 1:
             R += 2
     else:
         R = 1/3
     
-    if Vol[nom.index(clase)] == 'b':
+    if Clase['Vol']== 'b':
         V = 1/2
         if nv_cls == 1:
             V += 2
@@ -46,16 +42,10 @@ def ProCla(lista_de_clases,clase,nv_cls,stats):
     
     return bases
 
-def Competencias (grupo,clase,comprevia):
+def Competencias (clase,comprevia):
     '''Actualiza las competencias en armas o armaduras del personaje.'''
     
-    comp = []
-
-    for i in range(len(grupo[3])):
-        if clase in grupo[3][i]:
-            comp.append(i)
-
-    for item in comp:
+    for item in clase:
         if item not in comprevia:
             comprevia.append(item)
 
@@ -66,11 +56,7 @@ def Competencias (grupo,clase,comprevia):
 def PuntHab (lista_de_clases,clase,nivel,INT_mod,subtipo):
     '''Devuelve los puntos de habilidad a repartir para el nivel de clase.'''
     
-    nom = lista_de_clases[0]
-    PHs = lista_de_clases[6]
-    for i in range(len(PHs)):
-        PHs[i] = int(PHs[i])
-    PH = PHs[nom.index(clase)]+INT_mod
+    PH = lista_de_clases[clase]['PH']+INT_mod
     if nivel == 1:
         PH *= 4
         if subtipo == 'humano':
@@ -80,12 +66,12 @@ def PuntHab (lista_de_clases,clase,nivel,INT_mod,subtipo):
             PH += 1
     return PH
 
-def Claseas (claseas,clase,lista_de_hab):
+def Claseas (lista_de_clases,clase,lista_de_hab):
     '''Devuelve las habilidades cláseas de la clase citada.'''
     
     cls = []
-    for i in claseas[clase]:
-        cls.append(lista_de_hab[i])
+    for i in lista_de_clases[clase]['Claseas']:
+        cls.append(lista_de_hab[i]['Nombre'])
     return cls
 
 def HabcR (rangos):
@@ -124,157 +110,124 @@ def HabMod(mods,hab_num,mods_de_caract):
     
     return rng[hab_num]+mod+rcl[hab_num]+sng[hab_num]+dts[hab_num]+obj[hab_num]
 
-def ValPreReq (ID_dote,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract,comp_armas):
+def ValPreReq (ID_dote,lista_de_dotes,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract,comp_armas):
     '''Verifica que se cumplan los prerrequisitos de la dote seleccionada.'''
-
-    tipo = mecanicas[3]
-    cndr = mecanicas[4]
-    r_cls = mecanicas[5]
-    r_nv = mecanicas[6]
-    r_dts = mecanicas[7]
-    r_cmp = mecanicas[8]
-    r_rng = mecanicas[9]
-    r_app = mecanicas[10]
-    r_stat = mecanicas[11]
-    r_car = mecanicas[12]
+    
     
     ID = int(ID_dote.split(':')[0])
     if len(ID_dote.split(':'))>1:
         sub = int(ID_dote.split(':')[1])
     
-    Req = tipo[ID].split(':')
+    Req = lista_de_dotes[ID]['Tipo'].split(':')
     if Req[0] == 'u': ## Requisito de Tipo (Presencia/Ausencia de Dotes)
         if ID_dote in dotes:
-            valido = 0
+            return False
         else:
             valido = 1
     elif Req[0] == 's':
         valido = 1
     
-    if valido == 1: ## Consideración de Clase ('se considera que ya posee esta dote, por lo que no necesita elegirla')
-        if cndr[ID] == '':
-            valido = 1
-        else:
-            Reqs = cndr[ID].split(',')
-            for Req in Reqs:
-                Req = Req.split(' ')
-                if Req[0] in nv_cls:
-                    if nv_cls.count(Req[0]) >= int(Req[1]):
-                        valido = 0
-                        break
-                    else:
-                        valido = 1
-                else:
-                    valido = 1
-    
-    if valido == 1: ## Requisito de Nivel de Clase
-        if r_cls[ID] == '':
-            valido = 1
-        else:
-            Req = r_cls[ID].split(' ')
+    if 'Consideracion' in lista_de_dotes[ID]: ## Consideración de Clase ('se considera que ya posee
+        Reqs = lista_de_dotes[ID]['Consideracion']## esta dote, por lo que no necesita elegirla')
+        for Req in Reqs:
+            Req = Req.split(' ')
             if Req[0] in nv_cls:
                 if nv_cls.count(Req[0]) >= int(Req[1]):
-                    valido = 1
+                    return False
                 else:
-                    valido = 0
+                    valido = 1
             else:
-                valido = 0
-
-    if valido == 1: ## Requisito de Nivel de Personaje
-        if r_nv[ID] == '':
-            valido = 1
-        else:
-            if len(nv_cls)>= int(r_nv[ID]):
+                valido = 1
+    
+    if 'Req_Cls' in lista_de_dotes[ID]: ## Requisito de Nivel de Clase
+        Req = lista_de_dotes[ID]['Req_Cls']
+        if Req[0] in nv_cls:
+            if nv_cls.count(Req[0]) >= int(Req[1]):
                 valido = 1
             else:
-                valido = 0
-
-    if valido == 1: ## Requisito de Dotes
-        if r_dts[ID] == '':
+                return False
+        else:
+            return False
+    
+    if 'Req_NvPj' in lista_de_dotes[ID]: ## Requisito de Nivel de Personaje
+        if len(nv_cls)>= int(lista_de_dotes[ID]['Req_NvPj']):
             valido = 1
         else:
-            Reqs = r_dts[ID].split(',')
-            for Req in Reqs:
-                if ':' in Req:
-                    dt = Req.split(':')[0]
-                    sb = Req.split(':')[1]
-                    if sb == 'sub':
-                        if Req.split(':')[0]+':'+str(sub) in dotes:
-                            valido = 1
-                        else:
-                            valido = 0
-                    else:
-                        if Req.split(':')[0]+':'+sb in dotes:
-                            valido = 1
-                        else:
-                            valido = 0
-                else:
-                    if Req in dotes:
+            return False
+    
+    if 'Req_NL' in lista_de_dotes[ID]: ## Requisito de nivel de lanzador
+        valido = 1
+    
+    if 'Req_Dts' in lista_de_dotes[ID]: ## Requisito de Dotes
+        Reqs = lista_de_dotes[ID]['Req_Dts']
+        for Req in Reqs:
+            if ':' in Req:
+                dt = str(Req.split(':')[0])
+                sb = str(Req.split(':')[1])
+                if sb == 'sub':
+                    if dt+':'+sb in dotes:
                         valido = 1
                     else:
-                        valido = 0
-                        
-    if valido == 1: ## Requisito de Competencias en Armas
-        if r_cmp[ID] == '':
-            valido = 1
-        else:
-            if r_cmp[ID] == '#':
-                if sub in comp_armas:
-                    valido = 1
+                        return False
                 else:
-                    valido = 0
-            else:
-                Reqs = r_cmp[ID].split(',')
-                for Req in Reqs:
-                    if Req in comp_armas:
+                    if Req.split(':')[0]+':'+sb in dotes:
                         valido = 1
                     else:
-                        valido = 0
-    
-    if valido == 1: ## Requisito de Rangos de Habilidad
-        if r_rng[ID] == '':
-            valido = 1
-        else:
-            Req = r_rng[ID].split(':')
-            if rangos[int(Req[0])] >= int(Req[1]):
-                valido = 1
+                        return False
             else:
-                valido = 0
-
-    if valido == 1: ## Requisito de Aptitudes Especiales
-        if r_app[ID] == '':
-            valido = 1
-        else:
-            Reqs = r_app[ID].split(',')
-            for Req in Reqs:
-                if int(Req) in aptitudes:
+                if Req in dotes:
                     valido = 1
                 else:
-                    valido = 0
+                    return False
     
-    if valido == 1: ## Requisito de Ataque base y TSs
-        if r_stat[ID] == '': 
-            valido = 1
-        else:
-            Req = r_stat[ID].split(':')
-            if stats[int(Req[0])] >= int(Req[1]):
+    if 'Req_Comp' in lista_de_dotes[ID]: ## Requisito de Competencias en Armas
+        if lista_de_dotes[ID]['Req_Comp'] == '#':
+            if sub in comp_armas:
                 valido = 1
             else:
-                valido = 0
-
-    if valido == 1: ## Requisito de Puntuaciones de Caracteristica
-        if r_car[ID] == '':
-            valido = 1
+                return False
         else:
-            Reqs = r_car[ID].split(',')
+            Reqs = lista_de_dotes[ID]['Req_Comp']
             for Req in Reqs:
-                car = Req.split(':')[0]
-                val = Req.split(':')[1]
-                if caract[int(car)] >= int(val):
+                if Req in comp_armas:
                     valido = 1
                 else:
-                    valido = 0
-                    
+                    return False
+    
+    if 'Req_Hab' in lista_de_dotes[ID]: ## Requisito de Rangos de Habilidad
+        Req = lista_de_dotes[ID]['Req_Hab'].split(':')
+        hab = int(Req[0])
+        val = int(Req[1])
+        if rangos[hab] >= val:
+            valido = 1
+        else:
+            return False
+    
+    if 'Req_Apts' in lista_de_dotes[ID]: ## Requisito de Aptitudes Especiales
+        Reqs = lista_de_dotes[ID]['Req_Apts']
+        for Req in Reqs:
+            if Req in aptitudes:
+                valido = 1
+            else:
+                return False
+    
+    if 'Req_Stats' in lista_de_dotes[ID]: ## Requisito de Ataque base y TSs
+        Req = lista_de_dotes[ID]['Req_Stats'].split(':')
+        if stats[int(Req[0])] >= int(Req[1]):
+            valido = 1
+        else:
+            return False
+    
+    if 'Req_Car' in lista_de_dotes[ID]: ## Requisito de Puntuaciones de Caracteristica
+        Reqs = lista_de_dotes[ID]['Req_Car']
+        for Req in Reqs:
+            car = Req.split(':')[0]
+            val = Req.split(':')[1]
+            if caract[int(car)] >= int(val):
+                valido = 1
+            else:
+                return False
+            
     if valido == 1:
         return True
     else:
@@ -283,29 +236,29 @@ def ValPreReq (ID_dote,mecanicas,nv_cls,nivel,dotes,rangos,aptitudes,stats,carac
 def AutoDot (DOTES,comp_armas,ARMAS,lista_de_habilidades,sub=None):
     '''Autoelige dotes como si no tuvieran prerrequisitos. '''
 
-    nom = DOTES[0]
-    mec = DOTES[3]
+    mec = [DOTES[i]['Tipo'] for i in range(len(DOTES))]
 
-    escuelas = 'Abjuración','Adivinación','Conjuración','Encantamiento','Evocación','Ilusión','Nigromancia','Transmutación' ## TEMPORAL y TRANSITORIA
+    escuelas = ['Abjuración','Adivinación','Conjuración','Encantamiento','Evocación',
+                'Ilusión','Nigromancia','Transmutación'] ## TEMPORAL y TRANSITORIA
     dotes = []
     
     if sub == None:
-        indexes = range(len(nom))
+        indexes = range(len(DOTES))
     else:
-        indexes = sub
+        indexes = [i for i in sub]
     
     for i in indexes:
-        i = int(i)
         if mec[i] == 'u:h':
             for h in range(len(lista_de_habilidades)):
                 dotes.append(str(i)+':'+str(h))
-        elif mec[i] == 'u:w':
+        elif mec[i] in ('u:w','u:w?'):
             for w in comp_armas:
                 dotes.append(str(i)+':'+str(w))
         elif mec[i] == 'u:m':
-            for m in range(len(ARMAS[0])):
-                if ARMAS[0][m] not in comp_armas:
-                    dotes.append(str(i)+':'+str(m))
+            for m in range(len(ARMAS)):
+                if ARMAS[m]['Competencia'] == i:
+                    if m not in comp_armas:
+                        dotes.append(str(i)+':'+str(m))
         elif mec[i] == 'u:e':
             for e in range(len(escuelas)):
                 dotes.append(str(i)+':'+str(e))
@@ -314,13 +267,12 @@ def AutoDot (DOTES,comp_armas,ARMAS,lista_de_habilidades,sub=None):
 
     return dotes
 
-def GenerarListadeAyuda (todas_las_dotes,DOTES):
-    nom = DOTES[0]
-    mec = DOTES[3]
+def GenerarListadeAyuda (todas_las_dotes,lista_de_dotes):
+    '''Evalúa las dotes autoelegidas verificando prerrequisitos. '''
     
     posibles = []
     for ID in todas_las_dotes:
-        if ValPreReq(ID,s.DOTES,s.cla,s.nivel,s.dotes,s.rng,s.apps,s.stats,s.CARS,s.compW):
+        if ValPreReq(ID,lista_de_dotes,p.clases,p.nivel,p.dotes,p.rng,p.apps,p.stats,p.CARS,p.compW):
             posibles.append(ID)
     
     ayuda = []
@@ -372,7 +324,7 @@ def paginar (tam_pag,lineas):
     for i in range(len(lineas)):
         if (i+1) % tam_pag == 0:
             input ('\n[Presione Enter para continuar]\n')
-            os.system(['clear','cls'][os.name == 'nt'])
+            #os.system(['clear','cls'][os.name == 'nt'])
         print (lineas[i])
 
 def HabDosCol (rangos):
@@ -400,17 +352,17 @@ def HabDosCol (rangos):
 def a_dos_columnas(items):
     c1 = []
     c2 = []
-    
-    for i in range(1,len(items)+1):
-        if i <= len(items)/2:
-            c1.append(items[i-1])
+
+    for i in range(len(items)):
+        if i < len(items)/2:
+            c1.append(items[i])
         else:
-            c2.append(items[i-1])
+            c2.append(items[i])
 
     if len(c1) > len(c2):
         for i in range(len(c1)-len(c2)):
-            c2.append(' ')
-        
+            c2.append('')
+
     lineas = []
     for i in range(len(c1)):
         if len(c1[i]) > 32:
@@ -435,60 +387,56 @@ def CarMod(car):
         mod = (car-11)/2
     return int(mod)
 
-def AppClas (APPdict,clase,nv_cls):
-    '''Devuelve las aptitudes de la clase al nivel dado.'''
+def actualizar_aptitudes (ap,APSmc,apps_pj,dotes,DOTES,HABS,clase,sub = ''):
+    '''Actuliza la lista de aptitudes del personaje.'''
     
-    nv_cls -= 1
-    return APPdict[clase][nv_cls]
-
-def ProcMecApp (APSmc,aptitud,apps_pj):
-    '''Dada una aptitud, devuelve la mecánica relacionada.'''
-
-    mecanica = APSmc[2][APSmc[0].index(aptitud)]
+    nom = APSmc[ap]['Nombre']
+    tipo = APSmc[ap]['Tipo'].split(':')[0]
+    if ':' in APSmc[ap]['Tipo']:
+        mec = APSmc[ap]['Tipo'].split(':')[1]
+    if 'Sublista' in APSmc[ap]:
+        sub = APSmc[ap]['Sublista']
+        prompt = APSmc[ap]['Sub_Sel']
     
-    if mecanica == 'u':
-        return aptitud
-    elif mecanica == 'd':
-        return 'd'
-    elif mecanica == 'x':
-        return 'x'
-    elif mecanica == 'a':
-        return 'a'
-    elif mecanica == 'v':
-        return aptitud+' '+str(apps_pj.count(aptitud))+'/día'
-    elif mecanica == 's':
-        return aptitud+' '+str(apps_pj.count(aptitud))+'/semana'
-    elif mecanica == 'm':
-        return aptitud+' +'+str(apps_pj.count(aptitud))
-    elif mecanica.split(':')[0] == 'r':
-        return apps_pj[apps_pj.index(mecanica.split(':')[1])]
-    elif mecanica.split(':')[0] == 'e':
-        if aptitud == 'Ataque furtivo':
-            if apps_pj.count(aptitud) == 0:
-                return aptitud+' +1d6'
-            else:
-                cantidad = apps_pj.count(aptitud)
-                return aptitud+' +'+str(cantidad)+'d6'
-                        
-        elif aptitud == 'Enemigo predliecto':
-            if apps_pj.count(aptitud) == 0:
-                return '1º +'+aptitud
-            else:
-                cantidad = apps_pj.count(aptitud)
-                return str(cantidad)+'º '+aptitud
-                        
-        elif aptitud == 'Ralentizar caída':
-            if apps_pj.count(aptitud) == 0:
-                return aptitud+" 20'"
-            elif apps_pj.count(aptitud) == 9:
-                return 'Ralentizar caída cualquier distancia'
-            else:
-                cantidad = apps_pj.count(aptitud)
-                return aptitud+' '+str(cantidad)+"0'"
-                    
-        elif aptitud == 'Reducción de daño':
-            if apps_pj.count(aptitud) == 0:
-                return aptitud+' 1/-'
-            else:
-                cantidad = apps_pj.count(aptitud)
-                return aptitud+','+str(cantidad)+'/-'
+    if tipo == 'u':
+        if sub != '':
+            print ('\n'+APSmc[ap]['Intro'])
+            elec = subselector(prompt,sub)
+            p.apps.append(str(ap)+':'+str(elec))
+        else:
+            p.apps.append(str(ap))
+
+    elif tipo == 'v':
+        p.apps.append(ap)
+        if sub != '':
+            print ('\n'+APSmc[ap]['Intro'])
+            elec = subselector(prompt,sub,dos_col=True)
+            p.apps.append(str(ap)+':'+str(elec))
+        else:
+            p.apps.append(str(ap))
+
+    elif tipo == 'r':
+        if sub != '':
+            print ('\n'+APSmc[ap]['Intro'])
+            elec = subselector(prompt,sub,dos_col=True)
+            p.apps[apps.index(mec)] = str(ap)+':'+str(elec)
+        else:
+            p.apps[apps.index(mec)] = str(ap)
+        
+    elif tipo == 'a':
+        if sub != '':
+            print ('\n'+APSmc[ap]['Intro'])
+            elec = subselector(prompt,sub)
+            p.dotes.append(str(DOTES.index(sub[elec])))
+        else:
+            p.dotes.append(str(APSmc[ap]['ID_dt']))
+
+    elif tipo == 'd':
+        p.dt_cl = True
+
+    elif tipo == 'x':
+        e = SelAE (APSmc,apps_pj)
+        if e == 'd':
+            p.dotes.append(SelDot(p.nivel,dotes,DOTES,p.compW,s.ARMAS,s.HABS,False,clase))
+        else:
+            p.apps.append(e)

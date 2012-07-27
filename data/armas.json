@@ -1,0 +1,337 @@
+[
+    {
+        "Nombre": "Alabarda", 
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Alfanjón",
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Arco corto",
+        "Tipo": "ad",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Arco corto compuesto",
+        "Tipo": "ad",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Arco largo",
+        "Tipo": "ad",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Arco largo compuesto",
+        "Tipo": "ad",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Ballesta de mano",
+        "Tipo": "ad",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Ballesta de repetición ligera",
+        "Tipo": "ad",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Ballesta de repetición pesada",
+        "Tipo": "ad",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Ballesta ligera",
+        "Tipo": "ad",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Ballesta pesada",
+        "Tipo": "ad",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Bastón",
+        "Tipo": "dm",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Bisarma",
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Bolas",
+        "Tipo": "ad",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Cachiporra",
+        "Tipo": "lc",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Cadena armada",
+        "Tipo": "dm",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Cimitarra",
+        "Tipo": "um",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Clava",
+        "Tipo": "um",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Daga",
+        "Tipo": "lc",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Dardo",
+        "Tipo": "ad",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Espada bastarda",
+        "Tipo": "um",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Espada corta",
+        "Tipo": "lc",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Espada de dos hojas",
+        "Tipo": "dm",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Espada larga",
+        "Tipo": "um",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Espadón",
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Estoque",
+        "Tipo": "um",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Gran clava",
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Gran hacha",
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Guadaña",
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Guantelete armado",
+        "Tipo": "lc",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Guja",
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Hacha arrojadiza",
+        "Tipo": "lc",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Hacha de batalla",
+        "Tipo": "um",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Hacha de guerra enana",
+        "Tipo": "um",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Hacha de mano",
+        "Tipo": "lc",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Hacha doble orca",
+        "Tipo": "dm",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Honda",
+        "Tipo": "ad",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Hoz",
+        "Tipo": "lc",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Impacto sin arma",
+        "Tipo": "sa",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Jabalina",
+        "Tipo": "ad",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Kama",
+        "Tipo": "lc",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Kukri",
+        "Tipo": "lc",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Lanza",
+        "Tipo": "dm",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Lanza corta",
+        "Tipo": "um",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Lanza de caballería",
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Lanza larga",
+        "Tipo": "dm",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Látigo",
+        "Tipo": "um",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Mangual",
+        "Tipo": "um",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Mangual doble",
+        "Tipo": "dm",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Mangual pesado",
+        "Tipo": "dm",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Martillo de guerra",
+        "Tipo": "um",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Martillo ganchudo gnomo",
+        "Tipo": "dm",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Martillo ligero",
+        "Tipo": "lc",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Maza de armas",
+        "Tipo": "um",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Maza ligera",
+        "Tipo": "lc",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Maza pesada",
+        "Tipo": "um",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Nunchaku",
+        "Tipo": "lc",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Pico ligero",
+        "Tipo": "lc",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Pico pesado",
+        "Tipo": "um",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Puñal",
+        "Tipo": "lc",
+        "Competencia": 28
+    },
+    {
+        "Nombre": "Red",
+        "Tipo": "ad",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Ronca",
+        "Tipo": "ad",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Sai",
+        "Tipo": "lc",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Shuriken",
+        "Tipo": "ad",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Siangham",
+        "Tipo": "lc",
+        "Competencia": 26
+    },
+    {
+        "Nombre": "Tridente",
+        "Tipo": "um",
+        "Competencia": 27
+    },
+    {
+        "Nombre": "Urgosh enano",
+        "Tipo": "dm",
+        "Competencia": 26
+    }
+]

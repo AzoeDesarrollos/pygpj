@@ -1,8 +1,8 @@
 ﻿# coding=UTF-8
 import func as f
 import setup as s
+import prsnj as p
 from time import sleep
-import setup
 import os
 
 def SelRaza(lista_de_razas):
@@ -24,7 +24,7 @@ def SelRaza(lista_de_razas):
                 elif raza == '5': raza = 'Mediano'
                 elif raza == '6': raza = 'Semielfo'
                 elif raza == '7': raza = 'Semiorco'
-                print ('Has elegido que este personaje sea un '+lista_de_razas[raza][0]+'.', end = ' ')
+                print ('Has elegido que este personaje sea un '+lista_de_razas[raza]['Nombre']+'.', end = ' ')
                 if not input ('¿Estas seguro? ').lower().startswith('s'):
                     raza = ''
                 else:
@@ -32,7 +32,7 @@ def SelRaza(lista_de_razas):
         elif raza not in lista_de_razas:
             print('Raza inválida o error ortográfico, intente nuevamente')
         else:
-            print ('Has elegido que este personaje sea un '+lista_de_razas[raza][0]+'.', end = ' ')
+            print ('Has elegido que este personaje sea un '+lista_de_razas[raza]['Nombre']+'.', end = ' ')
             if not input ('¿Estas seguro? ').lower().startswith('s'):
                 raza = ''
             else:
@@ -86,16 +86,17 @@ def Alinear ():
 
 def SelCla(claseprevia,lista_de_clases,alineamiento):
     '''Provee un selector de clases.'''
-    
-    abr = lista_de_clases[0]
-    nom = lista_de_clases[5]
-    ali = lista_de_clases[8]
+
+    abr = [lista_de_clases[i]['Abr'] for i in range(len(lista_de_clases))]
+    nom = [lista_de_clases[i]['Nombre'] for i in range(len(lista_de_clases))]
+    ali = [lista_de_clases[i]['Alineamientos'] for i in range(len(lista_de_clases))]
     pos = []
     abp = []
     for i in range(len(ali)):
-        if str(alineamiento) in ali[i]:
+        if alineamiento in ali[i]:
             pos.append(nom[i])
             abp.append(abr[i])
+
             
     imprimir = ''
     numeros = []
@@ -124,21 +125,22 @@ def SelCla(claseprevia,lista_de_clases,alineamiento):
             elif cla == '':
                 if claseprevia == '':
                     print ('\nDebe seleccionar una clase')
+                    cla = '?'
                 else:
                     cla = claseprevia
             
-        if cla in abr: Clase = cla
-        elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
+        if cla in abr: Clase = abr.index(cla)
+        elif cla.capitalize() in nom: Clase = nom.index(cla)
         elif cla == '': Clase = ''
-        elif cla == 'Barbaro': Clase = 'Brb'
-        elif cla == 'Clerigo': Clase = 'Clr'
-        elif cla == 'Paladin': Clase = 'Pld'
-        elif cla == 'Picaro': Clase = 'Pcr'
-        elif cla.isnumeric(): Clase = abp[int(cla)]
+        elif cla == 'Barbaro': Clase = 0
+        elif cla == 'Clerigo': Clase = 2
+        elif cla == 'Paladin': Clase = 9
+        elif cla == 'Picaro': Clase = 10
+        elif cla.isnumeric(): Clase = abr.index(abp[int(cla)])
             
-        print ("Has seleccionado '"+nom[abr.index(Clase)]+"' como clase para este nivel.",end= ' ')
+        print ("Has seleccionado '"+nom[Clase]+"' como clase para este nivel.",end= ' ')
         if not input ('¿Estas seguro? ').lower().startswith('s'):
-            cla = ''
+            cla = '?'
         else:
             break
     
@@ -192,14 +194,17 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     
     rng = {}
     for i in range(len(rangos)):
-        rng[lista_de_hab[i]] = rangos[i]
-        
+        rng[lista_de_hab[i]['Nombre']] = rangos[i]
+    nom_hab = []
+    for i in range(len(lista_de_hab)):
+        nom_hab.append(lista_de_hab[i]['Nombre'])
+    
     rng_max = nv_cls+3
     rng_max_tc = rng_max/2
     idiomas = []
     while PH > 0:
         hab = input('\nHabilidad: ').strip(' ').capitalize()
-        while hab not in lista_de_hab:
+        while hab not in nom_hab:
             print('Por favor, escribe la habilidad correctamente')
             hab = input('\nHabilidad: ').rstrip(' ').capitalize()
         if rng[hab] >0:
@@ -246,29 +251,43 @@ def RepRNG (PH,nv_cls,hab_cla,lista_de_hab,rangos):
                 print('\nPuntos restantes: '+str(PH))
         
         if hab == 'Hablar un idioma':
-            idiomas = NuevosIdiomas(s.IDIOMAS,s.idiomas,round(rng[hab]))
+            idiomas = NuevosIdiomas(s.IDIOMAS,p.idiomas,round(rng[hab]))
+    
+    rng_hab = {}
+    for i in range(len(nom_hab)):
+        if nom_hab[i] in rng:
+            rng_hab[i] = rng[nom_hab[i]]
     
     input ('\n[Presione Enter para continuar]')
-    return rng,idiomas
+    return rng_hab,idiomas
 
-def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clase,dotes_clase):
+def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,spec,clase,*dotes_clase):
     '''Provee un selector de dotes.'''
     
-    nom = lista_de_dotes[0]
-    pre = lista_de_dotes[1]
-    des = lista_de_dotes[2]
-    mec = lista_de_dotes[3]
+    nom = [lista_de_dotes[i]['Nombre'] for i in range(len(lista_de_dotes))]
+    des = [lista_de_dotes[i]['Descripcion'] for i in range(len(lista_de_dotes))]
+    mec = [lista_de_dotes[i]['Tipo'] for i in range(len(lista_de_dotes))]
+    pre = []
+    for i in range(len(lista_de_dotes)):
+        if 'PreReq' in lista_de_dotes[i]:
+            pre.append(lista_de_dotes[i]['PreReq'])
+        else:
+            pre.append('')
+    
     
     if spec == False:
-        print ('\nEn el '+str(s.nivel)+'º nivel, tienes una dote para elegir.\n')
-        posibles = f.GenerarListadeAyuda(f.AutoDot(s.DOTES,comp_armas,ARMAS[0],lista_de_habilidades),s.DOTES)
+        print ('\nEn el '+str(nivel)+'º nivel, tienes una dote para elegir.\n')
+        posibles = f.GenerarListadeAyuda(f.AutoDot(lista_de_dotes,comp_armas,ARMAS,
+                                                   lista_de_habilidades),lista_de_dotes)
     else:
         print ('\nComo aptitud de clase, en este nivel tienes una dote adicional para elegir.\n')
-        posibles = f.GenerarListadeAyuda(f.AutoDot(s.DOTES,comp_armas,ARMAS[0],
-                                                   lista_de_habilidades,sub=s.dt_cls[clase]),s.DOTES)
+        posibles = f.GenerarListadeAyuda(f.AutoDot(lista_de_dotes,comp_armas,ARMAS,
+                                                   lista_de_habilidades,sub=dotes_clase[0]),
+                                         lista_de_dotes)
     
     print ('Escribe el nombre de la dote elegida. Si deseas información sobre una dote en',
-           'particular, escribe <dote>?. Si deseas información sobre todas las dotes', 'escribe *?.',sep = '\n')
+           'particular, escribe <dote>?. Si deseas información sobre todas las dotes', 'escribe *?.'
+           ,sep = '\n')
     
     dote = ''
     while dote == '':
@@ -279,7 +298,10 @@ def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,
             elif dt == '*?':
                 lineas = []
                 for ID in posibles:
-                    lineas.append(nom[ID]+'\nPrerrequisitos: '+pre[ID]+'\nBeneficio: '+des[ID]+'\n')
+                    if pre[ID] != '':
+                        lineas.append(nom[ID]+'\nPrerrequisitos: '+pre[ID]+'\nBeneficio: '+des[ID]+'\n')
+                    else:
+                        lineas.append(nom[ID]+'\nBeneficio: '+des[ID]+'\n')
                 f.paginar(5,lineas)
             elif dt.split('?')[0] not in nom:
                 print ('Por favor, escribe la dote correctamente\n')
@@ -304,38 +326,49 @@ def SelDot (nivel,dotes_pj,lista_de_dotes,comp_armas,ARMAS,lista_de_habilidades,
             armas = []
             for i in comp_armas:
                 if  str(nom.index(dt))+':'+str(i) not in dotes_pj:
-                    armas.append(ARMAS[0][i])
+                    armas.append(ARMAS[i]['Nombre'])
             
             arma = subselector('Arma',armas,dos_col=True)
             print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
-            dote = str(nom.index(dt))+':'+str(ARMAS[0].index(armas[arma]))
+            for i in range(len(ARMAS)):
+                if ARMAS[i]['Nombre'] == armas[arma]:
+                    dote = str(nom.index(dt))+':'+str(i)
         
         elif mec[nom.index(dt)] == 'u:w?':
-            subs = AutoDot(lista_de_dotes,comp_armas,ARMAS[0],lista_de_habilidades,sub=[nom.index(dt)])
+            print ('Para la dote seleccionada debes elegir un arma de entre las siguientes',
+                   'Elije una',sep = '\n')
+            subs = f.AutoDot(lista_de_dotes,comp_armas,ARMAS,
+                             lista_de_habilidades,sub=[nom.index(dt)])
             armas = []
             for ID in subs:
-                if ValPreReq(ID,lista_de_dotes,s.cla,nivel,dotes_pj,s.rng,s.apps,s.stats,s.CARS,comp_armas):
+                if f.ValPreReq(ID,lista_de_dotes,p.clases,nivel,
+                               dotes_pj,p.rng,p.apps,p.stats,p.CARS,comp_armas):
                     armas.append(int(ID.split(':')[1]))
             arma = subselector('Arma',armas)
             print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
-            dote = str(nom.index(dt))+':'+str(ARMAS[0].index(armas[arma]))
+            for i in range(len(ARMAS)):
+                if ARMAS[i]['Nombre'] == armas[arma]:
+                    dote = str(nom.index(dt))+':'+str(i)
             
         elif mec[nom.index(dt)] == 'u:m':
             print ('Para la dote seleccionada debes elegir un arma con la que no seas competente',
                    'Elije una: ', sep = '\n')
             armas = []
-            for i in range(len(ARMAS[0])):
-                if ARMAS[2][i] == str(nom.index(dt)):
+            for i in range(len(ARMAS)):
+                if ARMAS[i]['Competencia'] == nom.index(dt):
                     if i not in comp_armas:
-                            if str(nom.index(dt))+':'+str(i) not in dotes_pj:
-                                armas.append(ARMAS[0][i])
+                        if str(nom.index(dt))+':'+str(i) not in dotes_pj:
+                            armas.append(ARMAS[i]['Nombre'])
 
             arma = subselector('Arma',armas,dos_col=True)
             print ('Prerrequisitos: '+pre[nom.index(dt)]+' (cumplidos)\n'+des[nom.index(dt)])
-            dote = str(nom.index(dt))+':'+str(ARMAS[0].index(armas[arma]))
+            for i in range(len(ARMAS)):
+                if ARMAS[i]['Nombre'] == armas[arma]:
+                    dote = str(nom.index(dt))+':'+str(i)
 
         elif mec[nom.index(dt)] == 'u:e':
-            print ('Para la dote seleccionada debes elegir una escuela de magia', 'Elije una: ', sep = '\n')
+            print ('Para la dote seleccionada debes elegir una escuela de magia',
+                   'Elije una: ', sep = '\n')
             ESCUELAS = 'Abjuración','Adivinación','Conjuración','Encantamiento',
             'Evocación','Ilusión','Nigromancia','Transmutación' ## TEMPORAL y TRANSITORIA
             escuelas = []
@@ -408,7 +441,7 @@ def subselector (prompt,lista,dos_col=False,vueltas=1):
         if vuelta == 0:
             paginado = []
             for i in range(len(lista)):
-                paginado.append(str(i)+': '+lista[i])
+                paginado.append(str(i)+': '+str(lista[i]))
             if dos_col == False:
                 f.paginar (10,paginado)
             else:
@@ -444,24 +477,26 @@ def subselector (prompt,lista,dos_col=False,vueltas=1):
             if not input('¿Está seguro? ').strip().lower().startswith('s'):
                 pool += 1
                 del items[-1]
+    
+    if vueltas == 1:
+        return items[0]
+    else:
+        return items
 
-    return items
-
-def SelIdiomas (IDIOMAS,CLASES,raza,clase,pool):
+def SelIdiomas (IDIOMAS,Clase,Raza,pool):
     autos = []
     adics = []
-    nom = CLASES[0]
-    idiomas_de_clase = CLASES[10]
-    for i in raza[6]:
+    nom = Clase['Nombre']
+    for i in Raza['Idioma_auto']:
         autos.append(IDIOMAS[i])
-    for i in raza[7]:
+    for i in Raza['Idioma_adic']:
         adics.append(IDIOMAS[i])
-
-    idi_clas = idiomas_de_clase[nom.index(clase)]
-    if idi_clas != '':
-        for idi in idi_clas.split(','):
-            if IDIOMAS[int(idi)] not in adics:
-                adics.append(IDIOMAS[int(idi)])
+    
+    if 'Idiomas' in Clase:
+        idi_clas = Clase['Idiomas']
+        for i in idi_clas:
+            if IDIOMAS[i] not in adics:
+                adics.append(IDIOMAS[i])
     print ('\nLos idiomas automáticos de tu raza son: '+f.PrepPrint(autos))
     
     idiomas = []
@@ -469,8 +504,11 @@ def SelIdiomas (IDIOMAS,CLASES,raza,clase,pool):
         print ('\nAdemás, tu personaje puede conocer '+str(pool)+
                ' idiomas adicionales.\nEligelos de la siguiente lista:')
         elecs = subselector ('Idioma',adics,dos_col=True,vueltas=pool)
-        for i in elecs:
-            idiomas.append(IDIOMAS.index(adics[i]))
+        if type(elecs) == list:
+            for i in elecs:
+                idiomas.append(IDIOMAS.index(adics[i]))
+        else:
+            idiomas.append(IDIOMAS.index(adics[elecs]))
     
     for i in autos:
         idiomas.append(IDIOMAS.index(i))
@@ -490,8 +528,11 @@ def NuevosIdiomas (IDIOMAS,idi_pj,pool):
             posibles.append(IDIOMAS[i])
 
     sels = subselector ('Idioma',posibles,dos_col=True,vueltas=pool)
-    for i in sels:
-        idi_pj.append(IDIOMAS.index(posibles[i]))
+    if type(sels) == list:
+        for i in sels:
+            idi_pj.append(IDIOMAS.index(posibles[i]))
+    else:
+        idi_pj.append(IDIOMAS.index(posibles[sels]))
     
     idi_pj.sort()
     return idi_pj

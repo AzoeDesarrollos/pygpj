@@ -1,0 +1,70 @@
+{
+    "Humano":   {
+                "Nombre": "Humano",
+                "Ajustes": [0, 0, 0, 0, 0, 0],
+                "Tamaño": "Mediano",
+                "Subtipo": "humano",
+                "Velocidad": "30'",
+                "Idioma_auto":[4],
+                "Idioma_adic": [0, 1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+                },
+    "Elfo":     {
+                "Nombre": "Elfo",
+                "Ajustes": [0, 2, -2, 0, 0, 0],
+                "Tamaño": "Mediano",
+                "Subtipo": "elfo",
+                "Hab_rcl": [[3, 2], [4, 2], [14, 2]],
+                "Velocidad": "30'",
+                "Idioma_auto": [4, 7],
+                "Idioma_adic": [5, 10, 11, 16, 17, 19]
+                },
+    "Enano":    {
+                "Nombre": "Enano",
+                "Ajustes": [0, 0, 2, 0, 0, -2],
+                "Tamaño": "Mediano",
+                "Subtipo": "enano",
+                "Hab_rcl": [[1, 2], [4, 2], [39, 2]],
+                "Velocidad": "20'",
+                "Idioma_auto": [4, 8],
+                "Idioma_adic": [9, 11, 14, 16, 18, 19]
+                },
+    "Gnomo":    {
+                "Nombre": "Gnomo",
+                "Ajustes": [-2, 0, 2, 0, 0, 0],
+                "Tamaño": "Pequeño",
+                "Subtipo": "gnomo",
+                "Hab_rcl": [[1, 2], [14, 2]],
+                "Velocidad": "20'",
+                "Idioma_auto": [4, 11],
+                "Idioma_adic": [5, 7, 8, 9, 16, 19]
+                },
+    "Mediano":  {
+                "Nombre": "Mediano",
+                "Ajustes": [-2, 2, 0, 0, 0, 0],
+                "Tamaño": "Pequeño",
+                "Subtipo": "mediano",
+                "Hab_rcl": [[14, 2], [21, 2], [36, 2], [41, 2]],
+                "Velocidad": "20'",
+                "Idioma_auto": [4, 15],
+                "Idioma_adic": [7, 8, 11, 16, 19]
+                },
+    "Semielfo": {
+                "Nombre": "Semielfo",
+                "Ajustes": [0, 0, 0, 0, 0, 0],
+                "Tamaño": "Mediano",
+                "Subtipo": "elfo",
+                "Hab_rcl": [[3, 1], [4, 1], [8, 2], [14, 1], [25, 2]],
+                "Velocidad": "30'",
+                "Idioma_auto": [4, 7],
+                "Idioma_adic": [0, 1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+                },
+    "Semiorco": {
+                "Nombre": "Semiorco",
+                "Ajustes": [2, 0, 0, 2, 0, -2],
+                "Tamaño": "Mediano",
+                "Subtipo": "orco",
+                "Velocidad": "30'",
+                "Idioma_auto": [4, 16],
+                "Idioma_adic": [0, 5, 9, 10, 19]
+                }
+}
