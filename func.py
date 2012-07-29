@@ -1,6 +1,6 @@
 ﻿# coding=UTF-8
 from random import randint
-from sels import subselector , SelDot
+from sels import subselector , SelDot, SelAE
 import os
 import setup as s
 import prsnj as p
@@ -66,49 +66,21 @@ def PuntHab (lista_de_clases,clase,nivel,INT_mod,subtipo):
             PH += 1
     return PH
 
-def Claseas (lista_de_clases,clase,lista_de_hab):
+def Claseas (CLASES,clase,HABS):
     '''Devuelve las habilidades cláseas de la clase citada.'''
     
     cls = []
-    for i in lista_de_clases[clase]['Claseas']:
-        cls.append(lista_de_hab[i]['Nombre'])
+    for i in CLASES[clase]['Claseas']:
+        cls.append(HABS[i]['Nombre'])
     return cls
 
-def HabcR (rangos):
-    c1 = []
-    c2 = []
-    cR = []
-    for i in range(len(rangos)):
-        if rangos[i] > 0:
-            cR.append(HABS[0][i])
-
-    for i in range(len(cR)):
-        if i%2 == 0:
-            c1.append(cR[i])
-        else:
-            c2.append(cR[i])
-
-    for i in range(len(c1)):
-        if len(c1[i]+' '+str(rangos[i])) > 23:
-            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t')
-        elif len(c1[i]+' '+str(rangos[i])) > 15:
-            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t')
-        else:
-            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t\t')
-
-def HabMod(mods,hab_num,mods_de_caract):
+def HabMod(hab_num,lista_habs,mods_de_caract,rangos, raciales, sinergias, dotes, objetos):
     '''Calcula el modificador final de habilidad.'''
+    if 'Modificador' in lista_habs[hab_num]:
+        mod = mods_de_caract[lista_habs[hab_num]['Modificador']]
+        total = rangos[hab_num]+mod+raciales[hab_num]+sinergias[hab_num]+dotes[hab_num]+objetos[hab_num]
     
-    mod = 0
-    temp = mods[hab_num]
-    if temp == 'FUE': mod = mods_de_caract[0]
-    elif temp == 'DES': mod = mods_de_caract[1]
-    elif temp == 'CON': mod = mods_de_caract[2]
-    elif temp == 'INT': mod = mods_de_caract[3]
-    elif temp == 'SAB': mod = mods_de_caract[4]
-    elif temp == 'CAR': mod = mods_de_caract[5]
-    
-    return rng[hab_num]+mod+rcl[hab_num]+sng[hab_num]+dts[hab_num]+obj[hab_num]
+    return total
 
 def ValPreReq (ID_dote,lista_de_dotes,nv_cls,nivel,dotes,rangos,aptitudes,stats,caract,comp_armas):
     '''Verifica que se cumplan los prerrequisitos de la dote seleccionada.'''
@@ -233,13 +205,10 @@ def ValPreReq (ID_dote,lista_de_dotes,nv_cls,nivel,dotes,rangos,aptitudes,stats,
     else:
         return False
 
-def AutoDot (DOTES,comp_armas,ARMAS,lista_de_habilidades,sub=None):
+def AutoDot (DOTES,comp_armas,ARMAS,HABS,ESCUELAS,sub=None):
     '''Autoelige dotes como si no tuvieran prerrequisitos. '''
 
     mec = [DOTES[i]['Tipo'] for i in range(len(DOTES))]
-
-    escuelas = ['Abjuración','Adivinación','Conjuración','Encantamiento','Evocación',
-                'Ilusión','Nigromancia','Transmutación'] ## TEMPORAL y TRANSITORIA
     dotes = []
     
     if sub == None:
@@ -249,7 +218,7 @@ def AutoDot (DOTES,comp_armas,ARMAS,lista_de_habilidades,sub=None):
     
     for i in indexes:
         if mec[i] == 'u:h':
-            for h in range(len(lista_de_habilidades)):
+            for h in range(len(HABS)):
                 dotes.append(str(i)+':'+str(h))
         elif mec[i] in ('u:w','u:w?'):
             for w in comp_armas:
@@ -259,8 +228,8 @@ def AutoDot (DOTES,comp_armas,ARMAS,lista_de_habilidades,sub=None):
                 if ARMAS[m]['Competencia'] == i:
                     if m not in comp_armas:
                         dotes.append(str(i)+':'+str(m))
-        elif mec[i] == 'u:e':
-            for e in range(len(escuelas)):
+        elif mec[i] in ('u:e','u:e?'):
+            for e in range(len(ESCUELAS)):
                 dotes.append(str(i)+':'+str(e))
         else:
             dotes.append(str(i))
@@ -320,64 +289,6 @@ def PrepPrint(lista):
 
     return imprimir
 
-def paginar (tam_pag,lineas):
-    for i in range(len(lineas)):
-        if (i+1) % tam_pag == 0:
-            input ('\n[Presione Enter para continuar]\n')
-            #os.system(['clear','cls'][os.name == 'nt'])
-        print (lineas[i])
-
-def HabDosCol (rangos):
-    c1 = []
-    c2 = []
-    cR = []
-    for i in range(len(rangos)):
-        if rangos[i] > 0:
-            cR.append(HABS[0][i])
-
-    for i in range(len(cR)):
-        if i%2 == 0:
-            c1.append(cR[i])
-        else:
-            c2.append(cR[i])
-
-    for i in range(len(c1)):
-        if len(c1[i]+' '+str(rangos[i])) > 23:
-            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t')
-        elif len(c1[i]+' '+str(rangos[i])) > 15:
-            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t')
-        else:
-            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t\t')
-
-def a_dos_columnas(items):
-    c1 = []
-    c2 = []
-
-    for i in range(len(items)):
-        if i < len(items)/2:
-            c1.append(items[i])
-        else:
-            c2.append(items[i])
-
-    if len(c1) > len(c2):
-        for i in range(len(c1)-len(c2)):
-            c2.append('')
-
-    lineas = []
-    for i in range(len(c1)):
-        if len(c1[i]) > 32:
-            lineas.append(c1[i] +'\t'+ c2[i])
-        elif len(c1[i]) > 23:
-            lineas.append(c1[i] +'\t'*2+ c2[i])
-        elif len(c1[i]) > 15:
-            lineas.append(c1[i] +'\t'*3+ c2[i])
-        elif len(c1[i]) > 7:
-            lineas.append(c1[i] +'\t'*4+ c2[i])
-        else:
-            lineas.append(c1[i] +'\t'*5+ c2[i])
-
-    return lineas
-
 def CarMod(car):
     '''Calcula el modificador de característica.'''
     
@@ -401,17 +312,18 @@ def actualizar_aptitudes (ap,APSmc,apps_pj,dotes,DOTES,HABS,clase,sub = ''):
     if tipo == 'u':
         if sub != '':
             print ('\n'+APSmc[ap]['Intro'])
-            elec = subselector(prompt,sub)
+            elec = subselector(prompt,sub,dos_col=True)
             p.apps.append(str(ap)+':'+str(elec))
         else:
             p.apps.append(str(ap))
 
     elif tipo == 'v':
-        p.apps.append(ap)
         if sub != '':
             print ('\n'+APSmc[ap]['Intro'])
             elec = subselector(prompt,sub,dos_col=True)
             p.apps.append(str(ap)+':'+str(elec))
+        elif ap == '83': ## Chapuza.. no me gusta
+            p.apps.append(str(ap))
         else:
             p.apps.append(str(ap))
 
@@ -419,9 +331,13 @@ def actualizar_aptitudes (ap,APSmc,apps_pj,dotes,DOTES,HABS,clase,sub = ''):
         if sub != '':
             print ('\n'+APSmc[ap]['Intro'])
             elec = subselector(prompt,sub,dos_col=True)
-            p.apps[apps.index(mec)] = str(ap)+':'+str(elec)
+            p.apps[p.apps.index(mec)] = str(ap)+':'+str(elec)
+        elif apps_pj.count(mec) > 1:
+            while apps_pj.count(mec) >1:
+                del p.apps[p.apps.index(mec)]
+            p.apps[p.apps.index(mec)] = str(ap)
         else:
-            p.apps[apps.index(mec)] = str(ap)
+            p.apps[p.apps.index(mec)] = str(ap)
         
     elif tipo == 'a':
         if sub != '':
@@ -437,6 +353,39 @@ def actualizar_aptitudes (ap,APSmc,apps_pj,dotes,DOTES,HABS,clase,sub = ''):
     elif tipo == 'x':
         e = SelAE (APSmc,apps_pj)
         if e == 'd':
-            p.dotes.append(SelDot(p.nivel,dotes,DOTES,p.compW,s.ARMAS,s.HABS,False,clase))
+            p.dotes.append(SelDot(p.nivel,dotes,DOTES,p.compW,s.ARMAS,s.ESCUELAS,s.HABS,False,clase))
         else:
             p.apps.append(e)
+
+def PG (CON_mod,DG,nivel):
+    PG = 0
+    if nivel == 1:
+        PG += DG+CON_mod
+    else:
+        PG += randint(1,DG)+CON_mod
+
+    return PG
+
+def aplicar_dote (nueva_dote,DOTES,ARMAS,ARMDS):
+    if ':' in nueva_dote:
+        if nueva_dote.split(':')[0] in ('26','27'):
+            p.compW.append(int(nueva_dote.split(':')[1]))
+        elif nueva_dote.split(':')[0] == '28':
+            for i in range(len(ARMAS)):
+                if ARMAS[i]['Competencia'] == 28:
+                    if i not in p.compW:
+                        p.compW.append(i)
+            p.compW.sort()
+        elif nueva_dote.split(':')[0] in ('29','30','31'):
+            for i in range(len(ARMDS)):
+                if ARMDS[i]['Competencia'] == int(nueva_dote.split(':')[0]):
+                    if i not in p.compA:
+                        p.compA.append(i)
+            p.compA.sort()
+    elif nueva_dote.isnumeric:
+        if 'Stat' in DOTES[int(nueva_dote)]:
+            p.stats [DOTES[int(nueva_dote)]['Stat']] += 2
+        elif nueva_dote == '65': ## especificidades que me gustaría eliminar
+            p.iniciativa += 4
+        elif nueva_dote == '51': ## especificidades que me gustaría eliminar
+            p.PG += 3

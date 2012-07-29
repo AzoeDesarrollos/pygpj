@@ -1,77 +1,77 @@
 [
     {
         "Nombre": "Abrir cerraduras",
-        "Modificador": "DES",
+        "Modificador": 1,
         "Solo_entrenada": true
     },
     {
         "Nombre": "Artesanía",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Sinergias": [39]
     },
     {
         "Nombre": "Averiguar intenciones",
-        "Modificador": "SAB",
+        "Modificador": 4,
         "Sinergias": [8]
     },
     {
         "Nombre": "Avistar",
-        "Modificador": "SAB"
+        "Modificador": 4
     },
     {
         "Nombre": "Buscar",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Sinergias": [38]
     },
     {
         "Nombre": "Concentración",
-        "Modificador": "CON"
+        "Modificador": 2
     },
     {
         "Nombre": "Conocimiento de conjuros",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [42]
     },
     {
         "Nombre": "Descifrar escritura",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [42]
     },
     {
         "Nombre": "Diplomacia",
-        "Modificador": "CAR"
+        "Modificador": 5
     },
     {
         "Nombre": "Disfrazarse",
-        "Modificador": "CAR"
+        "Modificador": 5
     },
     {
         "Nombre": "Engañar",
-        "Modificador": "CAR",
+        "Modificador": 5,
         "Sinergias": [8,9,17,19]
     },
     {
         "Nombre": "Equilibrio",
-        "Modificador": "DES"
+        "Modificador": 1
     },
     {
         "Nombre": "Escapismo",
-        "Modificador": "DES",
+        "Modificador": 1,
         "Sinergias": [43]
     },
     {
         "Nombre": "Esconderse",
-        "Modificador": "DES"
+        "Modificador": 1
     },
     {
         "Nombre": "Escuchar",
-        "Modificador": "SAB"
+        "Modificador": 4
     },
     {
         "Nombre": "Falsificar",
-        "Modificador": "INT"
+        "Modificador": 3
     },
     {
         "Nombre": "Hablar un idioma",
@@ -79,151 +79,151 @@
     },
     {
         "Nombre": "Interpretar",
-        "Modificador": "CAR"
+        "Modificador": 5
     },
     {
         "Nombre": "Intimidar",
-        "Modificador": "INT"
+        "Modificador": 3
     },
     {
         "Nombre": "Inutilizar mecanismo",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true
     },
     {
         "Nombre": "Juego de manos",
-        "Modificador": "DES",
+        "Modificador": 1,
         "Solo_entrenada": true
     },
     {
         "Nombre": "Montar",
-        "Modificador": "DES"
+        "Modificador": 1
     },
     {
         "Nombre": "Moverse sigilosamente",
-        "Modificador": "DES"
+        "Modificador": 1
     },
     {
         "Nombre": "Nadar",
-        "Modificador": "FUE"
+        "Modificador": 0
     },
     {
         "Nombre": "Oficio",
-        "Modificador": "SAB",
+        "Modificador": 4,
         "Solo_entrenada": true,
         "Sinergias": [11,36]
     },
     {
         "Nombre": "Piruetas",
-        "Modificador": "DES",
+        "Modificador": 1,
         "Solo_entrenada": true
     },
     {
         "Nombre": "Reunir información",
-        "Modificador": "CAR",
+        "Modificador": 5,
         "Sinergias": [6]
     },
     {
         "Nombre": "Saber (arcano)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [4]
     },
     {
         "Nombre": "Saber (arquitectura e ingeniería)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [38]
     },
     {
         "Nombre": "Saber (dungeons)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [38]
     },
     {
         "Nombre": "Saber (geografía)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": ["*"]
     },
     {
         "Nombre": "Saber (historia)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [25]
     },
     {
         "Nombre": "Saber (local)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [38]
     },
     {
         "Nombre": "Saber (los planos)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [38]
     },
     {
         "Nombre": "Saber (naturaleza)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [8]
     },
     {
         "Nombre": "Saber (nobleza y realeza)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": ["*"]
     },
     {
         "Nombre": "Saber (religión)",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Solo_entrenada": true
     },
     {
         "Nombre": "Saltar",
-        "Modificador": "DES",
+        "Modificador": 1,
         "Sinergias": [24]
     },
     {
         "Nombre": "Sanar",
-        "Modificador": "SAB",
+        "Modificador": 4,
         "Sinergias": [33]
     },
     {
         "Nombre": "Supervivencia",
-        "Modificador": "SAB"
+        "Modificador": 4
     },
     {
         "Nombre": "Tasación",
-        "Modificador": "INT",
+        "Modificador": 3,
         "Sinergias": [44,20]
     },
     {
         "Nombre": "Trato con animales",
-        "Modificador": "CAR",
+        "Modificador": 5,
         "Solo_entrenada": true
     },
     {
         "Nombre": "Trepar",
-        "Modificador": "FUE",
+        "Modificador": 0,
         "Sinergias": [6]
     },
     {
         "Nombre": "Usar objeto mágico",
-        "Modificador": "CAR",
+        "Modificador": 5,
         "Solo_entrenada": true,
         "Sinergias": [41,12]
     },
     {
         "Nombre": "Uso de cuerdas",
-        "Modificador": "DES"
+        "Modificador": 1
     },
     {
         "Nombre": "Empatía salvaje",
-        "Modificador": "CAR",
+        "Modificador": 5,
         "Solo_entrenada": true
     }
 ]

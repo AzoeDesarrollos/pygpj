@@ -404,6 +404,7 @@
     {
         "Nombre": "Gran Fortaleza",
         "Descripcion": "Bonificador +2 a las salvaciones de Fortaleza",
+        "Stat": 1,
         "Tipo": "u" 
     },
     {
@@ -557,6 +558,7 @@
     {
         "Nombre": "Reflejos rápidos",
         "Descripcion": "Bonificador +2 a las salvaciones de Reflejos",
+        "Stat": 2,
         "Tipo": "u" 
     },
     {
@@ -602,11 +604,13 @@
     {
         "Nombre": "Soltura mayor con una escuela de magia",
         "Descripcion": "Bonificador +1 a las CD de las salvaciones contra una escuela de magia\ndeterminada",
-        "Tipo": "u:e?" 
+        "Tipo": "u:e?",
+        "Req_Dts":["87:sub"]
     },
     {
         "Nombre": "Soltura con una habilidad",
         "Descripcion": "Bonificador +3 a las pruebas con la habilidad elegida",
+        "Hab_dt": "sub",
         "Tipo": "u:h" 
     },
     {
@@ -617,6 +621,7 @@
     {
         "Nombre": "Voluntad de hierro",
         "Descripcion": "Bonificador +2 en las salvaciones de Voluntad",
+        "Stat": 3,
         "Tipo": "u" 
     },
     {

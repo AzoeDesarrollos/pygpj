@@ -472,7 +472,7 @@
     {
         "Nombre": "Ralentizar caída", 
         "Clase": "Mnj", 
-        "Tipo": "r:84", 
+        "Tipo": "v", 
         "Formato": "{0} {1!s}0'"
     }, 
     {
