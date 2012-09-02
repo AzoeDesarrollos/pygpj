@@ -167,7 +167,8 @@
         "Clase": "Mnj", 
         "Tipo": "a", 
         "Formato": "{2}", 
-        "Sublista": ["Presa mejorada", "Puñetazo aturdidor"]
+        "Sublista": ["Presa mejorada", "Puñetazo aturdidor"],
+        "Sub_Sel": "Dote"
     }, 
     {
         "Nombre": "Dote:Mnj 2",
@@ -175,7 +176,8 @@
         "Clase": "Mnj", 
         "Tipo": "a", 
         "Formato": "{2}", 
-        "Sublista": ["Reflejos de combate", "Desviar flechas"]
+        "Sublista": ["Reflejos de combate", "Desviar flechas"],
+        "Sub_Sel": "Dote"
     }, 
     {
         "Nombre": "Dote:Mnj 6",
@@ -183,7 +185,8 @@
         "Clase": "Mnj", 
         "Tipo": "a", 
         "Formato": "{2}", 
-        "Sublista": ["Derribo mejorado", "Desarme mejorado"]
+        "Sublista": ["Derribo mejorado", "Desarme mejorado"],
+        "Sub_Sel": "Dote"
     }, 
     {
         "Nombre": "Empatía salvaje", 

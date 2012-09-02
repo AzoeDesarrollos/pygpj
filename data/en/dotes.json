@@ -248,7 +248,7 @@
         "PreReq": "Aptitud para usar forma salvaje, Sabiduría 13",
         "Descripcion": "Puedes lanzar conjuros mientras usas forma salvaje",
         "Tipo": "u",
-        "Req_Apts": "34",
+        "Req_Apts": ["34"],
         "Req_Car": ["4:13"]
     },
     {
@@ -386,14 +386,14 @@
         "PreReq": "Aptitud para expulsar o reprender criaturas",
         "Descripcion": "Puedes expulsar o reprender 4 veces más por día",
         "Tipo": "s", 
-        "Req_Apts": "32" 
+        "Req_Apts": ["39"] 
     },
     {
         "Nombre": "Expulsión mejorada",
         "PreReq": "Aptitud para expulsar o reprender criaturas",
         "Descripcion": "+1 nivel para las pruebas de expulsión",
         "Tipo": "u",
-        "Req_Apts": "32" 
+        "Req_Apts": ["39"]
     },
     {
         "Nombre": "Facilidad para la magia",
@@ -473,7 +473,7 @@
         "Nombre": "Maestría en conjuros",
         "PreReq": "Mago de 1º nivel",
         "Descripcion": "Puedes preparar algunos conjuros sin un libro de conjuros",
-        "Tipo": "u:e?",
+        "Tipo": "u:c",
         "Req_Cls": "Mag 1" 
     },
     {

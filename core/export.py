@@ -1,11 +1,14 @@
 # coding=UTF-8
 '''Modulo de Exportación'''
-import prsnj as p
-import setup as s
-from func import HabMod
+import data.setup as s
+from gen.habs import HabMod
+from gen.dotes import ver_dotes
+from core.prsnj import Pj as p
+from core.config import guardar_json
 from time import sleep
+import os
 
-def Aplicar_mods (lista_dts, lista_habs, raciales, dotes, rangos):
+def aplicar_mods (lista_dts, lista_habs, raciales, dotes, rangos):
     # Raciales
     for r in raciales:
         p.rcl[r[0]]+=r[1]
@@ -31,7 +34,7 @@ def Aplicar_mods (lista_dts, lista_habs, raciales, dotes, rangos):
                 for i in lista_habs[r]['Sinergias']:
                     p.sng[i]+=2
 
-def OrdHabPrint (lista_habs,rangos,sinergia,dotes,racial,objetos):
+def orden_habs_imprint (lista_habs,rangos,sinergia,dotes,racial,objetos):
     '''Ordena las habilidades que se van a imprimir.'''
     
     Orden = [rangos,sinergia,dotes,racial]
@@ -40,7 +43,7 @@ def OrdHabPrint (lista_habs,rangos,sinergia,dotes,racial,objetos):
     
     for lista in Orden:
         for index in range(len(lista)):
-            if lista[index]>0:
+            if lista[index]!= 0:
                 if index not in indexes:
                     indexes.append(index)
     
@@ -90,40 +93,21 @@ def imprimir_DG(clases_pj,CLASES,CON_mod,PG):
     prim += ' ('+str(PG)+' pg)'
     return prim
 
-def imprimir_clases (cla_abr,CLASES):
+def imprimir_clases (cla,CLASES):
     texto = ''
-    clases = [CLASES[i]['Abr'] for i in range(len(CLASES))]
+    clases = sorted([clase for clase in CLASES.keys()])
     for i in clases:
-        if i in cla_abr:
-            texto += i+' '+str(cla_abr.count(i))+'º '
+        if i in cla:
+            texto += i+' '+str(cla.count(i))+'º '
     return texto
 
-def imprimir_dotes (dotes_pj,DOTES,ARMAS,HABS,ESCUELAS):
-    _dotes_ = [DOTES[i]['Nombre'] for i in range(len(DOTES))]
-    _armas_ = [ARMAS[i]['Nombre'] for i in range(len(ARMAS))]
-    _habs_ = [HABS[i]['Nombre'] for i in range(len(HABS))]
-    imprimir = []
-    for i in dotes_pj:
-        if i.isnumeric():
-            imprimir.append(_dotes_[int(i)])
-        elif ':' in i:
-            dt = int(i.split(':')[0])
-            sub = int(i.split(':')[1])
-            if mec[dt].split(':')[1] in ('m','w','w?'):
-                imprimir.append(_dotes_[dt]+' ('+_armas_[sub]+')')
-            elif mec[dt].split(':')[1] == 'h':
-                imprimir.append(_dotes_[dt]+' ('+_habs_[sub]+')')
-            elif mec[dt].split(':')[1] in ('e','e?'):
-                imprimir.append(_dotes_[dt]+' ('+ESCUELAS[sub]+')')
-    return ', '.join(imprimir)+'.'
-
-def Guardar():
-    if input('\nDeseas Guardar este personaje? ').lower().startswith('s'):
+def exportar_pj():
+    if input('\nDesea Exportar este personaje? ').lower().startswith('s'):
         nombre = input('\nNombre: ').capitalize()
         Pj = open('Personajes/'+nombre+'.txt','w')
         Pj.write('Nombre: '+nombre+'\n')
-        Pj.write('Clase y nivel: '+imprimir_clases(p.clases,s.CLASES)+' AL '+s.alinieamientos[p.alini]+'\n')
-        Pj.write('Tipo y Tamaño: Humanoide '+p.tam_nom+' ('+p.subtipo+')')
+        Pj.write('Clase y nivel: '+imprimir_clases(p.cla,s.CLASES)+' AL '+s.alinieamientos[p.alini]+'\n')
+        Pj.write('Tipo y Tamaño: Humanoide '+p.tam['Nombre']+' ('+p.subtipo+')\n')
         Pj.write('DG: '+imprimir_DG(p.cla,s.CLASES,p.CARS_mods[2],p.PG)+'\n')
         Pj.write('Iniciativa: +'+str(p.iniciativa)+'\nVelocidad: '+p.velocidad+'\n\n')
         Pj.write("Ataque base: +"+str(p.stats[0])+"\nPresa: +"+str(p.stats[0]+p.CARS_mods[0])+
@@ -133,13 +117,19 @@ def Guardar():
         Pj.write('Características: Fuerza '+str(p.CARS[0])+', Destreza '+str(p.CARS[1])+
                  ', Constitución '+str(p.CARS[2])+', Inteligencia '+str(p.CARS[3])+
                  ', Sabuduría ' + str(p.CARS[4])+', Carisma '+str(p.CARS[5])+
-                 '.\nHabilidades y Dotes: '+OrdHabPrint(s.HABS,p.rng,p.sng,p.dts,p.rcl,p.obj)+
-                 ' '+imprimir_dotes(p.dotes,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS))
+                 '.\nHabilidades y Dotes: '+orden_habs_imprint(s.HABS,p.rng,p.sng,p.dts,p.rcl,p.obj)+
+                 ' '+', '.join(ver_dotes(p.dotes,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS))+'.')
         sleep(3)
         print('\nPersonaje Guardado')
         Pj.close()
-    print ('Gracias')
     sleep (2)
 
-def autoguardar ():
-    pass
+def autoguardar (datos):
+    carpeta = 'Guardar/reciente/'
+    ID = 0
+    while True:
+        if not os.path.exists(carpeta+str(ID)+'.json'):
+            guardar_json(carpeta+str(ID)+'.json',datos)
+            break
+        else:
+            ID += 1

@@ -1,0 +1,554 @@
+[
+    {
+        "Nombre": "Aguante", 
+        "Clase": "Exp",
+        "ID_dt": 4,
+        "Tipo": "a"
+    }, 
+    {
+        "Nombre": "Alma diamantina", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Analfabetismo", 
+        "Clase": "Brb", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Aptitud especial",
+        "Intro": "Debes elegir una aptitud especial, de entre las siguientes", 
+        "Clase": "Pcr", 
+        "Tipo": "x"
+    }, 
+    {
+        "Nombre": "Ataque furtivo", 
+        "Clase": "Pcr", 
+        "Tipo": "v", 
+        "Formato": "{0} +{1!s}d6"
+    }, 
+    {
+        "Nombre": "Aura de bien", 
+        "Clase": "Pld", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Aura de valor", 
+        "Clase": "Pld", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Camuflaje", 
+        "Clase": "Exp", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Canción de libertad", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Castigar al mal", 
+        "Clase": "Pld", 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/día"
+    }, 
+    {
+        "Nombre": "Compañero animal",
+        "Intro": "Puedes elegir un compañero animal de la siguiente lista",
+        "Clase": ["Drd", "Exp"], 
+        "Tipo": "u", 
+        "Formato": "{0} ({2})",
+        "Sub_Sel": "Compañero animal",
+        "Sublista": ["<Ninguno>", "Águila", "Búho", "Caballo ligero", "Caballo pesado", "Camello", "Halcón", "Lobo", "Perro", "Perro de monta", "Poni", "Rata terrible", "Serpiente víbora Pequeña", "Serpiente víbora Mediana", "Tejón"]
+    }, 
+    {
+        "Nombre": "Compañero animal",
+        "Intro": "Puedes elegir un compañero animal de la siguiente lista",
+        "Clase": ["Drd", "Exp"], 
+        "Tipo": "r:10", 
+        "Formato": "{0} ({2})",
+        "Sub_Sel": "Compañero animal",
+        "Sublista": ["<Ninguno>", "Bisonte", "Comadreja terrible", "Glotón", "Leopardo", "Guepardo", "Jabalí", "Lagarto gigante", "Murciélago terrible", "Oso negro", "Serpiente constríctor", "Serpiente víbora Grande", "Simio", "Tejón terrible"]
+    }, 
+    {
+        "Nombre": "Compañero animal",
+        "Intro": "Puedes elegir un compañero animal de la siguiente lista",
+        "Clase": ["Drd", "Exp"],
+        "Tipo": "r:11", 
+        "Formato": "{0} ({2})",
+        "Sub_Sel": "Compañero animal",
+        "Sublista": ["<Ninguno>", "Cocodrilo gigante", "Deinónico", "Glotón terrible", "Jabalí terrible", "León", "Lobo terrible", "Oso pardo", "Rinoceronte", "Serpiente víbora Enorme", "Simio terrible", "Tigre"]
+    }, 
+    {
+        "Nombre": "Compañero animal",
+        "Intro": "Puedes elegir un compañero animal de la siguiente lista",
+        "Clase": ["Drd", "Exp"],
+        "Tipo": "r:12", 
+        "Formato": "{0} ({2})",
+        "Sub_Sel": "Compañero animal",
+        "Sublista": ["<Ninguno>", "León terrible", "Megarraptor", "Oso polar", "Serpiente constríctor gigante"]
+    }, 
+    {
+        "Nombre": "Compañero animal",
+        "Intro": "Puedes elegir un compañero animal de la siguiente lista",
+        "Clase": ["Drd", "Exp"],
+        "Tipo": "r:13", 
+        "Formato": "{0} ({2})",
+        "Sub_Sel": "Compañero animal",
+        "Sublista": ["<Ninguno>", "Elefante", "Oso terrible"]
+    }, 
+    {
+        "Nombre": "Compañero animal",
+        "Intro": "Puedes elegir un compañero animal de la siguiente lista",
+        "Clase": ["Drd", "Exp"], 
+        "Tipo": "r:14", 
+        "Formato": "{0} ({2})",
+        "Sub_Sel": "Compañero animal",
+        "Sublista": ["<Ninguno>", "Tigre terrible", "Tiranosaurio", "Tricerátopo"]
+    }, 
+    {
+        "Nombre": "Conocimiento de bardo", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Contraoda", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Convocar a un familiar",
+        "Intro": "Puedes elegir un familiar de la siguiente lista",
+        "Clase": ["Hcr", "Mag"], 
+        "Tipo": "u", 
+        "Formato": "Familiar {2}",
+        "Sub_Sel": "Familiar",
+        "Sublista": ["Búho", "Comadreja", "Cuervo", "Gato", "Halcón", "Lagarto", "Murciélago", "Rata", "Sapo", "Serpiente"]
+    }, 
+    {
+        "Nombre": "Cuerpo diamantino", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Cuerpo eterno", 
+        "Clase": ["Drd, Mnj"], 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Cuerpo vacío", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Detectar el mal", 
+        "Clase": "Pld", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Dote General", 
+        "Clase": "3", 
+        "Tipo": "d"
+    }, 
+    {
+        "Nombre": "Dote:Gue", 
+        "Clase": "Gue", 
+        "Tipo": "d"
+    }, 
+    {
+        "Nombre": "Dote:Mag", 
+        "Clase": "Mag", 
+        "Tipo": "d"
+    }, 
+    {
+        "Nombre": "Dote:Mnj 1",
+        "Intro": "Debes elegir una de estas dotes, aunque no cumplas sus prerrequisitos",
+        "Clase": "Mnj", 
+        "Tipo": "a", 
+        "Formato": "{2}", 
+        "Sublista": ["Presa mejorada", "Puñetazo aturdidor"],
+        "Sub_Sel": "Dote"
+    }, 
+    {
+        "Nombre": "Dote:Mnj 2",
+        "Intro": "Debes elegir una de estas dotes, aunque no cumplas sus prerrequisitos",
+        "Clase": "Mnj", 
+        "Tipo": "a", 
+        "Formato": "{2}", 
+        "Sublista": ["Reflejos de combate", "Desviar flechas"],
+        "Sub_Sel": "Dote"
+    }, 
+    {
+        "Nombre": "Dote:Mnj 6",
+        "Intro": "Debes elegir una de estas dotes, aunque no cumplas sus prerrequisitos",
+        "Clase": "Mnj", 
+        "Tipo": "a", 
+        "Formato": "{2}", 
+        "Sublista": ["Derribo mejorado", "Desarme mejorado"],
+        "Sub_Sel": "Dote"
+    }, 
+    {
+        "Nombre": "Empatía salvaje", 
+        "Clase": ["Drd", "Exp"], 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Encontrar trampas", 
+        "Clase": "Pcr", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Enemigo predilecto",
+        "Intro": "Debes elegir un enemigo predilecto, si ya elegiste uno, puedes volver a seleccionarlo.",
+        "Clase": "Exp", 
+        "Tipo": "v", 
+        "Formato": "{1!s}º {0} ({2})",
+        "Sub_Sel": "Enemigo Predilecto",
+        "Sublista": ["Aberraciones", "Ajenos (agua)", "Ajenos (aire)", "Ajenos (buenos)", "Ajenos (caóticos)", "Ajenos (fuego)", "Ajenos (malignos)", "Ajenos (nativos)", "Ajenos (tierra)", "Animales", "Bestias mágicas", "Cienos", "Constructos", "Dragones", "Elementales", "Fatas", "Gigantes", "Humanoides (acuáticos)", "Humanoides (elfos)", "Humanoides (enanos)", "Humanoides (gnolls)", "Humanoides (gnomos)", "Humanoides (humanos)", "Humanoides (medianos)", "Humanoides (orcos)", "Humanoides (reptilianos)", "Humanoides (trasgoides)", "Humanoides monstruosos", "Muertos vivientes", "Plantas", "Sabandijas"]
+    }, 
+    {
+        "Nombre": "Esconderse a plena vista", 
+        "Clase": "Exp", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Esquiva asombrosa", 
+        "Clase": ["Brb", "Pcr"], 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Esquiva asombrosa mejorada", 
+        "Clase": ["Brb", "Pcr"], 
+        "Tipo": "r:33"
+    }, 
+    {
+        "Nombre": "Estilo de combate",
+        "Intro": "Debes elegir un estilo de combate. Esta elección no se puede cambiar.",
+        "Clase": "Exp", 
+        "Tipo": "u",
+        "Sub_Sel": "Estilo",
+        "Sublista": ["Tiro con arco", "Combate con dos armas"]
+    }, 
+    {
+        "Nombre": "Estilo de combate mejorado", 
+        "Clase": "Exp", 
+        "Tipo": "r:35"
+    }, 
+    {
+        "Nombre": "Evasión", 
+        "Clase": ["Exp", "Mnj", "Pcr"], 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Evasión mejorada", 
+        "Clase": ["Mnj", "3"], 
+        "Tipo": "r:37"
+    }, 
+    {
+        "Nombre": "Expulsar muertos vivientes", 
+        "Clase": ["Clr", "Pld"], 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Fascinar", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Forma salvaje", 
+        "Clase": "Drd", 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/día"
+    }, 
+    {
+        "Nombre": "Forma salvaje (elemental Enorme)", 
+        "Clase": "Drd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Forma salvaje (elemental)", 
+        "Clase": "Drd", 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/día"
+    }, 
+    {
+        "Nombre": "Forma salvaje (Enorme)", 
+        "Clase": "Drd", 
+        "Tipo": "r:45"
+    }, 
+    {
+        "Nombre": "Forma salvaje (Grande)", 
+        "Clase": "Drd", 
+        "Tipo": "r:46"
+    }, 
+    {
+        "Nombre": "Forma salvaje (Menuda)", 
+        "Clase": "Drd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Forma salvaje (planta)", 
+        "Clase": "Drd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Furia", 
+        "Clase": "Brb", 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/día"
+    }, 
+    {
+        "Nombre": "Furia incansable", 
+        "Clase": "Brb", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Furia mayor", 
+        "Clase": "Brb", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Furia poderosa", 
+        "Clase": "Brb", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Gracia divina", 
+        "Clase": "Pld", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Impacto ki (adamantino)", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Impacto ki (legal)", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Impacto ki (mágico)", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Impacto sin arma mejorado",
+        "ID_dt": 60,
+        "Clase": "Mnj", 
+        "Tipo": "a"
+    }, 
+    {
+        "Nombre": "Imposición de manos", 
+        "Clase": "Pld", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Infundir gran aptitud", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Infundir grandeza", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Infundir heroicidad", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Infundir valor", 
+        "Clase": "Brd", 
+        "Tipo": "v", 
+        "Formato": "{0} +{1!s}"
+    }, 
+    {
+        "Nombre": "Inmunidad al veneno", 
+        "Clase": "Drd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Inscribir rollo de pergamino",
+        "ID_dt": 99,
+        "Clase": "Mag", 
+        "Tipo": "a"
+    }, 
+    {
+        "Nombre": "Las mil caras", 
+        "Clase": "Drd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Lengua del sol y la luna", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Lisiar con un impacto", 
+        "Clase": "3", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Maestría con estilo de combate", 
+        "Clase": "Exp", 
+        "Tipo": "r:36"
+    }, 
+    {
+        "Nombre": "Maestria en habilidades", 
+        "Clase": "3", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Mente en calma", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Mente escurridiza", 
+        "Clase": "3", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Montura especial", 
+        "Clase": "Pld", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Movimiento rápido", 
+        "Clase": "Brb", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Música de bardo", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Oportunismo", 
+        "Clase": "3", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Palma temblorosa", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Paso abundante", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Pisada sin rastro", 
+        "Clase": "Drd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Plenitud corporal", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Pureza corporal", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Quitar enfermedad", 
+        "Clase": "Pld", 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/semana"
+    }, 
+    {
+        "Nombre": "Ráfaga de golpes", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Ráfaga mayor", 
+        "Clase": "Mnj", 
+        "Tipo": "r:81"
+    }, 
+    {
+        "Nombre": "Ralentizar caída", 
+        "Clase": "Mnj", 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}0'"
+    }, 
+    {
+        "Nombre": "Ralentizar caída cualquier distancia", 
+        "Clase": "Mnj", 
+        "Tipo": "r:83"
+    }, 
+    {
+        "Nombre": "Rastreador veloz", 
+        "Clase": "Exp", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Rastrear",
+        "ID_dt": 78,
+        "Clase": "Exp", 
+        "Tipo": "a"
+    }, 
+    {
+        "Nombre": "Reducción de daño", 
+        "Clase": "Brb", 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/-"
+    }, 
+    {
+        "Nombre": "Resistir la atracción de la naturaleza", 
+        "Clase": "Drd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Rodar a la defensiva", 
+        "Clase": "3", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Salud divina", 
+        "Clase": "Pld", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Sentido de la naturaleza", 
+        "Clase": "Drd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Sentido de las trampas", 
+        "Clase": ["Brb", "Pcr"],
+        "Tipo": "v", 
+        "Formato": "{0} +{1!s}"
+    }, 
+    {
+        "Nombre": "Sugestión", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Sugestión en grupo", 
+        "Clase": "Brd", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Voluntad indomable", 
+        "Clase": "Brb", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Yo perfecto", 
+        "Clase": "Mnj", 
+        "Tipo": "u"
+    }, 
+    {
+        "Nombre": "Zancada forestal", 
+        "Clase": ["Drd", "Exp"], 
+        "Tipo": "u"
+    }
+]
