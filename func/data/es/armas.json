@@ -1,0 +1,604 @@
+[
+    {
+        "Nombre": "Alabarda", 
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":10
+    },
+    {
+        "Nombre": "Alfanjón",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":75
+    },
+    {
+        "Nombre": "Arco corto",
+        "Tipo": "ad",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":30
+    },
+    {
+        "Nombre": "Arco corto compuesto",
+        "Tipo": "ad",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":75
+    },
+    {
+        "Nombre": "Arco largo",
+        "Tipo": "ad",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":75
+    },
+    {
+        "Nombre": "Arco largo compuesto",
+        "Tipo": "ad",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":100
+    },
+    {
+        "Nombre": "Ballesta de mano",
+        "Tipo": "ad",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":100
+    },
+    {
+        "Nombre": "Ballesta de repetición ligera",
+        "Tipo": "ad",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":250
+    },
+    {
+        "Nombre": "Ballesta de repetición pesada",
+        "Tipo": "ad",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":400
+    },
+    {
+        "Nombre": "Ballesta ligera",
+        "Tipo": "ad",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":35
+    },
+    {
+        "Nombre": "Ballesta pesada",
+        "Tipo": "ad",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":50
+    },
+    {
+        "Nombre": "Bastón",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":0
+    },
+    {
+        "Nombre": "Bisarma",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":9
+    },
+    {
+        "Nombre": "Bolas",
+        "Tipo": "ad",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":5
+    },
+    {
+        "Nombre": "Cachiporra",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":1
+    },
+    {
+        "Nombre": "Cadena armada",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":25
+    },
+    {
+        "Nombre": "Cimitarra",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":15
+    },
+    {
+        "Nombre": "Clava",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":0
+    },
+    {
+        "Nombre": "Daga",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":2
+    },
+    {
+        "Nombre": "Dardo",
+        "Tipo": "ad",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":0.5
+    },
+    {
+        "Nombre": "Espada bastarda",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":35
+    },
+    {
+        "Nombre": "Espada corta",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":10
+    },
+    {
+        "Nombre": "Espada de dos hojas",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":100
+    },
+    {
+        "Nombre": "Espada larga",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":15
+    },
+    {
+        "Nombre": "Espadón",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":50
+    },
+    {
+        "Nombre": "Estoque",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":20
+    },
+    {
+        "Nombre": "Gran clava",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":5
+    },
+    {
+        "Nombre": "Gran hacha",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":20
+    },
+    {
+        "Nombre": "Guadaña",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":18
+    },
+    {
+        "Nombre": "Guantelete armado",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":5
+    },
+    {
+        "Nombre": "Guja",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":8
+    },
+    {
+        "Nombre": "Hacha arrojadiza",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":8
+    },
+    {
+        "Nombre": "Hacha de batalla",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":10
+    },
+    {
+        "Nombre": "Hacha de guerra enana",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":30
+    },
+    {
+        "Nombre": "Hacha de mano",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":6
+    },
+    {
+        "Nombre": "Hacha doble orca",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":60
+    },
+    {
+        "Nombre": "Honda",
+        "Tipo": "ad",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":0
+    },
+    {
+        "Nombre": "Hoz",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":6
+    },
+    {
+        "Nombre": "Impacto sin arma",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":""
+    },
+    {
+        "Nombre": "Jabalina",
+        "Tipo": "ad",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":1
+    },
+    {
+        "Nombre": "Kama",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":2
+    },
+    {
+        "Nombre": "Kukri",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":8
+    },
+    {
+        "Nombre": "Lanza",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":2
+    },
+    {
+        "Nombre": "Lanza corta",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":1
+    },
+    {
+        "Nombre": "Lanza de caballería",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":10
+    },
+    {
+        "Nombre": "Lanza larga",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":5
+    },
+    {
+        "Nombre": "Látigo",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":1
+    },
+    {
+        "Nombre": "Mangual",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":8
+    },
+    {
+        "Nombre": "Mangual doble",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":90
+    },
+    {
+        "Nombre": "Mangual pesado",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":15
+    },
+    {
+        "Nombre": "Martillo de guerra",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":12
+    },
+    {
+        "Nombre": "Martillo ganchudo gnomo",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":20
+    },
+    {
+        "Nombre": "Martillo ligero",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":1
+    },
+    {
+        "Nombre": "Maza de armas",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":8
+    },
+    {
+        "Nombre": "Maza ligera",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":5
+    },
+    {
+        "Nombre": "Maza pesada",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":12
+    },
+    {
+        "Nombre": "Nunchaku",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":2
+    },
+    {
+        "Nombre": "Pico ligero",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":4
+    },
+    {
+        "Nombre": "Pico pesado",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":8
+    },
+    {
+        "Nombre": "Puñal",
+        "Tipo": "cc",
+        "Competencia": 28,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":2
+    },
+    {
+        "Nombre": "Red",
+        "Tipo": "ad",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":20
+    },
+    {
+        "Nombre": "Ronca",
+        "Tipo": "ad",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":10
+    },
+    {
+        "Nombre": "Sai",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":1
+    },
+    {
+        "Nombre": "Shuriken",
+        "Tipo": "ad",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":0.2
+    },
+    {
+        "Nombre": "Siangham",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":3
+    },
+    {
+        "Nombre": "Tridente",
+        "Tipo": "cc",
+        "Competencia": 27,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":15
+    },
+    {
+        "Nombre": "Urgosh enano",
+        "Tipo": "cc",
+        "Competencia": 26,
+        "Daño_P":"",
+        "Daño_M":"",
+        "Critico":"",
+        "Precio":50
+    }
+]
