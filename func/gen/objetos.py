@@ -80,7 +80,12 @@ def calcular_precio (objeto,GRUPO,OBJMAG):
         if objeto['bon'] > 0:
             bon = objeto['bon']
             if len(objeto['apts']) > 0:
-                for i in objeto['apts']:
+                for i in objeto['apts']:                    
+                    if ':' in i:
+                        i = int(i.split(':')[0])
+                    else:
+                        i = int(i)
+                    
                     if not OBJMAG[i]['Precio'].isnumeric():
                         bon += int(OBJMAG[i]['Precio'].split('+')[1])
                         precio += precio_base(objeto['grupo'],bon)
@@ -115,7 +120,7 @@ def objeto_magico (obj,subgrupo,GRUPO,OBJMAG):
         os.system(['clear','cls'][os.name == 'nt'])
         imprimir_titulo()
         print (barra(p.CARS,s.alinis[p.alini],p.raza['Nombre']))
-        print (GRUPO[obj]['Nombre'])
+        print (GRUPO[str(obj)]['Nombre'])
         op = subselector('Tipo',op1)
         if op == 0:
             objeto['gc'] = True
@@ -142,6 +147,7 @@ def objeto_magico (obj,subgrupo,GRUPO,OBJMAG):
                 objeto['apts'] = []
                 op2,nom = [],[]
                 for i in range(len(OBJMAG)):
+                    i = str(i)
                     nom.append(OBJMAG[i]['Nombre'])
                     if subgrupo in OBJMAG[i]['Subgrupo']:
                         op2.append(nom[i])
@@ -149,8 +155,7 @@ def objeto_magico (obj,subgrupo,GRUPO,OBJMAG):
                 
                 while bon < 10:
                     print ('\nEl bonificador de mejora actual es de +'+str(bon))
-                    print ('\n'+GRUPO[obj]['Nombre']+' +'+str(objeto['bon'])+' '+
-                           ' '.join(sorted([OBJMAG[i]['Nombre'] for i in objeto['apts'] if len(objeto['apts']) > 0])))
+                    imprimir_nom_objmag (objeto, OBJMAG,GRUPO)
                     op = subselector('Aptitud',op2,True)
                     for i in range(len(nom)):
                         if op2[op] == nom[i]:
@@ -158,7 +163,13 @@ def objeto_magico (obj,subgrupo,GRUPO,OBJMAG):
                     if not OBJMAG[sel]['Precio'].isnumeric():
                         bon +=  int(OBJMAG[sel]['Precio'].split('+')[1])
                         del op2[op]
-                    objeto['apts'].append(sel)
+                    
+                    if 'Sublista' in OBJMAG[sel]:
+                        print (OBJMAG[sel]['Intro'])
+                        opsel = subselector(OBJMAG[sel]['Sub_sel'],OBJMAG[sel]['Sublista'],True)
+                        objeto['apts'].append(str(sel)+':'+str(opsel))
+                    else:
+                        objeto['apts'].append(str(sel))
                     
                     if not input('Desea continuar? ').lower().startswith('s'):
                         break
@@ -167,13 +178,32 @@ def objeto_magico (obj,subgrupo,GRUPO,OBJMAG):
             os.system(['clear','cls'][os.name == 'nt'])
         return objeto
 
-def comprar(dinero,objetos,grupo):
-    # crea una lista maestra con todos los índices de la lista OBJETOS
-    _nom_ = [objetos[i]['Nombre'] for i in range(len(objetos))]
+def imprimir_nom_objmag (obj, OBJMAG,GRUPO):
+    nom = GRUPO[obj['index']]['Nombre']
+    if obj['bon'] > 0: bon = ' +'+str(obj['bon'])
+    elif obj['gc'] == True: bon = ' GC '
+    else: bon = ''
     
-    # crea dos nuevas listas, filtrando los objetos que no tienen precio
-    nom = [objetos[i]['Nombre'] for i in range(len(objetos)) if 'Precio' in objetos[i]]
-    pre = [objetos[i]['Precio'] for i in range(len(objetos)) if 'Precio' in objetos[i]]
+    if len(obj['apts']) > 0:
+        apts = obj['apts'] *1
+        for i in range(len(apts)):
+            ap = int(apts[i].split(':')[0])
+            if ':' in apts[i]:
+                sb = int(apts[i].split(':')[1])
+                apts[i] = OBJMAG[ap]['Nombre']+' de '+OBJMAG[ap]['Sublista'][sb]
+            else:
+                apts[i] = OBJMAG[ap]['Nombre']
+        apts.sort()
+    else:
+        apts = ['']
+    
+    return nom+bon+' '+' '.join(apts).rstrip(' ')
+
+def comprar(dinero,objetos,grupo):
+    
+    # crea dos listas, filtrando los objetos que no tienen precio
+    nom = [objetos[str(i)]['Nombre'] for i in range(len(objetos)) if 'Precio' in objetos[str(i)]]
+    pre = [objetos[str(i)]['Precio'] for i in range(len(objetos)) if 'Precio' in objetos[str(i)]]
     
     compras = []
     while dinero > 0:
@@ -181,7 +211,7 @@ def comprar(dinero,objetos,grupo):
         imprimir_titulo()
         print (barra(p.CARS,s.alinis[p.alini],p.raza['Nombre']))
         print('\nTe quedan '+unificar_precio(convertir_precio(dinero))+' para gastar')
-        op = subselector('Objeto',nom,True)
+        op = str(subselector('Objeto',nom,True))
         if input('Deseas una versión mágica/de gran calidad de este objeto? ').lower().startswith('s'):
             if objetos[op]['Tipo'] in ('cc','ad'):
                 obj = objeto_magico (op,objetos[op]['Tipo'],s.ARMAS,s.OBJMAG)
@@ -191,18 +221,18 @@ def comprar(dinero,objetos,grupo):
                 precio = calcular_precio (obj,s.ARMDS,s.OBJMAG)
             costo = unificar_precio(convertir_precio(precio))
         else:
-            costo = unificar_precio(convertir_precio(pre[op]))
-            precio = pre[op]
+            costo = unificar_precio(convertir_precio(pre[int(op)]))
+            precio = pre[int(op)]
             obj = {'index':op,'subgrupo':objetos[op]['Tipo'],'gc':False,'bon':0,'apts':[]}
         
-        print('Te quedan '+unificar_precio(convertir_precio(dinero))+' para gastar')
+        os.system(['clear','cls'][os.name == 'nt'])
+        imprimir_titulo()
+        print (barra(p.CARS,s.alinis[p.alini],p.raza['Nombre']))
+        print('\nTe quedan '+unificar_precio(convertir_precio(dinero))+' para gastar',
+              '\n'+imprimir_nom_objmag (obj,s.OBJMAG,objetos),
+              '\nEste objeto cuesta '+costo+'.',sep = '\n\n')
         
-        print ('\n'+objetos[op]['Nombre'], end = '')
-        if obj['bon'] > 0: print(' +'+str(obj['bon'])+' ',end = ' ')
-        elif obj['gc'] == True: print(' GC',end ='')
-        print(' '.join(sorted([s.OBJMAG[i]['Nombre'] for i in obj['apts'] if len(obj['apts']) > 0])))
         
-        print ('\nEste objeto cuesta '+costo+'.')
         if precio > dinero:
             print('\nNecesitas más riqueza para poder pagarlo.')
         else:
@@ -213,15 +243,15 @@ def comprar(dinero,objetos,grupo):
         if not input('\n¿Deseas continuar comprando? ').lower().startswith('s'):
             return compras
 
-def elegir_equipo (clase,compras):
-    
+def comprar_equipo (clase):
+    compras = []
     opciones = ['Comprar armas y munición',
                 'Comprar armaduras y escudos',
                 'Comprar equipo de aventura',
                 'Ver las propiedades de un objeto, arma o armadura',
                 'Ver los objetos poseídos',
                 'Devolver objetos comprados']
-    # 'compras' es un diccionario que incluye separadamente los índices de armas, armaduras y objetos
+    
     dinero = riqueza(clase,s.CLASES,len(p.cla))
     while True:
         os.system(['clear','cls'][os.name == 'nt'])
@@ -231,14 +261,14 @@ def elegir_equipo (clase,compras):
         op = subselector('Opción',opciones)
         if op == 0: # Comprar armas y munición
             nuevas = comprar(dinero,s.ARMAS,'armas')
-            compras['Armas'] += nuevas
+            compras += nuevas
             subtotal = 0
             for i in nuevas:
                 dinero -= calcular_precio(i,s.ARMAS,s.OBJMAG)
             if 'Nada más' not in opciones: opciones.append('Nada más')
         elif op == 1: # Comprar armaduras y escudos
             nuevas = comprar(dinero,s.ARMDS,'armds')
-            compras['Armds'] += nuevas
+            compras += nuevas
             subtotal = 0
             for i in nuevas:
                 dinero -= calcular_precio(i,s.ARMDS,s.OBJMAG)
@@ -255,3 +285,71 @@ def elegir_equipo (clase,compras):
             print ('Opción aún no disponible')
         elif op == 6: # Nada más
             return compras,dinero
+
+def equiparse (inventario,equipo):
+    nombres = []
+    equip = equipo.copy() # copia de trabajo
+    for item in inventario:
+        if item['subgrupo'] in ('armd','esc'):
+            nombres.append(imprimir_nom_objmag(item,s.OBJMAG,s.ARMDS).rstrip(' '))
+        else:
+            nombres.append(imprimir_nom_objmag(item,s.OBJMAG,s.ARMAS).rstrip(' '))
+    nombres.append('\nSalir')
+    
+    while True:
+        ver_equipado (equip)
+        sel = subselector('Item',nombres)
+        if nombres[sel].lstrip('\n') == 'Salir':
+            break
+        else:
+            item = inventario[sel]
+            if item['subgrupo'] in ('cc','ad'):
+                item = equipar_obj(item,s.ARMAS,s.OBJMAG)
+            elif item['subgrupo'] in ('esc','armd'):
+                item = equipar_obj(item,s.ARMDS,s.OBJMAG)
+            else:
+                print('Este objeto no es equipable')
+            
+            if equip[item['espacio']] == '':
+                equip[item['espacio']] = item
+                del nombres[sel],inventario[sel]
+            else:
+                print('Primero libere el espacio para equipar ese objeto')
+        
+    return equip
+
+def equipar_obj(obj,GRUPO,OBJMAG):
+    if GRUPO[obj['index']]['Tipo'] == 'esc':
+        obj['espacio'] = 'mm'
+    elif GRUPO[obj['index']]['Tipo'] == 'armd':
+        obj['espacio'] = 'armd'
+    elif GRUPO[obj['index']]['Subtipo'] == 'dm':
+        obj['espacio'] = 'dm'
+    else:
+        ops = [('Mano buena','mb'),('Mano mala','mm'),('Dos manos','dm')]
+        op = subselector('Opción',[ops[i][0] for i in range(len(ops))])
+        obj['espacio'] = ops[op][1]
+    return obj
+
+def ver_equipado (equipo):
+    equipado = {'mb':'<vacía>','mm':'<vacía>','dm':'<vacía>','armd':'<ninguna>'}
+    if equipo['dm'] == '':
+        if equipo['mb'] != '':
+            equipado ['mb'] = imprimir_nom_objmag(equipo['mb'],s.OBJMAG,s.ARMAS)
+        if equipo['mm'] != '':
+            if equipo['mm']['subgrupo'] == 'esc':
+                equipado['mm'] = imprimir_nom_objmag(equipo['mm'],s.OBJMAG,s.ARMDS)
+            else:
+                equipado['mm'] = imprimir_nom_objmag(equipo['mm'],s.OBJMAG,s.ARMAS)
+    else:
+        equipado['dm'] = imprimir_nom_objmag(equipo['dm'],s.OBJMAG,s.ARMAS)
+    if equipo['armd'] != '':
+        equipado['armd'] = imprimir_nom_objmag(equipo['armd'],s.OBJMAG,s.ARMDS)
+    
+    if equipado['dm'] != '<vacía>':
+        print ('Ambas manos: '+equipado['dm'])
+    else:
+        print ('Mano buena: '+equipado['mb'])
+        print ('Mano mala: '+equipado['mm'])
+    print('Armadura: '+equipado['armd'])
+

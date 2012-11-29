@@ -1,42 +1,79 @@
-# coding=UTF-8
 import os
-from random import randint
-from time import sleep
-from func.gen.viz import PrepPrint
+from random import randint,shuffle
+from func.gen.viz import subselector
 from func.core.lang import t
 from func.core.intro import imprimir_titulo
 
-def UnaCar ():
-    '''Un simple generador para una caracterítica.'''
+def UnaTir (dados,descarte=0):
+    '''Un simple generador para una tirada.'''
     
-    car = [randint(1,6),randint(1,6),randint(1,6),randint(1,6)]
+    car = []
+    for i in range(dados):
+        car.append(randint(1,6))
+
     car.sort(reverse=True)
-    del car[-1]
-    Car = sum(car)
-    return Car
-
-def generar_tiradas():
-    ''''Genera las 7 tiradas y descarta la más baja.'''
     
-    A,B,C = UnaCar(),UnaCar(),UnaCar()
-    D,E,F = UnaCar(),UnaCar(),UnaCar()
-    G = UnaCar()
-    TirList = [A,B,C,D,E,F,G]
-    TirList.sort(reverse=True)
-    del TirList[-1]
-    return TirList
+    for i in range(descarte):
+        del car[-1]
 
-def elegir_tiradas (tirs):
-    print(t('Sus tiradas son')+': '+PrepPrint(tirs))
-    sleep (2)
-    if input (t('¿Desea tirar de nuevo? ')).lower().startswith('s'):
-        os.system(['clear','cls'][os.name == 'nt'])
-        imprimir_titulo()
-        return False
-    else:
-        return True
+    shuffle(car)
+            
+    return car
 
-def repartir_puntuaciones(lista,Car):
+def retirar (tir):
+    tir[-1] = randint(1,6)
+    tir.sort(reverse=True)
+    return tir
+
+def generar_tiradas(metodo):
+    ''''Genera las 6 tiradas segun el método elegido'''
+    Tirs = []
+    total = 0
+    if metodo in (0,1):
+        while total <= 0:
+            for i in range(6):
+                Tirs.append(sum(UnaTir(3)))
+                total += CarMod(Tirs[i])
+            if total >0:
+                break
+            else:
+                total = 0
+                Tirs = []
+                
+            
+    elif metodo in (2,3):
+        for i in range(6):
+            Tirs.append(sum(UnaTir(4,1)))
+
+    elif metodo == 4:
+        tirs = []
+        tirsp = []
+        for i in range(6):
+            t = UnaTir(4)
+            tirs.append(t)
+            tirsp.append(','.join([str(i) for i in t]))
+            
+        lineas = []
+        for i in range(len(tirs)):
+            lineas.append('el '+str(tirs[i][-1])+' de la '+str(i+1)+'º tirada ('+tirsp[i]+': '+str(sum(tirs[i][0:-1]))+')')
+
+        print ('¿que valor desea retirar?')
+        op = subselector('Opción',lineas,True)
+        tirs[op] = retirar(tirs[op])
+
+        for t in range(len(tirs)):
+            del tirs[t][-1]
+            Tirs.append(sum(tirs[t]))
+
+    elif metodo == 5:
+        for i in range(6):
+            Tirs.append(sum(UnaTir(5,2)))
+
+    Tirs.sort(reverse=True)
+    print ('Sus tiradas son: '+', '.join(str(i) for i in Tirs)+'.')
+    return Tirs
+
+def repartir_a_voluntad(lista,Car):
     '''Ordena la distribución de valores de característica.'''
     
     CarVal = 0
@@ -50,6 +87,34 @@ def repartir_puntuaciones(lista,Car):
             CarVal = int(entrada)
             del lista[lista.index(int(entrada))]
     return CarVal
+
+def repartir_puntuaciones(metodo,Cars,tirs):
+    CARS = []
+    if metodo in (1,2,5): # repartir a voluntad
+        print ('\nReparte tus puntuaciones de característica')
+        for Car in Cars:
+            CARS.append(repartir_a_voluntad(tirs,Car))
+    elif metodo in (0,3,4): # salen como salen
+        for i in tirs:
+            CARS.append(i)
+        print('Sus características quedan así:\n'+'\n'.join([Cars[i]+': '+str(CARS[i]) for i in range(len(Cars))]))
+        if metodo == 3: # personajes orgánicos; vuelve a tirar una caracteristica, intercambia 2
+            if input('\n¿Desea volver a tirar por una característica? ').lower().startswith('s'):
+                CARS[Cars.index(input('Elije qué caraceristica deseas volver a tirar\nCaracterísitica: '))] = sum(UnaTir(4,1))
+            print('\nPuedes intercambiar las puntuaciones de dos características.')
+            # todo esta seccion es bastante burda, y debe tener muchos bugs...
+            if input('¿Quieres hacerlo? ').lower().startswith('s'):
+                print ('\nElije cuales')
+                prim = input('Primera: ')
+                sec = input ('Segunda: ')
+                
+                a = CARS[Cars.index(prim)]
+                b = CARS[Cars.index(sec)]
+
+                CARS[Cars.index(prim)] = b
+                CARS[Cars.index(sec)] = a
+            
+    return CARS
 
 def CarMod(car):
     '''Calcula el modificador de característica.'''

@@ -1,229 +1,226 @@
-[
-    {
-        "Nombre": "Abrir cerraduras",
-        "Modificador": 1,
-        "Solo_entrenada": true
+{
+    "0":{
+        "Nombre":"Open Lock",
+        "Modificador":1,
+        "Solo_entrenada":true
     },
-    {
-        "Nombre": "Artesanía",
-        "Modificador": 3,
-        "Sinergias": [39]
+    "1":{
+        "Nombre":"Craft",
+        "Modificador":3,
+        "Sinergias":[39]
     },
-    {
-        "Nombre": "Averiguar intenciones",
-        "Modificador": 4,
-        "Sinergias": [8]
+    "2":{
+        "Nombre":"Sense Motive",
+        "Modificador":4,
+        "Sinergias":[8]
     },
-    {
-        "Nombre": "Avistar",
-        "Modificador": 4
+    "3":{
+        "Nombre":"Spot",
+        "Modificador":4
     },
-    {
-        "Nombre": "Buscar",
-        "Modificador": 3,
-        "Sinergias": [38]
+    "4":{
+        "Nombre":"Search",
+        "Modificador":3,
+        "Sinergias":[38]
     },
-    {
-        "Nombre": "Concentración",
-        "Modificador": 2
+    "5":{
+        "Nombre":"Concentration",
+        "Modificador":2
     },
-    {
-        "Nombre": "Conocimiento de conjuros",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [42]
+    "6":{
+        "Nombre":"Spellcraft",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[42]
     },
-    {
-        "Nombre": "Descifrar escritura",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [42]
+    "7":{
+        "Nombre":"Decipher Script",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[42]
     },
-    {
-        "Nombre": "Diplomacia",
-        "Modificador": 5
+    "8":{
+        "Nombre":"Diplomacy",
+        "Modificador":5
     },
-    {
-        "Nombre": "Disfrazarse",
-        "Modificador": 5
+    "9":{
+        "Nombre":"Disguise",
+        "Modificador":5
     },
-    {
-        "Nombre": "Engañar",
-        "Modificador": 5,
-        "Sinergias": [8,9,17,19]
+    "10":{
+        "Nombre":"Bluff",
+        "Modificador":5,
+        "Sinergias":[8,9,17,19]
     },
-    {
-        "Nombre": "Equilibrio",
-        "Modificador": 1
+    "11":{
+        "Nombre":"Balance",
+        "Modificador":1
     },
-    {
-        "Nombre": "Escapismo",
-        "Modificador": 1,
-        "Sinergias": [43]
+    "12":{
+        "Nombre":"Escape Artist",
+        "Modificador":1,
+        "Sinergias":[43]
     },
-    {
-        "Nombre": "Esconderse",
-        "Modificador": 1
+    "13":{
+        "Nombre":"Hide",
+        "Modificador":1
     },
-    {
-        "Nombre": "Escuchar",
-        "Modificador": 4
+    "14":{
+        "Nombre":"Listen",
+        "Modificador":4
     },
-    {
-        "Nombre": "Falsificar",
-        "Modificador": 3
+    "15":{
+        "Nombre":"Forgery",
+        "Modificador":3
     },
-    {
-        "Nombre": "Hablar un idioma",
-        "Solo_entrenada": true
+    "16":{
+        "Nombre":"Speak Language",
+        "Solo_entrenada":true
     },
-    {
-        "Nombre": "Interpretar",
-        "Modificador": 5
+    "17":{
+        "Nombre":"Perform",
+        "Modificador":5
     },
-    {
-        "Nombre": "Intimidar",
-        "Modificador": 3
+    "18":{
+        "Nombre":"Intimidate",
+        "Modificador":3
     },
-    {
-        "Nombre": "Inutilizar mecanismo",
-        "Modificador": 3,
-        "Solo_entrenada": true
+    "19":{
+        "Nombre":"Disable Device",
+        "Modificador":3,
+        "Solo_entrenada":true
     },
-    {
-        "Nombre": "Juego de manos",
-        "Modificador": 1,
-        "Solo_entrenada": true
+    "20":{
+        "Nombre":"Sleight Of Hand",
+        "Modificador":1,
+        "Solo_entrenada":true
     },
-    {
-        "Nombre": "Montar",
-        "Modificador": 1
+    "21":{
+        "Nombre":"Ride",
+        "Modificador":1
     },
-    {
-        "Nombre": "Moverse sigilosamente",
-        "Modificador": 1
+    "22":{
+        "Nombre":"Move Silently",
+        "Modificador":1
     },
-    {
-        "Nombre": "Nadar",
-        "Modificador": 0
+    "23":{
+        "Nombre":"Swim",
+        "Modificador":0
     },
-    {
-        "Nombre": "Oficio",
-        "Modificador": 4,
-        "Solo_entrenada": true,
-        "Sinergias": [11,36]
+    "24":{
+        "Nombre":"Profession",
+        "Modificador":4,
+        "Solo_entrenada":true,
+        "Sinergias":[11,36]
     },
-    {
-        "Nombre": "Piruetas",
-        "Modificador": 1,
-        "Solo_entrenada": true
+    "25":{
+        "Nombre":"Tumble",
+        "Modificador":1,
+        "Solo_entrenada":true
     },
-    {
-        "Nombre": "Reunir información",
-        "Modificador": 5,
-        "Sinergias": [6]
+    "26":{
+        "Nombre":"Gather Information",
+        "Modificador":5,
+        "Sinergias":[6]
     },
-    {
-        "Nombre": "Saber (arcano)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [4]
+    "27":{
+        "Nombre":"Knowledge (arcana)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[4]
     },
-    {
-        "Nombre": "Saber (arquitectura e ingeniería)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [38]
+    "28":{
+        "Nombre":"Knowledge (architecture and engineering)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[38]
     },
-    {
-        "Nombre": "Saber (dungeons)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [38]
+    "29":{
+        "Nombre":"Knowledge (dungeoneering)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[38]
     },
-    {
-        "Nombre": "Saber (geografía)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": ["*"]
+    "30":{
+        "Nombre":"Knowledge (geography)",
+        "Modificador":3,
+        "Solo_entrenada":true
     },
-    {
-        "Nombre": "Saber (historia)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [25]
+    "31":{
+        "Nombre":"Knowledge (history)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[25]
     },
-    {
-        "Nombre": "Saber (local)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [38]
+    "32":{
+        "Nombre":"Knowledge (local)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[38]
     },
-    {
-        "Nombre": "Saber (los planos)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [38]
+    "33":{
+        "Nombre":"Knowledge (the planes)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[38]
     },
-    {
-        "Nombre": "Saber (naturaleza)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [8]
+    "34":{
+        "Nombre":"Knowledge (nature)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[8]
     },
-    {
-        "Nombre": "Saber (nobleza y realeza)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": ["*"]
+    "35":{
+        "Nombre":"Knowledge (nobility and royalty)",
+        "Modificador":3,
+        "Solo_entrenada":true
     },
-    {
-        "Nombre": "Saber (religión)",
-        "Modificador": 3,
-        "Solo_entrenada": true
+    "36":{
+        "Nombre":"Knowledge (religion)",
+        "Modificador":3,
+        "Solo_entrenada":true
     },
-    {
-        "Nombre": "Saltar",
-        "Modificador": 1,
-        "Sinergias": [24]
+    "37":{
+        "Nombre":"Jump",
+        "Modificador":1,
+        "Sinergias":[24]
     },
-    {
-        "Nombre": "Sanar",
-        "Modificador": 4,
-        "Sinergias": [33]
+    "38":{
+        "Nombre":"Heal",
+        "Modificador":4,
+        "Sinergias":[33]
     },
-    {
-        "Nombre": "Supervivencia",
-        "Modificador": 4
+    "39":{
+        "Nombre":"Survival",
+        "Modificador":4
     },
-    {
-        "Nombre": "Tasación",
-        "Modificador": 3,
-        "Sinergias": [44,20]
+    "40":{
+        "Nombre":"Appraise",
+        "Modificador":3,
+        "Sinergias":[44,20]
     },
-    {
-        "Nombre": "Trato con animales",
-        "Modificador": 5,
-        "Solo_entrenada": true
+    "41":{
+        "Nombre":"Handle Animal",
+        "Modificador":5,
+        "Solo_entrenada":true
     },
-    {
-        "Nombre": "Trepar",
-        "Modificador": 0,
-        "Sinergias": [6]
+    "42":{
+        "Nombre":"Climb",
+        "Modificador":0,
+        "Sinergias":[6]
     },
-    {
-        "Nombre": "Usar objeto mágico",
-        "Modificador": 5,
-        "Solo_entrenada": true,
-        "Sinergias": [41,12]
+    "43":{
+        "Nombre":"Use Magic Device",
+        "Modificador":5,
+        "Solo_entrenada":true,
+        "Sinergias":[41,12]
     },
-    {
-        "Nombre": "Uso de cuerdas",
-        "Modificador": 1
+    "44":{
+        "Nombre":"Use Rope",
+        "Modificador":1
     },
-    {
-        "Nombre": "Empatía salvaje",
-        "Modificador": 5,
-        "Solo_entrenada": true
-    }
-]
+    "45":{
+        "Nombre":"Wild empathy",
+        "Modificador":5,
+        "Solo_entrenada":true}
+}

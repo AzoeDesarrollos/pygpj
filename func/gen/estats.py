@@ -2,28 +2,36 @@
 '''Estadísticas.py'''
 from random import randint
 
-def calcular_CA (tam,DES_mod,armds,ARMDS,natural=0):
+def calcular_CA (tam,DES_mod,equipo,ARMDS,natural=0):
     '''Calcula los tres valores de CA'''
-    if len(armds) == 0:
-        armd = {'Bon_CA':0}
-        esc = {'Bon_CA':0}
-    else:
-        for i in range(len(armds)):
-            if armds[i]['subgrupo'] == 'armd':
-                armd = ARMDS[armds[i]['index']]
-            if armds[i]['subgrupo'] == 'esc':
-                esc = ARMDS[armds[i]['index']]
-    
-    if 'Bon_max_des' in (armd,esc):
-        if DES_mod > armd['Bon_max_des']:
-            DES_mod = armd['Bon_max_des']
-        if 'Bon_max_des' in esc:
-            if DES_mod > esc['Bon_max_des']:
-                DES_mod = esc['Bon_max_des']
-    
     bon = 0
-    for i in range(len(armds)):
-        bon += armds[i]['bon']
+    if equipo['armd'] != '':
+        armd = equipo['armd']
+        
+        if 'Bon_max_des' in armd:
+            if DES_mod > ARMDS[armd['index']]['Bon_max_des']:
+                DES_mod = ARMDS[armd['index']]['Bon_max_des']
+        
+        armd['Bon_CA'] = ARMDS[armd['index']]['Bon_CA']
+    else:
+        armd = {'Bon_CA':0,'bon':0}
+        
+    if equipo['mm'] != '':
+        if equipo['mm']['subgrupo'] == 'esc':
+            esc = equipo['mm']
+        
+        if 'Bon_max_des' in esc:
+            if DES_mod > ARMDS[esc['index']]['Bon_max_des']:
+                DES_mod = ARMDS[esc['index']]['Bon_max_des']
+        
+        esc['Bon_CA'] = ARMDS[esc['index']]['Bon_CA']
+    else:
+        esc = {'Bon_CA':0,'bon':0}
+     
+    bon = 0
+    for i in (armd, esc):
+        if 'bon' in i:
+            bon += i['bon']
     
     normal = 10+tam['mod_gen']+DES_mod+natural+armd['Bon_CA']+esc['Bon_CA']+bon
     toque = 10+tam['mod_gen']+DES_mod
@@ -31,9 +39,15 @@ def calcular_CA (tam,DES_mod,armds,ARMDS,natural=0):
     
     return normal,toque,desprevenido
 
-def calcular_ATKs (ATKb,FUE_mod,DES_mod,tam,armas,dotes,ARMAS):
+def calcular_ATKs (ATKb,FUE_mod,DES_mod,tam,equipo,dotes,ARMAS):
     '''Cacula los mods de ataque para cada arma'''
     
+    armas = []
+    for mano in ('mb','mm'):
+        if equipo[mano] != '':
+            if equipo[mano]['subgrupo'] in ('cc','ad'):
+                armas.append(equipo[mano])
+            
     ataques = []
     if ATKb == 0:
         ataques.append(ATKb)
@@ -62,7 +76,7 @@ def calcular_ATKs (ATKb,FUE_mod,DES_mod,tam,armas,dotes,ARMAS):
                         bon += 2
                 
         ATKs[arm] = []
-        if ARMAS[arm]['Tipo'] == 'ad':
+        if arma['subgrupo'] == 'ad':
             for i in ATK_D:
                 ATKs[arm].append(i+bon)
         else:

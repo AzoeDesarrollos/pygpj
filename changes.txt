@@ -1,0 +1,18 @@
+ver 36
+- Aptitudes, Conjuros y Escuelas traducidas al inglés
+- Dotes parcialmente traducidas
+- Nuevas funciones para equipar los objetos comprados (armas, armaduras y escudos)
+- Primer doc detallando la estructura de dotes.json
+- Nuevo json (aun no integrado al código) Dominios.json
+- Emparejamiento del código
+- Este mismo Changelog
+
+known bugs
+- la eleccion de conjuros no reconoce los conjuros nuevos
+- ha de haber otros bugs, el QA debe revisar.
+
+TODO
+- desarmar el bucle principal en opciones para hacer el editor no lineal
+- docs para el resto de los json, y sobre el código en general
+- menú de selección para los distintos tipos de tiradas para la generación de características
+- seguramente otras cosas más, pero ahora no se me ocurren.

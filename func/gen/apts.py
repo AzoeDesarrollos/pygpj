@@ -4,51 +4,53 @@ from func.core.prsnj import Pj as p
 import func.gen.viz as v
 import func.data.setup as s
 import os
+from math import floor
 
-def elegir_AE (mecanicas,apts_cls):
-    print ('Esta aptitud especial te permite elegir una de las siguientes aptitudes.\nElije una.\n')
+def elegir_AE (APTS,apts_cls):
 
-    elegibles = []
+    elegibles = sorted([int(key) for key in APTS
+                        if ('3' in APTS[key]['Clase'])
+                        and (int(key) not in apts_cls)])
 
-    for i in range(len(mecanicas[1])):
-        if mecanicas[1][i] == '3':
-            if mecanicas[0][i] not in apts_cls:
-                elegibles.append(mecanicas[0][i])
-
-    for i in range(len(elegibles)):
-        if ':' in elegibles[i]:
-            tipo = elegibles[i].split(':')[1]
-            if tipo == 'Gen':
-                elegibles[i] = 'Dote general'
+    for i in elegibles:
+        tipo = APTS[str(i)]['Tipo']
+        if tipo == 'd':
+            elegibles[i] = 'Dote general'
+        else:
+            elegibles[i] = APTS[str(i)]['Nombre']
     
     seleccion = v.subselector('AE',elegibles)
+    sel = APTS[str(seleccion)]['Tipo']
         
-    if seleccion == 'Dote general':
+    if sel == 'd':
         return 'd'
     else:
         return seleccion
 
-def actualizar_aptitudes (clase,ap,APSmc,apts_cls,DOTES,sub = ''):
+def actualizar_aptitudes (ap,apts_cls,ATPS,DOTES,sub = '',mec =''):
     '''Actuliza la lista de aptitudes del personaje.'''
             
-    tipo = APSmc[ap]['Tipo'].split(':')[0]
-    if ':' in APSmc[ap]['Tipo']:
-        mec = APSmc[ap]['Tipo'].split(':')[1]
-    if 'Sublista' in APSmc[ap]:
-        sub = APSmc[ap]['Sublista']
-        prompt = APSmc[ap]['Sub_Sel']
+    tipo = ATPS[ap]['Tipo'].split(':')[0]
+    if ':' in ATPS[ap]['Tipo']:
+        mec = ATPS[ap]['Tipo'].split(':')[1]
+    if 'Sublista' in ATPS[ap]:
+        sub = ATPS[ap]['Sublista']
+        prompt = ATPS[ap]['Sub_Sel']
     
     if tipo == 'u':
         if sub != '':
-            print ('\n'+APSmc[ap]['Intro'])
+            print ('\n'+ATPS[ap]['Intro'])
             elec = v.subselector(prompt,sub,dos_col=True)
             p.apps.append(str(ap)+':'+str(elec))
         else:
             p.apps.append(str(ap))
+        if mec != '':
+            #actualizar_aptitudes (str(elec),apts_cls,ATPS,DOTES)
+            pass
 
     elif tipo == 'v':
         if sub != '':
-            print ('\n'+APSmc[ap]['Intro'])
+            print ('\n'+ATPS[ap]['Intro'])
             elec = v.subselector(prompt,sub,dos_col=True)
             p.apps.append(str(ap)+':'+str(elec))
         else:
@@ -56,7 +58,7 @@ def actualizar_aptitudes (clase,ap,APSmc,apts_cls,DOTES,sub = ''):
 
     elif tipo == 'r':
         if sub != '':
-            print ('\n'+APSmc[ap]['Intro'])
+            print ('\n'+ATPS[ap]['Intro'])
             elec = v.subselector(prompt,sub,dos_col=True)
             p.apps[p.apps.index(mec)] = str(ap)+':'+str(elec)
         elif p.apps.count(mec) > 1:
@@ -68,19 +70,19 @@ def actualizar_aptitudes (clase,ap,APSmc,apts_cls,DOTES,sub = ''):
         
     elif tipo == 'a':
         if sub != '':
-            print ('\n'+APSmc[ap]['Intro'])
+            print ('\n'+ATPS[ap]['Intro'])
             elec = v.subselector(prompt,sub)
             for i in range(len(DOTES)):
                 if DOTES[i]['Nombre'] == sub[elec]:
                     p.dotes.append(str(i))
         else:
-            p.dotes.append(str(APSmc[ap]['ID_dt']))
+            p.dotes.append(str(ATPS[ap]['ID_dt']))
 
     elif tipo == 'd':
         p.e_dts['dt_cls'] = True
 
     elif tipo == 'x':
-        e = elegir_AE (APSmc,apts_cls)
+        e = elegir_AE (ATPS,apts_cls)
         if e == 'd':
             p.dotes.append(elegir_dotes(setup.DOTES,p.dotes))
         else:
@@ -91,16 +93,16 @@ def sort_conj_clase (clase, nv_cnj, conjuros, CONJUROS, ESCUELAS, escuela='Ningu
     
     También puede, opcionalmente, discriminar por escuela.'''
     texto = []
-    for i in range(len(CONJUROS)):
-        if i not in conjuros:
-            if clase+' '+str(nv_cnj) in CONJUROS[i]['Nivel']:
+    for conj in CONJUROS:
+        if conj not in conjuros:
+            if clase+' '+str(nv_cnj) in CONJUROS[conj]['Nivel']:
                 if escuela == 'Ninguna':
-                    texto.append(CONJUROS[i]['Nombre'])
+                    texto.append(CONJUROS[conj]['Nombre'])
                 else:
-                    for j in range(len(ESCUELAS)):
-                        if escuela == ESCUELAS[j]['Nombre']:
-                            if i in ESCUELAS[j]['Conjuros']:
-                                texto.append(CONJUROS[i]['Nombre'])
+                    for esc in ESCUELAS:
+                        if escuela == ESCUELAS[esc]['Nombre']:
+                            if conj in ESCUELAS[esc]['Conjuros']:
+                                texto.append(CONJUROS[conj]['Nombre'])
     return texto
 
 def sort_conj_escuela (index_escuela, CONJUROS, ESCUELAS):

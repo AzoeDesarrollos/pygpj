@@ -1,0 +1,90 @@
+***Etrucutra básica de los archivos de datos JSON***
+
+Los archivos *.json que se usan en este programa están estructurados de la siguiente manera básica:
+
+{
+    "<index>": {
+        "Nombre": "<Nombre del dato>",
+        "<Dato1>": "<detalles>",
+        "<Dato2>": "<detalles>",
+        ...
+    },
+    ...
+}
+
+Cada vez que aparezca un numero contenido en un detalle, dicho numero representa el index de uno u otro archivo
+json de este programa.
+
+A continuación, algunas especificaciones sobre los distintos archivos
+
+** dotes.json **
+
+los detalles que pueden contener los distintos datos (en el caso de este achivo, dotes), son los siguientes:
+
+    "Descripcion": es la descripción corta de la dote. Formato: string. Este detalle se imprime en
+    pantalla.
+    
+    "Pre_Req": es la lista de prerrequisitos de la dote. Formato string.Este detalle se imprime en
+    pantalla.
+    
+    "Tipo": es una clasificacion que se da a los distintos tipos de dotes. este detalle no se
+    imprime.
+        Tipo "u": la dote solo se puede elegir una vez. 
+        subtipo "u:m": el usuario debe elegir un arma con la que el personaje no sea competente. 
+        subtipo "u:e": el usuario debe elegir una escuela de magia cualqueira.
+        suptipo "u:e?": el usuario debe elegir una escuela de magia que se encuentre dentro de la
+        lista  presentada.
+        suptipo "u:c": el usuario debe elegir cierto numero de conjuros
+        subiipo "u:w": el usuario debe elegir un arma con la que el personaje sea ya competente.
+        subtipo "u:w?": el usuario debe elegir un arma dentro de las presentadas
+        subtipo "u:h": el ususario debe elegir una habilidad.
+        Tipo "s": la dote se puede elegir mas de una vez. sus efectos se apilan.
+    
+    "Req_###": si la dote tiene prerrequistos, los diversos campos Req lo detallan. Este detalle
+    no se imprime.
+        Req_Cls: un string con una sigla y un numero. La sigla es la clase requerida, y el numero
+        es el nivel de ésta requerido.
+        
+        Req_NvPj: un integrer que representa el nivel de personaje requerido.
+        
+        Req_Dts: una lista de strings que presenta las diversas dotes que el personaje ya debe
+        poseer para adquirir esta dote. un valor que contenga ':' implica ademas una subseleccion
+        específica. En este contexto 'sub' es cualquier eleccion que cumpla el requisito, mientras que un valor
+        específico es ese valor y no otro.
+        
+        Req_Car: una lista de strings. cada string esta se muestra como dos valores separados por
+        ':'. El numero detras del signo es la característica (0: Fuerza; 1: Destreza; 2:
+        Constitución; 3: Inteligencia; 4: Sabiduría; 5: Carisma). El siguiente es la puntuacion que
+        dicha característica debe tener.
+        
+        Req_Comp: puede ser un string ("#") o una lista de integrers. Un # representa que se debe
+        la competencia con arma para la dote que se está eligiendo. una lista representa las
+        competencias que el personaje debe poseer para poder elegir la dote.
+        
+        Req_Hab: una lista de strings. cada string es un par <habilidad>:<rangos>. El personaje
+        debe poseer la cantidad de rangos requeridos en las habilidades especificadas para
+        adquirir la dote.
+        
+        Req_Apt: una lista de strings. Dos números separados entre si por 'o' implican que el
+        personaje debe poseer una aptitud O la otra. Un numero simple, implica que el personaje
+        debe poseer la aptitud en cuestion.
+        
+        Req_Stats: un string de dos numeros separados por ':'. El primer numero implica la
+        estadística de combate (0: Ataque base; 1: TS Fort; 2: TS Ref; 3: TS Vol ) y el siguiente
+        el valor que debe poseer.
+        
+        Req_NL: un integrer que representa el nivel de lanzador que el personaje debe poseer con
+        alguna de sus clases para poder elegir esta dote.
+    
+    "Intro": si la dote en cuestion es de tipo u:e, u:e?, u:m, u:m?, u:w, u:w?, u:h o u:c entonces una breve
+    introduccion a la subseleccion que debe realizarse se incluye en este detalle. Es un string.
+    
+    "Hab_dt": si la dote en cuestion es del tipo "+2 a esta y aquella habilidad", entonces los
+    numeros que se muestran en este detalle son los índices de las habilidades mencionadas (ver
+    habs.json)
+    
+    "Stat": si la dote en cuestión afecta las estadisticas de combate (Ataque base y TSs) encontes
+    en este detalle se muestra que estadística es afectada (0: Ataque base; 1: TS Fort; 2: TS
+    Ref; 3: TS Vol ) antes de los ':' y en cuanto se modifica luego de ese signo.
+
+    

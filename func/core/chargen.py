@@ -22,11 +22,8 @@ def go ():
         if P.nivel == 1:
             imprimir_titulo()
             ## Inicio ##
-            tirs = C.generar_tiradas()
-            op = C.elegir_tiradas(tirs)
-            while op == False:
-                tirs = C.generar_tiradas()
-                op = C.elegir_tiradas(tirs)
+            tirs = C.generar_tiradas(2)
+            # el método es 2 (estándar) porque todavia no está hecho el selector de métodos
             
             ## Seleccionar Raza ##
             P.raza = B.elegir_raza(S.RAZAS)
@@ -42,13 +39,12 @@ def go ():
                 P.e_dts['dt_rcl'] =  P.raza['Dt_rcl']
             
             ## Repartir puntuaciones de característica y aplicar mods raciales ##
-            print ('\n'+t('Reparte tus puntuaciones de característica'))
-            for Car in S.Cars:
-                P.CARS[S.Cars.index(Car)]=C.repartir_puntuaciones(tirs,Car)
+            P.CARS = C.repartir_puntuaciones(2,S.Cars,tirs)
         
             if 'Ajustes' in  P.raza:
                 for Car in P.raza['Ajustes']:
                     P.CARS[S.Cars.index(Car)]+=P.raza['Ajustes'][Car]
+                    car = P.CARS[S.Cars.index(Car)] # debug
             
             for i in range(len(P.CARS)):
                 P.CARS_mods.append(C.CarMod(P.CARS[i]))
@@ -87,7 +83,7 @@ def go ():
             for aptitud in S.CLASES[clase]['Apts'][str(P.cla.count(clase))]:
                 nuevas.append(str(aptitud))
                 for ap in nuevas:
-                    A.actualizar_aptitudes (clase,ap,S.APTS,S.CLASES[clase]['Apts'],S.DOTES)
+                    A.actualizar_aptitudes (ap,S.CLASES[clase]['Apts'],S.APTS,S.DOTES)
                 nuevas = []
         ## Aumento de Características en niveles multiplos de 4 ##
         if P.nivel % 4 == 0:
@@ -108,20 +104,20 @@ def go ():
         if P.nivel in (1,3,6,9,12,15,18):
             P.e_dts['dt_nv'] = True
         if any(P.e_dts.values()):
-            dotes = D.elegir_dotes(P.dotes,clase) # nuevo
-            for dote in dotes:
-                D.aplicar_dote(dote,S.DOTES,S.ARMAS,S.ARMDS)
+            D.elegir_dotes(P.dotes,clase)
         
         ## Elección de Equipo ##
-        compras = O.elegir_equipo(clase,P.equipo)
-        P.equipo = compras[0]
+        compras = O.comprar_equipo(clase)
         P.dinero = compras[1]
+        
+        P.actualizar_inventario (compras[0])
+        P.equipar_pj ()
         
         ## Cálculo de estadísticas de combate
         P.PG = T.calcular_PG(P.PG,P.CARS_mods[2],S.CLASES[clase]['DG'],P.nivel,P.dotes) # puntos de golpe
         P.ataques = T.calcular_ATKs (P.stats[0],P.CARS_mods[0],P.CARS_mods[1],
-                                     P.tam,P.equipo['Armas'],P.dotes,S.ARMAS) # modificadores de ataque
-        P.CA = T.calcular_CA (P.tam,P.CARS_mods[1],P.equipo['Armds'],S.ARMDS) # CA
+                                     P.tam,P.equipo,P.dotes,S.ARMAS) # modificadores de ataque
+        P.CA = T.calcular_CA (P.tam,P.CARS_mods[1],P.equipo,S.ARMDS) # CA
         P.iniciativa = T.calcular_inic (P.CARS_mods[1],P.dotes) # iniciativa
         
     

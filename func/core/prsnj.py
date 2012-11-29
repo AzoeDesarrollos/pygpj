@@ -1,4 +1,5 @@
 # coding=UTF-8
+from func.data.setup import data as d
 
 class Pj():
     '''Clase base para todos los Objetos-Personaje.'''
@@ -42,7 +43,6 @@ class Pj():
     dinero = 0
         
     def nuevo_pj():
-        from func.data.setup import data as d
         Pj.nombre = ''
         Pj.CARS = [0,0,0,0,0,0]
         Pj.CARS_mods = []
@@ -81,10 +81,10 @@ class Pj():
         Pj.esc = {}
         Pj.CA = 0
         Pj.dinero = 0
-        Pj.equipo = {'Armas':[],'Armds':[],'Otros':[]}
+        Pj.equipo = {'mb':'','mm':'','dm':'','armd':''}
+        Pj.inventario = {'Armas':[],'Armd':[],'Esc':[]}
         
     def cargar_pj (data):
-        from func.data.setup import data as d
         from func.gen.iniciales import procesar_clase, Competencias
         from func.gen.cars import CarMod
         from func.gen.dotes import aplicar_dote
@@ -119,8 +119,7 @@ class Pj():
             Pj.compW = Competencias (d.CLASES[clase]['Comp_Arma'],Pj.compW)
             Pj.compA = Competencias (d.CLASES[clase]['Comp_Armd'],Pj.compA)
         for dote in Pj.dotes:
-            if ':' in dote:
-                aplicar_dote (dote,d.DOTES,d.ARMAS,d.ARMDS)
+            Pj.aplicar_dote(dote,d.DOTES,d.ARMAS,d.ARMDS)
         Pj.idiomas = data['idiomas']
         Pj.ataques = calcular_ATKs (Pj.stats[0],Pj.CARS_mods[0],Pj.CARS_mods[1],
                                       Pj.tam,Pj.armas,Pj.dotes,d.ARMAS)
@@ -144,4 +143,50 @@ class Pj():
                    'dinero':Pj.dinero}
         
         return guardar
+    
+    def agregar_dote (dote,lista):
+        Pj.dotes.append(dote)
+        Pj.aplicar_dote (dote, d.DOTES,d.ARMAS,d.ARMDS)
+        Pj.e_dts[lista] = False
+    
+    def aplicar_dote (nueva_dote,DOTES,ARMAS,ARMDS):
+        if ':' in nueva_dote:
+            dt = nueva_dote.split(':')[0]
+            sb = int(nueva_dote.split(':')[1])
+            if dt in ('23','24'):
+                if sb not in Pj.compW:
+                    Pj.compW.append(sb)
+            elif dt == '25':
+                for i in range(len(ARMAS)):
+                    if ARMAS[i]['Competencia'] == dt:
+                        if i not in Pj.compW:
+                            Pj.compW.append(i)
+                Pj.compW.sort()
+            elif 'Critico' in DOTES[dt]:
+                pass
+            elif 'Hab_dt' in DOTES[dt]:
+                Pj.dts[sb] += 3
+        elif nueva_dote.isnumeric():
+            dt = nueva_dote
+            if 'Stat' in DOTES[dt]:
+                st = int(DOTES[dt]['Stat'].split(':')[0])
+                sb = int(DOTES[dt]['Stat'].split(':')[1])
+                Pj.stats [st] += sb
+            elif 'Hab_dt' in DOTES[dt]:
+                for i in DOTES[dt]['Hab_dt']:
+                    Pj.dts[i]+=2
+            elif dt in ('26','27','28'):
+                for i in range(len(ARMDS)):
+                    if ARMDS[i]['Competencia'] == dt:
+                        if i not in Pj.compA:
+                            Pj.compA.append(i)
+                Pj.compA.sort()
+    
+    def actualizar_inventario (compras):
+        Pj.inventario = compras
+        
+    def equipar_pj ():
+        from func.gen.objetos import equiparse
+        Pj.equipo = equiparse(Pj.inventario,Pj.equipo)
+    
     

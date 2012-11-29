@@ -54,7 +54,7 @@ def elegir_habs (PH_cls,rangos,HABS,clase,PH):
             for i in v.a_dos_columnas(Claseas(s.CLASES,clase,s.HABS)):
                 print (i)        
         elif op == 5: # Ver una lista de todas las habilidades
-            habs = [HABS[i]['Nombre'] for i in range(len(s.HABS))]
+            habs = [HABS[str(i)]['Nombre'] for i in range(len(s.HABS))]
             del habs[-1]
             for i in v.a_dos_columnas(habs):
                 print (i)
@@ -67,7 +67,7 @@ def elegir_habs (PH_cls,rangos,HABS,clase,PH):
 def maximizar_habs (PH_cls,INT_mod,hab_cla,HABS,rangos,nv_cls,subtipo):
     '''Maximiza o actualiza las habilidades maximizadas del nivel anterior.'''
     
-    nom_hab = [HABS[i]['Nombre'] for i in range(len(HABS))]
+    nom_hab = [HABS[str(i)]['Nombre'] for i in range(len(HABS))]
     puntos = PH_cls + INT_mod
     if subtipo == 'humano':
         puntos += 1
@@ -79,14 +79,14 @@ def maximizar_habs (PH_cls,INT_mod,hab_cla,HABS,rangos,nv_cls,subtipo):
     
     pool = 0
     for i in range(len(rangos)):
-        if not HABS[i]['Nombre'] in hab_cla:
+        if not HABS[str(i)]['Nombre'] in hab_cla:
             pool += rangos[i]*2
         else:
             pool += rangos[i]
     pool = pool/(rng_max-1)
     if pool == puntos:
         for i in range(len(rangos)):
-            if not HABS[i]['Nombre'] in hab_cla:
+            if not HABS[str(i)]['Nombre'] in hab_cla:
                 if rangos[i] == rng_max_tc-0.5:
                     rangos[i]+= 0.5
                     puntos -= 1
@@ -103,7 +103,7 @@ def maximizar_habs (PH_cls,INT_mod,hab_cla,HABS,rangos,nv_cls,subtipo):
     
     rng = {}
     for i in range(len(rangos)):
-        rng[HABS[i]['Nombre']] = rangos[i]
+        rng[HABS[str(i)]['Nombre']] = rangos[i]
     
     if puntos >0:
         print ('Escoge '+str(puntos)+ ' habilidades')
@@ -135,7 +135,7 @@ def maximizar_habs (PH_cls,INT_mod,hab_cla,HABS,rangos,nv_cls,subtipo):
     
     return rng_hab
 
-def repartir_rangos (PH,nv_cls,hab_cla,lista_de_hab,rangos):
+def repartir_rangos (PH,nv_cls,hab_cla,HABS,rangos):
     '''Reparte los puntos de habilidad manualmente, uno por uno.'''
     
     print('\nTienes '+str(PH)+' puntos de habilidad para distribuir en este nivel.\n')
@@ -146,15 +146,20 @@ def repartir_rangos (PH,nv_cls,hab_cla,lista_de_hab,rangos):
     
     rng = {}
     for i in range(len(rangos)):
-        rng[lista_de_hab[i]['Nombre']] = rangos[i]
+        rng[HABS[str(i)]['Nombre']] = rangos[i]
     
-    nom_hab = [lista_de_hab[i]['Nombre'] for i in range(len(lista_de_hab))]
+    nom_hab = [HABS[str(i)]['Nombre'] for i in range(len(HABS))]
     
     rng_max = nv_cls+3
     rng_max_tc = rng_max/2
     while PH > 0:
-        hab = input('\nHabilidad: ').strip(' ').capitalize()
-        hab = probar_input (nom_hab,'Habilidad',hab)
+        hab = ''
+        while hab == '':
+            hab = input('\nHabilidad: ').strip(' ').capitalize()
+            hab = probar_input (hab,nom_hab)
+            if hab == '':
+                print ('\nDebe elegir una habilidad')
+            
         if rng[hab] >0:
             print (hab+' ya posee '+str(rng[hab])+' rangos.')
         
@@ -206,7 +211,6 @@ def repartir_rangos (PH,nv_cls,hab_cla,lista_de_hab,rangos):
         if nom_hab[i] in rng:
             rng_hab.append(rng[nom_hab[i]])
     
-    input ('\n[Presione Enter para continuar]')
     return rng_hab
 
 def PuntHab (lista_de_clases,clase,nivel,INT_mod,subtipo):
@@ -227,22 +231,29 @@ def Claseas (CLASES,clase,HABS):
     
     cls = []
     for i in CLASES[clase]['Claseas']:
-        cls.append(HABS[i]['Nombre'])
+        cls.append(HABS[str(i)]['Nombre'])
     return cls
 
-def HabMod(hab_num,lista_habs,mods_de_caract,rangos, raciales, sinergias, dotes, objetos):
+def HabMod(hb,HABS,CARS_mods,rangos, raciales, sinergias, dotes, objetos,pen_armd):
     '''Calcula el modificador final de habilidad.'''
-    if 'Modificador' in lista_habs[hab_num]:
-        mod = mods_de_caract[lista_habs[hab_num]['Modificador']]
-        total = rangos[hab_num]+mod+raciales[hab_num]+sinergias[hab_num]+dotes[hab_num]+objetos[hab_num]
-    
-    return total
+    if 'Modificador' not in HABS[hb]:
+        return None
+    else:
+        mod = CARS_mods[HABS[hb]['Modificador']]
+        pen = 0
+        if 'Pen_armd' in HABS[hb]:
+            pen = pen_armd * HABS[hb]['Pen_armd']
+        
+        hb = int(hb)
+        total = rangos[hb]+mod+raciales[hb]+sinergias[hb]+dotes[hb]+objetos[hb]+pen
+        
+        return total
 
 def nuevos_idiomas (IDIOMAS,idi_pj,pool):
     lista = []
     for i in idi_pj:
         lista.append(IDIOMAS[i])
-    print ('Sus idiomas actuales son: '+PrepPrint(lista)+
+    print ('Sus idiomas actuales son: '+', '.join(lista)+'.'+
            '\nPuede elegir '+str(pool)+' idiomas nuevos, de entre los siguientes:\n')
     posibles = []
     for i in range(len(IDIOMAS)):
@@ -259,42 +270,18 @@ def nuevos_idiomas (IDIOMAS,idi_pj,pool):
     idi_pj.sort()
     return idi_pj
 
-def HabDosCol (rangos):
-    '''Imprime habilidades mostrando sus rangos, a dos columnas.'''
-    
-    c1 = []
-    c2 = []
-    cR = []
-    for i in range(len(rangos)):
-        if rangos[i] > 0:
-            cR.append(HABS[0][i])
-
-    for i in range(len(cR)):
-        if i%2 == 0:
-            c1.append(cR[i])
-        else:
-            c2.append(cR[i])
-
-    for i in range(len(c1)):
-        if len(c1[i]+' '+str(rangos[i])) > 23:
-            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t')
-        elif len(c1[i]+' '+str(rangos[i])) > 15:
-            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t')
-        else:
-            print (c1[i]+' '+str(rangos[i]),c2[i]+' '+str(rangos[i]),sep='\t\t\t')
-
 def HabcR (rang,HABS,inverso=False):
     ''' Genera una lista de habiliades, solo si tienen rangos, lista para paginar.'''
     
     if type(rang) == dict:
         rangos = []
         for i in range(len(HABS)):
-            rangos[i] = rang[HABS[i]['Nombre']]
+            rangos[i] = rang[HABS[str(i)]['Nombre']]
     else:
         rangos = rang
         
     cR = []
-    nombres = [HABS[i]['Nombre'] for i in range(len(HABS))]
+    nombres = [HABS[str(i)]['Nombre'] for i in range(len(HABS))]
     if inverso == True:
         for i in range(len(rangos)):
             if rangos[i] == 0:

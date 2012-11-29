@@ -1,229 +1,234 @@
-[
-    {
+{
+    "0":{
         "Nombre": "Abrir cerraduras",
         "Modificador": 1,
         "Solo_entrenada": true
     },
-    {
+    "1":{
         "Nombre": "Artesanía",
         "Modificador": 3,
-        "Sinergias": [39]
+        "Sinergias": [40]
     },
-    {
+    "2":{
         "Nombre": "Averiguar intenciones",
         "Modificador": 4,
         "Sinergias": [8]
     },
-    {
+    "3":{
         "Nombre": "Avistar",
         "Modificador": 4
     },
-    {
+    "4":{
         "Nombre": "Buscar",
         "Modificador": 3,
-        "Sinergias": [38]
+        "Sinergias": [39]
     },
-    {
+    "5":{
         "Nombre": "Concentración",
         "Modificador": 2
     },
-    {
+    "6":{
         "Nombre": "Conocimiento de conjuros",
         "Modificador": 3,
         "Solo_entrenada": true,
-        "Sinergias": [42]
+        "Sinergias": [43]
     },
-    {
+    "7":{
         "Nombre": "Descifrar escritura",
         "Modificador": 3,
         "Solo_entrenada": true,
-        "Sinergias": [42]
+        "Sinergias": [43]
     },
-    {
+    "8":{
         "Nombre": "Diplomacia",
         "Modificador": 5
     },
-    {
+    "9":{
         "Nombre": "Disfrazarse",
         "Modificador": 5
     },
-    {
+    "10":{
         "Nombre": "Engañar",
         "Modificador": 5,
-        "Sinergias": [8,9,17,19]
+        "Sinergias": [8,9,18,20]
     },
-    {
+    "11":{
         "Nombre": "Equilibrio",
-        "Modificador": 1
+        "Modificador": 1,
+        "Pen_armd": 1
     },
-    {
+    "12":{
         "Nombre": "Escapismo",
         "Modificador": 1,
-        "Sinergias": [43]
+        "Sinergias": [44],
+        "Pen_armd": 1
     },
-    {
+    "13":{
         "Nombre": "Esconderse",
-        "Modificador": 1
+        "Modificador": 1,
+        "Pen_armd": 1
     },
-    {
+    "14":{
         "Nombre": "Escuchar",
         "Modificador": 4
     },
-    {
+    "15":{
         "Nombre": "Falsificar",
         "Modificador": 3
     },
-    {
+    "16":{
         "Nombre": "Hablar un idioma",
         "Solo_entrenada": true
     },
-    {
+    "17":{
         "Nombre": "Interpretar",
         "Modificador": 5
     },
-    {
+    "18":{
         "Nombre": "Intimidar",
         "Modificador": 3
     },
-    {
+    "19":{
         "Nombre": "Inutilizar mecanismo",
         "Modificador": 3,
         "Solo_entrenada": true
     },
-    {
+    "20":{
         "Nombre": "Juego de manos",
         "Modificador": 1,
-        "Solo_entrenada": true
+        "Solo_entrenada": true,
+        "Pen_armd": 1
     },
-    {
+    "21":{
         "Nombre": "Montar",
         "Modificador": 1
     },
-    {
+    "22":{
         "Nombre": "Moverse sigilosamente",
-        "Modificador": 1
+        "Modificador": 1,
+        "Pen_armd": 1
     },
-    {
+    "23":{
         "Nombre": "Nadar",
-        "Modificador": 0
+        "Modificador": 0,
+        "Pen_armd": 2
     },
-    {
+    "24":{
         "Nombre": "Oficio",
         "Modificador": 4,
-        "Solo_entrenada": true,
-        "Sinergias": [11,36]
-    },
-    {
-        "Nombre": "Piruetas",
-        "Modificador": 1,
         "Solo_entrenada": true
     },
-    {
+    "25":{
+        "Nombre": "Piruetas",
+        "Modificador": 1,
+        "Solo_entrenada": true,
+        "Sinergias": [11,37],
+        "Pen_armd": 1
+    },
+    "26":{
         "Nombre": "Reunir información",
         "Modificador": 5,
         "Sinergias": [6]
     },
-    {
+    "27":{
         "Nombre": "Saber (arcano)",
+        "Modificador": 3,
+        "Solo_entrenada": true,
+        "Sinergias": [6]
+    },
+    "28":{
+        "Nombre": "Saber (arquitectura e ingeniería)",
         "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [4]
     },
-    {
-        "Nombre": "Saber (arquitectura e ingeniería)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [38]
-    },
-    {
+    "29":{
         "Nombre": "Saber (dungeons)",
         "Modificador": 3,
         "Solo_entrenada": true,
-        "Sinergias": [38]
+        "Sinergias": [39]
     },
-    {
+    "30":{
         "Nombre": "Saber (geografía)",
         "Modificador": 3,
         "Solo_entrenada": true,
-        "Sinergias": ["*"]
+        "Sinergias": [39]
     },
-    {
+    "31":{
         "Nombre": "Saber (historia)",
         "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": [25]
+        "Solo_entrenada": true
     },
-    {
+    "32":{
         "Nombre": "Saber (local)",
         "Modificador": 3,
         "Solo_entrenada": true,
-        "Sinergias": [38]
+        "Sinergias": [26]
     },
-    {
+    "33":{
         "Nombre": "Saber (los planos)",
         "Modificador": 3,
         "Solo_entrenada": true,
-        "Sinergias": [38]
+        "Sinergias": [39]
     },
-    {
+    "34":{
         "Nombre": "Saber (naturaleza)",
+        "Modificador": 3,
+        "Solo_entrenada": true,
+        "Sinergias": [39]
+    },
+    "35":{
+        "Nombre": "Saber (nobleza y realeza)",
         "Modificador": 3,
         "Solo_entrenada": true,
         "Sinergias": [8]
     },
-    {
-        "Nombre": "Saber (nobleza y realeza)",
-        "Modificador": 3,
-        "Solo_entrenada": true,
-        "Sinergias": ["*"]
-    },
-    {
+    "36":{
         "Nombre": "Saber (religión)",
         "Modificador": 3,
         "Solo_entrenada": true
     },
-    {
+    "37":{
         "Nombre": "Saltar",
         "Modificador": 1,
-        "Sinergias": [24]
+        "Sinergias": [25],
+        "Pen_armd": 1
     },
-    {
+    "38":{
         "Nombre": "Sanar",
-        "Modificador": 4,
-        "Sinergias": [33]
-    },
-    {
-        "Nombre": "Supervivencia",
         "Modificador": 4
     },
-    {
-        "Nombre": "Tasación",
-        "Modificador": 3,
-        "Sinergias": [44,20]
+    "39":{
+        "Nombre": "Supervivencia",
+        "Modificador": 4,
+        "Sinergias": [34]
+        
     },
-    {
+    "40":{
+        "Nombre": "Tasación",
+        "Modificador": 3
+    },
+    "41":{
         "Nombre": "Trato con animales",
         "Modificador": 5,
-        "Solo_entrenada": true
+        "Solo_entrenada": true,
+        "Sinergias": [21]
     },
-    {
+    "42":{
         "Nombre": "Trepar",
         "Modificador": 0,
-        "Sinergias": [6]
+        "Pen_armd": 1
     },
-    {
+    "43":{
         "Nombre": "Usar objeto mágico",
         "Modificador": 5,
         "Solo_entrenada": true,
-        "Sinergias": [41,12]
+        "Sinergias": [6]
+        
     },
-    {
+    "44":{
         "Nombre": "Uso de cuerdas",
-        "Modificador": 1
-    },
-    {
-        "Nombre": "Empatía salvaje",
-        "Modificador": 5,
-        "Solo_entrenada": true
+        "Modificador": 1,
+        "Sinergias": [42,12]
     }
-]
+}

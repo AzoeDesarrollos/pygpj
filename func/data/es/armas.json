@@ -1,604 +1,775 @@
-[
-    {
-        "Nombre": "Alabarda", 
+{
+    "0":{
+        "Nombre": "Alabarda",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":10
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante o Perforante",
+        "Precio": 10
     },
-    {
+    "1":{
         "Nombre": "Alfanjón",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":75
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "2d4",
+        "Critico": "18-20/x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 75
     },
-    {
+    "2":{
         "Nombre": "Arco corto",
         "Tipo": "ad",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":30
+        "Subtipo": "pr",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x3",
+        "Alcance": "60'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 30
     },
-    {
+    "3":{
         "Nombre": "Arco corto compuesto",
         "Tipo": "ad",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":75
+        "Subtipo": "pr",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x3",
+        "Alcance": "70'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 75
     },
-    {
+    "4":{
         "Nombre": "Arco largo",
         "Tipo": "ad",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":75
+        "Subtipo": "pr",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Alcance": "100'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 75
     },
-    {
+    "5":{
         "Nombre": "Arco largo compuesto",
         "Tipo": "ad",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":100
+        "Subtipo": "pr",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Alcance": "110'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 100
     },
-    {
+    "6":{
         "Nombre": "Ballesta de mano",
         "Tipo": "ad",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":100
+        "Subtipo": "pr",
+        "Competencia": 23,
+        "Daño_P": "1d3",
+        "Daño_M": "1d14",
+        "Critico": "19-20/x2",
+        "Alcance": "30'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 100
     },
-    {
+    "7":{
         "Nombre": "Ballesta de repetición ligera",
         "Tipo": "ad",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":250
+        "Subtipo": "pr",
+        "Competencia": 23,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "19-20/x2",
+        "Alcance": "80'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 250
     },
-    {
+    "8":{
         "Nombre": "Ballesta de repetición pesada",
         "Tipo": "ad",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":400
+        "Subtipo": "pr",
+        "Competencia": 23,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "19-20/x2",
+        "Alcance": "120'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 400
     },
-    {
+    "9":{
         "Nombre": "Ballesta ligera",
         "Tipo": "ad",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":35
+        "Subtipo": "pr",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "19-20/x2",
+        "Alcance": "80'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 35
     },
-    {
+    "10":{
         "Nombre": "Ballesta pesada",
         "Tipo": "ad",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":50
+        "Subtipo": "pr",
+        "Competencia": 25,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "19-20/x2",
+        "Alcance": "120'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 50
     },
-    {
+    "11":{
         "Nombre": "Bastón",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":0
+        "Subtipo": "dm",
+        "Competencia": 25,
+        "Daño_P": "1d4/1d4",
+        "Daño_M": "1d6/1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Contundente",
+        "Precio": 0
     },
-    {
+    "12":{
         "Nombre": "Bisarma",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":9
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "2d4",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante",
+        "Precio": 9
     },
-    {
-        "Nombre": "Bolas",
+    "13":{
+        "Nombre": "Boleadoras",
         "Tipo": "ad",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":5
+        "Subtipo": "ar",
+        "Competencia": 23,
+        "Daño_P": "1d3*",
+        "Daño_M": "1d4*",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Contundente",
+        "Precio": 5
     },
-    {
+    "14":{
         "Nombre": "Cachiporra",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":1
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Contundente",
+        "Precio": 1
     },
-    {
+    "15":{
         "Nombre": "Cadena armada",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":25
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "Perforante",
+        "Precio": 25
     },
-    {
+    "16":{
         "Nombre": "Cimitarra",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":15
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "18-20/x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 15
     },
-    {
+    "17":{
         "Nombre": "Clava",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":0
+        "Subtipo": "um",
+        "Especial": "ar",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Contundente",
+        "Precio": 0
     },
-    {
+    "18":{
         "Nombre": "Daga",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":2
+        "Subtipo": "lc",
+        "Especial": "ar",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "19-20/x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Cortante o Perforante",
+        "Precio": 2
     },
-    {
+    "19":{
         "Nombre": "Dardo",
         "Tipo": "ad",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":0.5
+        "Subtipo": "ar",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x2",
+        "Alcance": "20'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 0.5
     },
-    {
+    "20":{
         "Nombre": "Espada bastarda",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":35
+        "Subtipo": "um",
+        "Competencia": 23,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 35
     },
-    {
+    "21":{
         "Nombre": "Espada corta",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":10
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Perforante",
+        "Precio": 10
     },
-    {
+    "22":{
         "Nombre": "Espada de dos hojas",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":100
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d6",
+        "Daño_M": "1d8/1d8",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 100
     },
-    {
+    "23":{
         "Nombre": "Espada larga",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":15
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 15
     },
-    {
+    "24":{
         "Nombre": "Espadón",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":50
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d10",
+        "Daño_M": "2d6",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 50
     },
-    {
+    "25":{
         "Nombre": "Estoque",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":20
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "18-20/x2",
+        "Daño_Tipo": "Perforante",
+        "Precio": 20
     },
-    {
+    "26":{
         "Nombre": "Gran clava",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":5
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante",
+        "Precio": 5
     },
-    {
+    "27":{
         "Nombre": "Gran hacha",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":20
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d10",
+        "Daño_M": "1d12",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante",
+        "Precio": 20
     },
-    {
+    "28":{
         "Nombre": "Guadaña",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":18
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "2d4",
+        "Critico": "x4",
+        "Daño_Tipo": "Cortante o Perforante",
+        "Precio": 18
     },
-    {
+    "29":{
+        "Nombre": "Guantelete",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d2",
+        "Daño_M": "1d3",
+        "Critico": "x2",
+        "Daño_Tipo": "Contundente",
+        "Precio": 2
+    },
+    "30":{
         "Nombre": "Guantelete armado",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":5
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x2",
+        "Daño_Tipo": "Perforante",
+        "Precio": 5
     },
-    {
+    "31":{
         "Nombre": "Guja",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":8
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante",
+        "Precio": 8
     },
-    {
+    "32":{
         "Nombre": "Hacha arrojadiza",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":8
+        "Subtipo": "lc",
+        "Especial": "ar",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Cortante",
+        "Precio": 8
     },
-    {
+    "33":{
         "Nombre": "Hacha de batalla",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":10
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante",
+        "Precio": 10
     },
-    {
+    "34":{
         "Nombre": "Hacha de guerra enana",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":30
+        "Subtipo": "um",
+        "Competencia": 23,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante",
+        "Precio": 30
     },
-    {
+    "35":{
         "Nombre": "Hacha de mano",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":6
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante",
+        "Precio": 6
     },
-    {
+    "36":{
         "Nombre": "Hacha doble orca",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":60
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d6",
+        "Daño_M": "1d8/1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante",
+        "Precio": 60
     },
-    {
+    "37":{
         "Nombre": "Honda",
         "Tipo": "ad",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":0
+        "Subtipo": "pr",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x2",
+        "Alcance": "50'",
+        "Daño_Tipo": "Contundente",
+        "Precio": 0
     },
-    {
+    "38":{
         "Nombre": "Hoz",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":6
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 6
     },
-    {
+    "39":{
         "Nombre": "Impacto sin arma",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":""
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d2",
+        "Daño_M": "1d3",
+        "Critico": "x2",
+        "Daño_Tipo": "Contundente"
     },
-    {
+    "40":{
         "Nombre": "Jabalina",
         "Tipo": "ad",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":1
+        "Subtipo": "ar",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Alcance": "30'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 1
     },
-    {
+    "41":{
         "Nombre": "Kama",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":2
+        "Subtipo": "lc",
+        "Competencia": 23,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 2
     },
-    {
+    "42":{
         "Nombre": "Kukri",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":8
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4*",
+        "Critico": "18-20/x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 8
     },
-    {
+    "43":{
         "Nombre": "Lanza",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":2
+        "Subtipo": "dm",
+        "Especial": "ar",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Alcance": "20'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 2
     },
-    {
+    "44":{
         "Nombre": "Lanza corta",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":1
+        "Subtipo": "um",
+        "Especial": "ar",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Alcance": "20'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 1
     },
-    {
+    "45":{
         "Nombre": "Lanza de caballería",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":10
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Perforante",
+        "Precio": 10
     },
-    {
+    "46":{
         "Nombre": "Lanza larga",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":5
+        "Subtipo": "dm",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Perforante",
+        "Precio": 5
     },
-    {
+    "47":{
         "Nombre": "Látigo",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":1
+        "Subtipo": "um",
+        "Competencia": 23,
+        "Daño_P": "1d2*",
+        "Daño_M": "1d3*",
+        "Critico": "x2",
+        "Daño_Tipo": "Cortante",
+        "Precio": 1
     },
-    {
+    "48":{
         "Nombre": "Mangual",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":8
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "Contundente",
+        "Precio": 8
     },
-    {
+    "49":{
         "Nombre": "Mangual doble",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":90
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d6",
+        "Daño_M": "1d8/1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "Contundente",
+        "Precio": 90
     },
-    {
+    "50":{
         "Nombre": "Mangual pesado",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":15
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Contundente",
+        "Precio": 15
     },
-    {
+    "51":{
         "Nombre": "Martillo de guerra",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":12
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Contundente",
+        "Precio": 12
     },
-    {
+    "52":{
         "Nombre": "Martillo ganchudo gnomo",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":20
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d4",
+        "Daño_M": "1d8/1d6",
+        "Critico": "x3/x4",
+        "Daño_Tipo": "",
+        "Precio": 20
     },
-    {
+    "53":{
         "Nombre": "Martillo ligero",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":1
+        "Subtipo": "lc",
+        "Especial": "ar",
+        "Competencia": 24,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4*",
+        "Critico": "x2",
+        "Alcance": "20'",
+        "Daño_Tipo": "Contundente",
+        "Precio": 1
     },
-    {
+    "54":{
         "Nombre": "Maza de armas",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":8
+        "Subtipo": "um",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "",
+        "Precio": 8
     },
-    {
+    "55":{
         "Nombre": "Maza ligera",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":5
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Contundente",
+        "Precio": 5
     },
-    {
+    "56":{
         "Nombre": "Maza pesada",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":12
+        "Subtipo": "um",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "Contundente",
+        "Precio": 12
     },
-    {
+    "57":{
         "Nombre": "Nunchaku",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":2
+        "Subtipo": "lc",
+        "Competencia": 23,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Contundente",
+        "Precio": 2
     },
-    {
+    "58":{
         "Nombre": "Pico ligero",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":4
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x4",
+        "Daño_Tipo": "Perforante",
+        "Precio": 4
     },
-    {
+    "59":{
         "Nombre": "Pico pesado",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":8
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x4",
+        "Daño_Tipo": "Perforante",
+        "Precio": 8
     },
-    {
+    "60":{
         "Nombre": "Puñal",
         "Tipo": "cc",
-        "Competencia": 28,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":2
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x3",
+        "Daño_Tipo": "Perforante",
+        "Precio": 2
     },
-    {
+    "61":{
         "Nombre": "Red",
         "Tipo": "ad",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":20
+        "Subtipo": "ar",
+        "Competencia": 23,"Alcance": "10'",
+        "Daño_Tipo": "",
+        "Precio": 20
     },
-    {
+    "62":{
         "Nombre": "Ronca",
-        "Tipo": "ad",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":10
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "2d4",
+        "Critico": "x3",
+        "Daño_Tipo": "Perforante",
+        "Precio": 10
     },
-    {
+    "63":{
         "Nombre": "Sai",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":1
+        "Subtipo": "lc",
+        "Competencia": 23,
+        "Daño_P": "1d3",
+        "Daño_M": "1d3",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Contundente",
+        "Precio": 1
     },
-    {
+    "64":{
         "Nombre": "Shuriken",
         "Tipo": "ad",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":0.2
+        "Subtipo": "ar",
+        "Competencia": 23,
+        "Daño_P": "1",
+        "Daño_M": "1d2",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 0.2
     },
-    {
+    "65":{
         "Nombre": "Siangham",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":3
+        "Subtipo": "lc",
+        "Competencia": 23,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Perforante",
+        "Precio": 3
     },
-    {
+    "66":{
         "Nombre": "Tridente",
         "Tipo": "cc",
-        "Competencia": 27,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":15
+        "Subtipo": "um",
+        "Especial": "ar",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Perforante",
+        "Precio": 15
     },
-    {
+    "67":{
         "Nombre": "Urgosh enano",
         "Tipo": "cc",
-        "Competencia": 26,
-        "Daño_P":"",
-        "Daño_M":"",
-        "Critico":"",
-        "Precio":50
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d4",
+        "Daño_M": "1d8/1d6",
+        "Critico": "x3",
+        "Daño_Tipo": "Cortante o Perforante",
+        "Precio": 50
     }
-]
+}

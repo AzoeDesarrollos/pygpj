@@ -2,45 +2,40 @@
 # iniciales.py
 from random import randint
 from func.core.lang import t
-from func.gen.viz import PrepPrint,subselector
+from func.gen.viz import subselector
 
-def elegir_raza(lista_de_razas):
+def elegir_raza(RAZAS):
     '''Provee un selector de razas.'''
-
-    razas = list(range(len(lista_de_razas)))
-    for key in lista_de_razas: 
-        razas[lista_de_razas[key]['Orden']] = key
+    
+    razas = [RAZAS[str(i)]['Nombre'] for i in range(len(RAZAS))]    
 
     print('\n'+t('Seleccione Raza')+'\n1: '+razas[0]+' 2: '+razas[1]+' 3: '+razas[2]
           +' 4: '+razas[3]+'\n5: '+razas[4]+' 6: '+razas[5]+' 7: '+razas[6])
     
     raza = ''
-    while raza not in lista_de_razas:
+    while raza == '':
         raza = input('\n'+t('Raza')+': ').capitalize()
         if raza.isnumeric():
-            if int(raza) not in (1,2,3,4,5,6,7):
+            raza = int(raza)
+            if raza not in range(1,len(razas)):
                 print(t('Raza inválida, intente nuevamente'))
+                raza = ''
             else:
-                if raza == '1': key = 'Humano'
-                elif raza == '2': key = 'Elfo'
-                elif raza == '3': key = 'Enano'
-                elif raza == '4': key = 'Mediano'
-                elif raza == '5': key = 'Gnomo'
-                elif raza == '6': key = 'Semielfo'
-                elif raza == '7': key = 'Semiorco'
+                key = razas[raza-1]
                 print (t('Has elegido que este personaje sea ')+t('un '+key)+'.', end = ' ')
                 if not input (t('¿Estas seguro? ')).lower().startswith(t('s')):
                     raza = ''
                 else:
-                    return lista_de_razas[razas[int(raza)-1]]
-        elif raza not in lista_de_razas:
+                    return RAZAS[str(raza-1)]
+        elif raza not in razas:
             print(t('Raza inválida o error ortográfico, intente nuevamente'))
+            raza = ''
         else:
-            print (t('Has elegido que este personaje sea')+' un '+lista_de_razas[razas[int(raza)+1]]['Nombre']+'.', end = ' ')
+            print (t('Has elegido que este personaje sea')+' un '+raza+'.', end = ' ')
             if not input (t('¿Estas seguro? ')).lower().startswith(t('s')):
                 raza = ''
             else:
-                return lista_de_razas[raza]
+                return RAZAS[str(razas.index(raza))]
 
 def elegir_alineamiento (Alineamientos):
     '''Provee un selector de alineamientos.'''
@@ -69,12 +64,9 @@ def elegir_alineamiento (Alineamientos):
 def elegir_clase(claseprevia,CLASES,alineamiento):
     '''Provee un selector de clases.'''
     
-    abr = list(range(len(CLASES)))
-    for key in CLASES:
-        abr[CLASES[key]['Orden']] = key
-
-    nom = [CLASES[clase]['Nombre'] for clase in abr]
-    ali = [CLASES[clase]['Alineamientos'] for clase in abr]
+    nom = [CLASES[str(i)]['Nombre'] for i in range(len(CLASES))]
+    abr = [CLASES[str(i)]['Abr'] for i in range(len(CLASES)) if CLASES[str(i)]['Nombre'] == nom[i]]
+    ali = [CLASES[str(i)]['Alineamientos'] for i in range(len(CLASES)) if CLASES[str(i)]['Nombre'] == nom[i]]
     pos = []
     abp = []
     for i in range(len(ali)):
@@ -113,30 +105,28 @@ def elegir_clase(claseprevia,CLASES,alineamiento):
                 else:
                     cla = claseprevia
             
-        if cla in abr: Clase = cla
-        elif cla.capitalize() in nom: Clase = abr[nom.index(cla)]
+        if cla in abr: Clase = abr.index(cla)
+        elif cla.capitalize() in nom: Clase = nom.index(cla)
         elif cla == '': Clase = ''
-        elif cla == 'Barbaro': Clase = 'Brb'
-        elif cla == 'Clerigo': Clase = 'Clr'
-        elif cla == 'Paladin': Clase = 'Pld'
-        elif cla == 'Picaro': Clase = 'Pcr'
-        elif cla.isnumeric(): Clase = abp[int(cla)]
+        elif cla == 'Barbaro': Clase = abr.index('Brb')
+        elif cla == 'Clerigo': Clase = abr.index('Clr')
+        elif cla == 'Paladin': Clase = abr.index('Pld')
+        elif cla == 'Picaro': Clase = abr.index('Pcr')
+        elif cla.isnumeric(): Clase = abr.index(abp[int(cla)])
             
-        print (t("Has seleccionado '")+nom[abr.index(Clase)]+t("' como clase para este nivel."),
+        print (t("Has seleccionado '")+nom[Clase]+t("' como clase para este nivel."),
                end= ' ')
         if not input (t('¿Estas seguro? ')).lower().startswith(t('s')):
             cla = '?'
         else:
             break
     
-    return Clase
+    return str(Clase)
 
 def idiomas_iniciales (IDIOMAS,Clase,Raza,pool):
     
-    lang = list(range(len(IDIOMAS)))
-    for key in IDIOMAS:
-        lang[IDIOMAS[key]['Orden']] = key
-
+    lang = [IDIOMAS[str(i)]['Nombre'] for i in range(len(IDIOMAS))]
+    
     autos = []
     adics = []
     nom = Clase['Nombre']
@@ -150,7 +140,7 @@ def idiomas_iniciales (IDIOMAS,Clase,Raza,pool):
         for i in idi_clas:
             if lang[i] not in adics:
                 adics.append(lang[i])
-    print ('\n'+t('Los idiomas automáticos de tu raza son: ')+PrepPrint(autos))
+    print ('\n'+t('Los idiomas automáticos de tu raza son: ')+','.join(autos)+'.')
     
     idiomas = []
     if pool > 0:
