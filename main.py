@@ -1,5 +1,4 @@
 import func.core.config as c
-import func.core.chargen
 import func.core.intro as intro
 from func.core.lang import t
 from func.gen.viz import subselector
@@ -27,16 +26,17 @@ def menu ():
                     t('Editar preferencias'),
                     t('Salir'),
                     '\n'+t('Ver licencia')]
-         
-        os.system(['clear','cls'][os.name == 'nt'])
+        
         intro.imprimir_titulo()
         intro.introduccion()
         print(t('Elije una opción'))
         op = subselector(t('Opción'),opciones)
         if op == 0: # Crear un nuevo Pj
+            import func.core.chargen
             Pj.nuevo_pj()
             func.core.chargen.go()
         elif op == 1: # Avanzar un Pj existente
+            import func.core.chargen
             Pj.cargar_pj(cargar_archivo('Personaje','Guardar'))
             func.core.chargen.go()            
         elif op == 2: # preferencias
@@ -47,7 +47,6 @@ def menu ():
             intro.licencia('LICENSE.txt')
         
         input(t('\n[Presione Enter para continuar]\n'))
-
 
 if __name__ == '__main__':
     os.system(['clear','cls'][os.name == 'nt'])

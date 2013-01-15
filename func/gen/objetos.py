@@ -117,9 +117,8 @@ def objeto_magico (obj,subgrupo,GRUPO,OBJMAG):
     op1 = ['Gran Calidad','Mágico']
     
     while True:
-        os.system(['clear','cls'][os.name == 'nt'])
         imprimir_titulo()
-        print (barra(p.CARS,s.alinis[p.alini],p.raza['Nombre']))
+        print (barra(p.CARS,s.alins[p.alini]['Abr'],p.raza['Nombre']))
         print (GRUPO[str(obj)]['Nombre'])
         op = subselector('Tipo',op1)
         if op == 0:
@@ -207,11 +206,11 @@ def comprar(dinero,objetos,grupo):
     
     compras = []
     while dinero > 0:
-        os.system(['clear','cls'][os.name == 'nt'])
         imprimir_titulo()
-        print (barra(p.CARS,s.alinis[p.alini],p.raza['Nombre']))
+        print (barra(p.CARS,s.alins[p.alini]['Abr'],p.raza['Nombre']))
         print('\nTe quedan '+unificar_precio(convertir_precio(dinero))+' para gastar')
-        op = str(subselector('Objeto',nom,True))
+        op = str(subselector('Objeto',nom,dos_col = True))
+        
         if input('Deseas una versión mágica/de gran calidad de este objeto? ').lower().startswith('s'):
             if objetos[op]['Tipo'] in ('cc','ad'):
                 obj = objeto_magico (op,objetos[op]['Tipo'],s.ARMAS,s.OBJMAG)
@@ -223,11 +222,12 @@ def comprar(dinero,objetos,grupo):
         else:
             costo = unificar_precio(convertir_precio(pre[int(op)]))
             precio = pre[int(op)]
-            obj = {'index':op,'subgrupo':objetos[op]['Tipo'],'gc':False,'bon':0,'apts':[]}
+            if objetos[op]['Tipo'] in ('cc','ad'): grupo = 'armas'
+            elif objetos[op]['Tipo'] in ('armd','esc'): grupo = 'armds'
+            obj = {'index':op,'grupo':grupo,'subgrupo':objetos[op]['Tipo'],'gc':False,'bon':0,'apts':[]}
         
-        os.system(['clear','cls'][os.name == 'nt'])
         imprimir_titulo()
-        print (barra(p.CARS,s.alinis[p.alini],p.raza['Nombre']))
+        print (barra(p.CARS,s.alins[p.alini]['Abr'],p.raza['Nombre']))
         print('\nTe quedan '+unificar_precio(convertir_precio(dinero))+' para gastar',
               '\n'+imprimir_nom_objmag (obj,s.OBJMAG,objetos),
               '\nEste objeto cuesta '+costo+'.',sep = '\n\n')
@@ -254,9 +254,8 @@ def comprar_equipo (clase):
     
     dinero = riqueza(clase,s.CLASES,len(p.cla))
     while True:
-        os.system(['clear','cls'][os.name == 'nt'])
         imprimir_titulo()
-        print (barra(p.CARS,s.alinis[p.alini],p.raza['Nombre']))
+        print (barra(p.CARS,s.alins[p.alini]['Abr'],p.raza['Nombre']))
         print ('\nTienes '+unificar_precio(convertir_precio(dinero))+ ' para gastar')
         op = subselector('Opción',opciones)
         if op == 0: # Comprar armas y munición
@@ -275,7 +274,7 @@ def comprar_equipo (clase):
             if 'Nada más' not in opciones: opciones.append('Nada más')
         elif op == 2: # Comprar objetos varios
             print ('Opción aún no disponible')
-            pass # compras['Otros'] += comprar(dinero,Otros)
+            # compras['Otros'] += comprar(dinero,Otros)
             #if 'Nada más' not in opciones: opciones.append('Nada más')
         elif op == 3: # Ver las estadísticas de un objeto, arma o armadura
             print ('Opción aún no disponible')
@@ -303,10 +302,10 @@ def equiparse (inventario,equipo):
             break
         else:
             item = inventario[sel]
-            if item['subgrupo'] in ('cc','ad'):
-                item = equipar_obj(item,s.ARMAS,s.OBJMAG)
-            elif item['subgrupo'] in ('esc','armd'):
-                item = equipar_obj(item,s.ARMDS,s.OBJMAG)
+            if item['grupo'] == 'armas':
+                item = equipar_obj(item,s.ARMAS)
+            elif item['grupo'] == 'armds':
+                item = equipar_obj(item,s.ARMDS)
             else:
                 print('Este objeto no es equipable')
             
@@ -318,7 +317,7 @@ def equiparse (inventario,equipo):
         
     return equip
 
-def equipar_obj(obj,GRUPO,OBJMAG):
+def equipar_obj(obj,GRUPO):
     if GRUPO[obj['index']]['Tipo'] == 'esc':
         obj['espacio'] = 'mm'
     elif GRUPO[obj['index']]['Tipo'] == 'armd':

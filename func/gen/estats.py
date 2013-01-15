@@ -33,19 +33,18 @@ def calcular_CA (tam,DES_mod,equipo,ARMDS,natural=0):
         if 'bon' in i:
             bon += i['bon']
     
-    normal = 10+tam['mod_gen']+DES_mod+natural+armd['Bon_CA']+esc['Bon_CA']+bon
-    toque = 10+tam['mod_gen']+DES_mod
-    desprevenido = 10+tam['mod_gen']+natural+armd['Bon_CA']+esc['Bon_CA']+bon
+    normal = 10+tam['Mod']+DES_mod+natural+armd['Bon_CA']+esc['Bon_CA']+bon
+    toque = 10+tam['Mod']+DES_mod
+    desprevenido = 10+tam['Mod']+natural+armd['Bon_CA']+esc['Bon_CA']+bon
     
     return normal,toque,desprevenido
 
-def calcular_ATKs (ATKb,FUE_mod,DES_mod,tam,equipo,dotes,ARMAS):
+def calcular_ATKs (ATKb,FUE_mod,DES_mod,tam,equipo,dotes,ARMAS,DOTES):
     '''Cacula los mods de ataque para cada arma'''
     
     armas = []
-    for mano in ('mb','mm'):
-        if equipo[mano] != '':
-            if equipo[mano]['subgrupo'] in ('cc','ad'):
+    for mano in ('mb','mm','dm'):
+        if equipo[mano] != '' and equipo[mano]['grupo'] == 'armas':
                 armas.append(equipo[mano])
             
     ataques = []
@@ -58,8 +57,8 @@ def calcular_ATKs (ATKb,FUE_mod,DES_mod,tam,equipo,dotes,ARMAS):
         
     ATK_C,ATK_D = [],[]
     for i in ataques:
-        ATK_C.append(i+FUE_mod+tam['mod_gen'])
-        ATK_D.append(i+DES_mod+tam['mod_gen'])
+        ATK_C.append(i+FUE_mod+tam['Mod'])
+        ATK_D.append(i+DES_mod+tam['Mod'])
 
     ATKs = {}
     for arma in armas:
@@ -70,10 +69,8 @@ def calcular_ATKs (ATKb,FUE_mod,DES_mod,tam,equipo,dotes,ARMAS):
                 dt = i.split(':')[0]
                 sb = i.split(':')[1]
                 if sb == str(arm):
-                    if dt == '83': # Soltura con un arma
-                        bon += 1
-                    elif dt == '85': # Soltura mayor con un arma
-                        bon += 2
+                    if 'Bon_ATK' in DOTES[dt]:
+                        bon += DOTES[dt]['Bon_ATK']
                 
         ATKs[arm] = []
         if arma['subgrupo'] == 'ad':
@@ -85,22 +82,24 @@ def calcular_ATKs (ATKb,FUE_mod,DES_mod,tam,equipo,dotes,ARMAS):
     
     return ATKs
 
-def calcular_PG (PG,CON_mod,DG,nivel,dotes):
+def calcular_PG (PG,CON_mod,DG,nivel):
     '''Calcula los Puntos de Golpe'''
-    
-    adic = (dotes.count('51'))*3
         
     if nivel == 1:
-        PG += DG+CON_mod+adic
+        PG += DG+CON_mod
     else:
-        PG += randint(1,DG)+CON_mod+adic
+        PG += randint(1,DG)+CON_mod
 
     return PG
 
-def calcular_inic (DES_mod,dotes):
+def calcular_inic (DES_mod,dotes,DOTES):
     '''Caclula el valor de iniciativa'''
     
     inic = DES_mod
-    if '65' in dotes:
-        inic += 4
+    for d in dotes:
+        if not ':' in d:
+            if 'Stat' in DOTES[d]:
+                if 'Init' in DOTES[d]['Stat']:
+                    inic += int(DOTES[d]['Stat'].split(':')[1])
+    
     return inic

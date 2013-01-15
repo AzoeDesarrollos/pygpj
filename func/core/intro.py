@@ -5,7 +5,6 @@ def licencia (achivo_licencia):
     archivo = open(achivo_licencia)
     texto = archivo.read()
     archivo.close()
-    os.system(['clear','cls'][os.name == 'nt'])
     imprimir_titulo()
     print (texto)
 
@@ -14,4 +13,5 @@ def introduccion ():
        '\n'+'by Zeniel Danaku & Einacio Spiegel'.rjust(79),sep = '\n',end = '\n\n')
 
 def imprimir_titulo ():
+    os.system(['clear','cls'][os.name == 'nt'])
     print ('====== PyGPJ ======'.center(79)+'\n')

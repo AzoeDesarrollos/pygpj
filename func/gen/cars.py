@@ -1,8 +1,10 @@
 import os
-from random import randint,shuffle
-from func.gen.viz import subselector
+from random import randint,shuffle,choice
+from func.gen.viz import subselector,paginar_dos_columnas
 from func.core.lang import t
 from func.core.intro import imprimir_titulo
+from func.data.setup import data as d
+from func.core.prsnj import Pj as p
 
 def UnaTir (dados,descarte=0):
     '''Un simple generador para una tirada.'''
@@ -73,6 +75,10 @@ def generar_tiradas(metodo):
     print ('Sus tiradas son: '+', '.join(str(i) for i in Tirs)+'.')
     return Tirs
 
+def puntuacion_fija (puntos):
+    print ('Sus puntuaciones son: '+', '.join(str(i) for i in puntos)+'.')
+    return puntos
+
 def repartir_a_voluntad(lista,Car):
     '''Ordena la distribución de valores de característica.'''
     
@@ -89,32 +95,54 @@ def repartir_a_voluntad(lista,Car):
     return CarVal
 
 def repartir_puntuaciones(metodo,Cars,tirs):
-    CARS = []
+    CARS = {}
+    noms = {}
+    for i in Cars:
+        CARS[Cars[i]['Abr']] = 0
+        noms[Cars[i]['Abr']] = Cars[i]['Nom']
+        
     if metodo in (1,2,5): # repartir a voluntad
         print ('\nReparte tus puntuaciones de característica')
-        for Car in Cars:
-            CARS.append(repartir_a_voluntad(tirs,Car))
+        #for Car in CARS:
+        for i in Cars:
+            Car = Cars[i]['Abr']
+            CARS[Car] = repartir_a_voluntad(tirs,noms[Car])
     elif metodo in (0,3,4): # salen como salen
-        for i in tirs:
-            CARS.append(i)
-        print('Sus características quedan así:\n'+'\n'.join([Cars[i]+': '+str(CARS[i]) for i in range(len(Cars))]))
+        for Car in CARS:
+            t = choice(tirs)
+            CARS[Car] = t
+            del tirs[tirs.index(t)]
+        print('Sus características quedan así:\n'+'\n'.
+              join([Cars[i]['Nom']+': '+str(CARS[Cars[i]['Abr']]) for i in Cars]))
+        
         if metodo == 3: # personajes orgánicos; vuelve a tirar una caracteristica, intercambia 2
             if input('\n¿Desea volver a tirar por una característica? ').lower().startswith('s'):
-                CARS[Cars.index(input('Elije qué caraceristica deseas volver a tirar\nCaracterísitica: '))] = sum(UnaTir(4,1))
+                Car = sel_car('\nElije qué caraceristica deseas volver a tirar\n\nCaracterísitica: ',Cars)
+                CARS[Car] = sum(UnaTir(4,1))
             print('\nPuedes intercambiar las puntuaciones de dos características.')
-            # todo esta seccion es bastante burda, y debe tener muchos bugs...
+            # toda esta seccion es bastante burda, y debe tener muchos bugs...
             if input('¿Quieres hacerlo? ').lower().startswith('s'):
                 print ('\nElije cuales')
-                prim = input('Primera: ')
-                sec = input ('Segunda: ')
+                prim = sel_car('Primera: ',Cars)
+                sec = sel_car('Segunda: ',Cars)
                 
-                a = CARS[Cars.index(prim)]
-                b = CARS[Cars.index(sec)]
+                a = CARS[prim]
+                b = CARS[sec]
 
-                CARS[Cars.index(prim)] = b
-                CARS[Cars.index(sec)] = a
+                CARS[prim] = b
+                CARS[sec] = a
             
     return CARS
+
+def sel_car (prompt,Cars):
+    '''Se asegura de que la selección de característica sea válida'''
+    
+    while True:
+        car = input(prompt)
+        for C in Cars:
+            if car.title() == Cars[C]['Nom']:
+                return Cars[C]['Abr']
+        print ('Característica inválida')
 
 def CarMod(car):
     '''Calcula el modificador de característica.'''
@@ -125,18 +153,19 @@ def CarMod(car):
         mod = (car-11)/2
     return int(mod)
 
-def aumenta_caract (nivel):
+def elegir_aumento_de_caracteristica (nivel):
     CARS = (t('FUE'),t('DES'),t('CON'),t('INT'),t('SAB'),t('CAR'),t('Fuerza'),t('Destreza'),
             t('Constitución'),'Constitucion',t('Inteligencia'),t('Sabiduría'),'Sabiduria',
             t('Carisma'))
-
+    
+    imprimir_titulo()
     print ('\nEn el '+str(nivel)+'º nivel, tienes un aumento de características')
-    print ('Selecciona la característica que quieres aumentar')
-    Car = input('Característica: ')
+    print (t('Selecciona la característica que quieres aumentar'))
+    Car = input(t('Característica')+'): ')
     while True:
         if Car.capitalize() not in CARS:
             if Car.upper() not in CARS:
-                print ('La característica es inválida o inexistente')
+                print (t('La característica es inválida o inexistente'))
                 Car = input('Característica: ')
             else:
                 break
@@ -159,4 +188,92 @@ def aumenta_caract (nivel):
         elif Car == 'SAB': Car = 4
         elif Car == 'CAR': Car = 5
     
-    return Car
+    p.aumentar_caracteristicas(Car)
+    print ('El personaje tiene ahora '+d.Cars[Car]+' '+str(p.CARS[Car])+' (+'+str(p.CARS_mods[Car])+')')
+
+def compra_puntos (puntos,Cars):
+    costes = {9:1,10:2,11:3,12:4,13:5,14:6,15:8,16:10,17:13,18:16}
+    _puntos = puntos # copia de seguridad
+    cars = ['']*6
+    lista = []
+    
+    CARS = {}
+    for i in Cars:
+        CARS[Cars[i]['Abr']] = 0
+        
+    def header(h, previo = True):
+        imprimir_titulo()
+        print(t('Compra tus puntuaciones de característica'))
+        print('\n'+texto(puntos,'Tienes','Tienes',' para gastar'))
+        paginar_dos_columnas(5,lista)
+        if previo == True:
+            print('\n'+'\n'.join(cars[:h+1]),end = '')
+    
+    def texto (puntos, plural, singular, sufijo=''):
+        if puntos > 1:
+            texto = t(plural)+' '+str(puntos)+' '+t('puntos')+t(sufijo)
+        elif puntos == 0:
+            texto = t(plural)+' '+str(puntos)+' '+t('puntos')+t(sufijo)
+        else:
+            texto = t(singular)+' '+str(puntos)+' '+t('punto')+t(sufijo)
+        
+        return texto
+    
+    for i in range(9,19):
+        lista.append(str(i)+': '+str(costes[i])+' '+t('puntos'))
+    while True:
+        for i in Cars:
+            nom = Cars[i]['Nom']
+            abr = Cars[i]['Abr']
+            while puntos > 0:
+                h = i
+                header(h)
+                entrada = input(nom+': ')
+                
+                if not entrada.isdigit():
+                    print(t('Por favor ingrese sólo números')+'\n')
+                    input(t('\n[Presione Enter para continuar]\n'))
+                else:
+                    entrada = int(entrada)
+                    
+                if entrada not in costes:
+                    if entrada < 8:
+                        print(t('El mínimo de característica es 8'))
+                        input(t('\n[Presione Enter para continuar]\n'))
+                    elif entrada > 18:
+                        print(t('No se puede tener una puntuación de característica mayor a 18 antes de los')+
+                              '\n'+t('ajustes raciales')+'\n')
+                        input(t('\n[Presione Enter para continuar]\n'))
+                    else:
+                        CARS[abr] = entrada
+                        cars[i] = nom+': '+str(CARS[abr])
+                        break
+                
+                elif puntos - costes[entrada] < 0:
+                    print ('\n'+t('No alcanzan los puntos para comprar esa puntuación')+' ('+texto(puntos,'quedan','queda')+')')
+                    input(t('\n[Presione Enter para continuar]\n'))
+                
+                else:
+                    puntos -= costes[entrada]
+                    CARS[abr] = entrada
+                    cars[i] = nom+': '+str(CARS[abr])
+                    break
+        
+        header(h, previo = False)
+        print()
+        for i in Cars:
+            print (Cars[i]['Nom']+': '+str(CARS[Cars[i]['Abr']]))
+        
+        if input ('\n'+t('¿Está seguro? ')).lower().startswith('s'):
+            if puntos != 0:
+                print(t('Debe gastar todos los puntos disponibles')+' ('+texto(puntos,'quedan','queda')+')')
+                puntos = _puntos # restablecer copia
+                cars = ['']*6
+                for i in CARS: CARS[i] = 0
+                    
+                input(t('\n[Presione Enter para continuar]\n'))
+            else:
+                break
+    
+    return CARS
+

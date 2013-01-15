@@ -18,7 +18,7 @@ def PrepPrint(lista):
 
     return imprimir
 
-def subselector (prompt,lista,dos_col=False,vueltas=1):
+def subselector (prompt,lista,vueltas=1,dos_col=False):
     from func.core.config import advt as advertencias
     items = []
     pool = vueltas
@@ -51,7 +51,7 @@ def subselector (prompt,lista,dos_col=False,vueltas=1):
                         item = ''
                     else:
                         if advertencias == True:
-                            print (t('Ha elegido ')+t(copia[int(item)]),end = '. ')
+                            print (t('Ha elegido ')+t(copia[item]),end = '. ')
                         items.append(item)
                         pool -= 1
                 else:
@@ -78,16 +78,16 @@ def subselector (prompt,lista,dos_col=False,vueltas=1):
 def barra (caracteristicas, alineamiento, raza):
     '''Genera la barra superior de previsualización'''
     
-    FUE = str(caracteristicas[0])
-    DES = str(caracteristicas[1])
-    CON = str(caracteristicas[2])
-    INT = str(caracteristicas[3])
-    SAB = str(caracteristicas[4])
-    CAR = str(caracteristicas[5])
+    FUE = str(caracteristicas['FUE']['Punt'])
+    DES = str(caracteristicas['DES']['Punt'])
+    CON = str(caracteristicas['CON']['Punt'])
+    INT = str(caracteristicas['INT']['Punt'])
+    SAB = str(caracteristicas['SAB']['Punt'])
+    CAR = str(caracteristicas['CAR']['Punt'])
     
     barra = ' | '.join([raza,' '.join([t('FUE'),FUE,t('DES'),DES,t('CON'),CON,
-                                         t('INT'),INT,t('SAB'),SAB,t('CAR'),CAR]),
-                        'Al '+alineamiento])
+                                       t('INT'),INT,t('SAB'),SAB,t('CAR'),CAR]),
+                                       'Al '+alineamiento])
     
     return barra
 

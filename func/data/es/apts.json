@@ -28,6 +28,7 @@
         "Clase": ["Pcr"],
         "Tipo": "v", 
         "Formato": "{0} +{1!s}d6",
+        "Valor_Inicial": 1,
         "Aptitud":"Ataque especial"
     }, 
     "5":{
@@ -59,6 +60,7 @@
         "Clase": ["Pld"], 
         "Tipo": "v", 
         "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
         "Aptitud":"Ataque especial"
     },
     "10":{
@@ -71,12 +73,6 @@
         "Nombre": "Compañero animal",
         "Clase": ["Exp"],
         "Tipo": "u", 
-        "Aptitud":"Cualidad especial"
-    }, 
-    "12":{
-        "Nombre": "Compañero animal",
-        "Clase": ["Drd", "Exp"],
-        "Tipo": "r:11", 
         "Aptitud":"Cualidad especial"
     }, 
     "16":{
@@ -123,25 +119,22 @@
     },
     "23":{
         "Nombre":"Dominios",
-        "Intro":"Debes elegir dos dominios de entre los siguientes: ",
         "Clase": ["Clr"],
-        "Sublista":["Agua","Aire","Animal","Bien","Caos","Curación","Destrucción","Fuego",
-                    "Fuerza","Guerra","Ley","Magia","Mal","Muerte","Protección","Saber",
-                    "Sol","Suerte","Superchería","Tierra","Vegetal","Viaje"],
-        "Sub_Sel":"Dominio",
-        "Vueltas":2,
-        "Tipo": "u:s",
+        "Tipo": "s",
         "Aptitud":"Cualidad especial"
     },    
     "24":{
+        "Nombre": "Dote adicional",
         "Clase": ["3"], 
         "Tipo": "d"
     }, 
     "25":{
+        "Nombre": "Dote adicional",
         "Clase": ["Gue"], 
         "Tipo": "d"
     }, 
     "26":{
+        "Nombre": "Dote adicional",
         "Clase": ["Mag"], 
         "Tipo": "d"
     }, 
@@ -187,6 +180,7 @@
         "Clase": ["Exp"], 
         "Tipo": "v", 
         "Formato": "{1!s}º {0} ({2})",
+        "Valor_Inicial": 1,
         "Sub_Sel": "Enemigo Predilecto",
         "Sublista": ["Aberraciones", "Ajenos (agua)", "Ajenos (aire)", "Ajenos (buenos)","Ajenos (caóticos)", "Ajenos (fuego)", "Ajenos (malignos)","Ajenos (nativos)", "Ajenos (tierra)", "Animales", "Bestias mágicas","Cienos", "Constructos", "Dragones", "Elementales", "Fatas","Gigantes", "Humanoides (acuáticos)", "Humanoides (elfos)","Humanoides (enanos)", "Humanoides (gnolls)", "Humanoides (gnomos)","Humanoides (humanos)", "Humanoides (medianos)", "Humanoides (orcos)","Humanoides (reptilianos)", "Humanoides (trasgoides)","Humanoides monstruosos", "Muertos vivientes", "Plantas", "Sabandijas"],
         "Aptitud":"Cualidad especial"
@@ -234,7 +228,7 @@
     "39":{
         "Nombre": "Evasión mejorada", 
         "Clase": ["Mnj", "3"], 
-        "Tipo": "r:37",
+        "Tipo": "r:38",
         "Aptitud":"Cualidad especial"
     }, 
     "40":{
@@ -260,6 +254,7 @@
         "Clase": ["Drd"], 
         "Tipo": "v", 
         "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
         "Aptitud":"Cualidad especial"
     }, 
     "44":{
@@ -273,6 +268,7 @@
         "Clase": ["Drd"], 
         "Tipo": "v", 
         "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
         "Aptitud":"Cualidad especial"
     }, 
     "46":{
@@ -304,6 +300,7 @@
         "Clase": ["Brb"], 
         "Tipo": "v", 
         "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
         "Aptitud":"Cualidad especial"
     }, 
     "51":{
@@ -383,6 +380,7 @@
         "Clase": ["Brd"], 
         "Tipo": "v", 
         "Formato": "{0} +{1!s}",
+        "Valor_Inicial": 1,
         "Aptitud":"Cualidad especial"
     }, 
     "64":{
@@ -498,6 +496,7 @@
         "Clase": ["Pld"], 
         "Tipo": "v", 
         "Formato": "{0} {1!s}/semana",
+        "Valor_Inicial": 1,
         "Aptitud":"Cualidad especial"
     }, 
     "83":{
@@ -509,7 +508,7 @@
     "84":{
         "Nombre": "Ráfaga mayor", 
         "Clase": ["Mnj"], 
-        "Tipo": "r:81",
+        "Tipo": "r:83",
         "Aptitud":"Cualidad especial"
     }, 
     "85":{
@@ -517,6 +516,7 @@
         "Clase": ["Mnj"], 
         "Tipo": "v", 
         "Formato": "{0} {1!s}0'",
+        "Valor_Inicial": 2,
         "Aptitud":"Cualidad especial"
     }, 
     "86":{
@@ -542,6 +542,7 @@
         "Clase": ["Brb"], 
         "Tipo": "v", 
         "Formato": "{0} {1!s}/-",
+        "Valor_Inicial": 1,
         "Aptitud":"Cualidad especial"
     }, 
     "90":{
@@ -573,6 +574,7 @@
         "Clase": ["Brb", "Pcr"],
         "Tipo": "v", 
         "Formato": "{0} +{1!s}",
+        "Valor_Inicial": 1,
         "Aptitud":"Cualidad especial"
     }, 
     "95":{

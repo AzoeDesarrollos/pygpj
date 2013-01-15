@@ -83,8 +83,16 @@ los detalles que pueden contener los distintos datos (en el caso de este achivo,
     numeros que se muestran en este detalle son los índices de las habilidades mencionadas (ver
     habs.json)
     
-    "Stat": si la dote en cuestión afecta las estadisticas de combate (Ataque base y TSs) encontes
+    "Stat": si la dote en cuestión afecta las estadisticas de combate (Ataque base y TSs) entonces
     en este detalle se muestra que estadística es afectada (0: Ataque base; 1: TS Fort; 2: TS
     Ref; 3: TS Vol ) antes de los ':' y en cuanto se modifica luego de ese signo.
+	
+	"Competencia": las dotes de competencias (Competencia en armas y armaduras) tienen indicado el grupo de objeto
+	que manejan. Formato: string. Este detalle no se imprime en pantalla.
+		"Sencillas": la dote permite adquirir competencia con todas las armas sencillas
+		"Marcial": la dote permite adquirir competencia con un arma marcial
+		"Exótica": la dote permite adquirir competencia con un arma exótica
+		"Armadura": la dote permite adquirir competencia con armaduras
+		"Escudo": la dote permite adquirir competencia con los escudos
 
     

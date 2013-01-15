@@ -19,13 +19,15 @@
         "Nombre":"Bien",
         "Conjuros":[455,42,87,77,202,45,422,41,136],
         "Aptitudes":["Aura buena"],
-        "NL":"buenos"
+        "NL":"buenos",
+        "Req_AL":[0,1,2]
     },
     "4":{
         "Nombre":"Caos",
         "Conjuros":[457,247,88,376,203,20,421,73,136],
         "Aptitudes":["Aura caótica"],
-        "NL":"caóticos"
+        "NL":"caóticos",
+        "Req_AL":[2,5,8]
     },
     "5":{
         "Nombre":"Curación",
@@ -56,7 +58,8 @@
         "Nombre":"Ley",
         "Conjuros":[454,64,86,335,201,321,379,230,136],
         "Aptitudes":["Aura legal"],
-        "NL":"legales"
+        "NL":"legales",
+        "Req_AL":[0,3,6]
     },
     "11":{
         "Nombre":"Magia",
@@ -67,7 +70,8 @@
         "Nombre":"Mal",
         "Conjuros":[453,451,85,43,200,147,51,40,136],
         "Aptitudes":["Aura maligna"],
-        "NL":"malignos"
+        "NL":"malignos",
+        "Req_AL":[6,7,8]
     },
     "13":{
         "Nombre":"Muerte",

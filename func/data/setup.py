@@ -13,20 +13,13 @@ class data:
     ARMAS = []
     ARMDS = []
     APTS = []
+    DOMINIOS = []
     OBJMAG = []
+    CAMPNG = []
     
-    Cars = (t('Fuerza'),t('Destreza'),t('Constitución'),
-    t('Inteligencia'),t('Sabiduría'),t('Carisma'))
-
-    alinieamientos = (t('Legal Bueno'),t('Neutral Bueno'),t('Caótico Bueno'),
-                      t('Legal Neutral'),t('Neutral Auténtico'),t('Caótico Neutral'),
-                      t('Legal Maligno'),t('Neutral Maligno'),t('Caótico Maligno'))
-    
-    alinis = (t('LB'),t('NB'),t('CB'),t('LN'),t('NN'),t('CN'),t('LM'),t('NM'),t('CM'))
-    
-    tam = {t('Minúsculo'):(+8,-16,+16),t('Diminuto'):(+4,-12,+12),t('Menudo'):(+2,-8,+8),
-           t('Pequeño'):(+1,-4,+4),t('Mediano'):(+0,+0,+0),t('Grande'):(-1,+4,-4),
-           t('Enorme'):(-2,+8,-8),t('Gargantuesco'):(-4,+12,-12),t('Colosal'):(-8,+16,-16)}
+    Cars = {}
+    alins = {}
+    tam = {}
     
     
     def cambiar_idioma (idioma):
@@ -41,19 +34,36 @@ class data:
         data.ARMAS = c.abrir_json(root+'armas.json')
         data.ARMDS = c.abrir_json(root+'armds.json')
         data.APTS = c.abrir_json(root+'apts.json')
+        data.DOMINIOS = c.abrir_json (root+'dominios.json')
         data.OBJMAG = c.abrir_json(root+'objmag.json')
+        data.CAMPNG = c.abrir_json('func/data/campaign.json')
     
-        data.Cars = (t('Fuerza'),t('Destreza'),t('Constitución'),
-        t('Inteligencia'),t('Sabiduría'),t('Carisma'))
+        data.Cars = {0:{'Abr':t('FUE'),'Nom':t('Fuerza')},
+                     1:{'Abr':t('DES'),'Nom':t('Destreza')},
+                     2:{'Abr':t('CON'),'Nom':t('Constitución')},
+                     3:{'Abr':t('INT'),'Nom':t('Inteligencia')},
+                     4:{'Abr':t('SAB'),'Nom':t('Sabiduría')},
+                     5:{'Abr':t('CAR'),'Nom':t('Carisma')}}
+
     
-        data.alinieamientos = (t('Legal Bueno'),t('Neutral Bueno'),t('Caótico Bueno'),
-                          t('Legal Neutral'),t('Neutral Auténtico'),t('Caótico Neutral'),
-                          t('Legal Maligno'),t('Neutral Maligno'),t('Caótico Maligno'))
+        data.alins = {0:{'Abr':t('LB'),'Nom':t('Legal Bueno')},
+                      1:{'Abr':t('NB'),'Nom':t('Neutral Bueno')},
+                      2:{'Abr':t('CB'),'Nom':t('Caótico Bueno')},
+                      3:{'Abr':t('LN'),'Nom':t('Legal Neutral')},
+                      4:{'Abr':t('NN'),'Nom':t('Neutral Auténtico')},
+                      5:{'Abr':t('CN'),'Nom':t('Caótico Neutral')},
+                      6:{'Abr':t('LM'),'Nom':t('Legal Maligno')},
+                      7:{'Abr':t('NM'),'Nom':t('Neutral Maligno')},
+                      8:{'Abr':t('CM'),'Nom':t('Caótico Maligno')}}
         
-        data.alinis = (t('LB'),t('NB'),t('CB'),t('LN'),t('NN'),t('CN'),t('LM'),t('NM'),t('CM'))
-        
-        data.tam = {t('Minúsculo'):(+8,-16,+16),t('Diminuto'):(+4,-12,+12),t('Menudo'):(+2,-8,+8),
-               t('Pequeño'):(+1,-4,+4),t('Mediano'):(+0,+0,+0),t('Grande'):(-1,+4,-4),
-               t('Enorme'):(-2,+8,-8),t('Gargantuesco'):(-4,+12,-12),t('Colosal'):(-8,+16,-16)}
+        data.tam = {0:{'Nom':t('Minúsculo'),   'Mod':+8,'Pre':-16,'Esc':+16},
+                    1:{'Nom':t('Diminuto'),    'Mod':+4,'Pre':-12,'Esc':+12},
+                    2:{'Nom':t('Menudo'),      'Mod':+2,'Pre':-8, 'Esc':+8},
+                    3:{'Nom':t('Pequeño'),     'Mod':+1,'Pre':-4, 'Esc':+4},
+                    4:{'Nom':t('Mediano'),     'Mod':+0,'Pre':+0, 'Esc':+0},
+                    5:{'Nom':t('Grande'),      'Mod':-1,'Pre':+4, 'Esc':-4},
+                    6:{'Nom':t('Enorme'),      'Mod':-2,'Pre':+8, 'Esc':-8},
+                    7:{'Nom':t('Gargantuesco'),'Mod':-4,'Pre':+12,'Esc':-12},
+                    8:{'Nom':t('Colosal'),     'Mod':-8,'Pre':+16,'Esc':-16}}
 
 data.cambiar_idioma(c.idioma)

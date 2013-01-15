@@ -16,9 +16,8 @@ def elegir_dotes (dotes,clase):
                 t('Ver una lista de todas las dotes')]
     
     while True:
-        os.system(['clear','cls'][os.name == 'nt'])
         imprimir_titulo()
-        print (v.barra(p.CARS,s.alinis[p.alini],p.raza['Nombre']))
+        print (v.barra(p.CARS,s.alins[p.alini]['Abr'],p.raza['Nombre']))
         print(t('Seleccione sus Dotes para este nivel'))
         sublista = posicion(p.e_dts,clase,len(p.cla),s.CLASES,s.DOTES)
         print ('\n'+t('¿Que desea hacer?'))
@@ -27,11 +26,11 @@ def elegir_dotes (dotes,clase):
             if not any(p.e_dts.values()):
                 print('\n'+t('No se pueden elegir más dotes por el momento'))
             else:
-                todas = AutoDot(sublista[0],p.compW,p.conjuros,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS)
+                todas = AutoDot(sublista[0],p.comps['Armas'],p.conjuros,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS)
                 posibles = GenerarListadeAyuda(todas,s.DOTES)
                 dote = SelDot(s.DOTES,posibles)
                 if dote != '':
-                    p.agregar_dote(dote,sublista[1]) # nuevo metodo
+                    p.agregar_dote(dote,sublista[1])
                 if not any(p.e_dts.values()):
                     opciones.append(t('Nada más'))
         elif op == 1: # Ver las dotes que ya se tienen
@@ -44,7 +43,7 @@ def elegir_dotes (dotes,clase):
             if not any(p.e_dts.values()):
                 print('\n'+t('No se pueden elegir más dotes por el momento'))
             else:
-                todas = AutoDot(sublista[0],p.compW,p.conjuros,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS)
+                todas = AutoDot(sublista[0],p.comps['Armas'],p.conjuros,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS)
                 posibles = GenerarListadeAyuda(todas,s.DOTES)
                 v.paginar_dos_columnas(15,[s.DOTES[str(i)]['Nombre'] for i in posibles])
         elif op == 3: # Ver información sobre una dote específica
@@ -84,7 +83,8 @@ def posicion (espacios,clase,nivel,CLASES,DOTES):
             if d == 2: ind = '> '
             else: ind = '* '
             print('\n'+ind+t('Como aptitud de clase, tienes una dote adicional para elegir.'))
-            sublista[2][0] = CLASES[clase]['dt_cls']
+            posibles = [str(i) for i in DOTES if 'Especial' in DOTES[i]]
+            sublista[2][0] = sorted([i for i in posibles if CLASES[clase]['Abr'] in DOTES[i]['Especial']])
             sublista[2][1] = 'dt_cls'
                    
     return sublista[d]
@@ -114,19 +114,19 @@ def SelDot (DOTES, posibles):
             elif ':' in mec[nom.index(dt)]:
                 sub = mec[nom.index(dt)].split(':')[1]
                 if sub == 'w':
-                    dote = u_w (dt,p.compW,p.dotes,s.ARMAS,nom,pre,des,DOTES)
+                    dote = u_w (dt,p.comps['Armas'],p.dotes,s.ARMAS,nom,pre,des,DOTES)
                 elif sub == 'w?':
-                    dote = u_w2 (dt,nom,pre,des,DOTES)
+                    dote = u_w2(dt,nom,pre,des,DOTES)
                 elif sub == 'm':
-                    dote = u_m (dt,p.compW,p.dotes,nom,pre,des,s.ARMAS,DOTES)
+                    dote = u_m (dt,p.comps['Armas'],p.dotes,nom,pre,des,s.ARMAS,DOTES)
                 elif sub == 'e':
                     dote = u_e (dt,p.dotes,s.ESCUELAS,nom,pre,des,DOTES)
                 elif sub == 'e?':
-                    dote = (dt,nom,pre,des,DOTES)
+                    dote = u_e2(dt,nom,pre,des,DOTES,s.ESCUELAS)
                 elif sub == 'c':
-                    dote = u_c (dt,p.CARS_mods[3],p.conjuros,s.CONJUROS,nom,pre,des,DOTES)
+                    dote = u_c (dt,p.CARS['INT']['Mod'],p.conjuros,s.CONJUROS,nom,pre,des,DOTES)
                 elif sub == 'h':
-                    dote = u_h(dt,s.HABS,nom,pre,des,DOTES)
+                    dote = u_h (dt,s.HABS,nom,pre,des,DOTES)
             else:
                 dote = str(nom.index(dt))
                 prinfo (dt,nom,pre,des)
@@ -182,23 +182,24 @@ def u_e (dt,dotes_pj,ESCUELAS,nom,pre,des,DOTES):
     escuelas = []
     for i in range(len(ESCUELAS)):
         if str(nom.index(dt))+':'+str(i) not in dotes_pj:
-            escuelas.append(ESCUELAS[str(i)]["Nombre"])
+            if not ESCUELAS[str(i)]["Nombre"] == 'Universal':
+                escuelas.append(ESCUELAS[str(i)]["Nombre"])
     
     esc = v.subselector('Escuela',escuelas,dos_col=True)
     prinfo (dt,nom,pre,des)
     dote = comprobacion (dt,nom,ESCUELAS,escuelas,esc)
     return dote
 
-def u_e2 (dt,nom,pre,des,DOTES):
+def u_e2 (dt,nom,pre,des,DOTES,ESCUELAS):
     print (DOTES[str(nom.index(dt))]['Intro'])
-    subs = AutoDot(DOTES,[nom.index(dt)],p.compW,p.conjuros,s.ARMAS,s.HABS,s.ESCUELAS)
+    subs = AutoDot([nom.index(dt)],p.compW,p.conjuros,DOTES,s.ARMAS,s.HABS,ESCUELAS)
     escuelas = []
     for ID in subs:
-        if validar_requisitos(ID,s.DOTES):
-            escuelas.append(int(ID.split(':')[1]))
+        if validar_requisitos(ID,DOTES):
+            escuelas.append(ESCUELAS[ID.split(':')[1]]["Nombre"])
     esc = v.subselector('Escuela',escuelas)
     prinfo (dt,nom,pre,des)
-    dote = comprobacion (dt,nom,s.ESCUELAS,escuelas,esc)
+    dote = comprobacion (dt,nom,ESCUELAS,escuelas,esc)
     return dote
 
 def u_c (dt,INT_mod,cnj_pj,CONJUROS,nom,pre,des,DOTES):
@@ -268,15 +269,15 @@ def validar_requisitos (ID_dote,DOTES):
             return False
         
     if 'Req_Comp' in dote:
-        if not req_competencia (ID,p.compW,sub,DOTES):
+        if not req_competencia (ID,p.comps['Armas'],sub,DOTES):
             return False
         
     if 'Req_Hab' in dote:
-        if not req_habilidad (ID,p.rng,DOTES):
+        if not req_habilidad (ID,p.habs,DOTES):
             return False
         
     if 'Req_Apts' in dote:
-        if not req_aptitudes (ID,p.apps,DOTES):
+        if not req_aptitudes (ID,p.apts,DOTES):
             return False
         
     if 'Req_Stats' in dote:
@@ -337,7 +338,7 @@ def req_dotes (ID,sub,dotes_pj,DOTES): ## Requisito de Dotes
             dt = str(Req.split(':')[0])
             sb = str(Req.split(':')[1])
             if sb == 'sub':
-                if dt+':'+sub in dotes_pj:
+                if dt+':'+str(sub) in dotes_pj:
                     return True
                 else:
                     return False
@@ -369,9 +370,9 @@ def req_competencia (ID,comp_armas,sub,DOTES): ## Requisito de Competencias en A
 def req_habilidad (ID,rangos,DOTES): ## Requisito de Rangos de Habilidad
     Reqs = DOTES[ID]['Req_Hab']
     for Req in Reqs:
-        hab = int(Req.split(':')[0])
+        hab = Req.split(':')[0]
         val = int(Req.split(':')[1])
-        if rangos[hab] >= val:
+        if rangos[hab]['rng'] >= val:
             return True
         else:
             return False
@@ -392,7 +393,7 @@ def req_aptitudes (ID,apts_pj,DOTES):## Requisito de Aptitudes Especiales
 
 def req_stats (ID,stats,DOTES): ## Requisito de Ataque base y TSs
     Req = DOTES[ID]['Req_Stats'].split(':')
-    if stats[int(Req[0])] >= int(Req[1]):
+    if stats[Req[0]] >= int(Req[1]):
         return True
     else:
         return False
@@ -400,9 +401,9 @@ def req_stats (ID,stats,DOTES): ## Requisito de Ataque base y TSs
 def req_caracteristica (ID,caract,DOTES):## Requisito de Puntuaciones de Caracteristica
     Reqs = DOTES[ID]['Req_Car']
     for Req in Reqs:
-        car = int(Req.split(':')[0])
+        car = Req.split(':')[0]
         val = int(Req.split(':')[1])
-        if caract[car] >= val:
+        if caract[car]['Punt'] >= val:
             return True
         else:
             return False
@@ -426,7 +427,7 @@ def AutoDot (sublista,comp_armas,conjuros,DOTES,ARMAS,HABS,ESCUELAS):
                 if ARMAS[str(m)]['Competencia'] == i:
                     if m not in comp_armas:
                         dotes.append(str(i)+':'+str(m))
-        elif mec == 'u:e':
+        elif mec in ('u:e', 'u:e?'):
             for e in range(len(ESCUELAS)):
                 dotes.append(str(i)+':'+str(e))
         elif mec == 'u:c':
@@ -457,23 +458,20 @@ def GenerarListadeAyuda (todas_las_dotes,lista_de_dotes):
     return ayuda
 
 def ver_dotes (dotes_pj,DOTES,ARMAS,HABS,ESCUELAS):
-    dotes = [DOTES[str(i)]['Nombre'] for i in range(len(DOTES))]
-    armas = [ARMAS[str(i)]['Nombre'] for i in range(len(ARMAS))]
-    habs = [HABS[str(i)]['Nombre'] for i in range(len(HABS))]
     mec = [DOTES[str(i)]['Tipo'] for i in range(len(DOTES))]
     imprimir = []
     for i in dotes_pj:
         if i.isnumeric():
-            imprimir.append(dotes[int(i)])
+            imprimir.append(DOTES[i]['Nombre'])
         elif ':' in i:
-            dt = int(i.split(':')[0])
-            sub = int(i.split(':')[1])
-            if mec[dt].split(':')[1] in ('m','w','w?'):
-                imprimir.append(dotes[dt]+' ('+armas[sub]+')')
-            elif mec[dt].split(':')[1] == 'h':
-                imprimir.append(dotes[dt]+' ('+habs[sub]+')')
-            elif mec[dt].split(':')[1] in ('e','e?'):
-                imprimir.append(dotes[dt]+' ('+ESCUELAS[sub]+')')
+            dt = i.split(':')[0]
+            sub = i.split(':')[1]
+            if mec[int(dt)].split(':')[1] in ('m','w','w?'):
+                imprimir.append(DOTES[dt]['Nombre']+' ('+ARMAS[sub]['Nombre']+')')
+            elif mec[int(dt)].split(':')[1] == 'h':
+                imprimir.append(DOTES[dt]['Nombre']+' ('+HABS[sub]['Nombre']+')')
+            elif mec[int(dt)].split(':')[1] in ('e','e?'):
+                imprimir.append(DOTES[dt]['Nombre']+' ('+ESCUELAS[sub]['Nombre']+')')
     return imprimir
 
 def lista_de_dotes(DOTES):

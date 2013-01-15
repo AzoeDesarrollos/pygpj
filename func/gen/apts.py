@@ -1,92 +1,144 @@
 # coding=UTF-8
 from func.gen.dotes import elegir_dotes
+from func.core.intro import imprimir_titulo
 from func.core.prsnj import Pj as p
+from func.data.setup import data as s
 import func.gen.viz as v
-import func.data.setup as s
 import os
 from math import floor
 
-def elegir_AE (APTS,apts_cls):
-
-    elegibles = sorted([int(key) for key in APTS
-                        if ('3' in APTS[key]['Clase'])
-                        and (int(key) not in apts_cls)])
-
-    for i in elegibles:
-        tipo = APTS[str(i)]['Tipo']
-        if tipo == 'd':
-            elegibles[i] = 'Dote general'
-        else:
-            elegibles[i] = APTS[str(i)]['Nombre']
+def elegir_AE (apts_pj,APTS):
+    '''Subselector dedicado para la aptitud de Pícaro: Aptitud especial'''
     
-    seleccion = v.subselector('AE',elegibles)
-    sel = APTS[str(seleccion)]['Tipo']
+    elegibles = [[APTS[key]['Nombre'],key] for key in APTS
+                if ('3' in APTS[key]['Clase']) and (key not in apts_pj)]
+    
+    nom = sorted([i[0] for i in elegibles])
+    ind = sorted([i[1] for i in elegibles])
+
+    sel = subselector('AE',nom)
+    seleccion = APTS[ind[sel]]['Tipo']
         
-    if sel == 'd':
-        return 'd'
+    if seleccion == 'd':
+        return 'd' # devuelve 'd' si la selección es una dote adicional
     else:
-        return seleccion
+        return ind[sel] # o el índice de la aptitud especial.
 
-def actualizar_aptitudes (ap,apts_cls,ATPS,DOTES,sub = '',mec =''):
-    '''Actuliza la lista de aptitudes del personaje.'''
-            
-    tipo = ATPS[ap]['Tipo'].split(':')[0]
-    if ':' in ATPS[ap]['Tipo']:
-        mec = ATPS[ap]['Tipo'].split(':')[1]
-    if 'Sublista' in ATPS[ap]:
-        sub = ATPS[ap]['Sublista']
-        prompt = ATPS[ap]['Sub_Sel']
+def actualizar_aptitudes (ap,apts_pj,APTS): # tiene similitud con dotes.validar_requisitos
+    '''Lee la aptitud entrante, y la envía a Pj.agregar_ap con el método correspondiente'''
     
-    if tipo == 'u':
-        if sub != '':
-            print ('\n'+ATPS[ap]['Intro'])
-            elec = v.subselector(prompt,sub,dos_col=True)
-            p.apps.append(str(ap)+':'+str(elec))
-        else:
-            p.apps.append(str(ap))
-        if mec != '':
-            #actualizar_aptitudes (str(elec),apts_cls,ATPS,DOTES)
-            pass
+    tipo = APTS[ap]['Tipo'].split(':')[0]
+    if ':' in APTS[ap]['Tipo']:
+        mec = APTS[ap]['Tipo'].split(':')[1]    
 
-    elif tipo == 'v':
-        if sub != '':
-            print ('\n'+ATPS[ap]['Intro'])
-            elec = v.subselector(prompt,sub,dos_col=True)
-            p.apps.append(str(ap)+':'+str(elec))
-        else:
-            p.apps.append(str(ap))
+    if 'Sublista' in APTS[ap]: # si la aptitud tiene opciones, pasa por aqui.
+        sub = APTS[ap]['Sublista']
+        prompt = APTS[ap]['Sub_Sel']
+        if tipo == 'u': 
+            if ap not in apts_pj:
+                apt = tipo_u(ap,sub,prompt)
+        elif tipo == 'v': 
+            apt = tipo_v(ap,sub,prompt)
+        elif tipo == 'r': 
+            apt = tipo_r (ap,mec,sub,prompt)
+        elif tipo == 'a': 
+            apt = tipo_a(ap,sub,prompt)
+    else:
+        if tipo == 'u': # tipo u: aptitudes únicas e irrepetibles
+            if ap not in apts_pj:
+                apt = tipo_u(ap)
+        elif tipo == 'v': # tipo v: aptitud apilable (ataque furtivo, forma salvaje, etc.)
+            apt = tipo_v(ap)
+        elif tipo == 'r': # tipo r: esta aptitud reemplaza a otra (ej. evasión mejorada)
+            apt = tipo_r (ap,mec)
+        elif tipo == 'a': # tipo a: esta aptitud es una dote adicional.
+            apt = tipo_a (ap)
+        elif tipo == 'd': # tipo d: dotes de guerreros, magos y dotes adicionales de picaro
+            apt = ['',{},'t']
+        elif tipo == 'x': # tipo x: activa Elegir AE para la aptitud especial de pícaro
+            apt = tipo_x (apts_pj)
+        elif tipo == 's': # tipo s: activa Elegir dominio para los dominios de clérigo
+            apt = tipo_s (ap)
+    
+    return apt
 
-    elif tipo == 'r':
-        if sub != '':
-            print ('\n'+ATPS[ap]['Intro'])
-            elec = v.subselector(prompt,sub,dos_col=True)
-            p.apps[p.apps.index(mec)] = str(ap)+':'+str(elec)
-        elif p.apps.count(mec) > 1:
-            while p.apps.count(mec) >1:
-                del p.apps[p.apps.index(mec)]
-            p.apps[p.apps.index(mec)] = str(ap)
-        else:
-            p.apps[p.apps.index(mec)] = str(ap)
-        
-    elif tipo == 'a':
-        if sub != '':
-            print ('\n'+ATPS[ap]['Intro'])
-            elec = v.subselector(prompt,sub)
-            for i in range(len(DOTES)):
-                if DOTES[i]['Nombre'] == sub[elec]:
-                    p.dotes.append(str(i))
-        else:
-            p.dotes.append(str(ATPS[ap]['ID_dt']))
+def tipo_u (ap,sub = '',prompt = ''):
+    if sub != '':
+        print ('\n'+s.APTS[ap]['Intro'])
+        elec = v.subselector(prompt,sub,dos_col=True)
+        apt = [str(ap),{'sub':str(elec)},'a']
+    else:
+        apt = [str(ap),{},'a']
 
-    elif tipo == 'd':
-        p.e_dts['dt_cls'] = True
+    return apt 
 
-    elif tipo == 'x':
-        e = elegir_AE (ATPS,apts_cls)
-        if e == 'd':
-            p.dotes.append(elegir_dotes(setup.DOTES,p.dotes))
+def tipo_v (ap,sub = '',prompt = ''):
+    if sub != '':
+        print ('\n'+s.APTS[ap]['Intro'])
+        elec = v.subselector(prompt,sub,dos_col=True)
+        apt = [str(ap),{'sub':str(elec),'In_Val':s.APTS[ap]['Valor_Inicial']},'c']
+    else:
+        apt = [str(ap),{'cant':s.APTS[ap]['Valor_Inicial']},'c']
+    return apt
+
+def tipo_r (ap,tipo,sub = '',prompt = ''):
+    if sub != '':
+        print ('\n'+s.ATPS[ap]['Intro'])
+        elec = v.subselector(prompt,sub,dos_col=True)
+        apt = [str(ap),{'sub':str(elec)},'r'+tipo]
+    else:
+        apt = [str(ap),{},'r'+tipo]
+    
+    return apt
+
+def tipo_a (ap,sub = '',prompt = ''):
+    if sub != '':
+        print ('\n'+s.APTS[ap]['Intro'])
+        elec = v.subselector(prompt,sub)
+        for d in s.DOTES:
+            if s.DOTES[d]['Nombre'] == sub[elec]:
+                dote = [d,{},'d']
+    else:
+        dote = [str(s.APTS[ap]['ID_dt']),{},'d']
+    return dote
+
+def tipo_x (apts_pj):
+    e = elegir_AE (apts_pj,s.APTS)
+    if e == 'd':
+        dote = elegir_dotes(s.DOTES,p.dotes)
+        return [dote,{},'d']
+    else:
+        apt = actualizar_aptitudes(e,p.apts,s.APTS)
+        return apt
+
+def tipo_s (ap):
+    doms = elegir_dominio(p.alini,2,s.DOMINIOS) # 2 es hardcoding...
+    apt = [ap,{'doms':doms},'s']
+    return apt
+
+def elegir_dominio (alini,cant,DOMINIOS):
+    '''Provee un selector para los dominios de clérigo'''
+    
+    imprimir_titulo()
+    disponibles = []
+    for i in DOMINIOS:
+        if 'Req_AL' in DOMINIOS[i]:
+            if alini in DOMINIOS[i]['Req_AL']:
+                disponibles.append(DOMINIOS[i]['Nombre'])
         else:
-            p.apps.append(e)
+            disponibles.append(DOMINIOS[i]['Nombre'])
+
+    disponibles.sort()
+    print ('Debes elegir '+str(cant)+' dominios de entre los siguientes:')
+    elect = v.subselector('Dominio',disponibles,True,cant)
+
+    keys = []
+    for i in elect:
+        for key in DOMINIOS:
+            if disponibles[i] == DOMINIOS[key]['Nombre']:
+                keys.append(key) 
+    
+    return keys
 
 def sort_conj_clase (clase, nv_cnj, conjuros, CONJUROS, ESCUELAS, escuela='Ninguna'):
     '''Muestra los conjuros disponibles por de Clase y por Nivel de conjuro.
@@ -133,7 +185,7 @@ def info_conjuro (CONJUROS,ESCUELAS):
 def conjuros_conocidos (clase,nv_cls,nv_cnj,conjuros,CLASES,CONJUROS,ESCUELAS):
     conocidos = []
     elects = []
-    conjuros_nuevos = sort_conj_clase(clase,nv_cnj,conjuros,CONJUROS,ESCUELAS)
+    conjuros_nuevos = sort_conj_clase(CLASES[clase]['Abr'],nv_cnj,conjuros,CONJUROS,ESCUELAS)
     if 'Conjuros_Conocidos' in CLASES[clase]:
         cantidad = CLASES[clase]['Conjuros_Conocidos'][str(nv_cls)][str(nv_cnj)]
         print ('\nPuede elegir '+str(cantidad)+' conjuros, de entre los siguientes:\n')
@@ -165,9 +217,9 @@ def conjuros_conocidos (clase,nv_cls,nv_cnj,conjuros,CLASES,CONJUROS,ESCUELAS):
                 break
 
     for index in elects:
-        for i in range(len(CONJUROS)):
-            if CONJUROS[i]['Nombre'] == conjuros_nuevos[index]:
-                conocidos.append(i)
+        for c in CONJUROS:
+            if CONJUROS[c]['Nombre'] == conjuros_nuevos[index]:
+                conocidos.append(c)
 
     return conocidos
 
@@ -205,7 +257,7 @@ def elegir_conjuros (clase, nv_cls, conjuros, CLASES, CONJUROS, ESCUELAS):
                 'Ver todos los conjuros de una escuela de magia']
     op = ''
     while op == '':
-        os.system(['clear','cls'][os.name == 'nt'])
+        imprimir_titulo()
         print('En este nivel, debe elegir conjuros',end = '\n\n')
         print ('¿Que desea hacer?\n')
         op = v.subselector('Opción',opciones)

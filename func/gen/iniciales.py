@@ -1,48 +1,53 @@
 # coding=UTF-8
 # iniciales.py
 from random import randint
-from func.core.lang import t
+from math import floor
+from func.core.lang import t,probar_input
 from func.gen.viz import subselector
+from func.core.intro import imprimir_titulo
 
 def elegir_raza(RAZAS):
     '''Provee un selector de razas.'''
     
-    razas = [RAZAS[str(i)]['Nombre'] for i in range(len(RAZAS))]    
+    razas = [RAZAS[str(i)]['Nombre'] for i in range(len(RAZAS))]
 
-    print('\n'+t('Seleccione Raza')+'\n1: '+razas[0]+' 2: '+razas[1]+' 3: '+razas[2]
-          +' 4: '+razas[3]+'\n5: '+razas[4]+' 6: '+razas[5]+' 7: '+razas[6])
+    print('\n'+t('Seleccione Raza'))
+    for i in range(len(RAZAS)):
+        if (i+1) % 4 == 0:
+            print(str(i+1)+': '+razas[i],end = '\n')
+        else:
+            print(str(i+1)+': '+razas[i],end = ' ')
     
     raza = ''
     while raza == '':
-        raza = input('\n'+t('Raza')+': ').capitalize()
-        if raza.isnumeric():
-            raza = int(raza)
-            if raza not in range(1,len(razas)):
+        r = input('\n\n'+t('Raza: '))
+        if r.isnumeric():
+            r = int(r)
+            if not 1 <= r <= len(RAZAS):
                 print(t('Raza inválida, intente nuevamente'))
-                raza = ''
+                continue
             else:
-                key = razas[raza-1]
-                print (t('Has elegido que este personaje sea ')+t('un '+key)+'.', end = ' ')
-                if not input (t('¿Estas seguro? ')).lower().startswith(t('s')):
-                    raza = ''
-                else:
-                    return RAZAS[str(raza-1)]
-        elif raza not in razas:
-            print(t('Raza inválida o error ortográfico, intente nuevamente'))
-            raza = ''
+                r -= 1
         else:
-            print (t('Has elegido que este personaje sea')+' un '+raza+'.', end = ' ')
-            if not input (t('¿Estas seguro? ')).lower().startswith(t('s')):
-                raza = ''
+            r = probar_input(r,razas)
+            if r == '':
+                print(t('Raza inválida o error ortográfico, intente nuevamente'))
+                continue
             else:
-                return RAZAS[str(razas.index(raza))]
+                r = razas.index(r)
+        print (t('Has elegido que este personaje sea')+' '+t('un '+razas[r])+'.', end = ' ')
+        if input (t('¿Estas seguro? ')).lower().startswith(t('s')):
+            return str(r)
 
 def elegir_alineamiento (Alineamientos):
     '''Provee un selector de alineamientos.'''
     
-    print('\n'+t('Escoge un alineamiento para este personaje'))
-    for i in range(len(Alineamientos)):
-        print (str(i)+': '+t(Alineamientos[i]))
+    imprimir_titulo()
+    print(t('Escoge un alineamiento para este personaje')+'\n')
+    alinis = []
+    for i in Alineamientos:
+        print (str(i)+': '+t(Alineamientos[i]['Nom']))
+        alinis.append(Alineamientos[i]['Nom'])
             
     while True:
         aling = input ('\n'+t('Alineamiento')+': ')
@@ -51,74 +56,75 @@ def elegir_alineamiento (Alineamientos):
             if aling not in range(len(Alineamientos)):
                 print(t('El numero elegido no representa ningún alineamiento'))
             else:
-                print (t('Has elegido que este personaje sea ')+Alineamientos[aling]+'.', end= ' ')
+                print (t('Has elegido que este personaje sea ')+Alineamientos[aling]['Nom']+'.', end= ' ')
                 if input (t('¿Estas seguro? ')).lower().startswith(t('s')):
                     return aling
         else:
-            if aling.capitalize() in Alineamientos:
-                aling = int(Alineamientos.index(aling.capitalize()))
-                print (t('Has elegido que este personaje sea ')+t(Alineamientos[aling])+'.', end= ' ')
+            if aling.capitalize() in alinis:
+                aling = int(alinis.index(aling.capitalize()))
+                print (t('Has elegido que este personaje sea ')+t(Alineamientos[aling]['Nom'])+'.', end= ' ')
                 if input (t('¿Estas seguro? ')).lower().startswith(t('s')):
                     return aling
 
 def elegir_clase(claseprevia,CLASES,alineamiento):
     '''Provee un selector de clases.'''
     
-    nom = [CLASES[str(i)]['Nombre'] for i in range(len(CLASES))]
-    abr = [CLASES[str(i)]['Abr'] for i in range(len(CLASES)) if CLASES[str(i)]['Nombre'] == nom[i]]
-    ali = [CLASES[str(i)]['Alineamientos'] for i in range(len(CLASES)) if CLASES[str(i)]['Nombre'] == nom[i]]
-    pos = []
-    abp = []
-    for i in range(len(ali)):
-        if alineamiento in ali[i]:
-            pos.append(nom[i])
-            abp.append(abr[i])
-
-            
+    # genera dos listas con los nombres y abreviaturas compatibles con el alineamiento
+    nom,abr = [],[]
+    for i in range(len(CLASES)):
+        if alineamiento in CLASES[str(i)]['Alineamientos']:
+            nom.append(CLASES[str(i)]['Nombre'])
+            abr.append(CLASES[str(i)]['Abr'])
+    
+    # genera un string que muestra las clases disponibles numeradas a partir de 0
     imprimir = ''
-    numeros = []
-    for i in range(len(pos)):
-        if (i+1)%4==0:
-            imprimir += str(i)+': '+pos[i]+'\n'
+    for i in range(len(nom)):
+        if (i+1)%4==0 and nom[i]!=nom[-1]:
+            imprimir += str(i)+': '+nom[i]+'\n'
         else:
-            imprimir += str(i)+': '+pos[i]+' '
-        numeros.append(str(i))
-        
-    if claseprevia == '':
-        print (t('Elija una clase para este nivel'))
-    else:
-        print (t('Elija una clase para este nivel')+' [Enter: '+claseprevia+']')
-    print ('\n'+t('Las clases disponibles según el alineamiento son')+': \n'+imprimir)
+            imprimir += str(i)+': '+nom[i]+' '
+
+    print (t('Elija una clase para este nivel'), end = ' ')
+    if claseprevia != '':
+        # claseprevia es la clase elegida en el nivel anterior.
+        print ('[Enter: '+claseprevia+']')
+        # presionando enter se autoelige esa clase, acelerando el proceso
+    
+    print ('\n\n'+t('Las clases disponibles según el alineamiento son')+': \n'+imprimir)
    
-    CLASES = ['Barbaro','Clerigo','Paladin','Picaro','']+numeros+pos+abp
     cla = '?'
     while True:
         while cla == '?':
-            cla = input('\nClase: ').capitalize()
-            if cla not in CLASES:
-                print ('\n'+t('Seleccione una clase válida.'))
-                cla = '?'
-            elif cla == '':
+            cla = input('\n'+'Clase: ').capitalize()
+            if cla == '':
                 if claseprevia == '':
                     print ('\n'+t('Debe seleccionar una clase'))
                     cla = '?'
                 else:
-                    cla = claseprevia
-            
-        if cla in abr: Clase = abr.index(cla)
-        elif cla.capitalize() in nom: Clase = nom.index(cla)
-        elif cla == '': Clase = ''
-        elif cla == 'Barbaro': Clase = abr.index('Brb')
-        elif cla == 'Clerigo': Clase = abr.index('Clr')
-        elif cla == 'Paladin': Clase = abr.index('Pld')
-        elif cla == 'Picaro': Clase = abr.index('Pcr')
-        elif cla.isnumeric(): Clase = abr.index(abp[int(cla)])
-            
-        print (t("Has seleccionado '")+nom[Clase]+t("' como clase para este nivel."),
-               end= ' ')
+                    # si hubo una clase previa, entonces '' es esa clase.
+                    cla = nom.index(claseprevia)
+            elif cla.isnumeric():
+                cla = int(cla)
+                if not 0 <= cla <= len(nom):
+                    print(t('Seleccione una clase válida.'))
+                    cla = '?'
+            elif cla in abr:
+                cla = abr.index(cla)
+            else:
+                cla = probar_input()
+                if cla == '':
+                    print ('\n'+t('Seleccione una clase válida.'))
+                    cla = '?'
+                else:
+                    cla = nom.index(cla)
+
+        print (t("Has seleccionado '")+nom[cla]+t("' como clase para este nivel."),end= ' ')
         if not input (t('¿Estas seguro? ')).lower().startswith(t('s')):
             cla = '?'
         else:
+            for Clase in CLASES:
+                if nom[cla] == CLASES[Clase]['Nombre']:
+                    break
             break
     
     return str(Clase)
@@ -157,10 +163,22 @@ def idiomas_iniciales (IDIOMAS,Clase,Raza,pool):
         idiomas.append(lang.index(i))
 
     idiomas.sort()
+    
+    input (t('\n[Presione Enter para continuar]\n'))
     return idiomas
 
 def procesar_clase(Clase,nv_cls,stats):
     '''Procesa la lista de clases y obtiene ATKbase, y TSs.'''
+    
+    def calcular_TS (TScls,nv_cls):
+        if TScls == 'b':
+            TS = 1/2
+            if nv_cls == 1:
+                TS += 2
+        else:
+            TS = 1/3
+        
+        return TS
     
     if Clase['ATKb'] == 'b':
         A = 1
@@ -168,32 +186,12 @@ def procesar_clase(Clase,nv_cls,stats):
         A = 3/4
     else:
         A = 1/2
-    
-    if Clase['Fort'] == 'b':
-        F = 1/2
-        if nv_cls == 1:
-            F += 2
-    else:
-        F = 1/3
-    
-    if Clase['Ref'] == 'b':
-        R = 1/2
-        if nv_cls == 1:
-            R += 2
-    else:
-        R = 1/3
-    
-    if Clase['Vol']== 'b':
-        V = 1/2
-        if nv_cls == 1:
-            V += 2
-    else:
-        V = 1/3
+    A = floor(A+stats['AtqB'])
+    F = floor(calcular_TS (Clase['Fort'],nv_cls)+stats['TSFort'])
+    R = floor(calcular_TS (Clase['Ref'],nv_cls)+stats['TSRef'])
+    V = floor(calcular_TS (Clase['Vol'],nv_cls)+stats['TSVol'])
     
     bases = [A,F,R,V]
-    for i in range(len(bases)):
-        bases[i]+=stats[i]
-    
     return bases
 
 def Competencias (clase,comprevia):
