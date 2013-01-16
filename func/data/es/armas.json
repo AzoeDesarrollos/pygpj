@@ -601,7 +601,7 @@
         "Daño_P": "1d6/1d4",
         "Daño_M": "1d8/1d6",
         "Critico": "x3/x4",
-        "Daño_Tipo": "",
+        "Daño_Tipo": "Cortante o Contundente",
         "Precio": 20
     },
     "53":{
@@ -625,7 +625,7 @@
         "Daño_P": "1d6",
         "Daño_M": "1d8",
         "Critico": "x2",
-        "Daño_Tipo": "",
+        "Daño_Tipo": "Contundente y Perforante",
         "Precio": 8
     },
     "55":{
@@ -698,8 +698,8 @@
         "Nombre": "Red",
         "Tipo": "ad",
         "Subtipo": "ar",
-        "Competencia": 23,"Alcance": "10'",
-        "Daño_Tipo": "",
+        "Competencia": 23,
+        "Alcance": "10'",
         "Precio": 20
     },
     "62":{

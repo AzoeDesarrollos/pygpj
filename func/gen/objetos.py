@@ -1,5 +1,5 @@
 # coding=UTF-8
-from func.gen.viz import subselector,barra
+from func.core.viz import subselector,barra
 from func.core.lang import t
 from func.data.setup import data as s
 from func.core.prsnj import Pj as p

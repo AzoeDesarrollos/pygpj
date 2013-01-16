@@ -15,11 +15,7 @@ Los archivos *.json que se usan en este programa están estructurados de la sigu
 Cada vez que aparezca un numero contenido en un detalle, dicho numero representa el index de uno u otro archivo
 json de este programa.
 
-A continuación, algunas especificaciones sobre los distintos archivos
-
-** dotes.json **
-
-los detalles que pueden contener los distintos datos (en el caso de este achivo, dotes), son los siguientes:
+A continuación, las especificaciones sobre el archivo ** dotes.json **
 
     "Descripcion": es la descripción corta de la dote. Formato: string. Este detalle se imprime en
     pantalla.
@@ -53,12 +49,12 @@ los detalles que pueden contener los distintos datos (en el caso de este achivo,
         específico es ese valor y no otro.
         
         Req_Car: una lista de strings. cada string esta se muestra como dos valores separados por
-        ':'. El numero detras del signo es la característica (0: Fuerza; 1: Destreza; 2:
-        Constitución; 3: Inteligencia; 4: Sabiduría; 5: Carisma). El siguiente es la puntuacion que
+        ':'. El string detras del signo es la característica abrevidada (FUE: Fuerza; DES: Destreza;
+	CON: Constitución; INT: Inteligencia; SAB: Sabiduría; CAR: Carisma). El siguiente es la puntuacion que
         dicha característica debe tener.
         
         Req_Comp: puede ser un string ("#") o una lista de integrers. Un # representa que se debe
-        la competencia con arma para la dote que se está eligiendo. una lista representa las
+        la competencia con arma para la dote que se está eligiendo. Una lista representa las
         competencias que el personaje debe poseer para poder elegir la dote.
         
         Req_Hab: una lista de strings. cada string es un par <habilidad>:<rangos>. El personaje
@@ -69,9 +65,9 @@ los detalles que pueden contener los distintos datos (en el caso de este achivo,
         personaje debe poseer una aptitud O la otra. Un numero simple, implica que el personaje
         debe poseer la aptitud en cuestion.
         
-        Req_Stats: un string de dos numeros separados por ':'. El primer numero implica la
-        estadística de combate (0: Ataque base; 1: TS Fort; 2: TS Ref; 3: TS Vol ) y el siguiente
-        el valor que debe poseer.
+        Req_Stats: un string de dos numeros separados por ':'. La primer parte indica la
+        estadística de combate (AtqB: Ataque base; TSFort: TS Fort; TSRef: TS Ref; TSVol: TS Vol)
+	y el siguiente el valor que debe poseer.
         
         Req_NL: un integrer que representa el nivel de lanzador que el personaje debe poseer con
         alguna de sus clases para poder elegir esta dote.
@@ -83,9 +79,9 @@ los detalles que pueden contener los distintos datos (en el caso de este achivo,
     numeros que se muestran en este detalle son los índices de las habilidades mencionadas (ver
     habs.json)
     
-    "Stat": si la dote en cuestión afecta las estadisticas de combate (Ataque base y TSs) entonces
-    en este detalle se muestra que estadística es afectada (0: Ataque base; 1: TS Fort; 2: TS
-    Ref; 3: TS Vol ) antes de los ':' y en cuanto se modifica luego de ese signo.
+    "Stat": si la dote en cuestión afecta las estadisticas de combate entonces en este detalle se
+    muestra que estadística es afectada (TSFort: TS Fortaleza; TSRef: TS Reflejos; TSVol: TS Voluntad
+    PG: puntos de golpe, Init: Iniciativa) antes de los ':' y en cuanto se modifica luego de ese signo.
 	
 	"Competencia": las dotes de competencias (Competencia en armas y armaduras) tienen indicado el grupo de objeto
 	que manejan. Formato: string. Este detalle no se imprime en pantalla.
@@ -94,5 +90,11 @@ los detalles que pueden contener los distintos datos (en el caso de este achivo,
 		"Exótica": la dote permite adquirir competencia con un arma exótica
 		"Armadura": la dote permite adquirir competencia con armaduras
 		"Escudo": la dote permite adquirir competencia con los escudos
-
+    
+    "Bon_ATK": las dotes que modifican el bonificador de ataque tienen este detalle. Es un integral que
+    representa ese modificador.
+    
+    "Especial": es una lista de strings. Cada string expresa una clase. Las clases indicadas aquí tienen
+    esta dote como dote adicional de clase, y deben elegirla cumpliendo los prerrequisitos (no se indican aqui
+    por ejemplo, las dotes adicionales automáticas de monje o explorador)
     

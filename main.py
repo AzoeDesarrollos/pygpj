@@ -1,9 +1,9 @@
 import func.core.config as c
 import func.core.intro as intro
 from func.core.lang import t
-from func.gen.viz import subselector
+from func.core.viz import subselector
 from func.core.prsnj import Pj
-from func.gen.export import imprimir_clases
+from func.core.export import imprimir_clases
 import os
 
 def cargar_archivo(prompt, carpeta):

@@ -1,42 +1,62 @@
 {
-    "Abyssal":{
-        "Orden":0},
-    "Acuan":{
-        "Orden":1},
-    "Auran":{
-        "Orden":2},
-    "Celestial":{
-        "Orden":3},
-    "Common":{
-        "Orden":4},
-    "Draconic":{
-        "Orden":5},
-    "Druidic":{
-        "Orden":6},
-    "Dwarven":{
-        "Orden":8},
-    "Elven":{
-        "Orden":7},
-    "Giant":{
-        "Orden":9},
-    "Gnome":{
-        "Orden":11},
-    "Goblin":{
-        "Orden":19},
-    "Gnoll":{
-        "Orden":10},
-    "Halfling":{
-        "Orden":15},
-    "Ignan":{
-        "Orden":12},
-    "Infernal":{
-        "Orden":13},
-    "Orc":{
-        "Orden":16},
-    "Sylvan":{
-        "Orden":17},
-    "Terran":{
-        "Orden":18},
-    "Undercommon":{
-        "Orden":14}
+    "0":{
+        "Nombre": "Abyssal"
+    },
+    "1":{
+        "Nombre": "Acuan"
+    },
+    "2":{
+        "Nombre": "Auran"
+    },
+    "3":{
+        "Nombre": "Celestial"
+    },
+    "4":{
+        "Nombre": "Common"
+    },
+    "5":{
+        "Nombre": "Draconic"
+    },
+    "6":{
+        "Nombre": "Druidic"
+    },
+    "7":{
+        "Nombre": "Elven"
+    },
+    "8":{
+        "Nombre": "Dwarven"
+    },
+    "9":{
+        "Nombre": "Giant"
+    },
+    "10":{
+        "Nombre": "Gnoll"
+    },
+    "11":{
+        "Nombre": "Gnome"
+    },
+    "12":{
+        "Nombre": "Ignan"
+    },
+    "13":{
+        "Nombre": "Infernal"
+    },
+    "14":{
+        "Nombre": "Undercommon"
+    },
+    "15":{
+        "Nombre": "Halfling"
+    },
+    "16":{
+        "Nombre": "Orc"
+    },
+    "17":{
+        "Nombre": "Sylvan"
+    },
+    "18":{
+        "Nombre": "Terran"
+    },
+    "19":{
+        "Nombre": "Goblin"
+    }
 }

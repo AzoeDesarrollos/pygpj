@@ -2,8 +2,9 @@
 from func.gen.dotes import elegir_dotes
 from func.core.intro import imprimir_titulo
 from func.core.prsnj import Pj as p
+import func.core.viz as v
 from func.data.setup import data as s
-import func.gen.viz as v
+
 import os
 from math import floor
 

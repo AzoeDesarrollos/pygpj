@@ -4,15 +4,16 @@ from func.core.lang import t # t() función de traducción a otros idiomas
 from func.core.intro import imprimir_titulo # función para imprimir el título del programa
 from func.core.config import puntgen # configuración para la generacion de características
 from func.core.prsnj import Pj as P # estadisticas del personaje a crear
+import func.core.export as E # funciones relativas al guardado del personaje generado
+import func.core.viz as V # funciones relativas a la visualización del generador
 from func.data.setup import data as S # datos básicos necesarios (razas, clases, dotes, etc)
 import func.gen.iniciales as B # funciones relativas a elecciones básicas (clase, raza, etc)
 import func.gen.cars as C # funciones relativas a las características
 import func.gen.habs as H # funciones relativas a las habilidades
 import func.gen.dotes as D # funciones relativas a las dotes
 import func.gen.apts as A # funciones relativas a las aptitudes especiales y los conjuros
-import func.gen.viz as V # funciones relativas a la visualización del generador
 import func.gen.objetos as O # funciones relativas al oro y los objetos del personaje
-import func.gen.export as E # funciones relativas al guardado del personaje generado
+
 
 def go ():
     while True:
@@ -24,9 +25,9 @@ def go ():
             tipo = puntgen[0]
             sub = puntgen[1:]
             if tipo == 'A':
-                tirs = C.generar_tiradas(S.CAMPNG[tipo][sub])
+                tirs = C.imprimir_puntos(C.generar_tiradas(S.CAMPNG[tipo][sub]),'A')
             elif tipo == 'C':
-                tirs = C.puntuacion_fija(S.CAMPNG[tipo][sub])
+                tirs = C.imprimir_puntos(S.CAMPNG[tipo][sub],'C')
             
             ## Seleccionar Raza ##
             raza =  B.elegir_raza(S.RAZAS)
@@ -69,14 +70,14 @@ def go ():
         
         ## Aumento de Características en niveles multiplos de 4 ##
         if P.nivel % 4 == 0:
-            C.elegir_aumento_de_caracteristica(nivel)
+            C.elegir_aumento_de_caracteristica(nivel,S.Cars)
         
         ## Cáculo de puntos y Asignación de Rangos de habilidad ##
         hab_rng = H.elegir_habs (P.habs,clase,P.nivel,S.HABS)
         P.actualizar_habilidades(hab_rng)
         
         ## Elección de Dotes ##
-        if P.nivel in (1,3,6,9,12,15,18):
+        if P.nivel == 1 or P.nivel%3 == 0:
             P.e_dts['dt_nv'] = True
         if any(P.e_dts.values()):
             D.elegir_dotes(P.dotes,clase)
@@ -89,7 +90,7 @@ def go ():
         P.equipar_pj ()
         
         ## Cálculo de estadísticas de combate
-        P.calcular_estadisticas_de_combate(clase)
+        P.calcular_estadisticas_de_combate(clase,S.DOTES,S.CLASES)
         
         if "Lanzamiento_de_conjuros" in S.CLASES[clase]:
             A.elegir_conjuros(clase,P.cla.count(clase),P.conjuros,

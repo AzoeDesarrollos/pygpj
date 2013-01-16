@@ -44,7 +44,7 @@
         "Precio": 200
     },
     "4":{
-        "Nombre": "Broquel",
+        "Nombre": "Broquel/Rodela",
         "Tipo": "esc",
         "Competencia": 32,
         "Bon_CA": 1,
@@ -180,12 +180,4 @@
         "Velocidad_20":"15'",
         "Precio": 15
     },
-    "18":{
-        "Nombre": "Rodela",
-        "Tipo": "esc",
-        "Competencia": 32,
-        "Bon_CA": 1,
-        "Penalizador":-1,
-        "Precio": 15
-    }
 }

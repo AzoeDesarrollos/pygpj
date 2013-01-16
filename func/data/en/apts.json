@@ -26,6 +26,7 @@
     "4":{
         "Nombre": "Sneak attack",
         "Formato": "{0} +{1!s}d6",
+        "Valor_Inicial": 1,
         "Clase": ["Pcr"],
         "Aptitud": "Ataque especial",
         "Tipo": "v"
@@ -56,6 +57,7 @@
     "9":{
         "Nombre": "Smite evil",
         "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
         "Clase": ["Pld"],
         "Aptitud": "Ataque especial",
         "Tipo": "v"
@@ -228,6 +230,7 @@
         "Nombre": "Favored enemy",
         "Clase": ["Exp"],
         "Formato": "{1!s}º {0}",
+        "Valor_Inicial": 1,
         "Intro": "You must choose a favored enemy, if you've already chosen one, you can reselect it.",
         "Tipo": "v",
         "Sublista": ["Aberration", "Animal ", "Construct ", "Dragon ", "Elemental ",
@@ -307,6 +310,7 @@
     "42":{
         "Nombre": "Wild shape",
         "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
         "Clase": ["Drd"],
         "Aptitud": "Cualidad especial",
         "Tipo": "v"
@@ -320,6 +324,7 @@
     "44":{
         "Nombre": "Wild shape (elemental)",
         "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
         "Clase": ["Drd"],
         "Aptitud": "Cualidad especial",
         "Tipo": "v"
@@ -351,6 +356,7 @@
     "49":{
         "Nombre": "Rage",
         "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
         "Clase": ["Brb"],
         "Aptitud": "Cualidad especial",
         "Tipo": "v"
@@ -430,6 +436,7 @@
     "62":{
         "Nombre": "Inspire courage",
         "Formato": "{0} +{1!s}",
+        "Valor_Inicial": 1,
         "Clase": ["Brd"],
         "Aptitud": "Cualidad especial",
         "Tipo": "v"
@@ -544,7 +551,8 @@
     },
     "81":{
         "Nombre": "Remove disease",
-        "Formato": "{0} {1!s}/semana",
+        "Formato": "{0} {1!s}/week",
+        "Valor_Inicial": 1,
         "Clase": ["Pld"],
         "Aptitud": "Cualidad especial",
         "Tipo": "v"
@@ -565,6 +573,7 @@
         "Nombre": "Slow fall",
         "Formato": "{0} {1!s}0'",
         "Clase": ["Mnj"],
+        "Valor_Inicial": 2,
         "Aptitud": "Cualidad especial",
         "Tipo": "v"
     },
@@ -590,6 +599,7 @@
         "Nombre": "Damage reduction",
         "Formato": "{0} {1!s}/-",
         "Clase": ["Brb"],
+        "Valor_Inicial": 1,
         "Aptitud": "Cualidad especial",
         "Tipo": "v"
     },
@@ -621,6 +631,7 @@
         "Nombre": "Trap sense",
         "Formato": "{0} +{1!s}",
         "Clase": ["Brb", "Pcr"],
+        "Valor_Inicial": 1,
         "Aptitud": "Cualidad especial",
         "Tipo": "v"
     },

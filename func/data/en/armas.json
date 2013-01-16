@@ -1,337 +1,775 @@
-[
-    {
-        "Nombre": "Alabarda", 
-        "Tipo": "dm",
-        "Competencia": 27
+{
+    "0":{
+        "Nombre": "Halberd",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing or piercing",
+        "Precio": 10
     },
-    {
-        "Nombre": "Alfanjón",
-        "Tipo": "dm",
-        "Competencia": 27
+    "1":{
+        "Nombre": "Falchion",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "2d4",
+        "Critico": "18-20/x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 75
     },
-    {
-        "Nombre": "Arco corto",
+    "2":{
+        "Nombre": "Shortbow",
         "Tipo": "ad",
-        "Competencia": 27
+        "Subtipo": "pr",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x3",
+        "Alcance": "60'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 30
     },
-    {
-        "Nombre": "Arco corto compuesto",
+    "3":{
+        "Nombre": "Shortbow, composite",
         "Tipo": "ad",
-        "Competencia": 27
+        "Subtipo": "pr",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x3",
+        "Alcance": "70'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 75
     },
-    {
-        "Nombre": "Arco largo",
+    "4":{
+        "Nombre": "Longbow",
         "Tipo": "ad",
-        "Competencia": 27
+        "Subtipo": "pr",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Alcance": "100'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 75
     },
-    {
-        "Nombre": "Arco largo compuesto",
+    "5":{
+        "Nombre": "Longbow, composite",
         "Tipo": "ad",
-        "Competencia": 27
+        "Subtipo": "pr",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Alcance": "110'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 100
     },
-    {
-        "Nombre": "Ballesta de mano",
+    "6":{
+        "Nombre": "Crossbow, hand",
         "Tipo": "ad",
-        "Competencia": 26
+        "Subtipo": "pr",
+        "Competencia": 23,
+        "Daño_P": "1d3",
+        "Daño_M": "1d14",
+        "Critico": "19-20/x2",
+        "Alcance": "30'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 100
     },
-    {
-        "Nombre": "Ballesta de repetición ligera",
+    "7":{
+        "Nombre": "Crossbow, repeating light",
         "Tipo": "ad",
-        "Competencia": 26
+        "Subtipo": "pr",
+        "Competencia": 23,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "19-20/x2",
+        "Alcance": "80'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 250
     },
-    {
-        "Nombre": "Ballesta de repetición pesada",
+    "8":{
+        "Nombre": "Crossbow, repeating heavy",
         "Tipo": "ad",
-        "Competencia": 26
+        "Subtipo": "pr",
+        "Competencia": 23,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "19-20/x2",
+        "Alcance": "120'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 400
     },
-    {
-        "Nombre": "Ballesta ligera",
+    "9":{
+        "Nombre": "Crossbow, light",
         "Tipo": "ad",
-        "Competencia": 28
+        "Subtipo": "pr",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "19-20/x2",
+        "Alcance": "80'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 35
     },
-    {
-        "Nombre": "Ballesta pesada",
+    "10":{
+        "Nombre": "Crossbow, heavy",
         "Tipo": "ad",
-        "Competencia": 28
+        "Subtipo": "pr",
+        "Competencia": 25,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "19-20/x2",
+        "Alcance": "120'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 50
     },
-    {
-        "Nombre": "Bastón",
-        "Tipo": "dm",
-        "Competencia": 28
+    "11":{
+        "Nombre": "Quarterstaff",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 25,
+        "Daño_P": "1d4/1d4",
+        "Daño_M": "1d6/1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 0
     },
-    {
-        "Nombre": "Bisarma",
-        "Tipo": "dm",
-        "Competencia": 27
+    "12":{
+        "Nombre": "Guisarme",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "2d4",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing",
+        "Precio": 9
     },
-    {
+    "13":{
         "Nombre": "Bolas",
         "Tipo": "ad",
-        "Competencia": 26
+        "Subtipo": "ar",
+        "Competencia": 23,
+        "Daño_P": "1d3*",
+        "Daño_M": "1d4*",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 5
     },
-    {
-        "Nombre": "Cachiporra",
-        "Tipo": "lc",
-        "Competencia": 27
+    "14":{
+        "Nombre": "Sap",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 1
     },
-    {
-        "Nombre": "Cadena armada",
-        "Tipo": "dm",
-        "Competencia": 26
+    "15":{
+        "Nombre": "Chain, spiked",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "Piercing",
+        "Precio": 25
     },
-    {
-        "Nombre": "Cimitarra",
-        "Tipo": "um",
-        "Competencia": 27
+    "16":{
+        "Nombre": "Scimitar",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "18-20/x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 15
     },
-    {
-        "Nombre": "Clava",
-        "Tipo": "um",
-        "Competencia": 28
+    "17":{
+        "Nombre": "Club",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Especial":"ar",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 0
     },
-    {
-        "Nombre": "Daga",
-        "Tipo": "lc",
-        "Competencia": 28
+    "18":{
+        "Nombre": "Dagger",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Especial":"ar",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "19-20/x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Slashing or piercing",
+        "Precio": 2
     },
-    {
-        "Nombre": "Dardo",
+    "19":{
+        "Nombre": "Dart",
         "Tipo": "ad",
-        "Competencia": 28
+        "Subtipo": "ar",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x2",
+        "Alcance": "20'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 0.5
     },
-    {
-        "Nombre": "Espada bastarda",
-        "Tipo": "um",
-        "Competencia": 26
+    "20":{
+        "Nombre": "Sword, bastard",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 23,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 35
     },
-    {
-        "Nombre": "Espada corta",
-        "Tipo": "lc",
-        "Competencia": 27
+    "21":{
+        "Nombre": "Sword, short",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Piercing",
+        "Precio": 10
     },
-    {
-        "Nombre": "Espada de dos hojas",
-        "Tipo": "dm",
-        "Competencia": 26
+    "22":{
+        "Nombre": "Sword, two-bladed",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d6",
+        "Daño_M": "1d8/1d8",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 100
     },
-    {
-        "Nombre": "Espada larga",
-        "Tipo": "um",
-        "Competencia": 27
+    "23":{
+        "Nombre": "Longsword",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 15
     },
-    {
-        "Nombre": "Espadón",
-        "Tipo": "dm",
-        "Competencia": 27
+    "24":{
+        "Nombre": "Greatsword",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d10",
+        "Daño_M": "2d6",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 50
     },
-    {
-        "Nombre": "Estoque",
-        "Tipo": "um",
-        "Competencia": 27
+    "25":{
+        "Nombre": "Rapier",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "18-20/x2",
+        "Daño_Tipo": "Piercing",
+        "Precio": 20
     },
-    {
-        "Nombre": "Gran clava",
-        "Tipo": "dm",
-        "Competencia": 27
+    "26":{
+        "Nombre": "Greatclub",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing",
+        "Precio": 5
     },
-    {
-        "Nombre": "Gran hacha",
-        "Tipo": "dm",
-        "Competencia": 27
+    "27":{
+        "Nombre": "Greataxe",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d10",
+        "Daño_M": "1d12",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing",
+        "Precio": 20
     },
-    {
-        "Nombre": "Guadaña",
-        "Tipo": "dm",
-        "Competencia": 27
+    "28":{
+        "Nombre": "Scythe",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "2d4",
+        "Critico": "x4",
+        "Daño_Tipo": "Slashing or piercing",
+        "Precio": 18
     },
-    {
-        "Nombre": "Guantelete armado",
-        "Tipo": "lc",
-        "Competencia": 28
+    "29":{
+        "Nombre": "Gauntlet",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d2",
+        "Daño_M": "1d3",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 2
     },
-    {
-        "Nombre": "Guja",
-        "Tipo": "dm",
-        "Competencia": 27
+    "30":{
+        "Nombre": "Gauntlet, spiked",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x2",
+        "Daño_Tipo": "Piercing",
+        "Precio": 5
     },
-    {
-        "Nombre": "Hacha arrojadiza",
-        "Tipo": "lc",
-        "Competencia": 27
+    "31":{
+        "Nombre": "Glaive",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing",
+        "Precio": 8
     },
-    {
-        "Nombre": "Hacha de batalla",
-        "Tipo": "um",
-        "Competencia": 27
+    "32":{
+        "Nombre": "Axe, throwing",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Especial":"ar",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Slashing",
+        "Precio": 8
     },
-    {
-        "Nombre": "Hacha de guerra enana",
-        "Tipo": "um",
-        "Competencia": 26
+    "33":{
+        "Nombre": "Battleaxe",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing",
+        "Precio": 10
     },
-    {
-        "Nombre": "Hacha de mano",
-        "Tipo": "lc",
-        "Competencia": 27
+    "34":{
+        "Nombre": "Waraxe, dwarven",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 23,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing",
+        "Precio": 30
     },
-    {
-        "Nombre": "Hacha doble orca",
-        "Tipo": "dm",
-        "Competencia": 26
+    "35":{
+        "Nombre": "Handaxe",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing",
+        "Precio": 6
     },
-    {
-        "Nombre": "Honda",
+    "36":{
+        "Nombre": "Axe, orc double",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d6",
+        "Daño_M": "1d8/1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing",
+        "Precio": 60
+    },
+    "37":{
+        "Nombre": "Sling",
         "Tipo": "ad",
-        "Competencia": 28
+        "Subtipo": "pr",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x2",
+        "Alcance": "50'",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 0
     },
-    {
-        "Nombre": "Hoz",
-        "Tipo": "lc",
-        "Competencia": 28
+    "38":{
+        "Nombre": "Sickle",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 6
     },
-    {
-        "Nombre": "Impacto sin arma",
-        "Tipo": "sa",
-        "Competencia": 28
+    "39":{
+        "Nombre": "Unarmed strike",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d2",
+        "Daño_M": "1d3",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning", 
     },
-    {
-        "Nombre": "Jabalina",
+    "40":{
+        "Nombre": "Javelin",
         "Tipo": "ad",
-        "Competencia": 28
+        "Subtipo": "ar",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Alcance": "30'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 1
     },
-    {
+    "41":{
         "Nombre": "Kama",
-        "Tipo": "lc",
-        "Competencia": 26
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 23,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 2
     },
-    {
+    "42":{
         "Nombre": "Kukri",
-        "Tipo": "lc",
-        "Competencia": 27
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4*",
+        "Critico": "18-20/x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 8
     },
-    {
-        "Nombre": "Lanza",
-        "Tipo": "dm",
-        "Competencia": 28
+    "43":{
+        "Nombre": "Spear",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Especial":"ar",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Alcance": "20'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 2
     },
-    {
-        "Nombre": "Lanza corta",
-        "Tipo": "um",
-        "Competencia": 28
+    "44":{
+        "Nombre": "Shortspear",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Especial":"ar",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Alcance": "20'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 1
     },
-    {
-        "Nombre": "Lanza de caballería",
-        "Tipo": "dm",
-        "Competencia": 27
+    "45":{
+        "Nombre": "Lance",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Piercing",
+        "Precio": 10
     },
-    {
-        "Nombre": "Lanza larga",
-        "Tipo": "dm",
-        "Competencia": 28
+    "46":{
+        "Nombre": "Longspear",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Piercing",
+        "Precio": 5
     },
-    {
-        "Nombre": "Látigo",
-        "Tipo": "um",
-        "Competencia": 26
+    "47":{
+        "Nombre": "Whip",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 23,
+        "Daño_P": "1d2*",
+        "Daño_M": "1d3*",
+        "Critico": "x2",
+        "Daño_Tipo": "Slashing",
+        "Precio": 1
     },
-    {
-        "Nombre": "Mangual",
-        "Tipo": "um",
-        "Competencia": 27
+    "48":{
+        "Nombre": "Flail",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 8
     },
-    {
-        "Nombre": "Mangual doble",
-        "Tipo": "dm",
-        "Competencia": 26
+    "49":{
+        "Nombre": "Flail, dire",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d6",
+        "Daño_M": "1d8/1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 90
     },
-    {
-        "Nombre": "Mangual pesado",
-        "Tipo": "dm",
-        "Competencia": 27
+    "50":{
+        "Nombre": "Flail, heavy",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d8",
+        "Daño_M": "1d10",
+        "Critico": "19-20/x2",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 15
     },
-    {
-        "Nombre": "Martillo de guerra",
-        "Tipo": "um",
-        "Competencia": 27
+    "51":{
+        "Nombre": "Warhammer",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x3",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 12
     },
-    {
-        "Nombre": "Martillo ganchudo gnomo",
-        "Tipo": "dm",
-        "Competencia": 26
+    "52":{
+        "Nombre": "Hammer, gnome hooked",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d4",
+        "Daño_M": "1d8/1d6",
+        "Critico": "x3/x4",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 20
     },
-    {
-        "Nombre": "Martillo ligero",
-        "Tipo": "lc",
-        "Competencia": 27
+    "53":{
+        "Nombre": "Hammer, light",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Especial":"ar",
+        "Competencia": 24,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4*",
+        "Critico": "x2",
+        "Alcance": "20'",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 1
     },
-    {
-        "Nombre": "Maza de armas",
-        "Tipo": "um",
-        "Competencia": 28
+    "54":{
+        "Nombre": "Morningstar",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning and piercing",
+        "Precio": 8
     },
-    {
-        "Nombre": "Maza ligera",
-        "Tipo": "lc",
-        "Competencia": 28
+    "55":{
+        "Nombre": "Mace, light",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 5
     },
-    {
-        "Nombre": "Maza pesada",
-        "Tipo": "um",
-        "Competencia": 28
+    "56":{
+        "Nombre": "Mace, heavy",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 25,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 12
     },
-    {
+    "57":{
         "Nombre": "Nunchaku",
-        "Tipo": "lc",
-        "Competencia": 26
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 23,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 2
     },
-    {
-        "Nombre": "Pico ligero",
-        "Tipo": "lc",
-        "Competencia": 27
+    "58":{
+        "Nombre": "Pick, light",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 24,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x4",
+        "Daño_Tipo": "Piercing",
+        "Precio": 4
     },
-    {
-        "Nombre": "Pico pesado",
-        "Tipo": "um",
-        "Competencia": 27
+    "59":{
+        "Nombre": "Pick, heavy",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Competencia": 24,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x4",
+        "Daño_Tipo": "Piercing",
+        "Precio": 8
     },
-    {
-        "Nombre": "Puñal",
-        "Tipo": "lc",
-        "Competencia": 28
+    "60":{
+        "Nombre": "Dagger, punching",
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 25,
+        "Daño_P": "1d3",
+        "Daño_M": "1d4",
+        "Critico": "x3",
+        "Daño_Tipo": "Piercing",
+        "Precio": 2
     },
-    {
-        "Nombre": "Red",
+    "61":{
+        "Nombre": "Net",
         "Tipo": "ad",
-        "Competencia": 26
+        "Subtipo": "ar",
+        "Competencia": 23,
+        "Alcance": "10'",
+        "Precio": 20
     },
-    {
-        "Nombre": "Ronca",
-        "Tipo": "ad",
-        "Competencia": 27
+    "62":{
+        "Nombre": "Ranseur",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "2d4",
+        "Critico": "x3",
+        "Daño_Tipo": "Piercing",
+        "Precio": 10
     },
-    {
+    "63":{
         "Nombre": "Sai",
-        "Tipo": "lc",
-        "Competencia": 26
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 23,
+        "Daño_P": "1d3",
+        "Daño_M": "1d3",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Bludgeoning",
+        "Precio": 1
     },
-    {
+    "64":{
         "Nombre": "Shuriken",
         "Tipo": "ad",
-        "Competencia": 26
+        "Subtipo": "ar",
+        "Competencia": 23,
+        "Daño_P": "1",
+        "Daño_M": "1d2",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 0.2
     },
-    {
+    "65":{
         "Nombre": "Siangham",
-        "Tipo": "lc",
-        "Competencia": 26
+        "Tipo": "cc",
+        "Subtipo": "lc",
+        "Competencia": 23,
+        "Daño_P": "1d4",
+        "Daño_M": "1d6",
+        "Critico": "x2",
+        "Daño_Tipo": "Piercing",
+        "Precio": 3
     },
-    {
-        "Nombre": "Tridente",
-        "Tipo": "um",
-        "Competencia": 27
+    "66":{
+        "Nombre": "Trident",
+        "Tipo": "cc",
+        "Subtipo": "um",
+        "Especial":"ar",
+        "Competencia": 24,
+        "Daño_P": "1d6",
+        "Daño_M": "1d8",
+        "Critico": "x2",
+        "Alcance": "10'",
+        "Daño_Tipo": "Piercing",
+        "Precio": 15
     },
-    {
-        "Nombre": "Urgosh enano",
-        "Tipo": "dm",
-        "Competencia": 26
-    }
-]
+    "67":{
+        "Nombre": "Urgrosh, dwarven",
+        "Tipo": "cc",
+        "Subtipo": "dm",
+        "Competencia": 23,
+        "Daño_P": "1d6/1d4",
+        "Daño_M": "1d8/1d6",
+        "Critico": "x3",
+        "Daño_Tipo": "Slashing or piercing",
+        "Precio": 50
+    },
+}

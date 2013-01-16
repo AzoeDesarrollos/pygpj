@@ -3,7 +3,7 @@
 from random import randint
 from math import floor
 from func.core.lang import t,probar_input
-from func.gen.viz import subselector
+from func.core.viz import subselector
 from func.core.intro import imprimir_titulo
 
 def elegir_raza(RAZAS):

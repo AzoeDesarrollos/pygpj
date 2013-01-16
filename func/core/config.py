@@ -18,7 +18,7 @@ def guardar_preferencias (nuevo):
     guardar_json(archivo,nuevo)
 
 def preferencias (prefs):
-    from func.gen.viz import subselector
+    from func.core.viz import subselector
     from func.core.lang import t,sel_idioma
     from func.data.setup import data as d
     from func.core.intro import imprimir_titulo
@@ -50,7 +50,7 @@ def preferencias (prefs):
 
 def menu_puntuacion():
     from func.core.intro import imprimir_titulo
-    from func.gen.viz import subselector
+    from func.core.viz import subselector
     
     opciones = ['Tiradas aleatorias','Compra de Puntos','Puntuaciones fijas','Salir']
     while True:

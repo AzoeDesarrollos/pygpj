@@ -11,12 +11,12 @@ class Pj():
     dotes = []
     e_dts = {}
     stats = {}
-    ataques = []
+    ataques = {}
     nivel = 0
     alini = 0
     apts = {}
     aprin = {}
-    comps = {}
+    competencias = {}
     idiomas = []
     NL = {}
     conjuros = []
@@ -44,15 +44,14 @@ class Pj():
         Pj.clases = [] ## ['Guerrero', 'Guerrero', 'Mago']
         Pj.dotes = []
         Pj.e_dts = {'dt_cls': False, 'dt_rcl':False,'dt_nv':False}
-        Pj.stats = {'AtqB':0,'TSFort':0,'TSRef':0,'TSVol':0,'Init':0,'PG':0,
-                    'CA':{'Normal':0,'Toque':0,'Desprevenido':0}} # esta nueva forma
-                                                                  # lo cambia todo.
-        Pj.ataques = []
+        Pj.stats = {'AtqB':0,'TSFort':0,'TSRef':0,'TSVol':0,'Init':0,'PG':0}
+        
+        Pj.ataques = {}
         Pj.nivel = 0
         Pj.alini = 0
         Pj.apts = {}
         Pj.aprin = {'Ataques':[],'Cualidades':[]}
-        Pj.comps = {'Armas':[],'Armds':[]}
+        Pj.competencias = {'Armas':[],'Armds':[]}
         Pj.idiomas = []
         Pj.NL = {}
         Pj.conjuros = []
@@ -60,9 +59,6 @@ class Pj():
         Pj.velocidad = ''
         Pj.subtipo = ''
         Pj.tam = {'Ind':0,'Nombre':'','Mod':0,'Pre':0,'Esc':0}
-        Pj.armas = []
-        Pj.armd = {}
-        Pj.esc = {}
         Pj.dinero = 0
         Pj.equipo = {'mb':'','mm':'','dm':'','armd':''}
         Pj.inventario = {'Armas':[],'Armd':[],'Esc':[]}
@@ -71,8 +67,7 @@ class Pj():
         from func.gen.iniciales import procesar_clase, Competencias
         from func.gen.cars import CarMod
         from func.gen.dotes import aplicar_dote
-        from func.gen.estats import calcular_ATKs,calcular_CA
-        from func.gen.export import aplicar_mods
+        from func.core.export import aplicar_mods
         
         Pj.nombre = data['nombre']
         Pj.raza = data['raza']
@@ -105,7 +100,6 @@ class Pj():
         Pj.equipo = data['equipo']
         Pj.ataques = calcular_ATKs (Pj.stats[0],Pj.CARS['FUE']['Mod'],Pj.CARS['DES']['Mod'],
                                       Pj.tam,Pj.armas,Pj.dotes,d.ARMAS)
-        Pj.CA = calcular_CA (Pj.tam,Pj.CARS['INT']['DES'],Pj.armd,Pj.esc)
         Pj.dinero = data['dinero']
     
     def guardar_pj ():
@@ -121,7 +115,6 @@ class Pj():
                    'dotes':Pj.dotes,
                    'apts':Pj.apts,
                    'idiomas':Pj.idiomas,
-                   'armas':Pj.armas,
                    'dinero':Pj.dinero,
                    'equipo':Pj.equipo}
         
@@ -173,11 +166,10 @@ class Pj():
     
     def aplicar_clase (clase):
         from func.gen.apts import calcular_NL
-        from func.gen.estats import calcular_PG
         from func.gen.iniciales import Competencias,procesar_clase
         
-        Pj.comps['Armas'] = Competencias (d.CLASES[clase]['Comp_Arma'],Pj.comps['Armas'])
-        Pj.comps['Armds'] = Competencias (d.CLASES[clase]['Comp_Armd'],Pj.comps['Armds'])
+        Pj.competencias['Armas'] = Competencias (d.CLASES[clase]['Comp_Arma'],Pj.competencias['Armas'])
+        Pj.competencias['Armds'] = Competencias (d.CLASES[clase]['Comp_Armd'],Pj.competencias['Armds'])
         Pj.cla.append(clase)
         Pj.clases.append(d.CLASES[clase]['Nombre'])
         Pj.NL = calcular_NL(clase,Pj.cla,d.CLASES)
@@ -218,14 +210,14 @@ class Pj():
             sb = int(nueva_dote.split(':')[1])
             if 'Competencia' in DOTES[dt]:
                 if 'Marcial' or 'Exótica' in DOTES[dt]['Competencia']:
-                    if sb not in Pj.comps['Armas']:
-                        Pj.comps['Armas'].append(sb)
+                    if sb not in Pj.competencias['Armas']:
+                        Pj.competencias['Armas'].append(sb)
                 elif 'Sencillas' in DOTES[dt]['Competencia']:
                     for i in range(len(ARMAS)):
                         if ARMAS[i]['Competencia'] == dt:
-                            if i not in Pj.comps['Armas']:
-                                Pj.comps['Armas'].append(i)
-                Pj.comps['Armas'].sort()
+                            if i not in Pj.competencias['Armas']:
+                                Pj.competencias['Armas'].append(i)
+                Pj.competencias['Armas'].sort()
             elif 'Critico' in DOTES[dt]:
                 pass
             elif 'Hab_dt' in DOTES[dt]:
@@ -275,16 +267,54 @@ class Pj():
         from func.gen.objetos import equiparse
         Pj.equipo = equiparse(Pj.inventario,Pj.equipo)
     
-    def calcular_estadisticas_de_combate(clase):
-        import func.gen.estats as T
-        Pj.stats['PG'] = T.calcular_PG(Pj.stats['PG'],Pj.CARS['CON']['Punt'],
-                                       d.CLASES[clase]['DG'],Pj.nivel,Pj.dotes,d.DOTES) # puntos de golpe
+    def calcular_estadisticas_de_combate(clase,DOTES,CLASES):
+
+        # Puntos de Golpe #
+        if Pj.nivel == 1:
+            Pj.stats['PG'] += CLASES[clase]['DG']+Pj.CARS['CON']['Mod']
+        else:
+            for i in range(Pj.nivel):
+                Pj.stats['PG'] += randint(1,CLASES[clase]['DG'])+Pj.CARS['CON']['Mod']
         
-        Pj.ataques = T.calcular_ATKs (Pj.stats['AtqB'],Pj.CARS['FUE']['Mod'],Pj.CARS['DES']['Mod'],
-                                     Pj.tam,Pj.equipo,Pj.dotes,d.ARMAS,d.DOTES) # modificadores de ataque
+        # Iniciativa #
+        Pj.stats['Init'] += Pj.CARS['DES']['Mod']
         
-        CA = T.calcular_CA (Pj.tam,Pj.CARS['DES']['Mod'],Pj.equipo,d.ARMDS) # CA
-        Pj.stats['CA']['Normal'] = CA[0]
-        Pj.stats['CA']['Toque'] = CA[1]
-        Pj.stats['CA']['Desprevenido'] = CA[2]
-        Pj.stats['Init'] = T.calcular_inic (Pj.CARS['DES']['Mod'],Pj.dotes,d.DOTES) # iniciativa
+        
+        # Bonificadores de ataque con cada arma #
+        armas = []
+        for mano in ('mb','mm','dm'):
+            if Pj.equipo[mano] != '' and Pj.equipo[mano]['grupo'] == 'armas':
+                    armas.append(Pj.equipo[mano])
+                
+        ATKs = []
+        ATKb = Pj.stats['AtqB']
+        if ATKb == 0:
+            ATKs.append(ATKb)
+        else:
+            while ATKb > 0:
+                ATKs.append(ATKb)
+                ATKb -= 5
+            
+        ATK_C,ATK_D = [],[]
+        for i in ATKs:
+            ATK_C.append(i+Pj.CARS['FUE']['Mod']+Pj.tam['Mod'])
+            ATK_D.append(i+Pj.CARS['DES']['Mod']+Pj.tam['Mod'])
+    
+        for arma in armas:
+            arm = arma['index']
+            bon = arma['bon']
+            for i in Pj.dotes:
+                if ':' in i:
+                    dt = i.split(':')[0]
+                    sb = i.split(':')[1]
+                    if sb == str(arm):
+                        if 'Bon_ATK' in DOTES[dt]:
+                            bon += DOTES[dt]['Bon_ATK']
+                    
+            Pj.ataques[arm] = []
+            if arma['subgrupo'] == 'ad':
+                for i in ATK_D:
+                    Pj.ataques[arm].append(i+bon)
+            else:
+                for i in ATK_C:
+                    Pj.ataques[arm].append(i+bon)            

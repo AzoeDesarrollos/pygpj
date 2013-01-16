@@ -4,7 +4,7 @@ from func.core.lang import t,probar_input
 from func.data.setup import data as s
 from func.core.intro import imprimir_titulo
 from func.core.prsnj import Pj as p
-import func.gen.viz as v
+import func.core.viz as v
 import os
 from random import choice
 

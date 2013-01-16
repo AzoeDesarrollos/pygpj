@@ -1,0 +1,14 @@
+Ver 38
+- Nuevas Funcionalidades
+** Imprimir_CA ahora imprime los 3 valores de CA y también los componentes del paréntesis
+
+- Cambios mayores
+** Nueva carpeta doc/ con más documentación sobre el programa
+** Desaparición del módulo estats.py. El código ahora se encuentra en prsnj.py y en export.py
+
+- Cambios menores y bugs reparados
+** export.py y viz.py ahora forma parte de func.core
+** suprimidas algunas variables que no tenian funcionamiento.
+** actualización de elegir_aumento_de_caracteristica()
+** traducidos y corregidos los archivos de traducción en/armas.json, en/armds.json y
+   en/idiomas.json

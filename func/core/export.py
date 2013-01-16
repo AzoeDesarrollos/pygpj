@@ -43,7 +43,7 @@ def orden_habs_imprint (habs_pj,equipo,HABS,ARMDS):
     
     return imprimir
 
-def imprimir_DG(clases_pj,CLASES,CON_mod,PG):
+def imprimir_DG(clases_pj,CLASES,CON_mod,PG,dotes):
     tempD,tempN,tempF = [],[],[]
     modif = CON_mod*len(clases_pj)
     impr = []
@@ -140,13 +140,59 @@ def imprimir_ATK (equipo,ATKs,ARMAS,tam_pj,FUE_mod):
     else:
         return ', '.join(imprimir)+'.'
 
-def imprimir_CA (CA_Pj,DES_mod):
-    normal = CA_Pj['Normal']
-    toque = CA_Pj['Toque']
-    deprevenido = CA_Pj['Desprevenido']
+def imprimir_CA (tam,DES_mod,equipo,ARMDS,natural=0):
+    '''Calcula e imprime la CA y sus componentes'''
     
-    texto = '{!s}'.format(normal)+' ({:+} '.format(DES_mod)+t('Des')+'), '+t('toque')+' {!s}, '.format(toque)+t('desprevenido')+' {!s}'.format(deprevenido)
-    return texto
+    prnts = {0:{'nom': 'tam', 'val': tam['Mod']},
+             1:{'nom': 'Des','val':DES_mod},
+             4:{'nom':'nat','val':natural}}
+    
+    bon = 0
+    if equipo['armd'] != '':
+        armd = equipo['armd']
+        
+        if 'Bon_max_des' in armd:
+            if DES_mod > ARMDS[armd['index']]['Bon_max_des']:
+                DES_mod = ARMDS[armd['index']]['Bon_max_des']
+                prnts[1]['val'] = DES_mod
+        
+        armd['Bon_CA'] = ARMDS[armd['index']]['Bon_CA']
+    else:
+        armd = {'index':None,'Bon_CA':0,'bon':0}
+    
+            
+    if equipo['mm'] != '':
+        if equipo['mm']['subgrupo'] == 'esc':
+            esc = equipo['mm']
+        
+        if 'Bon_max_des' in esc:
+            if DES_mod > ARMDS[esc['index']]['Bon_max_des']:
+                DES_mod = ARMDS[esc['index']]['Bon_max_des']
+                prnts[1]['val'] = DES_mod
+        
+        esc['Bon_CA'] = ARMDS[esc['index']]['Bon_CA']
+    else:
+        esc = {'index':None,'Bon_CA':0,'bon':0}
+        
+    for i in (armd, esc):
+        if 'bon' in i:
+            i['Bon_CA'] += i['bon']
+        
+    if armd['index'] != None: prnts[2] = {'nom':imprimir_nom_objmag(armd,s.OBJMAG,ARMDS).rstrip(),'val':armd['Bon_CA']}
+    if esc['index'] != None: prnts[3] = {'nom':imprimir_nom_objmag(esc,s.OBJMAG,ARMDS).rstrip(),'val':esc['Bon_CA']}
+    
+    CA_normal = 10+tam['Mod']+DES_mod+natural+armd['Bon_CA']+esc['Bon_CA']
+    CA_toque = 10+tam['Mod']+DES_mod
+    CA_desprevenido = 10+tam['Mod']+natural+armd['Bon_CA']+esc['Bon_CA']
+    
+    parentesis = []
+    for i in range(len(prnts)):
+        if i in prnts:
+            if prnts[i]['val'] != 0:
+                parentesis.append('{:+}'.format(prnts[i]['val'])+' '+prnts[i]['nom'])
+    
+    p = '{!s}'.format(CA_normal)+' ('+', '.join(parentesis)+') '+t('toque')+' {!s}, '.format(CA_toque)+t('desprevenido')+' {!s}.'.format(CA_desprevenido)
+    return p
 
 def imprimir_CARS (Cars_Pj,Cars):
     imprimir = []
@@ -154,6 +200,9 @@ def imprimir_CARS (Cars_Pj,Cars):
         imprimir.append(Cars[c]['Nom']+' '+str(Cars_Pj[Cars[c]['Abr']]['Punt']))
     
     return ', '.join(imprimir)+'.'
+
+def imprimir_idiomas (idiomas):
+    pass
 
 def exportar_pj():
     if input('\n'+t('Desea Exportar este personaje? ')).lower().startswith('s'):
@@ -163,9 +212,9 @@ def exportar_pj():
         Pj.write(t('Tipo y Tamaño')+': '+t('Humanoide')+' '+p.tam['Nombre'])
         if p.subtipo != '':
             Pj.write(' ('+p.subtipo+')\n')
-        Pj.write(t('DG')+': '+imprimir_DG(p.cla,s.CLASES,p.CARS['CON']['Mod'],p.stats['PG'])+'\n')
+        Pj.write(t('DG')+': '+imprimir_DG(p.cla,s.CLASES,p.CARS['CON']['Mod'],p.stats['PG'],p.dotes)+'\n')
         Pj.write(t('Iniciativa')+': {0:+}'.format(p.stats['Init'])+'\n'+t('Velocidad')+': '+p.velocidad+'\n')
-        Pj.write(t('CA')+': '+imprimir_CA(p.stats['CA'],p.CARS['DES']['Mod'])+'\n')
+        Pj.write(t('CA')+': '+imprimir_CA(p.tam,p.CARS['DES']['Mod'],p.equipo,s.ARMDS)+'\n')
         Pj.write(t('Ataque base/Presa')+': {0:+}/{1:+}'.format(p.stats['AtqB'],p.stats['AtqB']+p.CARS['FUE']['Mod'])+'\n')
         atks = imprimir_ATK (p.equipo,p.ataques,s.ARMAS,p.tam,p.CARS['FUE']['Mod'])
         if atks != '':

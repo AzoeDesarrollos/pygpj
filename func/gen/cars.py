@@ -1,7 +1,7 @@
 import os
 from random import randint,shuffle,choice
-from func.gen.viz import subselector,paginar_dos_columnas
-from func.core.lang import t
+from func.core.viz import subselector,paginar_dos_columnas
+from func.core.lang import t,probar_input
 from func.core.intro import imprimir_titulo
 from func.data.setup import data as d
 from func.core.prsnj import Pj as p
@@ -72,11 +72,14 @@ def generar_tiradas(metodo):
             Tirs.append(sum(UnaTir(5,2)))
 
     Tirs.sort(reverse=True)
-    print ('Sus tiradas son: '+', '.join(str(i) for i in Tirs)+'.')
     return Tirs
 
-def puntuacion_fija (puntos):
-    print ('Sus puntuaciones son: '+', '.join(str(i) for i in puntos)+'.')
+def imprimir_puntos (puntos,modo):
+    if modo == 'A':
+        print ('Sus tiradas son: '+', '.join(str(i) for i in puntos)+'.')
+    elif modo == 'C':
+        print ('Sus puntuaciones son: '+', '.join(str(i) for i in puntos)+'.')
+    
     return puntos
 
 def repartir_a_voluntad(lista,Car):
@@ -153,43 +156,28 @@ def CarMod(car):
         mod = (car-11)/2
     return int(mod)
 
-def elegir_aumento_de_caracteristica (nivel):
-    CARS = (t('FUE'),t('DES'),t('CON'),t('INT'),t('SAB'),t('CAR'),t('Fuerza'),t('Destreza'),
-            t('Constitución'),'Constitucion',t('Inteligencia'),t('Sabiduría'),'Sabiduria',
-            t('Carisma'))
+def elegir_aumento_de_caracteristica (nivel,Cars):
     
-    imprimir_titulo()
-    print ('\nEn el '+str(nivel)+'º nivel, tienes un aumento de características')
-    print (t('Selecciona la característica que quieres aumentar'))
-    Car = input(t('Característica')+'): ')
+    nom = [Cars[i]['Nom'] for i in range(len(Cars))]
+    
     while True:
-        if Car.capitalize() not in CARS:
-            if Car.upper() not in CARS:
-                print (t('La característica es inválida o inexistente'))
-                Car = input('Característica: ')
-            else:
-                break
+        imprimir_titulo()
+        print ('\nEn el '+str(nivel)+'º nivel, tienes un aumento de características')
+        print (t('Selecciona la característica que quieres aumentar'))
+        car = subselector('Característica',nom)
+        if car.isnumeric():
+            Car = Cars[car]['Abr']
         else:
-            break
-    if len(Car) > 3:
-        Car = Car.capitalize()
-        if Car in ('Fuerza'): Car = 0
-        elif Car in ('Destreza'): Car = 1
-        elif Car in ('Constitución','Constitucion'): Car = 2
-        elif Car in ('Inteligencia'): Car = 3
-        elif Car in ('Sabiduría','Sabiduria') : Car = 4
-        elif Car in ('Carisma'): Car = 5
-    else:
-        Car = Car.upper()
-        if Car == 'FUE': Car = 0
-        elif Car == 'DES': Car = 1
-        elif Car == 'CON': Car = 2
-        elif Car == 'INT': Car = 3
-        elif Car == 'SAB': Car = 4
-        elif Car == 'CAR': Car = 5
-    
+            car = probar_input(Car,nom)
+            if car == '':
+                print (t('La característica es inválida o inexistente'))
+            else:
+                car = nom.index(car)
+                Car = Cars[car]['Abr']
+   
     p.aumentar_caracteristicas(Car)
-    print ('El personaje tiene ahora '+d.Cars[Car]+' '+str(p.CARS[Car])+' (+'+str(p.CARS_mods[Car])+')')
+    print ('El personaje tiene ahora '+d.Cars[car]['Nom']+
+           ' '+str(p.CARS[Car]['Punt'])+' (+'+str(p.CARS[Car]['M'])+')')
 
 def compra_puntos (puntos,Cars):
     costes = {9:1,10:2,11:3,12:4,13:5,14:6,15:8,16:10,17:13,18:16}

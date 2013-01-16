@@ -1,6 +1,6 @@
 # coding=UTF-8
 # dotes.py
-import func.gen.viz as v
+import func.core.viz as v
 from func.data.setup import data as s
 from func.core.lang import t,probar_input
 from func.core.prsnj import Pj as p
@@ -26,7 +26,7 @@ def elegir_dotes (dotes,clase):
             if not any(p.e_dts.values()):
                 print('\n'+t('No se pueden elegir más dotes por el momento'))
             else:
-                todas = AutoDot(sublista[0],p.comps['Armas'],p.conjuros,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS)
+                todas = AutoDot(sublista[0],p.competencias['Armas'],p.conjuros,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS)
                 posibles = GenerarListadeAyuda(todas,s.DOTES)
                 dote = SelDot(s.DOTES,posibles)
                 if dote != '':
@@ -43,7 +43,7 @@ def elegir_dotes (dotes,clase):
             if not any(p.e_dts.values()):
                 print('\n'+t('No se pueden elegir más dotes por el momento'))
             else:
-                todas = AutoDot(sublista[0],p.comps['Armas'],p.conjuros,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS)
+                todas = AutoDot(sublista[0],p.competencias['Armas'],p.conjuros,s.DOTES,s.ARMAS,s.HABS,s.ESCUELAS)
                 posibles = GenerarListadeAyuda(todas,s.DOTES)
                 v.paginar_dos_columnas(15,[s.DOTES[str(i)]['Nombre'] for i in posibles])
         elif op == 3: # Ver información sobre una dote específica
@@ -114,11 +114,11 @@ def SelDot (DOTES, posibles):
             elif ':' in mec[nom.index(dt)]:
                 sub = mec[nom.index(dt)].split(':')[1]
                 if sub == 'w':
-                    dote = u_w (dt,p.comps['Armas'],p.dotes,s.ARMAS,nom,pre,des,DOTES)
+                    dote = u_w (dt,p.competencias['Armas'],p.dotes,s.ARMAS,nom,pre,des,DOTES)
                 elif sub == 'w?':
                     dote = u_w2(dt,nom,pre,des,DOTES)
                 elif sub == 'm':
-                    dote = u_m (dt,p.comps['Armas'],p.dotes,nom,pre,des,s.ARMAS,DOTES)
+                    dote = u_m (dt,p.competencias['Armas'],p.dotes,nom,pre,des,s.ARMAS,DOTES)
                 elif sub == 'e':
                     dote = u_e (dt,p.dotes,s.ESCUELAS,nom,pre,des,DOTES)
                 elif sub == 'e?':
@@ -269,7 +269,7 @@ def validar_requisitos (ID_dote,DOTES):
             return False
         
     if 'Req_Comp' in dote:
-        if not req_competencia (ID,p.comps['Armas'],sub,DOTES):
+        if not req_competencia (ID,p.competencias['Armas'],sub,DOTES):
             return False
         
     if 'Req_Hab' in dote:
