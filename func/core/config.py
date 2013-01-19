@@ -9,7 +9,11 @@ def abrir_json (archivo):
     return data
 
 def guardar_json (archivo, datos):
-    ex = open(archivo,'w')
+    try:
+        ex = open(archivo,'w')
+    except IOError:
+        os.mkdir(archivo.split('/')[0])
+        ex = open(archivo,'w')
     json.dump(datos,ex)
     ex.close()
 

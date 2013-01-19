@@ -1,14 +1,7 @@
-Ver 38
+Ver 39
 - Nuevas Funcionalidades
-** Imprimir_CA ahora imprime los 3 valores de CA y también los componentes del paréntesis
-
-- Cambios mayores
-** Nueva carpeta doc/ con más documentación sobre el programa
-** Desaparición del módulo estats.py. El código ahora se encuentra en prsnj.py y en export.py
+** Primer instalador proporcionado.
 
 - Cambios menores y bugs reparados
-** export.py y viz.py ahora forma parte de func.core
-** suprimidas algunas variables que no tenian funcionamiento.
-** actualización de elegir_aumento_de_caracteristica()
-** traducidos y corregidos los archivos de traducción en/armas.json, en/armds.json y
-   en/idiomas.json
+** debido a que el archivo config.json puede cambiar en cualqueir momento, subirlo en cada release es inútil.
+** creación automática de carpetas 'guardar' y 'personajes' cuando se crea el primer pj.

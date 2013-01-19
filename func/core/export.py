@@ -206,7 +206,12 @@ def imprimir_idiomas (idiomas):
 
 def exportar_pj():
     if input('\n'+t('Desea Exportar este personaje? ')).lower().startswith('s'):
-        Pj = open('Personajes/'+p.nombre+'.txt','w')
+        try:
+            Pj = open('Personajes/'+p.nombre+'.txt','w')
+        except IOError:
+            os.mkdir('Personajes/')
+            Pj = open('Personajes/'+p.nombre+'.txt','w')
+            
         Pj.write(t('Nombre')+': '+p.nombre+'\n')
         Pj.write(t('Clase y nivel')+': '+imprimir_clases(p.cla,s.CLASES)+' AL '+s.alins[p.alini]['Abr']+'\n')
         Pj.write(t('Tipo y Tamaño')+': '+t('Humanoide')+' '+p.tam['Nombre'])
