@@ -1,0 +1,234 @@
+{
+    "0":{
+        "Nombre": "Abrir cerraduras",
+        "Modificador": "DES",
+        "Solo_entrenada": true
+    },
+    "1":{
+        "Nombre": "Artesanía",
+        "Modificador": "INT",
+        "Sinergias": [40]
+    },
+    "2":{
+        "Nombre": "Averiguar intenciones",
+        "Modificador": "SAB",
+        "Sinergias": [8]
+    },
+    "3":{
+        "Nombre": "Avistar",
+        "Modificador": "SAB"
+    },
+    "4":{
+        "Nombre": "Buscar",
+        "Modificador": "INT",
+        "Sinergias": [39]
+    },
+    "5":{
+        "Nombre": "Concentración",
+        "Modificador": "CON"
+    },
+    "6":{
+        "Nombre": "Conocimiento de conjuros",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [43]
+    },
+    "7":{
+        "Nombre": "Descifrar escritura",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [43]
+    },
+    "8":{
+        "Nombre": "Diplomacia",
+        "Modificador": "CAR"
+    },
+    "9":{
+        "Nombre": "Disfrazarse",
+        "Modificador": "CAR"
+    },
+    "10":{
+        "Nombre": "Engañar",
+        "Modificador": "CAR",
+        "Sinergias": [8,9,18,20]
+    },
+    "11":{
+        "Nombre": "Equilibrio",
+        "Modificador": "DES",
+        "Pen_armd": 1
+    },
+    "12":{
+        "Nombre": "Escapismo",
+        "Modificador": "DES",
+        "Sinergias": [44],
+        "Pen_armd": 1
+    },
+    "13":{
+        "Nombre": "Esconderse",
+        "Modificador": "DES",
+        "Pen_armd": 1
+    },
+    "14":{
+        "Nombre": "Escuchar",
+        "Modificador": "SAB"
+    },
+    "15":{
+        "Nombre": "Falsificar",
+        "Modificador": "INT"
+    },
+    "16":{
+        "Nombre": "Hablar un idioma",
+        "Solo_entrenada": true
+    },
+    "17":{
+        "Nombre": "Interpretar",
+        "Modificador": "CAR"
+    },
+    "18":{
+        "Nombre": "Intimidar",
+        "Modificador": "INT"
+    },
+    "19":{
+        "Nombre": "Inutilizar mecanismo",
+        "Modificador": "INT",
+        "Solo_entrenada": true
+    },
+    "20":{
+        "Nombre": "Juego de manos",
+        "Modificador": "DES",
+        "Solo_entrenada": true,
+        "Pen_armd": 1
+    },
+    "21":{
+        "Nombre": "Montar",
+        "Modificador": "DES"
+    },
+    "22":{
+        "Nombre": "Moverse sigilosamente",
+        "Modificador": "DES",
+        "Pen_armd": 1
+    },
+    "23":{
+        "Nombre": "Nadar",
+        "Modificador": "FUE",
+        "Pen_armd": 2
+    },
+    "24":{
+        "Nombre": "Oficio",
+        "Modificador": "SAB",
+        "Solo_entrenada": true
+    },
+    "25":{
+        "Nombre": "Piruetas",
+        "Modificador": "DES",
+        "Solo_entrenada": true,
+        "Sinergias": [11,37],
+        "Pen_armd": 1
+    },
+    "26":{
+        "Nombre": "Reunir información",
+        "Modificador": "CAR",
+        "Sinergias": [6]
+    },
+    "27":{
+        "Nombre": "Saber (arcano)",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [6]
+    },
+    "28":{
+        "Nombre": "Saber (arquitectura e ingeniería)",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [4]
+    },
+    "29":{
+        "Nombre": "Saber (dungeons)",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [39]
+    },
+    "30":{
+        "Nombre": "Saber (geografía)",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [39]
+    },
+    "31":{
+        "Nombre": "Saber (historia)",
+        "Modificador": "INT",
+        "Solo_entrenada": true
+    },
+    "32":{
+        "Nombre": "Saber (local)",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [26]
+    },
+    "33":{
+        "Nombre": "Saber (los planos)",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [39]
+    },
+    "34":{
+        "Nombre": "Saber (naturaleza)",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [39]
+    },
+    "35":{
+        "Nombre": "Saber (nobleza y realeza)",
+        "Modificador": "INT",
+        "Solo_entrenada": true,
+        "Sinergias": [8]
+    },
+    "36":{
+        "Nombre": "Saber (religión)",
+        "Modificador": "INT",
+        "Solo_entrenada": true
+    },
+    "37":{
+        "Nombre": "Saltar",
+        "Modificador": "DES",
+        "Sinergias": [25],
+        "Pen_armd": 1
+    },
+    "38":{
+        "Nombre": "Sanar",
+        "Modificador": "SAB"
+    },
+    "39":{
+        "Nombre": "Supervivencia",
+        "Modificador": "SAB",
+        "Sinergias": [34]
+        
+    },
+    "40":{
+        "Nombre": "Tasación",
+        "Modificador": "INT"
+    },
+    "41":{
+        "Nombre": "Trato con animales",
+        "Modificador": "CAR",
+        "Solo_entrenada": true,
+        "Sinergias": [21]
+    },
+    "42":{
+        "Nombre": "Trepar",
+        "Modificador": "FUE",
+        "Pen_armd": 1
+    },
+    "43":{
+        "Nombre": "Usar objeto mágico",
+        "Modificador": "CAR",
+        "Solo_entrenada": true,
+        "Sinergias": [6]
+        
+    },
+    "44":{
+        "Nombre": "Uso de cuerdas",
+        "Modificador": "DES",
+        "Sinergias": [42,12]
+    }
+}

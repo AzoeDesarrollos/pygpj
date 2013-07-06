@@ -1,0 +1,226 @@
+{
+    "0":{
+        "Nombre":"Open Lock",
+        "Modificador":1,
+        "Solo_entrenada":true
+    },
+    "1":{
+        "Nombre":"Craft",
+        "Modificador":3,
+        "Sinergias":[39]
+    },
+    "2":{
+        "Nombre":"Sense Motive",
+        "Modificador":4,
+        "Sinergias":[8]
+    },
+    "3":{
+        "Nombre":"Spot",
+        "Modificador":4
+    },
+    "4":{
+        "Nombre":"Search",
+        "Modificador":3,
+        "Sinergias":[38]
+    },
+    "5":{
+        "Nombre":"Concentration",
+        "Modificador":2
+    },
+    "6":{
+        "Nombre":"Spellcraft",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[42]
+    },
+    "7":{
+        "Nombre":"Decipher Script",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[42]
+    },
+    "8":{
+        "Nombre":"Diplomacy",
+        "Modificador":5
+    },
+    "9":{
+        "Nombre":"Disguise",
+        "Modificador":5
+    },
+    "10":{
+        "Nombre":"Bluff",
+        "Modificador":5,
+        "Sinergias":[8,9,17,19]
+    },
+    "11":{
+        "Nombre":"Balance",
+        "Modificador":1
+    },
+    "12":{
+        "Nombre":"Escape Artist",
+        "Modificador":1,
+        "Sinergias":[43]
+    },
+    "13":{
+        "Nombre":"Hide",
+        "Modificador":1
+    },
+    "14":{
+        "Nombre":"Listen",
+        "Modificador":4
+    },
+    "15":{
+        "Nombre":"Forgery",
+        "Modificador":3
+    },
+    "16":{
+        "Nombre":"Speak Language",
+        "Solo_entrenada":true
+    },
+    "17":{
+        "Nombre":"Perform",
+        "Modificador":5
+    },
+    "18":{
+        "Nombre":"Intimidate",
+        "Modificador":3
+    },
+    "19":{
+        "Nombre":"Disable Device",
+        "Modificador":3,
+        "Solo_entrenada":true
+    },
+    "20":{
+        "Nombre":"Sleight Of Hand",
+        "Modificador":1,
+        "Solo_entrenada":true
+    },
+    "21":{
+        "Nombre":"Ride",
+        "Modificador":1
+    },
+    "22":{
+        "Nombre":"Move Silently",
+        "Modificador":1
+    },
+    "23":{
+        "Nombre":"Swim",
+        "Modificador":0
+    },
+    "24":{
+        "Nombre":"Profession",
+        "Modificador":4,
+        "Solo_entrenada":true,
+        "Sinergias":[11,36]
+    },
+    "25":{
+        "Nombre":"Tumble",
+        "Modificador":1,
+        "Solo_entrenada":true
+    },
+    "26":{
+        "Nombre":"Gather Information",
+        "Modificador":5,
+        "Sinergias":[6]
+    },
+    "27":{
+        "Nombre":"Knowledge (arcana)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[4]
+    },
+    "28":{
+        "Nombre":"Knowledge (architecture and engineering)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[38]
+    },
+    "29":{
+        "Nombre":"Knowledge (dungeoneering)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[38]
+    },
+    "30":{
+        "Nombre":"Knowledge (geography)",
+        "Modificador":3,
+        "Solo_entrenada":true
+    },
+    "31":{
+        "Nombre":"Knowledge (history)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[25]
+    },
+    "32":{
+        "Nombre":"Knowledge (local)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[38]
+    },
+    "33":{
+        "Nombre":"Knowledge (the planes)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[38]
+    },
+    "34":{
+        "Nombre":"Knowledge (nature)",
+        "Modificador":3,
+        "Solo_entrenada":true,
+        "Sinergias":[8]
+    },
+    "35":{
+        "Nombre":"Knowledge (nobility and royalty)",
+        "Modificador":3,
+        "Solo_entrenada":true
+    },
+    "36":{
+        "Nombre":"Knowledge (religion)",
+        "Modificador":3,
+        "Solo_entrenada":true
+    },
+    "37":{
+        "Nombre":"Jump",
+        "Modificador":1,
+        "Sinergias":[24]
+    },
+    "38":{
+        "Nombre":"Heal",
+        "Modificador":4,
+        "Sinergias":[33]
+    },
+    "39":{
+        "Nombre":"Survival",
+        "Modificador":4
+    },
+    "40":{
+        "Nombre":"Appraise",
+        "Modificador":3,
+        "Sinergias":[44,20]
+    },
+    "41":{
+        "Nombre":"Handle Animal",
+        "Modificador":5,
+        "Solo_entrenada":true
+    },
+    "42":{
+        "Nombre":"Climb",
+        "Modificador":0,
+        "Sinergias":[6]
+    },
+    "43":{
+        "Nombre":"Use Magic Device",
+        "Modificador":5,
+        "Solo_entrenada":true,
+        "Sinergias":[41,12]
+    },
+    "44":{
+        "Nombre":"Use Rope",
+        "Modificador":1
+    },
+    "45":{
+        "Nombre":"Wild empathy",
+        "Modificador":5,
+        "Solo_entrenada":true}
+}

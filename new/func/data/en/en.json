@@ -1,0 +1,101 @@
+{
+    "Bienvenido a PyGPJ, un generador de personajes para D&D 3.5":
+    "Welcome to PyGPJ, a D&D 3.5e character generator",
+    "Elije una opción":"Pick an option",
+    "Crear un nuevo personaje":"Create a new character",
+    "Avanzar un personaje existente":"Advance an existing character",
+    "Editar preferencias":"Edit preferences",
+    "Cambiar idioma":"Change language",
+    "Cambiar las advertencias":"Toggle warnings",
+    "Salir":"Close",
+    "Ver licencia":"View license",
+    
+    "Menú: Preferencias":"Menu: Preferences",
+    
+    "Sus tiradas son":"Your rolls are",
+    "¿Desea tirar de nuevo? ":"Do you want to roll again? ",
+    "s":"y",
+
+    "Seleccione Raza":"Select Race","Raza":"Race",
+    "Raza inválida, intente nuevamente":"Invalid race, try again",
+    "Raza inválida o error ortográfico, intente nuevamente":
+    "Invalid race or misspelling error, try again",
+    "Has elegido que este personaje sea ":"You have selected that this character be ",
+    "un Humano":"a Human","un Elfo":"an Elf","un Enano":"a Dwarf",
+    "un Mediano":"a Halfing","un Semielfo":"a Half-elf","un Semiorco":"a Half-orc",
+    "¿Estas seguro? ":"Are you sure? ","[S / N]":"[Y / N]",
+    
+    "Los idiomas automáticos de tu raza son: ":"Your race' automatic languages are: ",
+    "Además, tu personaje puede conocer ":"Plus, your character may know ",
+    " idiomas adicionales":" aditional languages",
+    "Eligelos de la siguiente lista:":"Pick them from the following list:",
+    "Idioma":"Language",
+    
+    "Mediano":"Medium","Pequeño":"Small",
+    "Reparte tus puntuaciones de característica":"Assing your ability scores",
+    "Por favor ingrese sólo números":"Please enter only numbers",
+    "No hay tiradas con ese valor":"There's no rolls with that value",
+    "Fuerza":"Strength","Destreza":"Dexterity","Constitución":"Constitution",
+    "Inteligencia":"Intelligence","Sabiduría":"Wisdom","Carisma":"Charisma",
+    "FUE":"STR","DES":"DEX","CON":"CON","INT":"INT","SAB":"WIS","CAR":"CHA",
+    
+    "Escoge un alineamiento para este personaje":"Select an alignment for this character",
+    "Alineamiento":"Alignment",
+    "Legal Bueno":"Lawful Good","Neutral Bueno":"Neutral Good","Caótico Bueno":"Chaotic Good",
+    "Legal Neutral":"Lawful Neutral","Neutral Auténtico":"Neutral","Caótico Neutral":"Chaotic Neutral",
+    "Legal Maligno":"Lawful Evil","Neutral Maligno":"Neutral Evil","Caótico Maligno":"Chaotic Evil",
+    "LB":"LG","NB":"NG","CB":"CG","LN":"LN","NN":"NN","CN":"CN","LM":"LE","NM":"NE","CM":"CE",
+    "El numero elegido no representa ningún alineamiento":"The selected number does not match any alignment",
+    "1º":"1st","2º":"2nd","3º":"3rd","4º":"4th","5º":"5th","6º":"6th","7º":"7th","8º":"8th","9º":"9th","10º":"10th",
+    "11º":"11th","12º":"12th","13º":"13th","14º":"14th","15º":"15th","16º":"16th","17º":"17th","18º":"18th","19º":"19th","20º":"20th",
+    "NIVEL":"LEVEL",
+    
+    "Elija una clase para este nivel":"Select a class for this level",
+    "Las clases disponibles según el alineamiento son":"The available classes according to alignment are",
+    "Seleccione una clase válida.":"Select a valid class.",
+    "Debe seleccionar una clase":"You must select a class",
+    "Has seleccionado '":"You have selected '",
+    "' como clase para este nivel.":"' as the class for this level.",
+    
+    "Seleccione sus Habiliades para este nivel":"Select your Skills for this level",
+    "¿Que desea hacer?":"What do you want to do?","Opción":"Option",
+    "Maximizar/actualizar habilidades":"Maximize/update skills",
+    "Repartir rango por rango":"Distribute range by range",
+    "Ver las habilidades que tienen rangos":"View the skills that have ranks",
+    "Ver las habilidades que no tienen rangos":"View the skills that don't have ranks",
+    "Ver las habilidades de clase":"View the class skills",
+    "Ver una lista de todas las habilidades":"View the entire skill list",
+    "Nada más":"Nothing else",
+    "Ya has repartido todos los rangos de habilidad disponibles.":
+    "You already distributed all the available skill points.",
+    "Ninguna habilidad tiene rangos por el momento":
+    "No skill has ranks for the moment",
+    
+    "Seleccione sus Dotes para este nivel":"Select you Feats for this level",
+    "Elegir una nueva dote":"Select a new feat",
+    "Ver las dotes que ya se tienen":"View the already selected feats",
+    "Ver una lista de las dotes elegibles":"View a list of selectable feats",
+    "Ver información sobre una dote específica":"View information about a specific feat",
+    "Ver una lista de todas las dotes":"View the entire feat list",
+    "Como aptitud racial, ":"As a racial ability, ",
+    "En el ":"in the "," nivel, tienes una dote para elegir.":
+    " level, you have can select a new feat.",
+    "Como aptitud de clase,":"As a class ability, ",
+    "tienes una dote adicional para elegir.":"you can select an extra feat.",
+    "No se pueden elegir más dotes por el momento":"You can't select more feats at the moment",
+    "No hay dotes elegidas de momento":"There's no feats to show at the moment",
+    "Escriba el nombre de una dote":"Write a feat name",
+    "Por favor, escribe la dote correctamente":"Please, type the feat correctly",
+    "Actualmente el personaje no cumple con los prerrequisitos para la dote seleccionada":
+    "Currently the character does not meet the prerequisites for the selected feat",
+    "Elija otra":"Select another",
+    
+    
+    
+    "\n[Presione Enter para continuar]\n":"\n[Press Enter to continue]\n",
+    "Ya ha realizado esa selección, intente nuevamente":"You already selected that, try again",
+    "La selección es incorrecta, intente nuevamente":"Selection is incorrect, try again",
+    "Ha elegido ":"You selected ",
+    "¿Quizo decir":"Did you mean"
+    
+}

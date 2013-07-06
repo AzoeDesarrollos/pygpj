@@ -1,0 +1,183 @@
+{
+    "0":{
+        "Nombre": "Padded",
+        "Tipo": "armd",
+        "Competencia": 27,
+        "Bon_CA": 1,
+        "Bon_max_des": 8,
+        "Penalizador": 0,
+        "Velocidad_30": "30",
+        "Velocidad_20": "20",
+        "Precio": 5
+    },
+    "1":{
+        "Nombre": "Full plate",
+        "Tipo": "armd",
+        "Competencia": 28,
+        "Bon_CA": 8,
+        "Bon_max_des": 1,
+        "Penalizador": -6,
+        "Velocidad_30": "20",
+        "Velocidad_20": "15",
+        "Precio": 1500
+    },
+    "2":{
+        "Nombre": "Half-plate",
+        "Tipo": "armd",
+        "Competencia": 28,
+        "Bon_CA": 7,
+        "Bon_max_des": 0,
+        "Penalizador": -7,
+        "Velocidad_30": "20",
+        "Velocidad_20": "15",
+        "Precio": 600
+    },
+    "3":{
+        "Nombre": "Splint mail",
+        "Tipo": "armd",
+        "Competencia": 28,
+        "Bon_CA": 6,
+        "Bon_max_des": 0,
+        "Penalizador": -7,
+        "Velocidad_30": "20",
+        "Velocidad_20": "15",
+        "Precio": 200
+    },
+    "4":{
+        "Nombre": "Buckler",
+        "Tipo": "esc",
+        "Competencia": 29,
+        "Bon_CA": 1,
+        "Penalizador": -1,
+        "Precio": 15
+    },
+    "5":{
+        "Nombre": "Chain shirt",
+        "Tipo": "armd",
+        "Competencia": 27,
+        "Bon_CA": 2,
+        "Bon_max_des": 4,
+        "Penalizador": -2,
+        "Velocidad_30": "30",
+        "Velocidad_20": "20",
+        "Precio": 100
+    },
+    "6":{
+        "Nombre": "Breastplate",
+        "Tipo": "armd",
+        "Competencia": 26,
+        "Bon_CA": 5,
+        "Bon_max_des": 3,
+        "Penalizador": -4,
+        "Velocidad_30": "20",
+        "Velocidad_20": "15",
+        "Precio": 200
+    },
+    "7":{
+        "Nombre": "Banded mail",
+        "Tipo": "armd",
+        "Competencia": 28,
+        "Bon_CA": 6,
+        "Bon_max_des": 1,
+        "Penalizador": -6,
+        "Velocidad_30": "20",
+        "Velocidad_20": "15",
+        "Precio": 250
+    },
+    "8":{
+        "Nombre": "Scale mail",
+        "Tipo": "armd",
+        "Competencia": 26,
+        "Bon_CA": 4,
+        "Bon_max_des": 3,
+        "Penalizador": -4,
+        "Velocidad_30": "20",
+        "Velocidad_20": "15",
+        "Precio": 50
+    },
+    "9":{
+        "Nombre": "Chainmail",
+        "Tipo": "armd",
+        "Competencia": 26,
+        "Bon_CA": 5,
+        "Bon_max_des": 2,
+        "Penalizador": -5,
+        "Velocidad_30": "20",
+        "Velocidad_20": "15",
+        "Precio": 150
+    },
+    "10":{
+        "Nombre": "Leather",
+        "Tipo": "armd",
+        "Competencia": 27,
+        "Bon_CA": 3,
+        "Bon_max_des": 6,
+        "Penalizador": 0,
+        "Velocidad_30": "30",
+        "Velocidad_20": "20",
+        "Precio": 10
+    },
+    "11":{
+        "Nombre": "Studded leather",
+        "Tipo": "armd",
+        "Competencia": 27,
+        "Bon_CA": 4,
+        "Bon_max_des": 5,
+        "Penalizador": -1,
+        "Velocidad_30": "30",
+        "Velocidad_20": "20",
+        "Precio": 25
+    },
+    "12":{
+        "Nombre": "Shield, heavy steel",
+        "Tipo": "esc",
+        "Competencia": 29,
+        "Bon_CA": 2,
+        "Penalizador": -2,
+        "Precio": 20
+    },
+    "13":{
+        "Nombre": "Shield, heavy wooden",
+        "Tipo": "esc",
+        "Competencia": 29,
+        "Bon_CA": 2,
+        "Penalizador": -2,
+        "Precio": 7
+    },
+    "14":{
+        "Nombre": "Shield, tower",
+        "Tipo": "esc",
+        "Competencia": 30,
+        "Bon_CA": 4,
+        "Bon_max_des": 2,
+        "Penalizador": -10,
+        "Precio": 30
+    },
+    "15":{
+        "Nombre": "Shield, light steel",
+        "Tipo": "esc",
+        "Competencia": 29,
+        "Bon_CA": 1,
+        "Penalizador": -1,
+        "Precio": 9
+    },
+    "16":{
+        "Nombre": "Shield, light wooden",
+        "Tipo": "esc",
+        "Competencia": 29,
+        "Bon_CA": 1,
+        "Penalizador": -1,
+        "Precio": 3
+    },
+    "17":{
+        "Nombre": "Hide",
+        "Tipo": "armd",
+        "Competencia": 26,
+        "Bon_CA": 3,
+        "Bon_max_des": 4,
+        "Penalizador": -3,
+        "Velocidad_30": "20",
+        "Velocidad_20": "15",
+        "Precio": 15
+    }
+}

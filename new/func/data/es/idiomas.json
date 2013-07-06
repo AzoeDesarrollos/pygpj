@@ -1,0 +1,62 @@
+{
+    "0":{
+        "Nombre": "Abisal"
+    },
+    "1":{
+        "Nombre": "Acuano"
+    },
+    "2":{
+        "Nombre": "Aurano"
+    },
+    "3":{
+        "Nombre": "Celestial"
+    },
+    "4":{
+        "Nombre": "Común"
+    },
+    "5":{
+        "Nombre": "Dracónico"
+    },
+    "6":{
+        "Nombre": "Druídico"
+    },
+    "7":{
+        "Nombre": "Élfico"
+    },
+    "8":{
+        "Nombre": "Enano"
+    },
+    "9":{
+        "Nombre": "Gigante"
+    },
+    "10":{
+        "Nombre": "Gnoll"
+    },
+    "11":{
+        "Nombre": "Gnomo"
+    },
+    "12":{
+        "Nombre": "Ígnaro"
+    },
+    "13":{
+        "Nombre": "Infernal"
+    },
+    "14":{
+        "Nombre": "Infracomún"
+    },
+    "15":{
+        "Nombre": "Mediano"
+    },
+    "16":{
+        "Nombre": "Orco"
+    },
+    "17":{
+        "Nombre": "Silvano"
+    },
+    "18":{
+        "Nombre": "Térraro"
+    },
+    "19":{
+        "Nombre": "Trasgo"
+    }
+}

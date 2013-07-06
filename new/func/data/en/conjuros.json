@@ -1,0 +1,3638 @@
+{
+        "0":{
+        "Nombre": "Soften Earth and Stone",
+        "Descripcion": "Turns stone to clay or dirt to sand or mud",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 2","Tierra 2"]
+    },
+    "1":{
+        "Nombre": "Open/Close",
+        "Descripcion": "Opens or closes small or light things",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 0","Mag 0","Brd 0"]
+    },
+    "2":{
+        "Nombre": "Haste",
+        "Descripcion": "One creature/level moves faster, +1 on attack rolls, AC, and Reflex saves",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "3":{
+        "Nombre": "Divination",
+        "Descripcion": "Provides useful advice for specific proposed actions",
+        "Escuela": "Adv",
+        "Nivel": ["Saber 4","Clr 4 "]
+    },
+    "4":{
+        "Nombre": "Keen Edge",
+        "Descripcion": "Doubles normal weapon’s threat range",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "5":{
+        "Nombre": "Enlarge Person",
+        "Descripcion": "Humanoid creature doubles in size",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 1","Mag 1","Fuerza 1"]
+    },
+    "6":{
+        "Nombre": "Enlarge Person, Mass",
+        "Descripcion": "Enlarges several creatures",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "7":{
+        "Nombre": "Shout",
+        "Descripcion": "Deafens all within cone and deals 5d6 sonic damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 4","Mag 4","Brd 4"]
+    },
+    "8":{
+        "Nombre": "Shout, Greater",
+        "Descripcion": "Devastating yell deals 10d6 sonic damage; stuns creatures, damages objects",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 8","Mag 8","Brd 6"]
+    },
+    "9":{
+        "Nombre": "Alarm",
+        "Descripcion": "Wards an area for 2 hours/level",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 1","Mag 1","Exp 1","Brd 1"]
+    },
+    "10":{
+        "Nombre": "Planar Ally",
+        "Descripcion": "As lesser planar ally, but up to 12 HD",
+        "Escuela": "Cjr",
+        "Nivel": ["Clr 6"]
+    },
+    "11":{
+        "Nombre": "Planar Ally, Greater",
+        "Descripcion": "As lesser planar ally, but up to 18 HD",
+        "Escuela": "Cjr",
+        "Nivel": ["Clr 8"]
+    },
+    "12":{
+        "Nombre": "Planar Ally, Lesser",
+        "Descripcion": "Exchange services with a 6 HD extraplanar creature",
+        "Escuela": "Cjr",
+        "Nivel": ["Clr 4 "]
+    },
+    "13":{
+        "Nombre": "Undetectable Alignment",
+        "Descripcion": "Conceals alignment for 24 hours",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 2","Clr 2","Brd 1"]
+    },
+    "14":{
+        "Nombre": "Align Weapon",
+        "Descripcion": "Weapon becomes good, evil, lawful, or chaotic",
+        "Escuela": "Tra",
+        "Nivel": ["Clr 2"]
+    },
+    "15":{
+        "Nombre": "Alter Self",
+        "Descripcion": "Assume form of a similar creature",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "16":{
+        "Nombre": "Analyze Dweomer",
+        "Descripcion": "Reveals magical aspects of subject",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 6","Mag 6","Brd 6"]
+    },
+    "17":{
+        "Nombre": "Dimensional Anchor",
+        "Descripcion": "Bars extradimensional movement",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 4","Mag 4","Clr 4 "]
+    },
+    "18":{
+        "Nombre": "Animal Messenger",
+        "Descripcion": "Sends a Tiny animal to a specific place",
+        "Escuela": "Enc",
+        "Nivel": ["Exp 1","Drd 2","Brd 2"]
+    },
+    "19":{
+        "Nombre": "Animate Plants",
+        "Descripcion": "One or more trees animate and fight for you",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 7","Vegetal 7"]
+    },
+    "20":{
+        "Nombre": "Animate Objects",
+        "Descripcion": "Objects attack your foes",
+        "Escuela": "Tra",
+        "Nivel": ["Caos 6","Clr 6","Brd 6"]
+    },
+    "21":{
+        "Nombre": "Animate Rope",
+        "Descripcion": "Makes a rope move at your command",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "22":{
+        "Nombre": "Antipathy",
+        "Descripcion": "Object or location affected by spell repels certain creatures",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 8","Mag 8","Drd 9"]
+    },
+    "23":{
+        "Nombre": "Gentle Repose",
+        "Descripcion": "Preserves one corpse",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 3","Mag 3","Clr 2"]
+    },
+    "24":{
+        "Nombre": "Quench",
+        "Descripcion": "Extinguishes nonmagical fires or one magic item",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 3"]
+    },
+    "25":{
+        "Nombre": "Knock",
+        "Descripcion": "Opens locked or magically sealed door",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "26":{
+        "Nombre": "Disrupting Weapon",
+        "Descripcion": "Melee weapon destroys undead",
+        "Escuela": "Tra",
+        "Nivel": ["Clr 5"]
+    },
+    "27":{
+        "Nombre": "Spiritual Weapon",
+        "Descripcion": "Magic weapon attacks on its own",
+        "Escuela": "Evo",
+        "Nivel": ["Guerra 2","Clr 2"]
+    },
+    "28":{
+        "Nombre": "Magic Weapon",
+        "Descripcion": "Weapon gains +1 bonus",
+        "Escuela": "Tra",
+        "Nivel": ["Pld 1","Hcr 1","Mag 1","Guerra 1","Clr 1"]
+    },
+    "29":{
+        "Nombre": "Magic Weapon, Greater",
+        "Descripcion": "+1 bonus/four levels (max +5)",
+        "Escuela": "Tra",
+        "Nivel": ["Pld 3","Hcr 3","Mag 3","Clr 4 "]
+    },
+    "30":{
+        "Nombre": "Mage Armor",
+        "Descripcion": "Gives subject +4 armor bonus",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "31":{
+        "Nombre": "Phantasmal Killer",
+        "Descripcion": "Fearsome illusion kills subject or deals 3d6 damage",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "32":{
+        "Nombre": "Blight",
+        "Descripcion": "Withers one plant or deals 1d6/level damage to plant creature",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 5","Mag 5","Drd 4"]
+    },
+    "33":{
+        "Nombre": "Fox’s Cunning",
+        "Descripcion": "Subject gains +4 to Int for 1 min./level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "34":{
+        "Nombre": "Fox’s Cunning, Mass",
+        "Descripcion": "As fox’s cunning, affects one subject/level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6","Brd 6"]
+    },
+    "35":{
+        "Nombre": "Daze",
+        "Descripcion": "Humanoid creature of 4 HD or less loses next action",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 0","Mag 0","Brd 0"]
+    },
+    "36":{
+        "Nombre": "Daze Monster",
+        "Descripcion": "Living creature of 6 HD or less loses next action",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "37":{
+        "Nombre": "Trap the Soul",
+        "Descripcion": "Imprisons subject within gem",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "38":{
+        "Nombre": "Augury",
+        "Descripcion": "Learns whether an action will be good or bad",
+        "Escuela": "Adv",
+        "Nivel": ["Clr 2"]
+    },
+    "39":{
+        "Nombre": "Magic Aura",
+        "Descripcion": "Alters object’s magic aura",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 1","Mag 1","Magia 1","Brd 1"]
+    },
+    "40":{
+        "Nombre": "Unholy Aura",
+        "Descripcion": "+4 to AC, +4 resistance, and SR 25 against good spells",
+        "Escuela": "Abj",
+        "Nivel": ["Mal 8","Clr 8"]
+    },
+    "41":{
+        "Nombre": "Holy Aura",
+        "Descripcion": "+4 to AC, +4 resistance, and SR 25 against evil spells",
+        "Escuela": "Abj",
+        "Nivel": ["Bien 8","Clr 8"]
+    },
+    "42":{
+        "Nombre": "Aid",
+        "Descripcion": "+1 on attack rolls and saves against fear, 1d8 temporary hp +1/level (max +10)",
+        "Escuela": "Enc",
+        "Nivel": ["Suerte 2","Bien 2","Clr 2"]
+    },
+    "43":{
+        "Nombre": "Unholy Blight",
+        "Descripcion": "Damages and sickens good creatures",
+        "Escuela": "Evo",
+        "Nivel": ["Mal 4"]
+    },
+    "44":{
+        "Nombre": "Irresistible Dance",
+        "Descripcion": "Forces subject to dance",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 8","Mag 8","Brd 6"]
+    },
+    "45":{
+        "Nombre": "Blade Barrier",
+        "Descripcion": "Wall of blades deals 1d6/level damage",
+        "Escuela": "Evo",
+        "Nivel": ["Guerra 6","Bien 6","Clr 6"]
+    },
+    "46":{
+        "Nombre": "Changestaff",
+        "Descripcion": "Your staff becomes a treant on command",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 7"]
+    },
+    "47":{
+        "Nombre": "Spellstaff",
+        "Descripcion": "Stores one spell in wooden quarterstaff",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 6"]
+    },
+    "48":{
+        "Nombre": "Bless",
+        "Descripcion": "Allies gain +1 on attack rolls and saves against fear",
+        "Escuela": "Enc",
+        "Nivel": ["Pld 1","Clr 1"]
+    },
+    "49":{
+        "Nombre": "Bless Water",
+        "Descripcion": "Makes holy water",
+        "Escuela": "Tra",
+        "Nivel": ["Pld 1","Clr 1"]
+    },
+    "50":{
+        "Nombre": "Bless Weapon",
+        "Descripcion": "Weapon strikes true against evil foes",
+        "Escuela": "Tra",
+        "Nivel": ["Pld 1"]
+    },
+    "51":{
+        "Nombre": "Blasphemy",
+        "Descripcion": "Kills, paralyzes, weakens, or dazes nonevil subjects",
+        "Escuela": "Evo",
+        "Nivel": ["Mal 7","Clr 7"]
+    },
+    "52":{
+        "Nombre": "Magic Mouth",
+        "Descripcion": "Speaks once when triggered",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 2","Mag 2","Brd 1"]
+    },
+    "53":{
+        "Nombre": "Fireball",
+        "Descripcion": "1d6 damage per level, 20-ft. radius",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "54":{
+        "Nombre": "Delayed Blast Fireball",
+        "Descripcion": "1d6/level fire damage; you can postpone blast for 5 rounds",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "55":{
+        "Nombre": "Erase",
+        "Descripcion": "Mundane or magical writing vanishes",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "56":{
+        "Nombre": "Spike Growth",
+        "Descripcion": "Creatures in area take 1d4 damage, may be slowed",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 2","Drd 3"]
+    },
+    "57":{
+        "Nombre": "Acid Fog",
+        "Descripcion": "Fog deals acid damage",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 6","Mag 6","Agua 7"]
+    },
+    "58":{
+        "Nombre": "Mind Fog",
+        "Descripcion": "Subjects in fog get -10 to Wis and Will checks",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 5","Mag 5","Brd 5"]
+    },
+    "59":{
+        "Nombre": "Solid Fog",
+        "Descripcion": "Blocks vision and slows movement",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "60":{
+        "Nombre": "Goodberry",
+        "Descripcion": "2d4 berries each cure 1 hp (max 8 hp/24 hours)",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 1"]
+    },
+    "61":{
+        "Nombre": "Feather Fall",
+        "Descripcion": "Objects or creatures fall slowly",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "62":{
+        "Nombre": "Heat Metal",
+        "Descripcion": "Make metal so hot it damages those who touch it",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 2","Sol 2"]
+    },
+    "63":{
+        "Nombre": "Calm Animals",
+        "Descripcion": "Calms (2d4 + level) HD of animals",
+        "Escuela": "Enc",
+        "Nivel": ["Exp 1","Drd 1","Animal 1"]
+    },
+    "64":{
+        "Nombre": "Calm Emotions",
+        "Descripcion": "Calms creatures, negating emotion effects",
+        "Escuela": "Enc",
+        "Nivel": ["Ley 2","Clr 2","Brd 2"]
+    },
+    "65":{
+        "Nombre": "Shapechange",
+        "Descripcion": "Transforms you into any creature, and change forms once per round",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 9","Mag 9","Drd 9","Animal 9"]
+    },
+    "66":{
+        "Nombre": "Wind Walk",
+        "Descripcion": "You and your allies turn vaporous and travel fast",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 7","Clr 6"]
+    },
+    "67":{
+        "Nombre": "Air Walk",
+        "Descripcion": "Subject treads on air as if solid (climb at 45-degree angle)",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 4","Aire 4","Clr 4 "]
+    },
+    "68":{
+        "Nombre": "Shadow Walk",
+        "Descripcion": "Step into shadow to travel rapidly",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 6","Mag 6","Brd 5"]
+    },
+    "69":{
+        "Nombre": "Water Walk",
+        "Descripcion": "Subject treads on water as if solid",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 3","Clr 3"]
+    },
+    "70":{
+        "Nombre": "Death Knell",
+        "Descripcion": "Kills dying creature; you gain 1d8 temporary hp, +2 to Str, and +1 level",
+        "Escuela": "Nig",
+        "Nivel": ["Muerte 2","Clr 2"]
+    },
+    "71":{
+        "Nombre": "Antimagic Field",
+        "Descripcion": "Negates magic within 10 ft",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 6","Mag 6","Protección 6","Magia 6","Clr 8"]
+    },
+    "72":{
+        "Nombre": "Song of Discord",
+        "Descripcion": "Forces targets to attack each other",
+        "Escuela": "Enc",
+        "Nivel": ["Brd 5"]
+    },
+    "73":{
+        "Nombre": "Cloak of Chaos",
+        "Descripcion": "+4 to AC, +4 resistance, and SR 25 against lawful spells",
+        "Escuela": "Abj",
+        "Nivel": ["Caos 8","Clr 8"]
+    },
+    "74":{
+        "Nombre": "Antiplant Shell",
+        "Descripcion": "Keeps animated plants at bay",
+        "Escuela": "Abj",
+        "Nivel": ["Drd 4"]
+    },
+    "75":{
+        "Nombre": "Antilife Shell",
+        "Descripcion": "10-ft. field hedges out living creatures",
+        "Escuela": "Abj",
+        "Nivel": ["Drd 6","Animal 6","Clr 6"]
+    },
+    "76":{
+        "Nombre": "Arcane Lock",
+        "Descripcion": "Magically locks a portal or chest",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "77":{
+        "Nombre": "Holy Smite",
+        "Descripcion": "Damages and blinds evil creatures",
+        "Escuela": "Evo",
+        "Nivel": ["Bien 4"]
+    },
+    "78":{
+        "Nombre": "Cause Fear",
+        "Descripcion": "One creature of 5 HD or less flees for 1d4 rounds",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 1","Mag 1","Muerte 1","Clr 1","Brd 1"]
+    },
+    "79":{
+        "Nombre": "Enthrall",
+        "Descripcion": "Captivates all within 100 ft. + 10 ft./level",
+        "Escuela": "Enc",
+        "Nivel": ["Clr 2","Brd 2"]
+    },
+    "80":{
+        "Nombre": "Imprisonment",
+        "Descripcion": "Entombs subject beneath the earth",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 9","Mag 9"]
+    },
+    "81":{
+        "Nombre": "Blindness/Deafness",
+        "Descripcion": "Makes subject blind or deaf",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 2","Mag 2","Clr 3","Brd 2"]
+    },
+    "82":{
+        "Nombre": "Dimensional Lock",
+        "Descripcion": "Teleportation and interplanar travel blocked for one day/level",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 8","Mag 8","Clr 8"]
+    },
+    "83":{
+        "Nombre": "Circle of Death",
+        "Descripcion": "Kills 1d4/level HD of creatures",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "84":{
+        "Nombre": "Teleportation Circle",
+        "Descripcion": "Circle teleports any creature inside to designated spot",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 9","Mag 9"]
+    },
+    "85":{
+        "Nombre": "Magic Circle against Good",
+        "Descripcion": "As protection from good, but 10-ft. radius and 10 min./level",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 3","Mag 3","Mal 3","Clr 3"]
+    },
+    "86":{
+        "Nombre": "Magic Circle against Chaos",
+        "Descripcion": "As protection from chaos, but 10-ft. radius and 10 min./level",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 3","Hcr 3","Mag 3","Ley 3","Clr 3"]
+    },
+    "87":{
+        "Nombre": "Magic Circle against Evil",
+        "Descripcion": "As protection from evil, but 10-ft. radius and 10 min./level",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 3","Hcr 3","Mag 3","Bien 3","Clr 3"]
+    },
+    "88":{
+        "Nombre": "Magic Circle against Law",
+        "Descripcion": "As protection from law, but 10-ft. radius and 10 min./level",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 3","Mag 3","Caos 3","Clr 3"]
+    },
+    "89":{
+        "Nombre": "Clairaudience/Clairvoyance",
+        "Descripcion": "Hear or see at a distance for 1 min./level",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 3","Mag 3","Saber 3","Brd 3"]
+    },
+    "90":{
+        "Nombre": "Clone",
+        "Descripcion": "Duplicate awakens when original dies",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "91":{
+        "Nombre": "Secure Shelter",
+        "Descripcion": "Creates sturdy cottage",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 4","Mag 4","Brd 4"]
+    },
+    "92":{
+        "Nombre": "Secret Chest",
+        "Descripcion": "Hides expensive chest on Ethereal Plane; you retrieve it at will",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "93":{
+        "Nombre": "Magic Fang",
+        "Descripcion": "One natural weapon of subject creature gets +1 on attack and damage rolls",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 1","Drd 1"]
+    },
+    "94":{
+        "Nombre": "Magic Fang, Greater",
+        "Descripcion": "One natural weapon of subject creature gets +1/four levels on attack and damage rolls (max +5)",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 3","Drd 3"]
+    },
+    "95":{
+        "Nombre": "Command Undead",
+        "Descripcion": "Undead creature obeys your commands",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "96":{
+        "Nombre": "Command Plants",
+        "Descripcion": "Sway the actions of one or more plant creatures",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 3","Drd 4","Vegetal 4"]
+    },
+    "97":{
+        "Nombre": "Comprehend Languages",
+        "Descripcion": "You understand all spoken and written languages",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 1","Mag 1","Clr 1","Brd 1"]
+    },
+    "98":{
+        "Nombre": "Commune",
+        "Descripcion": "Deity answers one yes-or-no question/level",
+        "Escuela": "Adv",
+        "Nivel": ["Clr 5"]
+    },
+    "99":{
+        "Nombre": "Commune with Nature",
+        "Descripcion": "Learn about terrain for 1 mile/level",
+        "Escuela": "Adv",
+        "Nivel": ["Exp 4","Drd 5","Animal 5"]
+    },
+    "100":{
+        "Nombre": "Confusion",
+        "Descripcion": "Subjects behave oddly for 1 round/level",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 4","Mag 4","Superchería 4","Brd 3"]
+    },
+    "101":{
+        "Nombre": "Confusion, Lesser",
+        "Descripcion": "One creature is confused for 1 round",
+        "Escuela": "Enc",
+        "Nivel": ["Brd 1"]
+    },
+    "102":{
+        "Nombre": "Shadow Conjuration",
+        "Descripcion": "Mimics conjuring below 4th level, but only 20% real",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 4","Mag 4","Brd 4"]
+    },
+    "103":{
+        "Nombre": "Shadow Conjuration, Greater",
+        "Descripcion": "As shadow conjuration, but up to 6th level and 60% real",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "104":{
+        "Nombre": "Cone of Cold",
+        "Descripcion": "1d6/level cold damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 5","Mag 5","Agua 6"]
+    },
+    "105":{
+        "Nombre": "Know Direction",
+        "Descripcion": "You discern north",
+        "Escuela": "Adv",
+        "Nivel": ["Drd 0","Brd 0"]
+    },
+    "106":{
+        "Nombre": "Legend Lore",
+        "Descripcion": "Lets you learn tales about a person, place, or thing",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 6","Mag 6","Saber 7","Brd 4"]
+    },
+    "107":{
+        "Nombre": "Consecrate",
+        "Descripcion": "Fills area with positive energy, making undead weaker",
+        "Escuela": "Evo",
+        "Nivel": ["Clr 2"]
+    },
+    "108":{
+        "Nombre": "Energy Drain",
+        "Descripcion": "Subject gains 2d4 negative levels",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 9","Mag 9","Clr 9"]
+    },
+    "109":{
+        "Nombre": "Contact Other Plane",
+        "Descripcion": "Lets you ask question of extraplanar entity",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "110":{
+        "Nombre": "Shocking Grasp",
+        "Descripcion": "Touch delivers 1d6/level electricity damage (max 5d6)",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "111":{
+        "Nombre": "Rusting Grasp",
+        "Descripcion": "Your touch corrodes iron and alloys",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 4"]
+    },
+    "112":{
+        "Nombre": "Contagion",
+        "Descripcion": "Infects subject with chosen disease",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 4","Mag 4","Drd 3","Destrucción 3","Clr 3"]
+    },
+    "113":{
+        "Nombre": "Contingency",
+        "Descripcion": "Sets trigger condition for another spell",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "114":{
+        "Nombre": "Blur",
+        "Descripcion": "Attacks miss subject 20% of the time",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "115":{
+        "Nombre": "Control Weather",
+        "Descripcion": "Changes weather in local area",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 7","Mag 7","Drd 7","Aire 7","Clr 7"]
+    },
+    "116":{
+        "Nombre": "Control Water",
+        "Descripcion": "Raises or lowers bodies of water",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6","Drd 4","Agua 4","Clr 4 "]
+    },
+    "117":{
+        "Nombre": "Control Winds",
+        "Descripcion": "Change wind direction and speed",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 5","Aire 5"]
+    },
+    "118":{
+        "Nombre": "Control Undead",
+        "Descripcion": "Undead don’t attack you while under your command",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "119":{
+        "Nombre": "Control Plants",
+        "Descripcion": "Control actions of one or more plant creatures",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 8","Vegetal 8"]
+    },
+    "120":{
+        "Nombre": "Instant Summons",
+        "Descripcion": "Prepared object appears in your hand",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "121":{
+        "Nombre": "Summon Nature’s Ally I",
+        "Descripcion": "Calls creature to fight",
+        "Escuela": "Cjr",
+        "Nivel": ["Exp 1","Drd 1"]
+    },
+    "122":{
+        "Nombre": "Summon Nature’s Ally II",
+        "Descripcion": "Calls creature to fight",
+        "Escuela": "Cjr",
+        "Nivel": ["Exp 2","Drd 2"]
+    },
+    "123":{
+        "Nombre": "Summon Nature’s Ally III",
+        "Descripcion": "Calls creature to fight",
+        "Escuela": "Cjr",
+        "Nivel": ["Exp 3","Drd 3"]
+    },
+    "124":{
+        "Nombre": "Summon Nature’s Ally IV",
+        "Descripcion": "Calls creature to fight",
+        "Escuela": "Cjr",
+        "Nivel": ["Exp 4","Drd 4","Animal 4"]
+    },
+    "125":{
+        "Nombre": "Summon Nature’s Ally IX",
+        "Descripcion": "Calls creature to fight",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 9"]
+    },
+    "126":{
+        "Nombre": "Summon Nature’s Ally V",
+        "Descripcion": "Calls creature to fight",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 5"]
+    },
+    "127":{
+        "Nombre": "Summon Nature’s Ally VI",
+        "Descripcion": "Calls creature to fight",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 6"]
+    },
+    "128":{
+        "Nombre": "Summon Nature’s Ally VII",
+        "Descripcion": "Calls creature to fight",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 7"]
+    },
+    "129":{
+        "Nombre": "Summon Nature’s Ally VIII",
+        "Descripcion": "Calls creature to fight",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 8","Animal 8"]
+    },
+    "130":{
+        "Nombre": "Summon Swarm",
+        "Descripcion": "Summons swarm of bats, rats, or spiders",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 2","Mag 2","Drd 2"]
+    },
+    "131":{
+        "Nombre": "Summon Instrument",
+        "Descripcion": "Summons one instrument of the caster’s choice",
+        "Escuela": "Cjr",
+        "Nivel": ["Brd 0"]
+    },
+    "132":{
+        "Nombre": "Summon Monster I",
+        "Descripcion": "Calls extraplanar creature to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 1","Mag 1","Clr 1","Brd 1"]
+    },
+    "133":{
+        "Nombre": "Summon Monster II",
+        "Descripcion": "Calls extraplanar creature to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 2","Mag 2","Clr 2","Brd 2"]
+    },
+    "134":{
+        "Nombre": "Summon Monster III",
+        "Descripcion": "Calls extraplanar creature to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 3","Mag 3","Clr 3","Brd 3"]
+    },
+    "135":{
+        "Nombre": "Summon Monster IV",
+        "Descripcion": "Calls extraplanar creature to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 4","Mag 4","Clr 4 , Brd 4"]
+    },
+    "136":{
+        "Nombre": "Summon Monster I",
+        "Descripcion": "Calls extraplanar creature to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 9","Mag 9","Mal 9","Ley 9","Caos 9","Bien 9","Clr 9"]
+    },
+    "137":{
+        "Nombre": "Summon Monster V",
+        "Descripcion": "Calls extraplanar creature to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 5","Mag 5","Clr 5","Brd 5"]
+    },
+    "138":{
+        "Nombre": "Summon Monster VI",
+        "Descripcion": "Calls extraplanar creature to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 6","Mag 6","Clr 6","Brd 6"]
+    },
+    "139":{
+        "Nombre": "Summon Monster VII",
+        "Descripcion": "Calls extraplanar creature to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 7","Mag 7","Clr 7"]
+    },
+    "140":{
+        "Nombre": "Summon Monster VIII",
+        "Descripcion": "Calls extraplanar creature to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 8","Mag 8","Clr 8"]
+    },
+    "141":{
+        "Nombre": "Summon Swarm",
+        "Descripcion": "Summons swarm of bats, rats, or spiders",
+        "Escuela": "Cjr",
+        "Nivel": ["Brd 2"]
+    },
+    "142":{
+        "Nombre": "Phantom Steed",
+        "Descripcion": "Magic horse appears for 1 hour/level",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "143":{
+        "Nombre": "Major Creation",
+        "Descripcion": "As minor creation, plus stone and metal",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "144":{
+        "Nombre": "Minor Creation",
+        "Descripcion": "Creates one cloth or wood object",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "145":{
+        "Nombre": "Create Water",
+        "Descripcion": "Creates 2 gallons/level of pure water",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 1","Drd 0","Clr 0"]
+    },
+    "146":{
+        "Nombre": "Create Food and Water",
+        "Descripcion": "Feeds three humans (or one horse)/level",
+        "Escuela": "Cjr",
+        "Nivel": ["Clr 3"]
+    },
+    "147":{
+        "Nombre": "Create Undead",
+        "Descripcion": "Create ghouls, ghasts, mummies, or mohrgs",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 6","Mag 6","Muerte 6","Mal 6","Clr 6"]
+    },
+    "148":{
+        "Nombre": "Create Greater Undead",
+        "Descripcion": "Create shadows, wraiths, spectres, or devourers",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 8","Mag 8","Muerte 8","Clr 8"]
+    },
+    "149":{
+        "Nombre": "Animal Growth",
+        "Descripcion": "One animal/two levels doubles in size",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 5","Mag 5","Exp 4","Drd 5"]
+    },
+    "150":{
+        "Nombre": "Plant Growth",
+        "Descripcion": "Grows vegetation, improves crops",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 3","Drd 3","Vegetal 3"]
+    },
+    "151":{
+        "Nombre": "Tiny Hut",
+        "Descripcion": "Creates shelter for ten creatures",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "152":{
+        "Nombre": "Message",
+        "Descripcion": "Whispered conversation at distance",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 0","Mag 0","Brd 0"]
+    },
+    "153":{
+        "Nombre": "Iron Body",
+        "Descripcion": "Your body becomes living iron",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 8","Mag 8","Tierra 8"]
+    },
+    "154":{
+        "Nombre": "Cure Critical Wounds",
+        "Descripcion": "Cures 4d8 damage +1/level (max +20)",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 5","Curación 4","Clr 4 , Brd 4"]
+    },
+    "155":{
+        "Nombre": "Cure Critical Wounds, Mass",
+        "Descripcion": "Cures 4d8 damage +1/level for many creatures",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 9","Curación 8","Clr 8"]
+    },
+    "156":{
+        "Nombre": "Cure Serious Wounds",
+        "Descripcion": "Cures 3d8 damage +1/level (max +15)",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 4","Exp 4","Drd 4","Curación 3","Clr 3","Brd 3"]
+    },
+    "157":{
+        "Nombre": "Cure Serious Wounds, Mass",
+        "Descripcion": "Cures 3d8 damage +1/level for many creatures",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 8","Clr 7"]
+    },
+    "158":{
+        "Nombre": "Cure Light Wounds",
+        "Descripcion": "Cures 1d8 damage +1/level (max +5)",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 1","Exp 2","Drd 1","Curación 1","Clr 1","Brd 1"]
+    },
+    "159":{
+        "Nombre": "Cure Light Wounds, Mass",
+        "Descripcion": "Cures 1d8 damage +1/level for many creatures",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 6","Curación 5","Clr 5","Brd 5"]
+    },
+    "160":{
+        "Nombre": "Cure Minor Wounds",
+        "Descripcion": "Cures 1 point of damage",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 0","Clr 0"]
+    },
+    "161":{
+        "Nombre": "Cure Moderate Wounds",
+        "Descripcion": "Cures 2d8 damage +1/level (max +10)",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 3","Exp 3","Drd 3","Curación 2","Clr 2","Brd 2"]
+    },
+    "162":{
+        "Nombre": "Cure Moderate Wounds, Mass",
+        "Descripcion": "Cures 2d8 damage +1/level for many creatures",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 7","Clr 6","Brd 6"]
+    },
+    "163":{
+        "Nombre": "Death Ward",
+        "Descripcion": "Grants immunity to death spells and negative energy effects",
+        "Escuela": "Nig",
+        "Nivel": ["Pld 4","Drd 5","Muerte 4","Clr 4 "]
+    },
+    "164":{
+        "Nombre": "Harm",
+        "Descripcion": "Deals 10 points/level damage to target",
+        "Escuela": "Nig",
+        "Nivel": ["Destrucción 6","Clr 6"]
+    },
+    "165":{
+        "Nombre": "Flesh to Stone",
+        "Descripcion": "Turns subject creature into statue",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "166":{
+        "Nombre": "Stone to Flesh",
+        "Descripcion": "Restores petrified creature",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "167":{
+        "Nombre": "Feeblemind",
+        "Descripcion": "Subject’s Int and Cha drop to 1",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "168":{
+        "Nombre": "Finger of Death",
+        "Descripcion": "Kills one subject",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 7","Mag 7","Drd 8"]
+    },
+    "169":{
+        "Nombre": "Warp Wood",
+        "Descripcion": "Bends wood (shaft, handle, door, plank)",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 2"]
+    },
+    "170":{
+        "Nombre": "Unhallow",
+        "Descripcion": "Designates location as unholy",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 5","Clr 5"]
+    },
+    "171":{
+        "Nombre": "Shambler",
+        "Descripcion": "Summons 1d4+2 shambling mounds to fight for you",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 9","Vegetal 9"]
+    },
+    "172":{
+        "Nombre": "Flame Strike",
+        "Descripcion": "Smite foes with divine fire (1d6/level damage)",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 4","Sol 5","Guerra 5","Clr 5"]
+    },
+    "173":{
+        "Nombre": "Wish",
+        "Descripcion": "As limited wish, but with fewer limits",
+        "Escuela": "Uni",
+        "Nivel": ["Hcr 9","Mag 9"]
+    },
+    "174":{
+        "Nombre": "Limited Wish",
+        "Descripcion": "Alters reality—within spell limits",
+        "Escuela": "Uni",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "175":{
+        "Nombre": "Crushing Despair",
+        "Descripcion": "Subjects take -2 on attack rolls, damage rolls, saves, and checks",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 4","Mag 4","Brd 3"]
+    },
+    "176":{
+        "Nombre": "Disintegrate",
+        "Descripcion": "Makes one creature or object vanish",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6","Destrucción 7"]
+    },
+    "177":{
+        "Nombre": "Misdirection",
+        "Descripcion": "Misleads divinations for one creature or object",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "178":{
+        "Nombre": "Displacement",
+        "Descripcion": "Attacks miss subject 50%",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "179":{
+        "Nombre": "Plane Shift",
+        "Descripcion": "As many as eight subjects travel to another plane",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 7","Mag 7","Clr 5"]
+    },
+    "180":{
+        "Nombre": "Banishment",
+        "Descripcion": "Banishes 2 HD/level of extraplanar creatures",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 7","Mag 7","Clr 6"]
+    },
+    "181":{
+        "Nombre": "Destruction",
+        "Descripcion": "Kills subject and destroys remains",
+        "Escuela": "Nig",
+        "Nivel": ["Muerte 7","Clr 7"]
+    },
+    "182":{
+        "Nombre": "Detect Animals or Plants",
+        "Descripcion": "Detects kinds of animals or plants",
+        "Escuela": "Adv",
+        "Nivel": ["Exp 1","Drd 1"]
+    },
+    "183":{
+        "Nombre": "Detect Good",
+        "Descripcion": "Reveals creatures, spells, or objects of good alignment",
+        "Escuela": "Adv",
+        "Nivel": ["Clr 1"]
+    },
+    "184":{
+        "Nombre": "Detect Chaos",
+        "Descripcion": "Reveals creatures, spells, or objects of chaotic alignment",
+        "Escuela": "Adv",
+        "Nivel": ["Clr 1"]
+    },
+    "185":{
+        "Nombre": "Detect Evil",
+        "Descripcion": "Reveals creatures, spells, or objects of evil alignment",
+        "Escuela": "Adv",
+        "Nivel": ["Clr 1"]
+    },
+    "186":{
+        "Nombre": "Detect Scrying",
+        "Descripcion": "Alerts you of magical eavesdropping",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 4","Mag 4","Brd 4"]
+    },
+    "187":{
+        "Nombre": "Detect Law",
+        "Descripcion": "Reveals creatures, spells, or objects of lawful alignment",
+        "Escuela": "Adv",
+        "Nivel": ["Clr 1"]
+    },
+    "188":{
+        "Nombre": "Detect Magic",
+        "Descripcion": "Detects spells and magic items within 60 ft",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 0","Mag 0","Drd 0","Clr 0","Brd 0"]
+    },
+    "189":{
+        "Nombre": "Detect Undead",
+        "Descripcion": "Reveals undead within 60 ft",
+        "Escuela": "Adv",
+        "Nivel": ["Pld 1","Hcr 1","Mag 1","Clr 1"]
+    },
+    "190":{
+        "Nombre": "Detect Thoughts",
+        "Descripcion": "Allows “listening” to surface thoughts",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 2","Mag 2","Saber 2","Brd 2"]
+    },
+    "191":{
+        "Nombre": "Detect Secret Doors",
+        "Descripcion": "Reveals hidden doors within 60 ft",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 1","Mag 1","Saber 1","Brd 1"]
+    },
+    "192":{
+        "Nombre": "Detect Snares and Pits",
+        "Descripcion": "Reveals natural or primitive traps",
+        "Escuela": "Adv",
+        "Nivel": ["Exp 1","Drd 1"]
+    },
+    "193":{
+        "Nombre": "Detect Poison",
+        "Descripcion": "Detects poison in one creature or object",
+        "Escuela": "Adv",
+        "Nivel": ["Pld 1","Hcr 0","Mag 0","Exp 1","Drd 0","Clr 0"]
+    },
+    "194":{
+        "Nombre": "Time Stop",
+        "Descripcion": "You act freely for 1d4+1 rounds",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 9","Mag 9","Superchería 9"]
+    },
+    "195":{
+        "Nombre": "Halt Undead",
+        "Descripcion": "Immobilizes undead for 1 round/level",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "196":{
+        "Nombre": "Discern Lies",
+        "Descripcion": "Reveals deliberate falsehoods",
+        "Escuela": "Adv",
+        "Nivel": ["Pld 3","Clr 4 "]
+    },
+    "197":{
+        "Nombre": "Discern Location",
+        "Descripcion": "Reveals exact location of creature or object",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 8","Mag 8","Saber 8","Clr 8"]
+    },
+    "198":{
+        "Nombre": "Floating Disk",
+        "Descripcion": "Creates 3-ft.-diameter horizontal disk that holds 100 lb./level",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "199":{
+        "Nombre": "Disguise Self",
+        "Descripcion": "Changes your appearance",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 1","Mag 1","Superchería 1","Brd 1"]
+    },
+    "200":{
+        "Nombre": "Dispel Good",
+        "Descripcion": "+4 bonus against good creatures attacks",
+        "Escuela": "Abj",
+        "Nivel": ["Mal 5","Clr 5"]
+    },
+    "201":{
+        "Nombre": "Dispel Chaos",
+        "Descripcion": "+4 bonus against chaotic creatures attacks",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 4","Ley 5","Clr 5"]
+    },
+    "202":{
+        "Nombre": "Dispel Evil",
+        "Descripcion": "+4 bonus against evil creatures attacks",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 4","Bien 5","Clr 5"]
+    },
+    "203":{
+        "Nombre": "Dispel Law",
+        "Descripcion": "+4 bonus against lawfull creatures attacks",
+        "Escuela": "Abj",
+        "Nivel": ["Caos 5","Clr 5"]
+    },
+    "204":{
+        "Nombre": "Dispel Magic",
+        "Descripcion": "Cancels magical spells and effects",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 3","Hcr 3","Mag 3","Drd 4","Magia 3","Clr 3","Brd 3"]
+    },
+    "205":{
+        "Nombre": "Dispel Magic, Greater",
+        "Descripcion": "As dispel magic, but +20 on check",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 6","Mag 6","Drd 6","Clr 6","Brd 5"]
+    },
+    "206":{
+        "Nombre": "Mage’s Disjunction",
+        "Descripcion": "Dispels magic, disenchants magic items",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 9","Mag 9","Magia 9"]
+    },
+    "207":{
+        "Nombre": "Mislead",
+        "Descripcion": "Turns you invisible and creates illusory double",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 6","Mag 6","Superchería 6","Suerte 6","Brd 5"]
+    },
+    "208":{
+        "Nombre": "Dominate Animal",
+        "Descripcion": "Subject animal obeys silent mental commands",
+        "Escuela": "Enc",
+        "Nivel": ["Drd 3","Animal 3"]
+    },
+    "209":{
+        "Nombre": "Dominate Monster",
+        "Descripcion": "As dominate person, but any creature",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 9","Mag 9"]
+    },
+    "210":{
+        "Nombre": "Dominate Person",
+        "Descripcion": "Controls humanoid telepathically",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 5","Mag 5","Brd 4"]
+    },
+    "211":{
+        "Nombre": "Tongues",
+        "Descripcion": "Speak any language",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 3","Mag 3","Clr 4 , Brd 2"]
+    },
+    "212":{
+        "Nombre": "Sleep",
+        "Descripcion": "Puts 4 HD of creatures into magical slumber",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "213":{
+        "Nombre": "Awaken",
+        "Descripcion": "Animal or tree gains human intellect",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 5"]
+    },
+    "214":{
+        "Nombre": "Shrink Item",
+        "Descripcion": "Object shrinks to one-sixteenth size",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "215":{
+        "Nombre": "Fabricate",
+        "Descripcion": "Transforms raw materials into finished items",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "216":{
+        "Nombre": "Mage’s Lucubration",
+        "Descripcion": "Recalls spell of 5th level or lower",
+        "Escuela": "Tra",
+        "Nivel": ["Mag 6"]
+    },
+    "217":{
+        "Nombre": "Find the Path",
+        "Descripcion": "Shows most direct way to a location",
+        "Escuela": "Adv",
+        "Nivel": ["Drd 6","Viaje 6","Saber 6","Clr 6","Brd 6"]
+    },
+    "218":{
+        "Nombre": "Find Traps",
+        "Descripcion": "Notice traps as a rogue does",
+        "Escuela": "Adv",
+        "Nivel": ["Clr 2"]
+    },
+    "219":{
+        "Nombre": "Enervation",
+        "Descripcion": "Subject gains 1d4 negative levels",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "220":{
+        "Nombre": "Elemental Swarm",
+        "Descripcion": "Summons multiple elementals",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 9","Tierra 9","Fuego 9","Aire 9","Agua 9"]
+    },
+    "221":{
+        "Nombre": "Entangle",
+        "Descripcion": "Plants entangle everyone in 40-ft.-radius",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 1","Drd 1","Vegetal 1"]
+    },
+    "222":{
+        "Nombre": "Hide from Animals",
+        "Descripcion": "Animals can’t perceive one subject/level",
+        "Escuela": "Abj",
+        "Nivel": ["Exp 1","Drd 1"]
+    },
+    "223":{
+        "Nombre": "Hide from Undead",
+        "Descripcion": "Undead can’t perceive one subject/level",
+        "Escuela": "Abj",
+        "Nivel": ["Clr 1"]
+    },
+    "224":{
+        "Nombre": "Illusory Script",
+        "Descripcion": "Only intended reader can decipher",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "225":{
+        "Nombre": "Shield Other",
+        "Descripcion": "You take half of subject’s damage",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 2","Protección 2","Clr 2"]
+    },
+    "226":{
+        "Nombre": "Shield",
+        "Descripcion": "Invisible disc gives +4 to AC, blocks magic missiles",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "227":{
+        "Nombre": "Entropic Shield",
+        "Descripcion": "Ranged attacks against you have 20% miss chance",
+        "Escuela": "Abj",
+        "Nivel": ["Suerte 1","Clr 1"]
+    },
+    "228":{
+        "Nombre": "Fire Shield",
+        "Descripcion": "Creatures attacking you take fire damage; you’re protected from heat or cold",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 4","Mag 4","Sol 4","Fuego 5"]
+    },
+    "229":{
+        "Nombre": "Shield of Faith",
+        "Descripcion": "Aura grants +2 or higher deflection bonus",
+        "Escuela": "Abj",
+        "Nivel": ["Clr 1"]
+    },
+    "230":{
+        "Nombre": "Shield of Law",
+        "Descripcion": "+4 to AC, +4 resistance, and SR 25 against chaotic spells",
+        "Escuela": "Abj",
+        "Nivel": ["Ley 8","Clr 8"]
+    },
+    "231":{
+        "Nombre": "Scrying",
+        "Descripcion": "Spies on subject from a distance",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 4","Mag 4","Drd 4","Clr 5","Brd 3"]
+    },
+    "232":{
+        "Nombre": "Scrying, Greater",
+        "Descripcion": "As scrying, but faster and longer",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 7","Mag 7","Drd 7","Clr 7","Brd 6"]
+    },
+    "233":{
+        "Nombre": "Sculpt Sound",
+        "Descripcion": "Creates new sounds or changes existing ones",
+        "Escuela": "Tra",
+        "Nivel": ["Brd 3"]
+    },
+    "234":{
+        "Nombre": "Freezing Sphere",
+        "Descripcion": "Freezes water or deals cold damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "235":{
+        "Nombre": "Invisibility Sphere",
+        "Descripcion": "Makes everyone within 10 ft. invisible",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "236":{
+        "Nombre": "Resilient Sphere",
+        "Descripcion": "Force globe protects but traps one subject",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "237":{
+        "Nombre": "Flaming Sphere",
+        "Descripcion": "Creates rolling ball of fire, 2d6 damage, lasts 1 round/level",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 2","Mag 2","Drd 2"]
+    },
+    "238":{
+        "Nombre": "Prismatic Sphere",
+        "Descripcion": "As prismatic wall, but surrounds on all sides",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 9","Mag 9","Sol 9","Protección 9"]
+    },
+    "239":{
+        "Nombre": "Telekinetic Sphere",
+        "Descripcion": "As resilient sphere, but you move sphere telekinetically",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "240":{
+        "Nombre": "Mage’s Sword",
+        "Descripcion": "Floating magic blade strikes opponents",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "241":{
+        "Nombre": "Holy Sword",
+        "Descripcion": "Weapon becomes +5, deals +2d6 damage against evil",
+        "Escuela": "Evo",
+        "Nivel": ["Pld 4"]
+    },
+    "242":{
+        "Nombre": "Scare",
+        "Descripcion": "Panics creatures of less than 6 HD",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "243":{
+        "Nombre": "Mirage Arcana",
+        "Descripcion": "As hallucinatory terrain, plus structures",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 5","Mag 5","Brd 5"]
+    },
+    "244":{
+        "Nombre": "Good Hope",
+        "Descripcion": "Subjects gain +2 on attack rolls, damage rolls, saves, and checks",
+        "Escuela": "Enc",
+        "Nivel": ["Brd 3"]
+    },
+    "245":{
+        "Nombre": "Eagle’s Splendor",
+        "Descripcion": "Subject gains +4 to Cha for 1 min./level",
+        "Escuela": "Tra",
+        "Nivel": ["Pld 2","Hcr 2","Mag 2","Clr 2","Brd 2"]
+    },
+    "246":{
+        "Nombre": "Eagle’s Splendor, Mass",
+        "Descripcion": "As eagle’s splendor, affects one subject/level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6","Clr 6","Brd 6"]
+    },
+    "247":{
+        "Nombre": "Shatter",
+        "Descripcion": "Sonic vibration damages objects or crystalline creatures",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 2","Mag 2","Destrucción 2","Caos 2","Clr 2","Brd 2"]
+    },
+    "248":{
+        "Nombre": "Temporal Stasis",
+        "Descripcion": "Puts subject into suspended animation",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "249":{
+        "Nombre": "Statue",
+        "Descripcion": "Subject can become a statue at will",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "250":{
+        "Nombre": "Etherealness",
+        "Descripcion": "Travel to Ethereal Plane with companions",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 9","Mag 9","Clr 9"]
+    },
+    "251":{
+        "Nombre": "Shadow Evocation",
+        "Descripcion": "Mimics evocation of lower than 5th level, but only 20% real",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 5","Mag 5","Brd 5"]
+    },
+    "252":{
+        "Nombre": "Shadow Evocation, Greater",
+        "Descripcion": "As shadow evocation, but up to 7th level and 60% real",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "253":{
+        "Nombre": "Ethereal Jaunt",
+        "Descripcion": "You become ethereal for 1 round/level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 7","Mag 7","Clr 7"]
+    },
+    "254":{
+        "Nombre": "Demand",
+        "Descripcion": "As sending, plus you can send suggestion",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "255":{
+        "Nombre": "Dismissal",
+        "Descripcion": "Forces a creature to return to native plane",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 5","Mag 5","Clr 4 "]
+    },
+    "256":{
+        "Nombre": "Atonement",
+        "Descripcion": "Removes burden of misdeeds from subject",
+        "Escuela": "Abj",
+        "Nivel": ["Drd 5","Clr 5"]
+    },
+    "257":{
+        "Nombre": "Sound Burst",
+        "Descripcion": "Deals 1d8 sonic damage to subjects; may stun them",
+        "Escuela": "Evo",
+        "Nivel": ["Clr 2","Brd 2"]
+    },
+    "258":{
+        "Nombre": "Sunburst",
+        "Descripcion": "Blinds all within 10 ft., deals 6d6 damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 8","Mag 8","Drd 8","Sol 8"]
+    },
+    "259":{
+        "Nombre": "False Life",
+        "Descripcion": "Gain 1d10 temporary hp +1/level (max +10)",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "260":{
+        "Nombre": "Doom",
+        "Descripcion": "One subject takes -2 on attack rolls, saves, and checks",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 1"]
+    },
+    "261":{
+        "Nombre": "Divine Favor",
+        "Descripcion": "You gain +1 per three levels on attack and damage rolls",
+        "Escuela": "Evo",
+        "Nivel": ["Pld 1","Clr 1"]
+    },
+    "262":{
+        "Nombre": "Heroes’ Feast",
+        "Descripcion": "Food for one creature/level cures and grants combat bonuses",
+        "Escuela": "Cjr",
+        "Nivel": ["Clr 6","Brd 6"]
+    },
+    "263":{
+        "Nombre": "Flame Blade",
+        "Descripcion": "Touch attack deals 1d8 +1/two levels damage",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 2"]
+    },
+    "264":{
+        "Nombre": "Produce Flame",
+        "Descripcion": "1d6 damage +1/ level, touch or thrown",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 1","Fuego 2"]
+    },
+    "265":{
+        "Nombre": "Acid Arrow",
+        "Descripcion": "Ranged touch attack; 2d4 damage for 1 round +1 round/three levels",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "266":{
+        "Nombre": "Flame Arrow",
+        "Descripcion": "Arrows deal +1d6 fire damage",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "267":{
+        "Nombre": "Tree Shape",
+        "Descripcion": "You look exactly like a tree for 1 hour/level",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 3","Drd 2"]
+    },
+    "268":{
+        "Nombre": "Gaseous Form",
+        "Descripcion": "Subject becomes insubstantial and can fly slowly",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3","Aire 3","Brd 3"]
+    },
+    "269":{
+        "Nombre": "Animal Shapes",
+        "Descripcion": "One ally/level polymorphs into chosen animal",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 8","Animal 7"]
+    },
+    "270":{
+        "Nombre": "Faerie Fire",
+        "Descripcion": "Outlines subjects with light, canceling blur, concealment, and the like",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 1"]
+    },
+    "271":{
+        "Nombre": "Bull’s Strength",
+        "Descripcion": "Subject gains +4 to Str for 1 min./level",
+        "Escuela": "Tra",
+        "Nivel": ["Pld 2","Hcr 2","Mag 2","Drd 2","Fuerza 2","Clr 2"]
+    },
+    "272":{
+        "Nombre": "Bull’s Strength, Mass",
+        "Descripcion": "As bull’s strength, affects one subject/level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6","Drd 6","Clr 6"]
+    },
+    "273":{
+        "Nombre": "Meld into Stone",
+        "Descripcion": "You and your gear merge with stone",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 3","Clr 3"]
+    },
+    "274":{
+        "Nombre": "Rage",
+        "Descripcion": "Gives +2 to Str and Con, +1 on Will saves, -2 to AC",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 3","Mag 3","Brd 2"]
+    },
+    "275":{
+        "Nombre": "Shillelagh",
+        "Descripcion": "Cudgel or quarterstaff becomes +1 weapon and deals damage as if two sizes larger",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 1"]
+    },
+    "276":{
+        "Nombre": "Geas, Lesser",
+        "Descripcion": "Commands subject of 7 HD or less",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 4","Mag 4","Brd 3"]
+    },
+    "277":{
+        "Nombre": "Geas/Quest",
+        "Descripcion": "As lesser geas, plus it affects any creature",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 6","Mag 6","Clr 6","Brd 6"]
+    },
+    "278":{
+        "Nombre": "Glyph of Warding",
+        "Descripcion": "Inscription harms those who pass it",
+        "Escuela": "Abj",
+        "Nivel": ["Clr 3"]
+    },
+    "279":{
+        "Nombre": "Glyph of Warding, Greater",
+        "Descripcion": "As glyph of warding, but up to 10d8 damage or 6th-level spell",
+        "Escuela": "Abj",
+        "Nivel": ["Clr 6"]
+    },
+    "280":{
+        "Nombre": "Globe of Invulnerability",
+        "Descripcion": "As lesser globe of invulnerability, plus 4th-level spell effects",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "281":{
+        "Nombre": "Globe of Invulnerability, Lesser",
+        "Descripcion": "Stops 1st- through 3rd-level spell effects",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "282":{
+        "Nombre": "Cat’s Grace",
+        "Descripcion": "Subject gains +4 to Dex for 1 min./level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2","Exp 2","Drd 2","Brd 2"]
+    },
+    "283":{
+        "Nombre": "Cat’s Grace, Mass",
+        "Descripcion": "As cat’s grace, affects one subject/level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6","Drd 6","Brd 6"]
+    },
+    "284":{
+        "Nombre": "Grease",
+        "Descripcion": "Makes 10-ft. square or one object slippery",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "285":{
+        "Nombre": "Guards and Wards",
+        "Descripcion": "Array of magic effects protect area",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "286":{
+        "Nombre": "Speak with Plants",
+        "Descripcion": "You can talk to normal plants and plant creatures",
+        "Escuela": "Adv",
+        "Nivel": ["Exp 2","Drd 3","Brd 4"]
+    },
+    "287":{
+        "Nombre": "Speak with Animals",
+        "Descripcion": "You can communicate with animals",
+        "Escuela": "Adv",
+        "Nivel": ["Exp 1","Drd 1","Brd 3"]
+    },
+    "288":{
+        "Nombre": "Speak with Dead",
+        "Descripcion": "Corpse answers one question/two levels",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 3"]
+    },
+    "289":{
+        "Nombre": "Charm Animal",
+        "Descripcion": "Makes one animal your friend",
+        "Escuela": "Enc",
+        "Nivel": ["Exp 1","Drd 1"]
+    },
+    "290":{
+        "Nombre": "Charm Monster",
+        "Descripcion": "Makes monster believe it is your ally",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 4","Mag 4","Brd 3"]
+    },
+    "291":{
+        "Nombre": "Charm Monster, Mass",
+        "Descripcion": "As charm monster, but all within 30 ft",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 8","Mag 8","Brd 6"]
+    },
+    "292":{
+        "Nombre": "Charm Person",
+        "Descripcion": "Makes one person your friend",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "293":{
+        "Nombre": "Chill Metal",
+        "Descripcion": "Cold metal damages those who touch it",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 2"]
+    },
+    "294":{
+        "Nombre": "Heroism",
+        "Descripcion": "Gives +2 on attack rolls, saves, skill checks",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 3","Mag 3","Brd 2"]
+    },
+    "295":{
+        "Nombre": "Heroism, Greater",
+        "Descripcion": "Gives +4 bonus on attack rolls, saves, skill checks; immunity to fear; temporary hp",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 6","Mag 6","Brd 5"]
+    },
+    "296":{
+        "Nombre": "Hypnotism",
+        "Descripcion": "Fascinates 2d4 HD of creatures",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "297":{
+        "Nombre": "Horrid Wilting",
+        "Descripcion": "Deals 1d6/level damage within 30 ft",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 8","Mag 8","Agua 8"]
+    },
+    "298":{
+        "Nombre": "Identify",
+        "Descripcion": "Determines properties of magic item",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 1","Mag 1","Magia 2","Brd 1"]
+    },
+    "299":{
+        "Nombre": "Major Image",
+        "Descripcion": "As silent image, plus sound, smell and thermal effects",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "300":{
+        "Nombre": "Minor Image",
+        "Descripcion": "As silent image, plus some sound",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "301":{
+        "Nombre": "Mirror Image",
+        "Descripcion": "Creates decoy duplicates of you (1d4 +1 per three levels, max 8)",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "302":{
+        "Nombre": "Permanent Image",
+        "Descripcion": "Includes sight, sound, and smell",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 6","Mag 6","Brd 6"]
+    },
+    "303":{
+        "Nombre": "Persistent Image",
+        "Descripcion": "As major image, but no concentration required",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 5","Mag 5","Brd 5"]
+    },
+    "304":{
+        "Nombre": "Programmed Image",
+        "Descripcion": "As major image, plus triggered by event",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 6","Mag 6","Brd 6"]
+    },
+    "305":{
+        "Nombre": "Silent Image",
+        "Descripcion": "Creates minor illusion of your design",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "306":{
+        "Nombre": "Imbue with Spell Ability",
+        "Descripcion": "Transfer spells to subject",
+        "Escuela": "Evo",
+        "Nivel": ["Magia 4","Clr 4 "]
+    },
+    "307":{
+        "Nombre": "True Strike",
+        "Descripcion": "+20 on your next attack roll",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "308":{
+        "Nombre": "Implosion",
+        "Descripcion": "Kills one creature/round",
+        "Escuela": "Evo",
+        "Nivel": ["Destrucción 9","Clr 9"]
+    },
+    "309":{
+        "Nombre": "Sepia Snake Sigil",
+        "Descripcion": "Creates text symbol that immobilizes reader",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "310":{
+        "Nombre": "Nondetection",
+        "Descripcion": "Hides subject from divination, scrying",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 3","Mag 3","Exp 4","Superchería 3"]
+    },
+    "311":{
+        "Nombre": "Inflict Critical Wounds",
+        "Descripcion": "Touch attack, 4d8 damage +1/level (max +20)",
+        "Escuela": "Nig",
+        "Nivel": ["Destrucción 4","Clr 4 "]
+    },
+    "312":{
+        "Nombre": "Inflict Critical Wounds, Mass",
+        "Descripcion": "Deals 4d8 damage +1/level to many creatures",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 8"]
+    },
+    "313":{
+        "Nombre": "Inflict Serious Wounds",
+        "Descripcion": "Touch attack, 3d8 damage +1/level (max +15)",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 3"]
+    },
+    "314":{
+        "Nombre": "Inflict Serious Wounds, Mass",
+        "Descripcion": "Deals 3d8 damage +1/level to many creatures",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 7"]
+    },
+    "315":{
+        "Nombre": "Inflict Light Wounds",
+        "Descripcion": "Touch deals 1d8 damage +1/level (max +5)",
+        "Escuela": "Nig",
+        "Nivel": ["Destrucción 1","Clr 1"]
+    },
+    "316":{
+        "Nombre": "Inflict Light Wounds, Mass",
+        "Descripcion": "Deals 1d8 damage +1/level to many creatures",
+        "Escuela": "Nig",
+        "Nivel": ["Destrucción 5","Clr 5"]
+    },
+    "317":{
+        "Nombre": "Inflict Minor Wounds",
+        "Descripcion": "Touch attack, 1 point of damage",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 0"]
+    },
+    "318":{
+        "Nombre": "Inflict Moderate Wounds",
+        "Descripcion": "Touch attack, 2d8 damage +1/level (max +10)",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 2"]
+    },
+    "319":{
+        "Nombre": "Inflict Moderate Wounds, Mass",
+        "Descripcion": "Deals 2d8 damage +1/level to many creatures",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 6"]
+    },
+    "320":{
+        "Nombre": "Hold Animal",
+        "Descripcion": "Paralyzes one animal for 1 round/level",
+        "Escuela": "Enc",
+        "Nivel": ["Exp 2","Drd 2","Animal 2"]
+    },
+    "321":{
+        "Nombre": "Hold Monster",
+        "Descripcion": "As hold person, but any creature",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 5","Mag 5","Ley 6","Brd 4"]
+    },
+    "322":{
+        "Nombre": "Hold Monster, Mass",
+        "Descripcion": "As hold monster, but all within 30 ft",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 9","Mag 9"]
+    },
+    "323":{
+        "Nombre": "Hold Person",
+        "Descripcion": "Paralyzes one humanoid for 1 round/level",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 3","Mag 3","Clr 2","Brd 2"]
+    },
+    "324":{
+        "Nombre": "Hold Person, Mass",
+        "Descripcion": "As hold person, but all within 30 ft",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "325":{
+        "Nombre": "Spell Immunity",
+        "Descripcion": "Subject is immune to one spell per four levels",
+        "Escuela": "Abj",
+        "Nivel": ["Protección 4","Fuerza 4","Clr 4 "]
+    },
+    "326":{
+        "Nombre": "Spell Immunity, Greater",
+        "Descripcion": "As spell immunity, but up to 8th-level spells",
+        "Escuela": "Abj",
+        "Nivel": ["Clr 8"]
+    },
+    "327":{
+        "Nombre": "Moment of Prescience",
+        "Descripcion": "You gain insight bonus on single attack roll, check, or save",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 8","Mag 8","Suerte 8"]
+    },
+    "328":{
+        "Nombre": "Make Whole",
+        "Descripcion": "Repairs an object",
+        "Escuela": "Tra",
+        "Nivel": ["Clr 2"]
+    },
+    "329":{
+        "Nombre": "Forbiddance",
+        "Descripcion": "Blocks planar travel, damages creatures of different alignment",
+        "Escuela": "Abj",
+        "Nivel": ["Clr 6"]
+    },
+    "330":{
+        "Nombre": "Blink",
+        "Descripcion": "You randomly vanish and reappear for 1 round/level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "331":{
+        "Nombre": "Reverse Gravity",
+        "Descripcion": "Objects and creatures fall upward",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 7","Mag 7","Drd 8"]
+    },
+    "332":{
+        "Nombre": "Invisibility",
+        "Descripcion": "Subject is invisible for 1 min./level or until it attacks",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 2","Mag 2","Superchería 2","Brd 2"]
+    },
+    "333":{
+        "Nombre": "Invisibility, Mass",
+        "Descripcion": "As invisibility, but affects all in range",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "334":{
+        "Nombre": "Invisibility, Greater",
+        "Descripcion": "As invisibility, but subject can attack and stay invisible",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 4","Mag 4","Brd 4"]
+    },
+    "335":{
+        "Nombre": "Order’s Wrath",
+        "Descripcion": "Damages and dazes chaotic creatures",
+        "Escuela": "Evo",
+        "Nivel": ["Ley 4"]
+    },
+    "336":{
+        "Nombre": "Forcecage",
+        "Descripcion": "Cube or cage of force imprisons all inside",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "337":{
+        "Nombre": "Maze",
+        "Descripcion": "Traps subject in extradimensional maze",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "338":{
+        "Nombre": "Glibness",
+        "Descripcion": "You gain +30 bonus on Bluff checks, and your lies can escape magical discernment",
+        "Escuela": "Tra",
+        "Nivel": ["Brd 3"]
+    },
+    "339":{
+        "Nombre": "Wail of the Banshee",
+        "Descripcion": "Kills one creature/level",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 9","Mag 9","Muerte 9"]
+    },
+    "340":{
+        "Nombre": "Bestow Curse",
+        "Descripcion": "-6 to an ability score; -4 on attack rolls, saves, and checks; or 50% chance of losing each action",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 4","Mag 4","Clr 3"]
+    },
+    "341":{
+        "Nombre": "Read Magic",
+        "Descripcion": "Read scrolls and spellbooks",
+        "Escuela": "Adv",
+        "Nivel": ["Pld 1","Hcr 0","Mag 0","Exp 1","Drd 0","Clr 0","Brd 0"]
+    },
+    "342":{
+        "Nombre": "Delay Poison",
+        "Descripcion": "Stops poison from harming subject for 1 hour/ level",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 2","Exp 1","Drd 2","Clr 2","Brd 2"]
+    },
+    "343":{
+        "Nombre": "Levitate",
+        "Descripcion": "Subject moves up and down at your direction",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "344":{
+        "Nombre": "Freedom",
+        "Descripcion": "Releases creature from imprisonment",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 9","Mag 9"]
+    },
+    "345":{
+        "Nombre": "Freedom of Movement",
+        "Descripcion": "Subject moves normally despite impediments",
+        "Escuela": "Abj",
+        "Nivel": ["Exp 4","Drd 4","Suerte 4","Clr 4 , Brd 4"]
+    },
+    "346":{
+        "Nombre": "Binding",
+        "Descripcion": "Utilizes an array of techniques to imprison a creature",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "347":{
+        "Nombre": "Planar Binding",
+        "Descripcion": "As lesser planar binding, but up to 12 HD",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "348":{
+        "Nombre": "Soul Bind",
+        "Descripcion": "Traps newly dead soul to prevent resurrection",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 9","Mag 9","Clr 9"]
+    },
+    "349":{
+        "Nombre": "Planar Binding, Greater",
+        "Descripcion": "As lesser planar binding, but up to 18 HD",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "350":{
+        "Nombre": "Planar Binding, Lesser",
+        "Descripcion": "Traps extraplanar creature of 6 HD or less until it performs a task",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "351":{
+        "Nombre": "Continual Flame",
+        "Descripcion": "Makes a permanent, heatless torch",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 2","Mag 2","Clr 3"]
+    },
+    "352":{
+        "Nombre": "Call Lightning Storm",
+        "Descripcion": "As call lightning, but 5d6 damage per bolt",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 5"]
+    },
+    "353":{
+        "Nombre": "Call Lightning",
+        "Descripcion": "Calls down lightning bolts (3d6 per bolt) from sky",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 3"]
+    },
+    "354":{
+        "Nombre": "Flare",
+        "Descripcion": "Dazzles one creature (-1 on attack rolls)",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 0","Mag 0","Drd 0","Brd 0"]
+    },
+    "355":{
+        "Nombre": "Locate Creature",
+        "Descripcion": "Indicates direction to familiar creature",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 4","Mag 4","Brd 4"]
+    },
+    "356":{
+        "Nombre": "Locate Object",
+        "Descripcion": "Senses direction toward object (specific or type)",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 2","Mag 2","Viaje 2","Clr 3","Brd 2"]
+    },
+    "357":{
+        "Nombre": "Insanity",
+        "Descripcion": "Subject suffers continuous confusion",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "358":{
+        "Nombre": "Dancing Lights",
+        "Descripcion": "Creates torches or other lights",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 0","Mag 0","Brd 0"]
+    },
+    "359":{
+        "Nombre": "Light",
+        "Descripcion": "Object shines like a torch",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 0","Mag 0","Drd 0","Clr 0","Brd 0"]
+    },
+    "360":{
+        "Nombre": "Searing Light",
+        "Descripcion": "Ray deals 1d8/two levels damage, more against undead",
+        "Escuela": "Evo",
+        "Nivel": ["Sol 3","Clr 3"]
+    },
+    "361":{
+        "Nombre": "Daylight",
+        "Descripcion": "60-ft. radius of bright light",
+        "Escuela": "Evo",
+        "Nivel": ["Pld 3","Hcr 3","Mag 3","Drd 3","Clr 3","Brd 3"]
+    },
+    "362":{
+        "Nombre": "Ironwood",
+        "Descripcion": "Magic wood is strong as steel",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 6"]
+    },
+    "363":{
+        "Nombre": "Mage’s Magnificent Mansion",
+        "Descripcion": "Door leads to extradimensional mansion",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "364":{
+        "Nombre": "Curse Water",
+        "Descripcion": "Makes unholy water",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 1"]
+    },
+    "365":{
+        "Nombre": "Grasping Hand",
+        "Descripcion": "Large hand provides cover, pushes, or grapples",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 7","Mag 7","Fuerza 7"]
+    },
+    "366":{
+        "Nombre": "Crushing Hand",
+        "Descripcion": "Large hand provides cover, pushes, or crushes your foes",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 9","Mag 9","Fuerza 9"]
+    },
+    "367":{
+        "Nombre": "Helping Hand",
+        "Descripcion": "Ghostly hand leads subject to you",
+        "Escuela": "Evo",
+        "Nivel": ["Clr 3"]
+    },
+    "368":{
+        "Nombre": "Mage Hand",
+        "Descripcion": "5-pound telekinesis",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 0","Mag 0","Brd 0"]
+    },
+    "369":{
+        "Nombre": "Spectral Hand",
+        "Descripcion": "Creates disembodied glowing hand to deliver touch attacks",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "370":{
+        "Nombre": "Forceful Hand",
+        "Descripcion": "Hand pushes creatures away",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "371":{
+        "Nombre": "Interposing Hand",
+        "Descripcion": "Hand provides cover against one opponent",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "372":{
+        "Nombre": "Burning Hands",
+        "Descripcion": "1d4/level fire damage (max 5d4)",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 1","Mag 1","Fuego 1"]
+    },
+    "373":{
+        "Nombre": "Creeping Doom",
+        "Descripcion": "Swarms of centipedes attack at your command",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 7"]
+    },
+    "374":{
+        "Nombre": "Arcane Mark",
+        "Descripcion": "Inscribes a personal rune (visible or invisible)",
+        "Escuela": "Uni",
+        "Nivel": ["Hcr 0","Mag 0"]
+    },
+    "375":{
+        "Nombre": "Mark of Justice",
+        "Descripcion": "Designates action that will trigger curse on subject",
+        "Escuela": "Nig",
+        "Nivel": ["Pld 4","Clr 5"]
+    },
+    "376":{
+        "Nombre": "Chaos Hammer",
+        "Descripcion": "Damages and staggers lawful creatures",
+        "Escuela": "Evo",
+        "Nivel": ["Caos 4"]
+    },
+    "377":{
+        "Nombre": "Mage’s Faithful Hound",
+        "Descripcion": "Phantom dog can guard, attack",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "378":{
+        "Nombre": "Undeath to Death",
+        "Descripcion": "Destroys 1d4 HD/level undead (max 20d4)",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 6","Mag 6","Clr 6"]
+    },
+    "379":{
+        "Nombre": "Dictum",
+        "Descripcion": "Kills, paralyzes, slows, or deafens nonlawful subjects",
+        "Escuela": "Evo",
+        "Nivel": ["Ley 7","Clr 7"]
+    },
+    "380":{
+        "Nombre": "Dream",
+        "Descripcion": "Sends message to anyone sleeping",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 5","Mag 5","Brd 5"]
+    },
+    "381":{
+        "Nombre": "Mind Blank",
+        "Descripcion": "Subject is immune to mental/emotional magic and scrying",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 8","Mag 8","Protección 8"]
+    },
+    "382":{
+        "Nombre": "Fear",
+        "Descripcion": "Subjects within cone flee for 1 round/level",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 4","Mag 4","Brd 3"]
+    },
+    "383":{
+        "Nombre": "Miracle",
+        "Descripcion": "Requests a deity’s intercession",
+        "Escuela": "Evo",
+        "Nivel": ["Suerte 9","Clr 9"]
+    },
+    "384":{
+        "Nombre": "Eyebite",
+        "Descripcion": "Target becomes panicked, sickened, and comatose",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 6","Mag 6","Brd 6"]
+    },
+    "385":{
+        "Nombre": "Modify Memory",
+        "Descripcion": "Changes 5 minutes of subject’s memories",
+        "Escuela": "Tra",
+        "Nivel": ["Brd 4"]
+    },
+    "386":{
+        "Nombre": "Mount",
+        "Descripcion": "Summons riding horse for 2 hours/level",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "387":{
+        "Nombre": "Wall of Thorns",
+        "Descripcion": "Thorns damage anyone who tries to pass",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 5","Vegetal 5"]
+    },
+    "388":{
+        "Nombre": "Wall of Fire",
+        "Descripcion": "Deals 2d4 fire damage out to 10 ft. and 1d4 out to 20 ft. Passing through wall deals 2d6 damage +1/level",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 4","Mag 4","Drd 5","Fuego 4"]
+    },
+    "389":{
+        "Nombre": "Wall of Force",
+        "Descripcion": "Wall is immune to damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "390":{
+        "Nombre": "Wall of Ice",
+        "Descripcion": "Ice plane creates wall with 15 hp +1/level, or hemisphere can trap creatures inside",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "391":{
+        "Nombre": "Wall of Iron",
+        "Descripcion": "30 hp/four levels; can topple onto foes",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "392":{
+        "Nombre": "Wall of Stone",
+        "Descripcion": "Creates a stone wall that can be shaped",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 5","Mag 5","Drd 6","Tierra 5","Clr 5"]
+    },
+    "393":{
+        "Nombre": "Wind Wall",
+        "Descripcion": "Deflects arrows, smaller creatures, and gases",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 3","Mag 3","Exp 2","Drd 3","Aire 2","Clr 3"]
+    },
+    "394":{
+        "Nombre": "Illusory Wall",
+        "Descripcion": "Wall, floor, or ceiling looks real, but anything can pass through",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "395":{
+        "Nombre": "Prismatic Wall",
+        "Descripcion": "Wall’s colors have array of effects",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "396":{
+        "Nombre": "Lullaby",
+        "Descripcion": "Makes subject drowsy; -5 on Spot and Listen checks, -2 on Will saves against sleep",
+        "Escuela": "Enc",
+        "Nivel": ["Brd 0"]
+    },
+    "397":{
+        "Nombre": "Weird",
+        "Descripcion": "As phantasmal killer, but affects all within 30 ft",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 9","Mag 9"]
+    },
+    "398":{
+        "Nombre": "Neutralize Poison",
+        "Descripcion": "Immunizes subject against poison, detoxifies venom in or on subject",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 4","Exp 3","Drd 3","Clr 4 , Brd 4"]
+    },
+    "399":{
+        "Nombre": "Obscuring Mist",
+        "Descripcion": "Fog surrounds you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 1","Mag 1","Drd 1","Aire 1","Agua 1","Clr 1"]
+    },
+    "400":{
+        "Nombre": "Cloudkill",
+        "Descripcion": "Kills 3 HD or less; 4-6 HD save or die, 6+ HD take Con damage",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "401":{
+        "Nombre": "Stinking Cloud",
+        "Descripcion": "Nauseating vapors, 1 round/level",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "402":{
+        "Nombre": "Fog Cloud",
+        "Descripcion": "Fog obscures vision",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 2","Mag 2","Drd 2","Agua 2"]
+    },
+    "403":{
+        "Nombre": "Incendiary Cloud",
+        "Descripcion": "Cloud deals 4d6 fire damage/round",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 8","Mag 8","Fuego 8"]
+    },
+    "404":{
+        "Nombre": "Obscure Object",
+        "Descripcion": "Masks object against scrying",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 2","Mag 2","Clr 3","Brd 1"]
+    },
+    "405":{
+        "Nombre": "False Vision",
+        "Descripcion": "Fools scrying with an illusion",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 5","Mag 5","Superchería 5","Brd 5"]
+    },
+    "406":{
+        "Nombre": "Arcane Eye",
+        "Descripcion": "Invisible floating eye moves 30 ft./round",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "407":{
+        "Nombre": "Prying Eyes",
+        "Descripcion": "1d4 +1/level floating eyes scout for you",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "408":{
+        "Nombre": "Prying Eyes, Greater",
+        "Descripcion": "As prying eyes, but eyes have true seeing",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "409":{
+        "Nombre": "Waves of Exhaustion",
+        "Descripcion": "Several targets become exhausted",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "410":{
+        "Nombre": "Waves of Fatigue",
+        "Descripcion": "Several targets become fatigued",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "411":{
+        "Nombre": "Command",
+        "Descripcion": "One subject obeys selected command for 1 round",
+        "Escuela": "Enc",
+        "Nivel": ["Clr 1"]
+    },
+    "412":{
+        "Nombre": "Command, Greater",
+        "Descripcion": "As command, but affects one subject/level",
+        "Escuela": "Enc",
+        "Nivel": ["Clr 5"]
+    },
+    "413":{
+        "Nombre": "Guidance",
+        "Descripcion": "+1 on one attack roll, saving throw, or skill check",
+        "Escuela": "Adv",
+        "Nivel": ["Drd 0","Clr 0"]
+    },
+    "414":{
+        "Nombre": "Darkness",
+        "Descripcion": "20-ft. radius of supernatural shadow",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 2","Mag 2","Clr 2","Brd 2"]
+    },
+    "415":{
+        "Nombre": "Deeper Darkness",
+        "Descripcion": "Object sheds supernatural shadow in 60-ft. radius",
+        "Escuela": "Evo",
+        "Nivel": ["Clr 3"]
+    },
+    "416":{
+        "Nombre": "Secret Page",
+        "Descripcion": "Changes one page to hide its real content",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "417":{
+        "Nombre": "Power Word Stun",
+        "Descripcion": "Stuns creature with 150 hp or less",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 8","Mag 8","Guerra 8"]
+    },
+    "418":{
+        "Nombre": "Power Word Blind",
+        "Descripcion": "Blinds creature with 200 hp or less",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 7","Mag 7","Guerra 7"]
+    },
+    "419":{
+        "Nombre": "Power Word Kill",
+        "Descripcion": "Kills creature with 100 hp or less",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 9","Mag 9","Guerra 9"]
+    },
+    "420":{
+        "Nombre": "Word of Recall",
+        "Descripcion": "Teleports you back to designated place",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 8","Clr 6"]
+    },
+    "421":{
+        "Nombre": "Word of Chaos",
+        "Descripcion": "Kills, confuses, stuns, or deafens nonchaotic subjects",
+        "Escuela": "Evo",
+        "Nivel": ["Caos 7","Clr 7"]
+    },
+    "422":{
+        "Nombre": "Holy Word",
+        "Descripcion": "Kills, paralyzes, blinds, or deafens nongood subjects",
+        "Escuela": "Evo",
+        "Nivel": ["Bien 7","Clr 7"]
+    },
+    "423":{
+        "Nombre": "Screen",
+        "Descripcion": "Illusion hides area from vision, scrying",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 8","Mag 8","Superchería 7"]
+    },
+    "424":{
+        "Nombre": "Glitterdust",
+        "Descripcion": "Blinds creatures, outlines invisible creatures",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "425":{
+        "Nombre": "Passwall",
+        "Descripcion": "Creates passage through wood or stone wall",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "426":{
+        "Nombre": "Pass without Trace",
+        "Descripcion": "One subject/level leaves no tracks",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 1","Drd 1"]
+    },
+    "427":{
+        "Nombre": "Scintillating Pattern",
+        "Descripcion": "Twisting colors confuse, stun, or render unconscious",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "428":{
+        "Nombre": "Hypnotic Pattern",
+        "Descripcion": "Fascinates (2d4 + level) HD of creatures",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "429":{
+        "Nombre": "Rainbow Pattern",
+        "Descripcion": "Lights fascinate 24 HD of creatures",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 4","Mag 4","Brd 4"]
+    },
+    "430":{
+        "Nombre": "Shades",
+        "Descripcion": "As shadow conjuration, but up to 8th level and 80% real",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 9","Mag 9"]
+    },
+    "431":{
+        "Nombre": "Bane",
+        "Descripcion": "Enemies take -1 on attack rolls and saves against fear",
+        "Escuela": "Enc",
+        "Nivel": ["Clr 1"]
+    },
+    "432":{
+        "Nombre": "Permanency",
+        "Descripcion": "Makes certain spells permanent",
+        "Escuela": "Uni",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "433":{
+        "Nombre": "Disrupt Undead",
+        "Descripcion": "Deals 1d6 damage to one undead",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 0","Mag 0"]
+    },
+    "434":{
+        "Nombre": "Nightmare",
+        "Descripcion": "Sends vision dealing 1d10 damage, fatigue",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 5","Mag 5","Brd 5"]
+    },
+    "435":{
+        "Nombre": "Magic Stone",
+        "Descripcion": "Three stones gain +1 on attack, deal 1d6 +1 damage",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 1","Tierra 1","Clr 1"]
+    },
+    "436":{
+        "Nombre": "Stone Tell",
+        "Descripcion": "Talk to natural or worked stone",
+        "Escuela": "Adv",
+        "Nivel": ["Drd 6"]
+    },
+    "437":{
+        "Nombre": "Spike Stones",
+        "Descripcion": "Creatures in area take 1d8 damage, may be lowed",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 4","Tierra 4"]
+    },
+    "438":{
+        "Nombre": "Stoneskin",
+        "Descripcion": "Ignore 10 points of damage per attack",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 4","Mag 4","Drd 5","Tierra 6","Fuerza 6"]
+    },
+    "439":{
+        "Nombre": "Barkskin",
+        "Descripcion": "Grants +2 (or higher) enhancement to natural armor",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 2","Drd 2","Vegetal 2"]
+    },
+    "440":{
+        "Nombre": "Pyrotechnics",
+        "Descripcion": "Turns fire into blinding light or choking smoke",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "441":{
+        "Nombre": "Insect Plague",
+        "Descripcion": "Locust swarms attack creatures",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 5","Clr 5"]
+    },
+    "442":{
+        "Nombre": "Prayer",
+        "Descripcion": "Allies +1 bonus on most rolls, enemies -1 penalty",
+        "Escuela": "Enc",
+        "Nivel": ["Pld 3","Clr 3"]
+    },
+    "443":{
+        "Nombre": "Righteous Might",
+        "Descripcion": "Your size increases, and you gain combat bonuses",
+        "Escuela": "Tra",
+        "Nivel": ["Fuerza 5","Clr 5"]
+    },
+    "444":{
+        "Nombre": "Divine Power",
+        "Descripcion": "You gain attack bonus, +6 to Str, and 1 hp/level",
+        "Escuela": "Evo",
+        "Nivel": ["Guerra 4","Clr 4 "]
+    },
+    "445":{
+        "Nombre": "Polymorph",
+        "Descripcion": "Gives one willing subject a new form",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "446":{
+        "Nombre": "Polymorph Any Object",
+        "Descripcion": "Changes any subject into anything else",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 8","Mag 8","Superchería 8"]
+    },
+    "447":{
+        "Nombre": "Baleful Polymorph",
+        "Descripcion": "Transforms subject into harmless animal",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 5","Mag 5","Drd 5"]
+    },
+    "448":{
+        "Nombre": "Mnemonic Enhancer",
+        "Descripcion": "Prepares extra spells or retains one just cast",
+        "Escuela": "Tra",
+        "Nivel": ["Mag 4"]
+    },
+    "449":{
+        "Nombre": "Foresight",
+        "Descripcion": "“Sixth sense” warns of impending danger",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 9","Mag 9","Drd 9","Saber 9"]
+    },
+    "450":{
+        "Nombre": "Prestidigitation",
+        "Descripcion": "Performs minor tricks",
+        "Escuela": "Uni",
+        "Nivel": ["Hcr 0","Mag 0","Brd 0"]
+    },
+    "451":{
+        "Nombre": "Desecrate",
+        "Descripcion": "Fills area with negative energy, making undead stronger",
+        "Escuela": "Evo",
+        "Nivel": ["Mal 2","Clr 2"]
+    },
+    "452":{
+        "Nombre": "Protection from Spells",
+        "Descripcion": "Confers +8 resistance bonus",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 8","Mag 8","Magia 8"]
+    },
+    "453":{
+        "Nombre": "Protection from Good",
+        "Descripcion": "+2 to AC and saves, counter mind control, hedge out good elementals and outsiders",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 1","Mag 1","Mal 1","Clr 1"]
+    },
+    "454":{
+        "Nombre": "Protection from Chaos",
+        "Descripcion": "+2 to AC and saves, counter mind control, hedge out chaotic elementals and outsiders",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 1","Hcr 1","Mag 1","Ley 1","Clr 1"]
+    },
+    "455":{
+        "Nombre": "Protection from Evil",
+        "Descripcion": "+2 to AC and saves, counter mind control, hedge out evil elementals and outsiders",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 1","Hcr 1","Mag 1","Bien 1","Clr 1"]
+    },
+    "456":{
+        "Nombre": "Protection from Energy",
+        "Descripcion": "Absorb 12 points/level of damage from one kind of energy",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 3","Mag 3","Exp 2","Drd 3","Suerte 3","Protección 3","Clr 3"]
+    },
+    "457":{
+        "Nombre": "Protection from Law",
+        "Descripcion": "+2 to AC and saves, counter mind control, hedge out lawful elementals and outsiders",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 1","Mag 1","Caos 1","Clr 1"]
+    },
+    "458":{
+        "Nombre": "Protection from Arrows",
+        "Descripcion": "Subject immune to most ranged attacks",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "459":{
+        "Nombre": "Astral Projection",
+        "Descripcion": "Projects you and companions onto Astral Plane",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 9","Mag 9","Viaje 9","Clr 9"]
+    },
+    "460":{
+        "Nombre": "Project Image",
+        "Descripcion": "Illusory double can talk and cast spells",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 7","Mag 7","Brd 6"]
+    },
+    "461":{
+        "Nombre": "Magic Missile",
+        "Descripcion": "1d4+1 damage; +1 missile per two levels above 1st (max 5)",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "462":{
+        "Nombre": "Dimension Door",
+        "Descripcion": "Teleports you short distance",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 4","Mag 4","Viaje 4","Brd 4"]
+    },
+    "463":{
+        "Nombre": "Phase Door",
+        "Descripcion": "Creates an invisible passage through wood or stone",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 7","Mag 7","Viaje 8"]
+    },
+    "464":{
+        "Nombre": "Clenched Fist",
+        "Descripcion": "Large hand provides cover, pushes, or attacks your foes",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 8","Mag 8","Fuerza 8"]
+    },
+    "465":{
+        "Nombre": "Invisibility Purge",
+        "Descripcion": "Dispels invisibility within 5 ft./level",
+        "Escuela": "Evo",
+        "Nivel": ["Clr 3"]
+    },
+    "466":{
+        "Nombre": "Purify Food and Drink",
+        "Descripcion": "Purifies 1 cu. ft./level of food or water",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 0","Clr 0"]
+    },
+    "467":{
+        "Nombre": "Remove Blindness/Deafness",
+        "Descripcion": "Cures normal or magical conditions",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 3","Clr 3"]
+    },
+    "468":{
+        "Nombre": "Remove Fear",
+        "Descripcion": "Suppresses fear or gives +4 on saves against fear for one subject + one per four levels",
+        "Escuela": "Abj",
+        "Nivel": ["Clr 1","Brd 1"]
+    },
+    "469":{
+        "Nombre": "Remove Disease",
+        "Descripcion": "Cures all diseases affecting subject",
+        "Escuela": "Cjr",
+        "Nivel": ["Exp 3","Drd 3","Clr 3"]
+    },
+    "470":{
+        "Nombre": "Remove Curse",
+        "Descripcion": "Frees object or person from curse",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 3","Hcr 4","Mag 4","Clr 3","Brd 3"]
+    },
+    "471":{
+        "Nombre": "Remove Paralysis",
+        "Descripcion": "Frees one or more creatures from paralysis or slow effect",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 2","Clr 2"]
+    },
+    "472":{
+        "Nombre": "Gust of Wind",
+        "Descripcion": "Blows away or knocks down smaller creatures",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 2","Mag 2","Drd 2"]
+    },
+    "473":{
+        "Nombre": "Slow",
+        "Descripcion": "One subject/level takes only one action/round, -1 to AC, reflex saves, and attack rolls",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "474":{
+        "Nombre": "Scorching Ray",
+        "Descripcion": "Ranged touch attack deals 4d6 fire damage, +1 ray/four levels (max 3)",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "475":{
+        "Nombre": "Ray of Exhaustion",
+        "Descripcion": "Ray makes subject exhausted",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "476":{
+        "Nombre": "Ray of Enfeeblement",
+        "Descripcion": "Ray deals 1d6 +1 per two levels Str damage",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "477":{
+        "Nombre": "Ray of Frost",
+        "Descripcion": "Ray deals 1d3 cold damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 0","Mag 0"]
+    },
+    "478":{
+        "Nombre": "Polar Ray",
+        "Descripcion": "Ranged touch attack deals 1d6/level cold damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 8","Mag 8"]
+    },
+    "479":{
+        "Nombre": "Lightning Bolt",
+        "Descripcion": "Electricity deals 1d6/level damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "480":{
+        "Nombre": "Sunbeam",
+        "Descripcion": "Beam blinds and deals 4d6 damage",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 7","Sol 7"]
+    },
+    "481":{
+        "Nombre": "Animate Dead",
+        "Descripcion": "Creates undead skeletons and zombies",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 4","Mag 4","Muerte 3","Clr 3"]
+    },
+    "482":{
+        "Nombre": "Sending",
+        "Descripcion": "Delivers short message anywhere, instantly",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 5","Mag 5","Clr 4 "]
+    },
+    "483":{
+        "Nombre": "Repulsion",
+        "Descripcion": "Creatures can’t approach you",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 6","Mag 6","Protección 7","Clr 7"]
+    },
+    "484":{
+        "Nombre": "Sequester",
+        "Descripcion": "Subject is invisible to sight and scrying; renders creature comatose",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "485":{
+        "Nombre": "Reduce Animal",
+        "Descripcion": "Shrinks one willing animal",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 3","Drd 2"]
+    },
+    "486":{
+        "Nombre": "Reduce Person",
+        "Descripcion": "Humanoid creature halves in size",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "487":{
+        "Nombre": "Reduce Person, Mass",
+        "Descripcion": "Reduces several creatures",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "488":{
+        "Nombre": "Diminish Plants",
+        "Descripcion": "Reduces size or blights growth of normal plants",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 3","Drd 3"]
+    },
+    "489":{
+        "Nombre": "Reincarnate",
+        "Descripcion": "Brings dead subject back in a random body",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 4"]
+    },
+    "490":{
+        "Nombre": "Refuge",
+        "Descripcion": "Alters item to transport its possessor to you",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 9","Mag 9","Clr 7"]
+    },
+    "491":{
+        "Nombre": "Regenerate",
+        "Descripcion": "Subject’s severed limbs grow back, cures 4d8 damage +1/level (max +35)",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 9","Curación 7","Clr 7"]
+    },
+    "492":{
+        "Nombre": "Chain Lightning",
+        "Descripcion": "1d6/level damage; 1 secondary bolt/level each deals half damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 6","Mag 6","Aire 6"]
+    },
+    "493":{
+        "Nombre": "Deathwatch",
+        "Descripcion": "Reveals how near death subjects within 30 ft. are",
+        "Escuela": "Nig",
+        "Nivel": ["Clr 1"]
+    },
+    "494":{
+        "Nombre": "Slay Living",
+        "Descripcion": "Touch attack kills subject",
+        "Escuela": "Nig",
+        "Nivel": ["Muerte 5","Clr 5"]
+    },
+    "495":{
+        "Nombre": "Mending",
+        "Descripcion": "Makes minor repairs on an object",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 0","Mag 0","Drd 0","Clr 0","Brd 0"]
+    },
+    "496":{
+        "Nombre": "Move Earth",
+        "Descripcion": "Digs trenches and builds hills",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6","Drd 6"]
+    },
+    "497":{
+        "Nombre": "Repel Wood",
+        "Descripcion": "Pushes away wooden objects",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 6","Vegetal 6"]
+    },
+    "498":{
+        "Nombre": "Repel Metal or Stone",
+        "Descripcion": "Pushes away metal and stone",
+        "Escuela": "Abj",
+        "Nivel": ["Drd 8"]
+    },
+    "499":{
+        "Nombre": "Repel Vermin",
+        "Descripcion": "Insects, spiders, and other vermin stay 10 ft. away",
+        "Escuela": "Abj",
+        "Nivel": ["Exp 3","Drd 4","Clr 4 , Brd 4"]
+    },
+    "500":{
+        "Nombre": "Resistance",
+        "Descripcion": "Subject gains +1 on saving throws",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 1","Hcr 0","Mag 0","Drd 0","Clr 0","Brd 0"]
+    },
+    "501":{
+        "Nombre": "Spell Resistance",
+        "Descripcion": "Subject gains SR 12 + level",
+        "Escuela": "Abj",
+        "Nivel": ["Protección 5","Magia 5","Clr 5"]
+    },
+    "502":{
+        "Nombre": "Bear’s Endurance",
+        "Descripcion": "Subject gains +4 to Con for 1 min./level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2","Exp 2","Drd 2","Clr 2"]
+    },
+    "503":{
+        "Nombre": "Bear’s Endurance, Mass",
+        "Descripcion": "As bear’s endurance, affects one subject/ level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6","Drd 6","Clr 6"]
+    },
+    "504":{
+        "Nombre": "Resist Energy",
+        "Descripcion": "Ignores 10 (or more) points of damage/attack from specified energy type",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 2","Hcr 2","Mag 2","Exp 1","Drd 2","Fuego 3","Clr 2"]
+    },
+    "505":{
+        "Nombre": "Water Breathing",
+        "Descripcion": "Subjects can breathe underwater",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3","Drd 3","Agua 3","Clr 3"]
+    },
+    "506":{
+        "Nombre": "Restoration",
+        "Descripcion": "Restores level and ability score drains",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 4","Clr 4 "]
+    },
+    "507":{
+        "Nombre": "Restoration, Greater",
+        "Descripcion": "As restoration, plus restores all levels and ability scores",
+        "Escuela": "Cjr",
+        "Nivel": ["Clr 7"]
+    },
+    "508":{
+        "Nombre": "Restoration, Lesser",
+        "Descripcion": "Dispels magical ability penalty or repairs 1d4 ability damage",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 1","Drd 2","Clr 2"]
+    },
+    "509":{
+        "Nombre": "Resurrection",
+        "Descripcion": "Fully restore dead subject",
+        "Escuela": "Cjr",
+        "Nivel": ["Clr 7"]
+    },
+    "510":{
+        "Nombre": "True Resurrection",
+        "Descripcion": "As resurrection, plus remains aren’t needed",
+        "Escuela": "Cjr",
+        "Nivel": ["Clr 9"]
+    },
+    "511":{
+        "Nombre": "Expeditious Retreat",
+        "Descripcion": "Your speed increases by 30 ft",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "512":{
+        "Nombre": "Spell Turning",
+        "Descripcion": "Reflect 1d4+6 spell levels back at caster",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 7","Mag 7","Suerte 7","Magia 7"]
+    },
+    "513":{
+        "Nombre": "Raise Dead",
+        "Descripcion": "Restores life to subject who died as long as one day/level ago",
+        "Escuela": "Cjr",
+        "Nivel": ["Clr 5"]
+    },
+    "514":{
+        "Nombre": "Liveoak",
+        "Descripcion": "Oak becomes treant guardian",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 6"]
+    },
+    "515":{
+        "Nombre": "Color Spray",
+        "Descripcion": "Knocks unconscious, blinds, and/or stuns weak creatures",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "516":{
+        "Nombre": "Prismatic Spray",
+        "Descripcion": "Rays hit subjects with variety of effects",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "517":{
+        "Nombre": "Break Enchantment",
+        "Descripcion": "Frees subjects from enchantments, alterations, curses, and petrification",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 4","Hcr 5","Mag 5","Suerte 5","Clr 5","Brd 4"]
+    },
+    "518":{
+        "Nombre": "Explosive Runes",
+        "Descripcion": "Deals 6d6 damage when read",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "519":{
+        "Nombre": "Giant Vermin",
+        "Descripcion": "Turns centipedes, scorpions, or spiders into giant vermin",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 4","Clr 4 "]
+    },
+    "520":{
+        "Nombre": "Owl’s Wisdom",
+        "Descripcion": "Subject gains +4 to Wis for 1 min./level",
+        "Escuela": "Tra",
+        "Nivel": ["Pld 2","Hcr 2","Mag 2","Exp 2","Drd 2","Clr 2"]
+    },
+    "521":{
+        "Nombre": "Owl’s Wisdom, Mass",
+        "Descripcion": "As owl’s wisdom, affects one subject/level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6","Drd 6","Clr 6"]
+    },
+    "522":{
+        "Nombre": "Hallow",
+        "Descripcion": "Designates location as holy",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 5","Clr 5"]
+    },
+    "523":{
+        "Nombre": "Acid Splash",
+        "Descripcion": "Orb deals 1d3 acid damage",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 0","Mag 0"]
+    },
+    "524":{
+        "Nombre": "Jump",
+        "Descripcion": "Subject gets bonus on Jump checks",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 1","Mag 1","Exp 1","Drd 1"]
+    },
+    "525":{
+        "Nombre": "Heal",
+        "Descripcion": "Cures 10 points/level of damage, all diseases and mental conditions",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 7","Curación 6","Clr 6"]
+    },
+    "526":{
+        "Nombre": "Heal Mount",
+        "Descripcion": "As heal on warhorse or other special mount",
+        "Escuela": "Cjr",
+        "Nivel": ["Pld 3"]
+    },
+    "527":{
+        "Nombre": "Heal, Mass",
+        "Descripcion": "As heal, but with several subjects",
+        "Escuela": "Cjr",
+        "Nivel": ["Curación 9","Clr 9"]
+    },
+    "528":{
+        "Nombre": "Mage’s Private Sanctum",
+        "Descripcion": "Prevents anyone from viewing or scrying an area for 24 hours",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "529":{
+        "Nombre": "Sanctuary",
+        "Descripcion": "Opponents can’t attack you, and you can’t attack",
+        "Escuela": "Abj",
+        "Nivel": ["Protección 1","Clr 1"]
+    },
+    "530":{
+        "Nombre": "Fire Seeds",
+        "Descripcion": "Acorns and berries become grenades and bombs",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 6","Sol 6","Fuego 6"]
+    },
+    "531":{
+        "Nombre": "Silence",
+        "Descripcion": "Negates sound in 20-ft. radius",
+        "Escuela": "Ilu",
+        "Nivel": ["Clr 2","Brd 2"]
+    },
+    "532":{
+        "Nombre": "Symbol of Stunning",
+        "Descripcion": "Triggered rune stuns nearby creatures",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 7","Mag 7","Clr 7"]
+    },
+    "533":{
+        "Nombre": "Symbol of Weakness",
+        "Descripcion": "Triggered rune weakens nearby creatures",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 7","Mag 7","Clr 7"]
+    },
+    "534":{
+        "Nombre": "Symbol of Pain",
+        "Descripcion": "Triggered rune wracks nearby creatures with pain",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 5","Mag 5","Clr 5"]
+    },
+    "535":{
+        "Nombre": "Symbol of Insanity",
+        "Descripcion": "Triggered rune renders nearby creatures insane",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 8","Mag 8","Clr 8"]
+    },
+    "536":{
+        "Nombre": "Symbol of Fear",
+        "Descripcion": "Triggered rune panics nearby creatures",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 6","Mag 6","Clr 6"]
+    },
+    "537":{
+        "Nombre": "Symbol of Death",
+        "Descripcion": "Triggered rune slays nearby creatures",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 8","Mag 8","Clr 8"]
+    },
+    "538":{
+        "Nombre": "Symbol of Persuasion",
+        "Descripcion": "Triggered rune charms nearby creatures",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 6","Mag 6","Clr 6"]
+    },
+    "539":{
+        "Nombre": "Symbol of Sleep",
+        "Descripcion": "Triggered rune puts nearby creatures into catatonic slumber",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 5","Mag 5","Clr 5"]
+    },
+    "540":{
+        "Nombre": "Seeming",
+        "Descripcion": "Changes appearance of one person per two levels",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 5","Mag 5","Brd 5"]
+    },
+    "541":{
+        "Nombre": "Sympathy",
+        "Descripcion": "Object or location attracts certain creatures",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 8","Mag 8","Drd 9"]
+    },
+    "542":{
+        "Nombre": "Simulacrum",
+        "Descripcion": "Creates partially real double of a creature",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "543":{
+        "Nombre": "Unseen Servant",
+        "Descripcion": "Invisible force obeys your commands",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "544":{
+        "Nombre": "Status",
+        "Descripcion": "Monitors condition, position of allies",
+        "Escuela": "Adv",
+        "Nivel": ["Clr 2"]
+    },
+    "545":{
+        "Nombre": "Ghost Sound",
+        "Descripcion": "Figment sounds",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 0","Mag 0","Brd 0"]
+    },
+    "546":{
+        "Nombre": "Endure Elements",
+        "Descripcion": "Exist comfortably in hot or cold environments",
+        "Escuela": "Abj",
+        "Nivel": ["Pld 1","Hcr 1","Mag 1","Exp 1","Drd 1","Sol 1","Clr 1"]
+    },
+    "547":{
+        "Nombre": "Deep Slumber",
+        "Descripcion": "Puts 10 HD of creatures to sleep",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 3","Mag 3","Brd 3"]
+    },
+    "548":{
+        "Nombre": "Suggestion",
+        "Descripcion": "Compels subject to follow stated course of action",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 3","Mag 3","Brd 2"]
+    },
+    "549":{
+        "Nombre": "Suggestion, Mass",
+        "Descripcion": "As suggestion, plus one subject/level",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 6","Mag 6","Brd 5"]
+    },
+    "550":{
+        "Nombre": "Web",
+        "Descripcion": "Fills 20-ft.-radius spread with sticky spiderwebs",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "551":{
+        "Nombre": "Telekinesis",
+        "Descripcion": "Moves object, attacks creature, or hurls object or creature",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "552":{
+        "Nombre": "Teleport",
+        "Descripcion": "Instantly transports you as far as 100 miles/level",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 5","Mag 5","Viaje 5"]
+    },
+    "553":{
+        "Nombre": "Teleport, Greater",
+        "Descripcion": "As teleport, but no range limit and no off-target arrival",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 7","Mag 7","Viaje 7"]
+    },
+    "554":{
+        "Nombre": "Teleport Object",
+        "Descripcion": "As teleport, but affects a touched object",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "555":{
+        "Nombre": "Black Tentacles",
+        "Descripcion": "Tentacles grapple all within 20 ft. spread",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 4","Mag 4"]
+    },
+    "556":{
+        "Nombre": "Earthquake",
+        "Descripcion": "Intense tremor shakes 80-ft.-radius",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 8","Tierra 7","Destrucción 8","Clr 8"]
+    },
+    "557":{
+        "Nombre": "Hallucinatory Terrain",
+        "Descripcion": "Makes one type of terrain appear like another (field into forest, or the like)",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 4","Mag 4","Brd 4"]
+    },
+    "558":{
+        "Nombre": "Hideous Laughter",
+        "Descripcion": "Subject loses actions for 1 round/ level",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 2","Mag 2","Brd 1"]
+    },
+    "559":{
+        "Nombre": "Touch of Idiocy",
+        "Descripcion": "Subject takes 1d6 points of Int, Wis, and Cha damage",
+        "Escuela": "Enc",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "560":{
+        "Nombre": "Touch of Fatigue",
+        "Descripcion": "Touch attack fatigues target",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 0","Mag 0"]
+    },
+    "561":{
+        "Nombre": "Ghoul Touch",
+        "Descripcion": "Paralyzes one subject, which exudes stench that makes those nearby sickened",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "562":{
+        "Nombre": "Chill Touch",
+        "Descripcion": "One touch/level deals 1d6 damage and possibly 1 Str damage",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "563":{
+        "Nombre": "Vampiric Touch",
+        "Descripcion": "Touch deals 1d6/two levels damage; caster gains damage as hp",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "564":{
+        "Nombre": "Whirlwind",
+        "Descripcion": "Cyclone deals damage and can pick up creatures",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 8","Aire 8"]
+    },
+    "565":{
+        "Nombre": "Sleet Storm",
+        "Descripcion": "Hampers vision and movement",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 3","Mag 3","Drd 3"]
+    },
+    "566":{
+        "Nombre": "Fire Storm",
+        "Descripcion": "Deals 1d6/level fire damage",
+        "Escuela": "Evo",
+        "Nivel": ["Drd 7","Fuego 7","Clr 8"]
+    },
+    "567":{
+        "Nombre": "Ice Storm",
+        "Descripcion": "Hail deals 5d6 damage in cylinder 40 ft. across",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 4","Mag 4","Drd 4","Agua 5"]
+    },
+    "568":{
+        "Nombre": "Storm of Vengeance",
+        "Descripcion": "Storm rains acid, lightning, and hail",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 9","Clr 9"]
+    },
+    "569":{
+        "Nombre": "Hold Portal",
+        "Descripcion": "Holds door shut",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 1","Mag 1"]
+    },
+    "570":{
+        "Nombre": "Fire Trap",
+        "Descripcion": "Opened object deals 1d4 +1/level damage",
+        "Escuela": "Abj",
+        "Nivel": ["Hcr 4","Mag 4","Drd 2"]
+    },
+    "571":{
+        "Nombre": "Snare",
+        "Descripcion": "Creates a magic booby trap",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 2","Drd 3"]
+    },
+    "572":{
+        "Nombre": "Phantom Trap",
+        "Descripcion": "Makes item seem trapped",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "573":{
+        "Nombre": "Animal Trance",
+        "Descripcion": "Fascinates 2d6 HD of animals",
+        "Escuela": "Enc",
+        "Nivel": ["Drd 2","Brd 2"]
+    },
+    "574":{
+        "Nombre": "Transformation",
+        "Descripcion": "You gain combat bonuses",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 6","Mag 6"]
+    },
+    "575":{
+        "Nombre": "Wood Shape",
+        "Descripcion": "Rearranges wooden objects to suit you",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 2"]
+    },
+    "576":{
+        "Nombre": "Transmute Metal to Wood",
+        "Descripcion": "Metal within 40 ft. becomes wood",
+        "Escuela": "Tra",
+        "Nivel": ["Drd 7"]
+    },
+    "577":{
+        "Nombre": "Stone Shape",
+        "Descripcion": "Sculpts stone into any shape",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 4","Mag 4","Drd 3","Tierra 3","Clr 3"]
+    },
+    "578":{
+        "Nombre": "Magic Jar",
+        "Descripcion": "Enables possession of another creature",
+        "Escuela": "Nig",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "579":{
+        "Nombre": "Transmute Mud to Rock",
+        "Descripcion": "Transforms two 10-ft. cubes per level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 5","Mag 5","Drd 5"]
+    },
+    "580":{
+        "Nombre": "Transmute Rock to Mud",
+        "Descripcion": "Transforms two 10-ft. cubes per level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 5","Mag 5","Drd 5"]
+    },
+    "581":{
+        "Nombre": "Spider Climb",
+        "Descripcion": "Grants ability to walk on walls and ceilings",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2","Drd 2"]
+    },
+    "582":{
+        "Nombre": "Meteor Swarm",
+        "Descripcion": "Four exploding spheres each deal 6d6 fire damage",
+        "Escuela": "Evo",
+        "Nivel": ["Hcr 9","Mag 9"]
+    },
+    "583":{
+        "Nombre": "Rope Trick",
+        "Descripcion": "As many as eight creatures hide in extradimensional space",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2"]
+    },
+    "584":{
+        "Nombre": "Gate",
+        "Descripcion": "Connects two planes for travel or summoning",
+        "Escuela": "Cjr",
+        "Nivel": ["Hcr 9","Mag 9","Clr 9"]
+    },
+    "585":{
+        "Nombre": "Veil",
+        "Descripcion": "Changes appearance of group of creatures",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 6","Mag 6","Brd 6"]
+    },
+    "586":{
+        "Nombre": "Poison",
+        "Descripcion": "Touch deals 1d10 Con damage, repeats in 1 min",
+        "Escuela": "Nig",
+        "Nivel": ["Drd 3","Clr 4 "]
+    },
+    "587":{
+        "Nombre": "Ventriloquism",
+        "Descripcion": "Throws voice for 1 min./level",
+        "Escuela": "Ilu",
+        "Nivel": ["Hcr 1","Mag 1","Brd 1"]
+    },
+    "588":{
+        "Nombre": "See Invisibility",
+        "Descripcion": "Reveals invisible creatures or objects",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 2","Mag 2","Brd 3"]
+    },
+    "589":{
+        "Nombre": "Magic Vestment",
+        "Descripcion": "Armor or shield gains +1 enhancement per four levels",
+        "Escuela": "Tra",
+        "Nivel": ["Guerra 3","Fuerza 3","Clr 3"]
+    },
+    "590":{
+        "Nombre": "Transport via Plants",
+        "Descripcion": "Move instantly from one plant to another of the same kind",
+        "Escuela": "Cjr",
+        "Nivel": ["Drd 6"]
+    },
+    "591":{
+        "Nombre": "Overland Flight",
+        "Descripcion": "You fly at a speed of 40 ft. and can hustle over long distances",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "592":{
+        "Nombre": "Sympathetic Vibration",
+        "Descripcion": "Deals 2d10 damage/round to freestanding structure",
+        "Escuela": "Evo",
+        "Nivel": ["Brd 6"]
+    },
+    "593":{
+        "Nombre": "Whispering Wind",
+        "Descripcion": "Sends a short message 1 mile/level",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2","Brd 2"]
+    },
+    "594":{
+        "Nombre": "Telepathic Bond",
+        "Descripcion": "Link lets allies communicate",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 5","Mag 5"]
+    },
+    "595":{
+        "Nombre": "Virtue",
+        "Descripcion": "Subject gains 1 temporary hp",
+        "Escuela": "Tra",
+        "Nivel": ["Pld 1","Drd 0","Clr 0"]
+    },
+    "596":{
+        "Nombre": "Vision",
+        "Descripcion": "As legend lore, but quicker and strenuous",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "597":{
+        "Nombre": "Darkvision",
+        "Descripcion": "See 60 ft. in total darkness",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 2","Mag 2","Exp 3"]
+    },
+    "598":{
+        "Nombre": "True Seeing",
+        "Descripcion": "Lets you see all things as they really are",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 6","Mag 6","Drd 7","Saber 5","Clr 5"]
+    },
+    "599":{
+        "Nombre": "Arcane Sight",
+        "Descripcion": "Magical auras become visible to you",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 3","Mag 3"]
+    },
+    "600":{
+        "Nombre": "Arcane Sight, Greater",
+        "Descripcion": "As arcane sight, but also reveals magic effects on creatures and objects",
+        "Escuela": "Adv",
+        "Nivel": ["Hcr 7","Mag 7"]
+    },
+    "601":{
+        "Nombre": "Fly",
+        "Descripcion": "Subject flies at speed of 60 ft",
+        "Escuela": "Tra",
+        "Nivel": ["Hcr 3","Mag 3","Viaje 3"]
+    },
+    "602":{
+        "Nombre": "Tree Stride",
+        "Descripcion": "Step from one tree to another far away",
+        "Escuela": "Cjr",
+        "Nivel": ["Exp 4","Drd 5"]
+    },
+    "603":{
+        "Nombre": "Longstrider",
+        "Descripcion": "Increases your speed",
+        "Escuela": "Tra",
+        "Nivel": ["Exp 1","Drd 1","Viaje 1"]
+    },
+    "604":{
+        "Nombre": "Zone of Silence",
+        "Descripcion": "Keeps eavesdroppers from overhearing conversations",
+        "Escuela": "Ilu",
+        "Nivel": ["Brd 4"]
+    },
+    "605":{
+        "Nombre": "Zone of Truth",
+        "Descripcion": "Subjects within range cannot lie",
+        "Escuela": "Enc",
+        "Nivel": ["Pld 2","Clr 2"]
+    }
+}

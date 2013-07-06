@@ -1,0 +1,821 @@
+{
+    "0":{
+        "Nombre": "Abstención de materiales",
+        "Descripcion": "Lanzas conjuros sin componentes materiales",
+        "Tipo": "u"
+    },
+    "1":{
+        "Nombre": "Acrobático",
+        "Descripcion": "Bonificador +2 a las pruebas de Piruetas y Saltar",
+        "Tipo": "u",
+        "Hab_dt": [24,36]
+    },
+    "2":{
+        "Nombre": "Afinidad con animales",
+        "Descripcion": "Bonificador +2 a las pruebas de Montar y Trato con animales",
+        "Tipo": "u",
+        "Hab_dt": [20,40]
+    },
+    "3":{
+        "Nombre": "Ágil",
+        "Descripcion": "Bonificador +2 a las pruebas de Equilibrio y Escapismo",
+        "Tipo": "u",
+        "Hab_dt": [11,12]
+    },
+    "4":{
+        "Nombre": "Aguante",
+        "Descripcion": "Bonificador +4 en las pruebas o salvaciones para resistir el daño no letal",
+        "Tipo": "u",
+        "Consideracion": ["Exp 3"]
+    },
+    "5":{
+        "Nombre": "Alerta",
+        "Descripcion": "Bonificador +2 a las pruebas de Avistar y Escuchar",
+        "Tipo": "u",
+        "Hab_dt": [3,14]
+    },
+    "6":{
+        "Nombre": "Ampliar conjuro",
+        "Descripcion": "Dobla el alcance del conjuro",
+        "Tipo": "u",
+        "Especial": ["Mag"]
+    },
+    "7":{
+        "Nombre": "Aplicado",
+        "Descripcion": "Bonificador +2 a las pruebas de Descifrar escritura y Tasación",
+        "Tipo": "u",
+        "Hab_dt": [7,39]
+    },
+    "8":{
+        "Nombre": "Apresurar conjuro",
+        "Descripcion": "Lanzas un conjuro como acción gratuita",
+        "Tipo": "u",
+        "Especial": ["Mag"]
+    },
+    "9":{
+        "Nombre": "Arrollar mejorado",
+        "PreReq": "Ataque poderoso",
+        "Descripcion": "Bonificador +4 a los intentos de arrollar, sin ataque de oportunidad",
+        "Tipo": "u",
+        "Req_Dts": ["13"],
+        "Especial": ["Gue"]
+    },
+    "10":{
+        "Nombre": "Ataque al galope",
+        "PreReq": "Combatir desde una montura",
+        "Descripcion": "Puedes moverte antes y después de cargar con una montura",
+        "Tipo": "u",
+        "Req_Dts": ["22"],
+        "Especial": ["Gue"]
+    },
+    "11":{
+        "Nombre": "Ataque de torbellino",
+        "PreReq": "Ataque base +4, Ataque elástico, Destreza 13, Esquiva, Movilidad, Pericia en combate",
+        "Descripcion": "Un ataque cuerpo a cuerpo contra cada oponente a no más de 5'",
+        "Tipo": "u",
+        "Req_Dts": ["12","61","87","89"],
+        "Req_Stats": "AtqB:4",
+        "Req_Car": ["DES:13"],
+        "Especial": ["Gue"]
+    },
+    "12":{
+        "Nombre": "Ataque elástico",
+        "PreReq": "Ataque base +4, Destreza 13, Esquiva, Movilidad",
+        "Descripcion": "Puedes mover antes y después de un ataque cuerpo a cuerpo",
+        "Tipo": "u",
+        "Req_Dts": ["53","54"],
+        "Req_Stats": "AtqB:4",
+        "Req_Car": ["DES:13"],
+        "Especial": ["Gue"]
+    },
+    "13":{
+        "Nombre": "Ataque poderoso",
+        "PreReq": "Fuerza 13",
+        "Descripcion": "Puedes cambiar bonificador de ataque por daño (máximo tu ataque base)",
+        "Tipo": "u",
+        "Req_Car": ["FUE:13"],
+        "Especial": ["Gue"]
+    },
+    "14":{
+        "Nombre": "Atlético",
+        "Descripcion": "Bonificador +2 a las pruebas de Nadar y Trepar",
+        "Tipo": "u",
+        "Hab_dt": [22,41]
+    },
+    "15":{
+        "Nombre": "Atrapar flechas",
+        "PreReq": "Destreza 15, Desviar flechas, Impacto sin arma mejorado",
+        "Descripcion": "Puedes atrapar un ataque a distancia desviado",
+        "Tipo": "u",
+        "Req_Dts": ["77","45"],
+        "Req_Car": ["DES:15"],
+        "Especial": ["Gue"]
+    },
+    "16":{
+        "Nombre": "Aumentar convocación",
+        "PreReq": "Soltura con una escuela de magia (conjuración)",
+        "Descripcion": "Las criaturas convocadas obtienen +4 a Fuerza y +4 a Constitución",
+        "Tipo": "u",
+        "Req_Dts": ["103:2"]
+    },
+    "17":{
+        "Nombre": "Autosuficiente",
+        "Descripcion": "Bonificador +2 a las pruebas de Sanar y Supervivencia",
+        "Tipo": "u",
+        "Hab_dt": [37,38]
+    },
+    "18":{
+        "Nombre": "Carga impetuosa",
+        "PreReq": "Ataque al galope, Combatir desde una montura",
+        "Descripcion": "Doble daño cuando se carga con una montura",
+        "Tipo": "u",
+        "Req_Dts": ["10","22"],
+        "Especial": ["Gue"]
+    },
+    "19":{
+        "Nombre": "Combate con dos armas",
+        "PreReq": "Destreza 15",
+        "Descripcion": "Reduce en 2 los penalizadores por combatir con dos armas",
+        "Tipo": "u",
+        "Req_Car": ["DES:15"],
+        "Especial": ["Gue"]
+    },
+    "20":{
+        "Nombre": "Combate con dos armas mayor",
+        "PreReq": "Ataque base +11, Combate con dos armas, Combate con dos armas mejorado, Destreza 19",
+        "Descripcion": "Obtienes un tercer ataque con la mano torpe",
+        "Tipo": "u",
+        "Req_Dts": ["17","19"],
+        "Req_Stats": "AtqB:11",
+        "Req_Car": ["DES:19"],
+        "Especial": ["Gue"]
+    },
+    "21":{
+        "Nombre": "Combate con dos armas mejorado",
+        "PreReq": "Ataque base +6, Combate con dos armas, Destreza 17",
+        "Descripcion": "Obtienes un segundo ataque con la mano torpe",
+        "Tipo": "u",
+        "Req_Dts": ["19"],
+        "Req_Stats": "AtqB:6",
+        "Req_Car": ["DES:17"],
+        "Especial": ["Gue"]
+    },
+    "22":{
+        "Nombre": "Combatir desde una montura",
+        "PreReq": "Montar 1 rango",
+        "Descripcion": "Niega los impactos causados a la montura con una prueba de Montar",
+        "Tipo": "u",
+        "Req_Hab": ["21:1"],
+        "Especial": ["Gue"]
+    },
+    "23":{
+        "Nombre": "Competencia con arma (exótica)",
+        "PreReq": "Ataque base +1",
+        "Descripcion": "Sin penalizador de ataque con un arma exótica específica",
+        "Tipo": "u:m",
+        "Intro": "Para la dote seleccionada debes elegir un arma con la que no seas competente.\nElije una: ",
+        "Req_Stats": "AtqB:1",
+        "Competencia": "Exótica",
+        "Especial": ["Gue"]
+    },
+    "24":{
+        "Nombre": "Competencia con arma (marcial)",
+        "Descripcion": "Sin penalizador en los ataques con un arma marcial específica",
+        "Tipo": "u:m",
+        "Intro": "Para la dote seleccionada debes elegir un arma con la que no seas competente.\nElije una: ",
+        "Consideracion": ["Brb 1","Gue 1","Pld 1","Exp 1"],
+        "Competencia": "Marcial"
+    },
+    "25":{
+        "Nombre": "Competencia con arma (sencilla)",
+        "Descripcion": "Anula el penalizador -4 en las tiradas de ataque con las armas sencillas",
+        "Tipo": "u",
+        "Consideracion": ["Brb 1","Brd 1","Clr 1","Exp 1","Gue 1","Hcr 1","Pld 1"],
+        "Competencia": "Sencillas"
+    },
+    "26":{
+        "Nombre": "Competencia con armadura (intermedia)",
+        "PreReq": "Competencia con armadura (ligera)",
+        "Descripcion": "Anula el penalizador de armadura a las tiradas de ataque",
+        "Tipo": "u",
+        "Consideracion": ["Brb 1","Brd 1","Clr 1","Drd 1","Gue 1","Pld 1"],
+        "Req_Dts": ["27"],
+        "Competencia": "Armadura"
+    },
+    "27":{
+        "Nombre": "Competencia con armadura (ligera)",
+        "Descripcion": "Anula el penalizador de armadura a las tiradas de ataque",
+        "Tipo": "u",
+        "Consideracion": ["Brb 1","Brd 1","Clr 1","Drd 1","Exp 1","Gue 1","Pld 1","Pcr 1"],
+        "Competencia": "Armadura"
+    },
+    "28":{
+        "Nombre": "Competencia con armadura (pesada)",
+        "PreReq": "Competencia con armadura (intermedia), Competencia con armadura (ligera)",
+        "Descripcion": "Anula el penalizador de armadura a las tiradas de ataque",
+        "Tipo": "u",
+        "Consideracion": ["Clr 1","Gue 1","Pld 1"],
+        "Req_Dts": ["29","30"],
+        "Competencia": "Armadura"
+    },
+    "29":{
+        "Nombre": "Competencia con escudo",
+        "Descripcion": "Anula el penalizador de armadura a las tiradas de ataque",
+        "Tipo": "u",
+        "Consideracion": ["Brb 1","Brd 1","Clr 1","Drd 1","Exp 1","Gue 1","Pld 1"],
+        "Competencia": "Escudo"
+    },
+    "30":{
+        "Nombre": "Competencia con escudo pavés",
+        "PreReq": "Competencia con escudo",
+        "Descripcion": "Anula el penalizador de armadura a las tiradas de ataque",
+        "Tipo": "u",
+        "Consideracion": ["Gue 1"],
+        "Req_Dts": ["29"],
+        "Competencia": "Escudo"
+    },
+    "31":{
+        "Nombre": "Conjurar en combate",
+        "Descripcion": "Bonificador +4 en las pruebas de Concentración al lanzar conjuros a la defensiva",
+        "Tipo": "u"
+    },
+    "32":{
+        "Nombre": "Conjurar en silencio",
+        "Descripcion": "Lanzas conjuros sin el componente verbal",
+        "Tipo": "u",
+        "Especial": ["Mag"]
+    },
+    "33":{
+        "Nombre": "Conjurar sin moverse",
+        "Descripcion": "Lanzas conjuros sin el componente somático",
+        "Tipo": "u",
+        "Especial": ["Mag"]
+    },
+    "34":{
+        "Nombre": "Conjuros naturales",
+        "PreReq": "Aptitud para usar forma salvaje, Sabiduría 13",
+        "Descripcion": "Puedes lanzar conjuros mientras usas forma salvaje",
+        "Tipo": "u",
+        "Req_Apts": ["42"],
+        "Req_Car": ["SAB:13"]
+    },
+    "35":{
+        "Nombre": "Conjuros penetrantes",
+        "Descripcion": "Bonificador +2 a las pruebas de nivel de lanzador para superar la RC",
+        "Tipo": "u"
+    },
+    "36":{
+        "Nombre": "Conjuros penetrantes mayores",
+        "PreReq": "Conjuros penetrantes",
+        "Descripcion": "Bonificador +4 a las pruebas de nivel de lanzador para superar la RC",
+        "Tipo": "u",
+        "Req_Dts": ["35"]
+    },
+    "37":{
+        "Nombre": "Contraconjuro mejorado",
+        "Descripcion": "Contraconjurar con un conjuro de la misma escuela",
+        "Tipo": "u"
+    },
+    "38":{
+        "Nombre": "Correr",
+        "Descripcion": "Corres a 5 veces la velocidad normal, bonificador +4 en las pruebas de Saltar tras una carrera inicial",
+        "Tipo": "u"
+    },
+    "39":{
+        "Nombre": "Crítico mejorado",
+        "PreReq": "Ataque base +8, Competencia con arma",
+        "Descripcion": "Duplica el rango de amenaza de un arma",
+        "Intro": "Para la dote seleccionada debes elegir un arma con la que seas competente.\nElije una: ",
+        "Tipo": "u:w",
+        "Req_Comp": "#",
+        "Req_Stats": "AtqB:8",
+        "Especial": ["Gue"]
+    },
+    "40":{
+        "Nombre": "Dedos ágiles",
+        "Descripcion": "Bonificador +2 a las pruebas de Abrir cerraduras e Inutilizar mecanismo",
+        "Tipo": "u",
+        "Hab_dt": [0,18]
+    },
+    "41":{
+        "Nombre": "Defensa con dos armas",
+        "PreReq": "Combate con dos armas",
+        "Descripcion": "El arma de la mano torpe otorga un bonificador +1 de escudo a la CA",
+        "Tipo": "u",
+        "Req_Dts": ["19"],
+        "Especial": ["Gue"]
+    },
+    "42":{
+        "Nombre": "Derribo mejorado",
+        "PreReq": "Pericia en combate",
+        "Descripcion": "Bonificador +4 a los intentos de derribo, sin ataque de oportunidad",
+        "Tipo": "u",
+        "Req_Dts": ["89"],
+        "Especial": ["Gue"]
+    },
+    "43":{
+        "Nombre": "Desarme mejorado",
+        "PreReq": "Pericia en combate",
+        "Descripcion": "Bonificador +4 a los intentos de desarmar, sin ataque de oportunidad",
+        "Tipo": "u",
+        "Req_Dts": ["89"],
+        "Especial": ["Gue"]
+    },
+    "44":{
+        "Nombre": "Desenvainado rápido",
+        "PreReq": "Ataque base +1",
+        "Descripcion": "Desenvainar armas como acción gratuita",
+        "Tipo": "u",
+        "Req_Stats": "AtqB:1",
+        "Especial": ["Gue"]
+    },
+    "45":{
+        "Nombre": "Desviar flechas",
+        "PreReq": "Destreza 13, Impacto sin arma mejorado",
+        "Descripcion": "Desvías un ataque a distancia por asalto",
+        "Tipo": "u",
+        "Req_Dts": ["77"],
+        "Req_Car": ["DES:13"],
+        "Especial": ["Gue"]
+    },
+    "46":{
+        "Nombre": "Disparar desde una montura",
+        "PreReq": "Combatir desde una montura",
+        "Descripcion": "Reduce a la mitad la penalización por realizar ataques a distancia desde una montura",
+        "Tipo": "u",
+        "Req_Dts": ["22"],
+        "Especial": ["Gue"]
+    },
+    "47":{
+        "Nombre": "Disparo a bocajarro",
+        "Descripcion": "Bonificador +1 al ataque a distancia el daño a menos de 30'",
+        "Tipo": "u",
+        "Especial": ["Gue"]
+    },
+    "48":{
+        "Nombre": "Disparo a la carrera",
+        "PreReq": "Ataque base +4, Destreza 13, Disparo a bocajarro, Esquiva, Movilidad",
+        "Descripcion": "Puedes moverte antes y después de un ataque a distancia",
+        "Tipo": "u",
+        "Req_Dts": ["47","87","61"],
+        "Req_Stats": "AtqB:4",
+        "Req_Car": ["DES:13"],
+        "Especial": ["Gue"]
+    },
+    "49":{
+        "Nombre": "Disparo a larga distancia",
+        "PreReq": "Disparo a bocajarro",
+        "Descripcion": "Aumenta el alcance en un 50% o un 100%",
+        "Tipo": "u",
+        "Req_Dts": ["47"],
+        "Especial": ["Gue"]
+    },
+    "50":{
+        "Nombre": "Disparo preciso",
+        "PreReq": "Disparo a bocajarro",
+        "Descripcion": "Anula el penalizador -4 por disparar a un combate cuerpo a cuerpo",
+        "Tipo": "u",
+        "Req_Dts": ["47"],
+        "Especial": ["Gue"]
+    },
+    "51":{
+        "Nombre": "Disparo preciso mejorado",
+        "PreReq": "Ataque base +11, Destreza 19, Disparo a bocajarro, Disparo preciso",
+        "Descripcion": "Ignora cualquier cobertura/ocultación inferior a total en los ataques a distancia",
+        "Tipo": "u",
+        "Req_Dts": ["47","50"],
+        "Req_Stats": "AtqB:11",
+        "Req_Car": ["DES:19"],
+        "Especial": ["Gue"]
+    },
+    "52":{
+        "Nombre": "Disparo rápido",
+        "PreReq": "Destreza 13, Disparo a bocajarro",
+        "Descripcion": "Un ataque a distancia adicional cada asalto",
+        "Tipo": "u",
+        "Req_Dts": ["47"],
+        "Req_Car": ["DES:13"],
+        "Especial": ["Gue"]
+    },
+    "53":{
+        "Nombre": "Disparos múltiples",
+        "PreReq": "Ataque base +6, Destreza 17, Disparo a bocajarro, Disparo rápido",
+        "Descripcion": "Disparas dos o más flechas simultáneamente",
+        "Tipo": "u",
+        "Req_Dts": ["47","52"],
+        "Req_Stats": "AtqB:6",
+        "Req_Car": ["DES:17"],
+        "Especial": ["Gue"]
+    },
+    "54":{
+        "Nombre": "Dureza",
+        "Descripcion": "+3 puntos de golpe",
+        "Tipo": "s",
+        "Stat": "PG:3"
+    },
+    "55":{
+        "Nombre": "Duro de pelar",
+        "PreReq": "Aguante",
+        "Descripcion": "Permaneces consciente entre -1 y -9 pg",
+        "Tipo": "u",
+        "Req_Dts": ["4"]
+    },
+    "56":{
+        "Nombre": "Elaborar poción",
+        "PreReq": "Nivel de lanzador 3º",
+        "Descripcion": "Crear pociones mágicas",
+        "Tipo": "u",
+        "Req_NL": 3,
+        "Especial": ["Mag"]
+    },
+    "57":{
+        "Nombre": "Embestida mejorada",
+        "PreReq": "Fuerza 13, Ataque poderoso",
+        "Descripcion": "Bonificador +4 a los intentos de embestida, sin ataque de oportunidad",
+        "Tipo": "u",
+        "Req_Dts": ["13"],
+        "Req_Car": ["FUE:13"],
+        "Especial": ["Gue"]
+    },
+    "58":{
+        "Nombre": "Engañoso",
+        "Descripcion": "Bonificador +2 a las pruebas de Disfrazarse y Falsificar",
+        "Tipo": "u",
+        "Hab_dt": [9,15]
+    },
+    "59":{
+        "Nombre": "Especialización con un arma",
+        "PreReq": "Competencia con el arma, nivel 4º de guerrero, Soltura con un arma con el arma",
+        "Descripcion": "Bonificador +2 a las tiradas de daño con el arma elegida",
+        "Tipo": "u:w?",
+        "Intro": "Para la dote seleccionada debes elegir un arma de entre las siguientes.\nElije una: ",
+        "Req_Cls": "Gue 4",
+        "Req_Dts": ["102:sub"],
+        "Req_Comp": "#",
+        "Especial": ["Gue"]
+    },
+    "60":{
+        "Nombre": "Especialización mayor con un arma",
+        "PreReq": "Competencia con el arma, Especialización con un arma con el arma, nivel 12º de guerrero, Soltura con un arma con el arma, Soltura mayor con un arma con el arma",
+        "Descripcion": "Bonificador +4 a las tiradas de daño con el arma elegida",
+        "Tipo": "u:w?",
+        "Intro": "Para la dote seleccionada debes elegir un arma de entre las siguientes.\nElije una: ",
+        "Req_Cls": "Gue 12",
+        "Req_Dts": ["102:sub","105:sub","59:sub"],
+        "Req_Comp": "#",
+        "Especial": ["Gue"]
+    },
+    "61":{
+        "Nombre": "Esquiva",
+        "PreReq": "Destreza 13",
+        "Descripcion": "Bonificador +1 a la CA contra un objetivo determinado",
+        "Tipo": "u",
+        "Req_Car": ["DES:13"],
+        "Especial": ["Gue"]
+    },
+    "62":{
+        "Nombre": "Expulsión incrementada",
+        "PreReq": "Aptitud para expulsar o reprender criaturas",
+        "Descripcion": "Puedes expulsar o reprender 4 veces más por día",
+        "Tipo": "s",
+        "Req_Apts": ["39o40"]
+    },
+    "63":{
+        "Nombre": "Expulsión mejorada",
+        "PreReq": "Aptitud para expulsar o reprender criaturas",
+        "Descripcion": "+1 nivel para las pruebas de expulsión",
+        "Tipo": "u",
+        "Req_Apts": ["39o40"]
+    },
+    "64":{
+        "Nombre": "Extender conjuro",
+        "Descripcion": "Dobla el área de un conjuro",
+        "Tipo": "u",
+        "Especial": ["Mag"]
+    },
+    "65":{
+        "Nombre": "Fabricar armas y armaduras mágicas",
+        "PreReq": "Nivel de lanzador 5º",
+        "Descripcion": "Crea armas, armaduras y escudos mágicos",
+        "Tipo": "u",
+        "Req_NL": 5,
+        "Especial": ["Mag"]
+    },
+    "66":{
+        "Nombre": "Fabricar bastón",
+        "PreReq": "Nivel de lanzador 12º",
+        "Descripcion": "Fabricar bastones",
+        "Tipo": "u",
+        "Req_NL": 12,
+        "Especial": ["Mag"]
+    },
+    "67":{
+        "Nombre": "Fabricar cetro",
+        "PreReq": "Nivel de lanzador 9º",
+        "Descripcion": "Fabricar cetros",
+        "Tipo": "u",
+        "Req_NL": 9,
+        "Especial": ["Mag"]
+    },
+    "68":{
+        "Nombre": "Fabricar objeto maravilloso",
+        "PreReq": "Nivel de lanzador 3º",
+        "Descripcion": "Fabricar objetos maravillosos",
+        "Tipo": "u",
+        "Req_NL": 3,
+        "Especial": ["Mag"]
+    },
+    "69":{
+        "Nombre": "Fabricar varita",
+        "PreReq": "Nivel de lanzador 5º",
+        "Descripcion": "Fabricar varitas",
+        "Tipo": "u",
+        "Req_NL": 5,
+        "Especial": ["Mag"]
+    },
+    "70":{
+        "Nombre": "Facilidad para la magia",
+        "Descripcion": "Bonificador +2 a las pruebas de Conocimiento de conjuros y Usar objeto mágico",
+        "Tipo": "u",
+        "Hab_dt": [6,42]
+    },
+    "71":{
+        "Nombre": "Finta mejorada",
+        "PreReq": "Pericia en combate",
+        "Descripcion": "Fintar en combate como acción de movimiento",
+        "Tipo": "u",
+        "Req_Dts": ["89"],
+        "Especial": ["Gue"]
+    },
+    "72":{
+        "Nombre": "Forjar anillo",
+        "PreReq": "Nivel de lanzador 12º",
+        "Descripcion": "Crear anillos mágicos",
+        "Tipo": "u",
+        "Req_NL": 12,
+        "Especial": ["Mag"]
+    },
+    "73":{
+        "Nombre": "Golpe con el escudo mejorado",
+        "PreReq": "Competencia con el escudo",
+        "Descripcion": "Conservas el bonificador a la CA cuando golpeas con el escudo",
+        "Tipo": "u",
+        "Req_Dts": ["29"],
+        "Especial": ["Gue"]
+    },
+    "74":{
+        "Nombre": "Gran Fortaleza",
+        "Descripcion": "Bonificador +2 a las salvaciones de Fortaleza",
+        "Tipo": "u",
+        "Stat": "TSFort:2"
+    },
+    "75":{
+        "Nombre": "Gran Hendedura",
+        "PreReq": "Ataque base +4, Ataque poderoso, Hendedura",
+        "Descripcion": "Sin límite a los ataques de Hendedura por asalto",
+        "Tipo": "u",
+        "Req_Dts": ["13","76"],
+        "Req_Stats": "AtqB:4",
+        "Especial": ["Gue"]
+    },
+    "76":{
+        "Nombre": "Hendedura",
+        "PreReq": "Ataque poderoso",
+        "Descripcion": "Ataque cuerpo a cuerpo adicional después de acabar con un objetivo",
+        "Tipo": "u",
+        "Req_Dts": ["13"],
+        "Especial": ["Gue"]
+    },
+    "77":{
+        "Nombre": "Impacto sin arma mejorado",
+        "Descripcion": "Se te considera armado aunque estés desarmado",
+        "Tipo": "u",
+        "Consideracion": ["Mnj 1"],
+        "Especial": ["Gue"]
+    },
+    "78":{
+        "Nombre": "Iniciativa mejorada",
+        "Descripcion": "Bonificador +4 a las pruebas de iniciativa",
+        "Tipo": "u",
+        "Stat": "Init:4",
+        "Especial": ["Gue"]
+    },
+    "79":{
+        "Nombre": "Inscribir rollo de pergamino",
+        "PreReq": "Nivel de lanzador 1º",
+        "Descripcion": "Crear rollos de pergamino mágicos",
+        "Tipo": "u",
+        "Req_NL": 1,
+        "Especial": ["Mag"]
+    },
+    "80":{
+        "Nombre": "Intensificar conjuro",
+        "Descripcion": "Lanzas un conjuro a mayor nivel",
+        "Tipo": "u"
+    },
+    "81":{
+        "Nombre": "Investigador",
+        "Descripcion": "Bonificador +2 a las pruebas de Buscar y Reunir información",
+        "Tipo": "u",
+        "Hab_dt": [4,25]
+    },
+    "82":{
+        "Nombre": "Liderazgo",
+        "PreReq": "Nivel 6º de personaje",
+        "Descripcion": "Atraes allegados y seguidores",
+        "Tipo": "u",
+        "Req_NvPj": 6
+    },
+    "83":{
+        "Nombre": "Lucha a ciegas",
+        "Descripcion": "Vuelve a tirar la posibilidad de fallo por ocultación",
+        "Tipo": "u",
+        "Especial": ["Gue"]
+    },
+    "84":{
+        "Nombre": "Maestría en conjuros",
+        "PreReq": "Mago de 1º nivel",
+        "Descripcion": "Puedes preparar algunos conjuros sin un libro de conjuros",
+        "Tipo": "u:c",
+        "Intro": "Para la dote seleccionada, debes elegir {0!s} conjuros de entre los siguientes.",
+        "Req_Cls": "Mag 1",
+        "Especial": ["Mag"]
+    },
+    "85":{
+        "Nombre": "Manos hábiles",
+        "Descripcion": "Bonificador +2 a las pruebas de Juego de manos y Uso de cuerdas",
+        "Tipo": "u",
+        "Hab_dt": [19,43]
+    },
+    "86":{
+        "Nombre": "Maximizar conjuro",
+        "Descripcion": "Maximiza los efectos numéricos variables de un conjuro",
+        "Tipo": "u",
+        "Especial": ["Mag"]
+    },
+    "87":{
+        "Nombre": "Movilidad",
+        "PreReq": "Destreza 13, Esquiva",
+        "Descripcion": "Bonificador +4 a la CA contra algunos ataques de oportunidad",
+        "Tipo": "u",
+        "Req_Dts": ["61"],
+        "Req_Car": ["DES:13"],
+        "Especial": ["Gue"]
+    },
+    "88":{
+        "Nombre": "Negociador",
+        "Descripcion": "Bonificador +2 a las pruebas de Averiguar intensiones y Diplomacia",
+        "Tipo": "u",
+        "Hab_dt": [2,8]
+    },
+    "89":{
+        "Nombre": "Pericia en combate",
+        "PreReq": "Inteligencia 13",
+        "Descripcion": "Cambia bonificador de ataque por CA (máximo 5 puntos)",
+        "Tipo": "u",
+        "Req_Car": ["INT:13"],
+        "Especial": ["Gue"]
+    },
+    "90":{
+        "Nombre": "Persuasivo",
+        "Descripcion": "Bonificador +2 a las pruebas de Engañar e Intimidar",
+        "Tipo": "u",
+        "Hab_dt": [10,17]
+    },
+    "91":{
+        "Nombre": "Pisotear",
+        "PreReq": "Combatir desde una montura",
+        "Descripcion": "El objetivo no puede evitar un ataque de arrollar desde una montura",
+        "Tipo": "u",
+        "Req_Dts": ["22"],
+        "Especial": ["Gue"]
+    },
+    "92":{
+        "Nombre": "Potenciar conjuro",
+        "Descripcion": "Aumenta los efectos numéricos variables de un conjuro en un 50%",
+        "Tipo": "u",
+        "Especial": ["Mag"]
+    },
+    "93":{
+        "Nombre": "Presa mejorada",
+        "PreReq": "Destreza 13, Impacto sin arma mejorado",
+        "Descripcion": "Bonificador +4 a las pruebas de presa, sin ataque de oportunidad",
+        "Tipo": "u",
+        "Req_Dts": ["77"],
+        "Req_Car": ["DES:13"],
+        "Especial": ["Gue"]
+    },
+    "94":{
+        "Nombre": "Prolongar conjuro",
+        "Descripcion": "Dobla la duración del conjuro",
+        "Tipo": "u",
+        "Especial": ["Mag"]
+    },
+    "95":{
+        "Nombre": "Puñetazo aturdidor",
+        "PreReq": "Ataque base +8, Destreza 13, Impacto sin arma mejorado, Sabiduría 13",
+        "Descripcion": "Aturde a un oponente con un impacto sin arma",
+        "Tipo": "u",
+        "Req_Dts": ["77"],
+        "Req_Stats": "AtqB:8",
+        "Req_Car": ["DES:13","SAB:13"],
+        "Especial": ["Gue"]
+    },
+    "96":{
+        "Nombre": "Rastrear",
+        "Descripcion": "Usas la habilidad de Supervivencia para rastrear",
+        "Tipo": "u",
+        "Consideracion": ["Exp 1"]
+    },
+    "97":{
+        "Nombre": "Recarga rápida",
+        "PreReq": "Competencia con ballesta",
+        "Descripcion": "Recargas las ballestas más rápido",
+        "Tipo": "u",
+        "Req_Comp": [9,10],
+        "Especial": ["Gue"]
+    },
+    "98":{
+        "Nombre": "Reflejos de combate",
+        "Descripcion": "Ataques de oportunidad adicionales",
+        "Tipo": "u",
+        "Especial": ["Gue"]
+    },
+    "99":{
+        "Nombre": "Reflejos rápidos",
+        "Descripcion": "Bonificador +2 a las salvaciones de Reflejos",
+        "Tipo": "u",
+        "Stat": "TSRef:2"
+    },
+    "100":{
+        "Nombre": "Romper arma mejorado",
+        "PreReq": "Fuerza 13, Ataque poderoso",
+        "Descripcion": "Bonificador +4 a los intentos de romper armas, sin ataque de oportunidad",
+        "Tipo": "u",
+        "Req_Dts": ["13"],
+        "Req_Car": ["FUE:13"],
+        "Especial": ["Gue"]
+    },
+    "101":{
+        "Nombre": "Sigiloso",
+        "Descripcion": "Bonificador +2 a las pruebas de Esconderse y Moverse sigilosamente",
+        "Tipo": "u",
+        "Hab_dt": [13,21]
+    },
+    "102":{
+        "Nombre": "Soltura con un arma",
+        "PreReq": "Ataque base +1, Competencia con el arma",
+        "Descripcion": "Bonificador +1 a las tiradas de ataque con el arma elegida",
+        "Tipo": "u:w",
+        "Intro": "Para la dote seleccionada debes elegir un arma con la que seas competente.\nElije una: ",
+        "Req_Comp": "#",
+        "Req_Stats": "AtqB:1",
+        "Bon_ATK": 1,
+        "Especial": ["Gue"]
+    },
+    "103":{
+        "Nombre": "Soltura con una escuela de magia",
+        "Descripcion": "Bonificador +1 a las CD de las salvaciones contra una escuela de magia\ndeterminada",
+        "Tipo": "u:e",
+        "Intro": "Para la dote seleccionada debes elegir una escuela de magia.\nElije una: "
+    },
+    "104":{
+        "Nombre": "Soltura con una habilidad",
+        "Descripcion": "Bonificador +3 a las pruebas con la habilidad elegida",
+        "Tipo": "u:h",
+        "Intro": "Para la dote seleccionada, debes elegir una habilidad.\nElije una: ",
+        "Hab_dt": "#"
+    },
+    "105":{
+        "Nombre": "Soltura mayor con un arma",
+        "PreReq": "Competencia con el arma, nivel 8º de guerrero, Soltura con un arma con el arma",
+        "Descripcion": "Bonificador +2 a las tiradas de ataque con el arma elegida",
+        "Tipo": "u:w?",
+        "Intro": "Para la dote seleccionada debes elegir un arma de entre las siguientes.\nElije una: ",
+        "Req_Cls": "Gue 8",
+        "Req_Dts": ["102:sub"],
+        "Req_Comp": "#",
+        "Bon_ATK": 2,
+        "Especial": ["Gue"]
+    },
+    "106":{
+        "Nombre": "Soltura mayor con una escuela de magia",
+        "Descripcion": "Bonificador +1 a las CD de las salvaciones contra una escuela de magia\ndeterminada",
+        "Tipo": "u:e?",
+        "Req_Dts":["103:sub"],
+        "Intro": "Para la dote seleccionada debes elegir una escuela de magia de entre las siguientes.\nElije una: "
+    },
+    "107":{
+        "Nombre": "Sutileza con las armas",
+        "PreReq": "Ataque base +1",
+        "Descripcion": "Utiliza el modificador de Destreza en lugar del de Fuerza en las tiradas\nde ataque con armas ligeras de cuerpo a cuerpo",
+        "Tipo": "u",
+        "Especial": ["Gue"]
+    },
+    "108":{
+        "Nombre": "Voluntad de hierro",
+        "Descripcion": "Bonificador +2 en las salvaciones de Voluntad",
+        "Tipo": "u",
+        "Stat": "TSVol:2"
+    }
+}

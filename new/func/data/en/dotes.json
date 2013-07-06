@@ -1,0 +1,720 @@
+{
+    "0":{
+        "Nombre": "Eschew Materials",
+        "Descripcion": "Cast spells without material components",
+        "Tipo": "u"
+    },
+    "1":{
+        "Nombre": "Acrobatic",
+        "Descripcion": "+2 bonus on Jump and Tumble checks",
+        "Tipo": "u",
+        "Hab_dt": [24,36]
+    },
+    "2":{
+        "Nombre": "Animal Affinity",
+        "Descripcion": "+2 bonus on Handle Animal and Ride checks",
+        "Tipo": "u",
+        "Hab_dt": [20,40]
+    },
+    "3":{
+        "Nombre": "Agile",
+        "Descripcion": "+2 bonus on Balance and Escape Artist checks",
+        "Tipo": "u",
+        "Hab_dt": [11,12]
+    },
+    "4":{
+        "Nombre": "Endurance",
+        "Descripcion": "+4 bonus on checks or saves to resist nonlethal damage",
+        "Tipo": "u",
+        "Consideracion": ["Exp 3"]
+    },
+    "5":{
+        "Nombre": "Alertness",
+        "Descripcion": "+2 bonus on Listen and Spot checks",
+        "Tipo": "u",
+        "Hab_dt": [3,14]
+    },
+    "6":{
+        "Nombre": "Widen Spell",
+        "Descripcion": "Double spell’s range",
+        "Tipo": "u"
+    },
+    "7":{
+        "Nombre": "Diligent",
+        "Descripcion": "+2 bonus on Appraise and Decipher Script checks",
+        "Tipo": "u",
+        "Hab_dt": [7,39]
+    },
+    "8":{
+        "Nombre": "Quicken Spell",
+        "Descripcion": "Cast spells as free action",
+        "Tipo": "u"
+    },
+    "9":{
+        "Nombre": "Improved Overrun",
+        "PreReq": "Str 13, Power Attack.",
+        "Descripcion": "+4 bonus on overrun attempts; no attack of opportunity",
+        "Tipo": "u",
+        "Req_dts": ["13"]
+    },
+    "10":{
+        "Nombre": "Ride-By Attack",
+        "PreReq": "Ride 1 rank, Mounted Combat.",
+        "Descripcion": "Move before and after a mounted charge",
+        "Tipo": "u",
+        "Req_dts": ["22"]
+    },
+    "11":{
+        "Nombre": "Whirlwind Attack",
+        "PreReq": "Dex 13, Int 13, Combat Expertise, Dodge, Mobility, Spring Attack, base attack bonus +4.",
+        "Descripcion": "One melee attack against each opponent within reach",
+        "Tipo": "u",
+        "Req_dts": ["12","61","87","89"],
+        "Req_Stats": "0:4"
+    },
+    "12":{
+        "Nombre": "Spring Attack",
+        "PreReq": "Dex 13, Dodge, Mobility, base attack bonus +4.",
+        "Descripcion": "Move before and after melee attack",
+        "Tipo": "u",
+        "Req_dts": ["53","54"],
+        "Req_Stats": "0:4"
+    },
+    "13":{
+        "Nombre": "Power Attack",
+        "PreReq": "Str 13.",
+        "Descripcion": "Trade attack bonus for damage (up to base attack bonus)",
+        "Tipo": "u"
+    },
+    "14":{
+        "Nombre": "Athletic",
+        "Descripcion": "+2 bonus on Climb and Swim checks",
+        "Tipo": "u",
+        "Hab_dt": [22,41]
+    },
+    "15":{
+        "Nombre": "Snatch Arrows",
+        "PreReq": "Dex 15, Deflect Arrows, Improved Unarmed Strike.",
+        "Descripcion": "Catch a deflected ranged attack",
+        "Tipo": "u",
+        "Req_dts": ["77","45"]
+    },
+    "16":{
+        "Nombre": "Augment Summoning",
+        "PreReq": "Spell Focus (conjuration).",
+        "Descripcion": "Summoned creatures gain +4 Str, +4 Con",
+        "Tipo": "u",
+        "Req_dts": ["103:2"]
+    },
+    "17":{
+        "Nombre": "Self-Sufficient",
+        "Descripcion": "+2 bonus on Heal and Survival checks",
+        "Tipo": "u",
+        "Hab_dt": [37,38]
+    },
+    "18":{
+        "Nombre": "Spirited Charge",
+        "PreReq": "Ride 1 rank, Mounted Combat, Ride-By Attack.",
+        "Descripcion": "Double damage with mounted charge",
+        "Tipo": "u",
+        "Req_dts": ["10","22"]
+    },
+    "19":{
+        "Nombre": "Two-Weapon Fighting",
+        "PreReq": "Dex 15.",
+        "Descripcion": "Reduce two-weapon fighting penalties by 2",
+        "Tipo": "u"
+    },
+    "20":{
+        "Nombre": "Greater Two-Weapon Fighting",
+        "PreReq": "Dex 19, Improved Two-Weapon Fighting, Two-Weapon Fighting, base attack bonus +11.",
+        "Descripcion": "Gain third off-hand attack",
+        "Tipo": "u",
+        "Req_dts": ["17","19"],
+        "Req_Stats": "0:11"
+    },
+    "21":{
+        "Nombre": "Improved Two-Weapon Fighting",
+        "PreReq": "Dex 17, Two-Weapon Fighting, base attack bonus +6.",
+        "Descripcion": "Gain second off-hand attack",
+        "Tipo": "u",
+        "Req_dts": ["19"],
+        "Req_Stats": "0:6"
+    },
+    "22":{
+        "Nombre": "Mounted Combat",
+        "PreReq": "Ride 1 rank.",
+        "Descripcion": "Negate hits on mount with Ride check",
+        "Tipo": "u",
+        "Req_Hab": ["21:1"]
+    },
+    "23":{
+        "Nombre": "Exotic Weapon Proficiency",
+        "PreReq": "Base attack bonus +1 (plus Str 13 for bastard sword or dwarven waraxe).",
+        "Descripcion": "No penalty on attacks with specific exotic weapon",
+        "Tipo": "u:m",
+        "Intro": "For the selected feat you must choose a weapon with which to you don't have proficiency.\nPick one:",
+        "Req_Stats": "0:1"
+    },
+    "24":{
+        "Nombre": "Martial Weapon Proficiency",
+        "Descripcion": "No penalty on attacks with specific martial weapon",
+        "Tipo": "u:m",
+        "Intro": "For the selected feat you must choose a weapon with which to you don't have proficiency.\nPick one:",
+        "Consideracion": ["Brb 1","Gue 1","Pld 1","Exp 1"]
+    },
+    "25":{
+        "Nombre": "Simple Weapon Proficiency",
+        "Descripcion": "No –4 penalty on attack rolls with simple weapons",
+        "Tipo": "u",
+        "Consideracion": ["Brb 1","Brd 1","Clr 1","Exp 1","Gue 1","Hcr 1","Pld 1"]
+    },
+    "26":{
+        "Nombre": "Armor Proficiency (Medium)",
+        "PreReq": "Armor Proficiency (light).",
+        "Descripcion": "No armor check penalty on attack rolls",
+        "Tipo": "u",
+        "Consideracion": ["Brb 1","Brd 1","Clr 1","Drd 1","Gue 1","Pld 1"],
+        "Req_dts": ["27"]
+    },
+    "27":{
+        "Nombre": "Armor Proficiency (Light)",
+        "Descripcion": "No armor check penalty on attack rolls",
+        "Tipo": "u",
+        "Consideracion": ["Brb 1","Brd 1","Clr 1","Drd 1","Exp 1","Gue 1","Pld 1","Pcr 1"]
+    },
+    "28":{
+        "Nombre": "Armor Proficiency (Heavy)",
+        "PreReq": "Armor Proficiency (light), Armor Proficiency (medium).",
+        "Descripcion": "No armor check penalty on attack rolls",
+        "Tipo": "u",
+        "Consideracion": ["Clr 1","Gue 1","Pld 1"], "Req_dts": ["29","30"]
+    },
+    "29":{
+        "Nombre": "Shield Proficiency",
+        "Descripcion": "No armor check penalty on attack rolls",
+        "Tipo": "u",
+        "Consideracion": ["Brb 1","Brd 1","Clr 1","Drd 1","Exp 1","Gue 1","Pld 1"]
+    },
+    "30":{
+        "Nombre": "Tower Shield Proficiency",
+        "PreReq": "Shield Proficiency.",
+        "Descripcion": "No armor check penalty on attack rolls",
+        "Tipo": "u",
+        "Consideracion": ["Gue 1"],
+        "Req_dts": ["29"]
+    },
+    "31":{
+        "Nombre": "Combat Casting",
+        "Descripcion": "+4 bonus on Concentration checks for defensive casting",
+        "Tipo": "u"
+    },
+    "32":{
+        "Nombre": "Silent Spell",
+        "Descripcion": "Cast spells without verbal components",
+        "Tipo": "u"
+    },
+    "33":{
+        "Nombre": "Still Spell",
+        "Descripcion": "Cast spells without somatic components",
+        "Tipo": "u"
+    },
+    "34":{
+        "Nombre": "Natural Spell",
+        "PreReq": "Wis 13, wild shape ability.",
+        "Descripcion": "Cast spells while in wild shape",
+        "Tipo": "u",
+        "Req_Apts": ["41"]
+    },
+    "35":{
+        "Nombre": "Spell Penetration",
+        "Descripcion": "+2 bonus on caster level checks to defeat spell resistance",
+        "Tipo": "u"
+    },
+    "36":{
+        "Nombre": "Greater Spell Penetration",
+        "PreReq": "Spell Penetration.",
+        "Descripcion": "+4 to caster level checks to defeat spell resistance",
+        "Tipo": "u",
+        "Req_dts": ["35"]
+    },
+    "37":{
+        "Nombre": "Improved Counterspell",
+        "Descripcion": "Counterspell with spell of same school",
+        "Tipo": "u"
+    },
+    "38":{
+        "Nombre": "Run",
+        "Descripcion": "Run 5 times normal speed, +4 bonus on Jump checks made after a running start",
+        "Tipo": "u"
+    },
+    "39":{
+        "Nombre": "Improved Critical",
+        "PreReq": "Proficient with weapon, base attack bonus +8.",
+        "Descripcion": "Double threat range of weapon",
+        "Tipo": "u:w",
+        "Req_Comp": ["#"],
+        "Req_Stats": "0:8"
+    },
+    "40":{
+        "Nombre": "Nimble Fingers",
+        "Descripcion": "+2 bonus on Disable Device and Open Lock checks",
+        "Tipo": "u",
+        "Hab_dt": [0,18]
+    },
+    "41":{
+        "Nombre": "Two-Weapon Defense",
+        "PreReq": "Dex 15, Two-Weapon Fighting.",
+        "Descripcion": "Off-hand weapon grants +1 shield bonus to AC",
+        "Tipo": "u",
+        "Req_dts": ["19"]
+    },
+    "42":{
+        "Nombre": "Improved Trip",
+        "PreReq": "Int 13, Combat Expertise.",
+        "Descripcion": "+4 bonus on trip attempts; no attack of opportunity",
+        "Tipo": "u",
+        "Req_dts": ["89"]
+    },
+    "43":{
+        "Nombre": "Improved Disarm",
+        "PreReq": "Int 13, Combat Expertise.",
+        "Descripcion": "+4 bonus on disarm attempts; no attack of opportunity",
+        "Tipo": "u",
+        "Req_dts": ["89"]
+    },
+    "44":{
+        "Nombre": "Quick Draw",
+        "PreReq": "Base attack bonus +1.",
+        "Descripcion": "Draw weapon as free weapon",
+        "Tipo": "u",
+        "Req_Stats": "0:1"
+    },
+    "45":{
+        "Nombre": "Deflect Arrows",
+        "PreReq": "Dex 13, Improved Unarmed Strike.",
+        "Descripcion": "Deflect one ranged attack per round",
+        "Tipo": "u",
+        "Req_dts": ["77"]
+    },
+    "46":{
+        "Nombre": "Mounted Archery",
+        "PreReq": "Ride 1 rank, Mounted Combat.",
+        "Descripcion": "Half penalty for ranged attacks while mounted",
+        "Tipo": "u",
+        "Req_dts": ["22"]
+    },
+    "47":{
+        "Nombre": "Point Blank Shot",
+        "Descripcion": "+1 bonus on ranged attack and damage within 30 ft.",
+        "Tipo": "u"
+    },
+    "48":{
+        "Nombre": "Shot On The Run",
+        "PreReq": "Dex 13, Dodge, Mobility, Point Blank Shot, base attack bonus +4.",
+        "Descripcion": "Move before and after ranged attack",
+        "Tipo": "u",
+        "Req_dts": ["47","87","61"],
+        "Req_Stats": "0:4"
+    },
+    "49":{
+        "Nombre": "Far Shot",
+        "PreReq": "Point Blank Shot.",
+        "Descripcion": "Increase range increment by 50% or 100%",
+        "Tipo": "u",
+        "Req_dts": ["47"]
+    },
+    "50":{
+        "Nombre": "Precise Shot",
+        "PreReq": "Point Blank Shot.",
+        "Descripcion": "No –4 penalty for shooting into melee",
+        "Tipo": "u",
+        "Req_dts": ["47"]
+    },
+    "51":{
+        "Nombre": "Improved Precise Shot",
+        "PreReq": "Dex 19, Point Blank Shot, Precise Shot, base attack bonus +11.",
+        "Descripcion": "Ignore less than total cover/concealment on ranged attack",
+        "Tipo": "u",
+        "Req_dts": ["47","50"],
+        "Req_Stats": "0:11"
+    },
+    "52":{
+        "Nombre": "Rapid Shot",
+        "PreReq": "Dex 13, Point Blank Shot.",
+        "Descripcion": "One extra ranged attack each round",
+        "Tipo": "u",
+        "Req_dts": ["47"]
+    },
+    "53":{
+        "Nombre": "Manyshot",
+        "PreReq": "Dex 17, Point Blank Shot, Rapid Shot, base attack bonus +6",
+        "Descripcion": "Shoot two or more arrows simultaneously",
+        "Tipo": "u",
+        "Req_dts": ["47","52"],
+        "Req_Stats": "0:6"
+    },
+    "54":{
+        "Nombre": "Toughness",
+        "Descripcion": "+3 hit points",
+        "Tipo": "s"
+    },
+    "55":{
+        "Nombre": "Diehard",
+        "PreReq": "Endurance.",
+        "Descripcion": "Remain conscious at –1 to –9 hp",
+        "Tipo": "u",
+        "Req_dts": ["4"]
+    },
+    "56":{
+        "Nombre": "Brew Potion",
+        "PreReq": "Caster level 3rd.",
+        "Descripcion": "Create magic potions",
+        "Tipo": "u",
+        "Req_Car": [3],
+        "Req_NL": 3
+    },
+    "57":{
+        "Nombre": "Improved Bull Rush",
+        "PreReq": "Str 13, Power Attack.",
+        "Descripcion": "+4 bonus on bull rush attempts; no attack of opportunity",
+        "Tipo": "u",
+        "Req_dts": ["13"]
+    },
+    "58":{
+        "Nombre": "Deceitful",
+        "Descripcion": "+2 bonus on Disguise and Forgery checks",
+        "Tipo": "u",
+        "Hab_dt": [9,15]
+    },
+    "59":{
+        "Nombre": "Weapon Specialization",
+        "PreReq": "Proficiency with selected weapon, Weapon Focus with selected weapon, fighter level 4th.",
+        "Descripcion": "+2 bonus on damage rolls with selected weapon",
+        "Tipo": "u:w?",
+        "Intro": "For the selected feat must choose a weapon from among the following.\nPick one:",
+        "Req_cls": "Gue 4",
+        "Req_dts": ["102:sub"],
+        "Req_Comp": ["#"]
+    },
+    "60":{
+        "Nombre": "Greater Weapon Specialization",
+        "PreReq": "Proficiency with selected weapon, Greater Weapon Focus with selected weapon, Weapon Focus with selected weapon, Weapon Specialization with selected weapon, fighter level 12th.",
+        "Descripcion": "+4 bonus on damage rolls with selected weapon",
+        "Tipo": "u:w?",
+        "Intro": "For the selected feat must choose a weapon from among the following.\nPick one:",
+        "Req_cls": "Gue 12",
+        "Req_dts": ["102:sub","105:sub","59:sub"],
+        "Req_Comp": ["#"]
+    },
+    "61":{
+        "Nombre": "Dodge",
+        "PreReq": "Dex 13.",
+        "Descripcion": "+1 dodge bonus to AC against selected target",
+        "Tipo": "u"
+    },
+    "62":{
+        "Nombre": "Extra Turning",
+        "PreReq": "Ability to turn or rebuke creatures.",
+        "Descripcion": "Can turn or rebuke 4 more times per day",
+        "Tipo": "s",
+        "Req_Apts": ["39o40"]
+    },
+    "63":{
+        "Nombre": "Improved Turning",
+        "PreReq": "Ability to turn or rebuke creatures.",
+        "Descripcion": "+1 level for turning checks",
+        "Tipo": "u",
+        "Req_Apts": ["39o40"]
+    },
+    "64":{
+        "Nombre": "Enlarge Spell",
+        "Descripcion": "Double spell’s area",
+        "Tipo": "u"
+    },
+    "65":{
+        "Nombre": "Craft Magic Arms And Armor",
+        "PreReq": "Caster level 5th.",
+        "Descripcion": "Create magic weapons, armor, and shields",
+        "Tipo": "u",
+        "Req_NL": 5
+    },
+    "66":{
+        "Nombre": "Craft Staff",
+        "PreReq": "Caster level 12th.",
+        "Descripcion": "Create magic staffs",
+        "Tipo": "u",
+        "Req_NL": 12
+    },
+    "67":{
+        "Nombre": "Craft Rod",
+        "PreReq": "Caster level 9th.",
+        "Descripcion": "Create magic rods",
+        "Tipo": "u",
+        "Req_NL": 9
+    },
+    "68":{
+        "Nombre": "Craft Wondrous Item",
+        "PreReq": "Caster level 3rd.",
+        "Descripcion": "Create magic wondrous items",
+        "Tipo": "u",
+        "Req_NL": 3
+    },
+    "69":{
+        "Nombre": "Craft Wand",
+        "PreReq": "Caster level 5th.",
+        "Descripcion": "Create magic wands",
+        "Tipo": "u",
+        "Req_NL": 5
+    },
+    "70":{
+        "Nombre": "Magical Aptitude",
+        "Descripcion": "+2 bonus on Spellcraft and Use Magic Device checks",
+        "Tipo": "u",
+        "Hab_dt": [6,42]
+    },
+    "71":{
+        "Nombre": "Improved Feint",
+        "PreReq": "Int 13, Combat Expertise.",
+        "Descripcion": "Feint in combat as move action",
+        "Tipo": "u",
+        "Req_dts": ["89"]
+    },
+    "72":{
+        "Nombre": "Forge Ring",
+        "PreReq": "Caster level 12th.",
+        "Descripcion": "Create magic rings",
+        "Tipo": "u",
+        "Req_NL": 12
+    },
+    "73":{
+        "Nombre": "Improved Shield Bash",
+        "PreReq": "Shield Proficiency.",
+        "Descripcion": "Retain shield bonus to AC when shield bashing",
+        "Tipo": "u",
+        "Req_dts": ["29"]
+    },
+    "74":{
+        "Nombre": "Great Fortitude",
+        "Descripcion": "+2 bonus on Fortitude saves",
+        "Tipo": "u",
+        "Stat": "1:2"},
+    "75":{
+        "Nombre": "Great Cleave",
+        "PreReq": "Str 13, Cleave, Power Attack, base attack bonus +4.",
+        "Descripcion": "No limit to cleave attacks each round",
+        "Tipo": "u",
+        "Req_dts": ["13","76"],
+        "Req_Stats": "0:4"
+    },
+    "76":{
+        "Nombre": "Cleave",
+        "PreReq": "Str 13, Power Attack.",
+        "Descripcion": "Extra melee attack after dropping target",
+        "Tipo": "u",
+        "Req_dts": ["13"]
+    },
+    "77":{
+        "Nombre": "Improved Unarmed Strike",
+        "Descripcion": "Considered armed even when unarmed",
+        "Tipo": "u",
+        "Consideracion": ["Mnj 1"]
+    },
+    "78":{
+        "Nombre": "Improved Initiative",
+        "Descripcion": "+4 bonus on initiative checks",
+        "Tipo": "u"
+    },
+    "79":{
+        "Nombre": "Scribe Scroll",
+        "PreReq": "Caster level 1st.",
+        "Descripcion": "Create magic scrolls",
+        "Tipo": "u",
+        "Req_NL": 1
+    },
+    "80":{
+        "Nombre": "Heighten Spell",
+        "Descripcion": "Cast spells as higher level",
+        "Tipo": "u"
+    },
+    "81":{
+        "Nombre": "Investigator",
+        "Descripcion": "+2 bonus on Gather Information and Search checks",
+        "Tipo": "u",
+        "Hab_dt": [4,25]
+    },
+    "82":{
+        "Nombre": "Leadership",
+        "PreReq": "Character level 6th.",
+        "Descripcion": "Attract cohort and followers",
+        "Tipo": "u",
+        "Req_NvPj": 6
+    },
+    "83":{
+        "Nombre": "Blind-Fight",
+        "Descripcion": "Reroll miss chance for concealment",
+        "Tipo": "u"
+    },
+    "84":{
+        "Nombre": "Spell Mastery",
+        "PreReq": "Wizard level 1st.",
+        "Descripcion": "Can prepare some spells without spellbook",
+        "Tipo": "u:c",
+        "Intro": "For the selected feat, you must choose {0!s} spells from among the following.",
+        "Req_cls": "Mag 1"
+    },
+    "85":{
+        "Nombre": "Deft Hands",
+        "Descripcion": "+2 bonus on Sleight of Hand and Use Rope checks",
+        "Tipo": "u",
+        "Hab_dt": [19,43]
+    },
+    "86":{
+        "Nombre": "Maximize Spell",
+        "Descripcion": "Maximize spell’s variable, numeric effects",
+        "Tipo": "u"
+    },
+    "87":{
+        "Nombre": "Mobility",
+        "PreReq": "Dex 13, Dodge.",
+        "Descripcion": "+4 dodge bonus to AC against some attacks of opportunity",
+        "Tipo": "u",
+        "Req_dts": ["61"]
+    },
+    "88":{
+        "Nombre": "Negotiator",
+        "Descripcion": "+2 bonus on Diplomacy and Sense Motive checks",
+        "Tipo": "u",
+        "Hab_dt": [2,8]
+    },
+    "89":{
+        "Nombre": "Combat Expertise",
+        "PreReq": "Int 13.",
+        "Descripcion": "Trade attack bonus for AC (max 5 points)",
+        "Tipo": "u"
+    },
+    "90":{
+        "Nombre": "Persuasive",
+        "Descripcion": "+2 bonus on Bluff checks and Intimidate checks",
+        "Tipo": "u",
+        "Hab_dt": [10,17]
+    },
+    "91":{
+        "Nombre": "Trample",
+        "PreReq": "Ride 1 rank, Mounted Combat.",
+        "Descripcion": "Target cannot avoid mounted overrun",
+        "Tipo": "u",
+        "Req_dts": ["22"]
+    },
+    "92":{
+        "Nombre": "Empower Spell",
+        "Descripcion": "Increase spell’s variable, numeric effects by 50%",
+        "Tipo": "u"
+    },
+    "93":{
+        "Nombre": "Improved Grapple",
+        "PreReq": "Dex 13, Improved Unarmed Strike.",
+        "Descripcion": "+4 bonus on grapple checks; no attack of opportunity",
+        "Tipo": "u",
+        "Req_dts": ["77"]
+    },
+    "94":{
+        "Nombre": "Extend Spell",
+        "Descripcion": "Double spell’s duration",
+        "Tipo": "u"
+    },
+    "95":{
+        "Nombre": "Stunning Fist",
+        "PreReq": "Dex 13, Wis 13, Improved Unarmed Strike, base attack bonus +8.",
+        "Descripcion": "Stun opponent with unarmed strike",
+        "Tipo": "u",
+        "Req_dts": ["77"],
+        "Req_Stats": "0:8"
+    },
+    "96":{
+        "Nombre": "Track",
+        "Descripcion": "Use Survival skill to track",
+        "Tipo": "u",
+        "Consideracion": ["Exp 1"]
+    },
+    "97":{
+        "Nombre": "Rapid Reload",
+        "PreReq": "Weapon Proficiency (crossbow type chosen).",
+        "Descripcion": "Reload crossbow more quickly",
+        "Tipo": "u",
+        "Req_Comp": [9,10]
+    },
+    "98":{
+        "Nombre": "Combat Reflexes",
+        "Descripcion": "Additional attacks of opportunity",
+        "Tipo": "u"
+    },
+    "99":{
+        "Nombre": "Lightning Reflexes",
+        "Descripcion": "+2 bonus on Reflex saves",
+        "Tipo": "u",
+        "Stat": "2:2"
+        },
+    "100":{
+        "Nombre": "Improved Sunder",
+        "PreReq": "Str 13, Power Attack.",
+        "Descripcion": "+4 bonus on sunder attempts; no attack of opportunity",
+        "Tipo": "u",
+        "Req_dts": ["13"]
+    },
+    "101":{
+        "Nombre": "Stealthy",
+        "Descripcion": "+2 bonus on Hide and Move Silently checks",
+        "Tipo": "u",
+        "Hab_dt": [13,21]
+    },
+    "102":{
+        "Nombre": "Weapon Focus",
+        "PreReq": "Proficiency with selected weapon, base attack bonus +1.",
+        "Descripcion": "+1 bonus on attack rolls with selected weapon",
+        "Tipo": "u:w",
+        "Intro": "For the selected feat you must choose a weapon with which to you have proficiency.\nPick one:",
+        "Req_Comp": ["#"],
+        "Req_Stats": "0:1"
+    },
+    "103":{
+        "Nombre": "Spell Focus",
+        "Descripcion": "+1 bonus on save DCs against specific school of magic",
+        "Tipo": "u:e",
+        "Intro": "For the selected feat you must select a school of magic,\nPick one: "
+    },
+    "104":{
+        "Nombre": "Skill Focus",
+        "Descripcion": "+3 bonus on checks with selected skill",
+        "Tipo": "u:h",
+        "Intro": "For the selected feat, you must choose a skill.\nPick one: "
+    },
+    "105":{
+        "Nombre": "Greater Weapon Focus",
+        "PreReq": "Proficiency with selected weapon, Weapon Focus with selected weapon, fighter level 8th.",
+        "Descripcion": "+2 bonus on attack rolls with selected weapon",
+        "Tipo": "u:w?",
+        "Intro": "For the selected feat must choose a weapon from among the following.\nPick one:",
+        "Req_cls": "Gue 8",
+        "Req_dts": ["102:sub"], "Req_Comp": ["#"]
+    },
+    "106":{
+        "Nombre": "Greater Spell Focus",
+        "Descripcion": "+1 bonus on save DCs against specific school of magic",
+        "Tipo": "u:e?",
+        "Req_Dts":["103:sub"],
+        "Intro": "For the selected feat must choose a school of magic from among the following.\nPick one: "
+    },
+    "107":{
+        "Nombre": "Weapon Finesse",
+        "PreReq": "Base attack bonus +1.",
+        "Descripcion": "Use Dex modifier instead of Str modifier on attack rolls with light melee weapons",
+        "Tipo": "u"
+    },
+    "108":{
+        "Nombre": "Iron Will",
+        "Descripcion": "+2 bonus on Will saves",
+        "Tipo": "u",
+        "Stat": "3:2"
+    }
+}

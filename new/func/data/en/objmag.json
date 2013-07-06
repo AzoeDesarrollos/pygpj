@@ -1,0 +1,450 @@
+{
+    "0":{
+        "Nombre": "Afilada",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc"]
+    },
+    "1":{
+        "Nombre": "Almacenaconjuros",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc"]
+    },
+    "2":{
+        "Nombre": "Anárquica",
+        "Grupo": "armas",
+        "Precio": "bon +2",
+        "Subgrupo": ["cc","ad"]
+    },
+    "3":{
+        "Nombre": "Animado",
+        "Grupo": "armds",
+        "Precio": "bon +2",
+        "Subgrupo": ["esc"]
+    },
+    "4":{
+        "Nombre": "Arrojadiza",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc"]
+    },
+    "5":{
+        "Nombre": "Atrapaflechas",
+        "Grupo": "armds",
+        "Precio": "bon +1",
+        "Subgrupo": ["esc"]
+    },
+    "6":{
+        "Nombre": "Axiomática",
+        "Grupo": "armas",
+        "Precio": "bon +2",
+        "Subgrupo": ["cc","ad"]
+    },
+    "7":{
+        "Nombre": "Azote",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Intro": "Para la aptitud 'Azote' debes elegir un enemigo específico, de entre los siguientes",
+        "Sub_sel": "Enemigo",
+        "Sublista": ["Aberraciones", "Ajenos buenos", "Ajenos caóticos", "Ajenos de agua",
+                     "Ajenos de aire", "Ajenos de fuego", "Ajenos de tierra", "Ajenos legales",
+                     "Ajenos malignos", "Animales", "Bestias mágicas", "Cienos", "Constructos",
+                     "Dragones", "Elementales", "Fatas", "Gigantes", "Humanoides (acuáticos)",
+                     "Humanoides (elfos)", "Humanoides (enanos)", "Humanoides (gnolls)",
+                     "Humanoides (gnomos)", "Humanoides (humanos)", "Humanoides (medianos)",
+                     "Humanoides mostruosos", "Humanoides (orcos)", "Humanoides (reptilianos)",
+                     "Humanoides (trasgoides)", "Muertos vivientes","Plantas", "Sabandijas"],
+        "Subgrupo": ["cc","ad"]
+    },
+    "8":{
+        "Nombre": "Buscadora",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["ad"]
+    },
+    "9":{
+        "Nombre": "Canalizadora de ki",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc"]
+    },
+    "10":{
+        "Nombre": "Cegador",
+        "Grupo": "armds",
+        "Precio": "bon +1",
+        "Subgrupo": ["esc"]
+    },
+    "11":{
+        "Nombre": "Compasiva",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc","ad"]
+    },
+    "12":{
+        "Nombre": "Congeladora",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc","ad"]
+    },
+    "13":{
+        "Nombre": "Danzante",
+        "Grupo": "armas",
+        "Precio": "bon +4",
+        "Subgrupo": ["cc"]
+    },
+    "14":{
+        "Nombre": "De controlar muertos vivientes",
+        "Grupo": "armds",
+        "Precio": "49000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "15":{
+        "Nombre": "De eteridad",
+        "Grupo": "armds",
+        "Precio": "49000",
+        "Subgrupo": ["armd"]
+    },
+    "16":{
+        "Nombre": "De invulnerabilidad",
+        "Grupo": "armds",
+        "Precio": "bon +3",
+        "Subgrupo": ["armd"]
+    },
+    "17":{
+        "Nombre": "De las sombras",
+        "Grupo": "armds",
+        "Precio": "3750",
+        "Subgrupo": ["armd"]
+    },
+    "18":{
+        "Nombre": "De las sombras mayor",
+        "Grupo": "armds",
+        "Precio": "37750",
+        "Subgrupo": ["armd"]
+    },
+    "19":{
+        "Nombre": "De las sombras mejorada",
+        "Grupo": "armds",
+        "Precio": "15000",
+        "Subgrupo": ["armd"]
+    },
+    "20":{
+        "Nombre": "Defensora",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc"]
+    },
+    "21":{
+        "Nombre": "Desviaflechas",
+        "Grupo": "armds",
+        "Precio": "bon +2",
+        "Subgrupo": ["esc"]
+    },
+    "22":{
+        "Nombre": "Disruptora",
+        "Grupo": "armas",
+        "Precio": "bon +2",
+        "Subgrupo": ["cc"]
+    },
+    "23":{
+        "Nombre": "Distante",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["ad"]
+    },
+    "24":{
+        "Nombre": "Electrizante",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc","ad"]
+    },
+    "25":{
+        "Nombre": "Explosiva eléctrica",
+        "Grupo": "armas",
+        "Precio": "bon +2",
+        "Subgrupo": ["cc","ad"]
+    },
+    "26":{
+        "Nombre": "Explosiva gélida",
+        "Grupo": "armas",
+        "Precio": "bon +2",
+        "Subgrupo": ["cc","ad"]
+    },
+    "27":{
+        "Nombre": "Explosiva ígnea",
+        "Grupo": "armas",
+        "Precio": "bon +2",
+        "Subgrupo": ["cc","ad"]
+    },
+    "28":{
+        "Nombre": "Fantasmal",
+        "Grupo": "armds",
+        "Precio": "bon +3",
+        "Subgrupo": ["armd","esc"]
+    },
+    "29":{
+        "Nombre": "Fantasmal",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc"]
+    },
+    "30":{
+        "Nombre": "Flamígera",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc","ad"]
+    },
+    "31":{
+        "Nombre": "Fortificante intensa",
+        "Grupo": "armds",
+        "Precio": "bon +5",
+        "Subgrupo": ["armd","esc"]
+    },
+    "32":{
+        "Nombre": "Fortificante leve",
+        "Grupo": "armds",
+        "Precio": "bon +1",
+        "Subgrupo": ["armd","esc"]
+    },
+    "33":{
+        "Nombre": "Fortificante moderada",
+        "Grupo": "armds",
+        "Precio": "bon +3",
+        "Subgrupo": ["armd","esc"]
+    },
+    "34":{
+        "Nombre": "Golpeador",
+        "Grupo": "armds",
+        "Precio": "bon +1",
+        "Subgrupo": ["esc"]
+    },
+    "35":{
+        "Nombre": "Hendiente",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc"]
+    },
+    "36":{
+        "Nombre": "Hiriente",
+        "Grupo": "armas",
+        "Precio": "bon +2",
+        "Subgrupo": ["cc"]
+    },
+    "37":{
+        "Nombre": "Ilusoria",
+        "Grupo": "armds",
+        "Precio": "2700",
+        "Subgrupo": ["armd"]
+    },
+    "38":{
+        "Nombre": "Radiante",
+        "Grupo": "armas",
+        "Precio": "bon +4",
+        "Subgrupo": ["cc","ad"]
+    },
+    "39":{
+        "Nombre": "Reflectante",
+        "Grupo": "armds",
+        "Precio": "bon +5",
+        "Subgrupo": ["esc"]
+    },
+    "40":{
+        "Nombre": "Resbaladiza",
+        "Grupo": "armds",
+        "Precio": "3750",
+        "Subgrupo": ["armd"]
+    },
+    "41":{
+        "Nombre": "Resbaladiza mayor",
+        "Grupo": "armds",
+        "Precio": "37750",
+        "Subgrupo": ["armd"]
+    },
+    "42":{
+        "Nombre": "Resbaladiza mejorada",
+        "Grupo": "armds",
+        "Precio": "15000",
+        "Subgrupo": ["armd"]
+    },
+    "43":{
+        "Nombre": "Resistente a conjuros (13)",
+        "Grupo": "armds",
+        "Precio": "bon +2",
+        "Subgrupo": ["armd","esc"]
+    },
+    "44":{
+        "Nombre": "Resistente a conjuros (15)",
+        "Grupo": "armds",
+        "Precio": "bon +3",
+        "Subgrupo": ["armd","esc"]
+    },
+    "45":{
+        "Nombre": "Resistente a conjuros (17)",
+        "Grupo": "armds",
+        "Precio": "bon +4",
+        "Subgrupo": ["armd","esc"]
+    },
+    "46":{
+        "Nombre": "Resistente a conjuros (19)",
+        "Grupo": "armds",
+        "Precio": "bon +5",
+        "Subgrupo": ["armd","esc"]
+    },
+    "47":{
+        "Nombre": "Resist. a la electricidad",
+        "Grupo": "armds",
+        "Precio": "18000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "48":{
+        "Nombre": "Resist. a la electricidad mayor",
+        "Grupo": "armds",
+        "Precio": "66000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "49":{
+        "Nombre": "Resist. a la electricidad mejorada",
+        "Grupo": "armds",
+        "Precio": "42000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "50":{
+        "Nombre": "Resistente al ácido",
+        "Grupo": "armds",
+        "Precio": "18000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "51":{
+        "Nombre": "Resistente al ácido mayor",
+        "Grupo": "armds",
+        "Precio": "66000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "52":{
+        "Nombre": "Resistente al ácido mejorada",
+        "Grupo": "armds",
+        "Precio": "42000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "53":{
+        "Nombre": "Resistente al frío",
+        "Grupo": "armds",
+        "Precio": "18000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "54":{
+        "Nombre": "Resistente al frío mayor",
+        "Grupo": "armds",
+        "Precio": "66000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "55":{
+        "Nombre": "Resistente al frío mejorada",
+        "Grupo": "armds",
+        "Precio": "42000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "56":{
+        "Nombre": "Resistente al fuego",
+        "Grupo": "armds",
+        "Precio": "18000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "57":{
+        "Nombre": "Resistente al fuego mayor",
+        "Grupo": "armds",
+        "Precio": "66000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "58":{
+        "Nombre": "Resistente al fuego mejorada",
+        "Grupo": "armds",
+        "Precio": "42000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "59":{
+        "Nombre": "Resistente al sonido",
+        "Grupo": "armds",
+        "Precio": "18000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "60":{
+        "Nombre": "Resistente al sonido mayor",
+        "Grupo": "armds",
+        "Precio": "66000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "61":{
+        "Nombre": "Resistente al sonido mejorada",
+        "Grupo": "armds",
+        "Precio": "42000",
+        "Subgrupo": ["armd","esc"]
+    },
+    "62":{
+        "Nombre": "Retornante",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["ad"]
+    },
+    "63":{
+        "Nombre": "Sacrílega",
+        "Grupo": "armas",
+        "Precio": "bon +2",
+        "Subgrupo": ["cc","ad"]
+    },
+    "64":{
+        "Nombre": "Sagrada",
+        "Grupo": "armas",
+        "Precio": "bon +2",
+        "Subgrupo": ["cc","ad"]
+    },
+    "65":{
+        "Nombre": "Salvaje",
+        "Grupo": "armds",
+        "Precio": "bon +3",
+        "Subgrupo": ["armd","esc"]
+    },
+    "66":{
+        "Nombre": "Silenciosa",
+        "Grupo": "armds",
+        "Precio": "3750",
+        "Subgrupo": ["armd"]
+    },
+    "67":{
+        "Nombre": "Silenciosa mayor",
+        "Grupo": "armds",
+        "Precio": "37750",
+        "Subgrupo": ["armd"]
+    },
+    "68":{
+        "Nombre": "Silenciosa mejorada",
+        "Grupo": "armds",
+        "Precio": "15000",
+        "Subgrupo": ["armd"]
+    },
+    "69":{
+        "Nombre": "Tronante",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc","ad"]
+    },
+    "70":{
+        "Nombre": "Veloz",
+        "Grupo": "armas",
+        "Precio": "bon +3",
+        "Subgrupo": ["cc","ad"]
+    },
+    "71":{
+        "Nombre": "Viciosa",
+        "Grupo": "armas",
+        "Precio": "bon +1",
+        "Subgrupo": ["cc"]
+    },
+    "72":{
+        "Nombre": "Vorpalina",
+        "Grupo": "armas",
+        "Precio": "bon +5",
+        "Subgrupo": ["cc"]
+    }
+}

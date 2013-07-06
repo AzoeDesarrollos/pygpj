@@ -1,0 +1,610 @@
+{
+    "0":{
+        "Nombre": "Aguante", 
+        "Clase": ["Exp"],
+        "ID_dt": 4,
+        "Tipo": "a"
+    }, 
+    "1":{
+        "Nombre": "Alma diamantina", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "2":{
+        "Nombre": "Analfabetismo", 
+        "Clase": ["Brb"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "3":{
+        "Nombre": "Aptitud especial",
+        "Intro": "Debes elegir una aptitud especial, de entre las siguientes:", 
+        "Clase": ["Pcr"], 
+        "Tipo": "x"
+    }, 
+    "4":{
+        "Nombre": "Ataque furtivo", 
+        "Clase": ["Pcr"],
+        "Tipo": "v", 
+        "Formato": "{0} +{1!s}d6",
+        "Valor_Inicial": 1,
+        "Aptitud":"Ataque especial"
+    }, 
+    "5":{
+        "Nombre": "Aura de bien", 
+        "Clase": ["Pld"],
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "6":{
+        "Nombre": "Aura de valor", 
+        "Clase": ["Pld"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "7":{
+        "Nombre": "Camuflaje", 
+        "Clase": ["Exp"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "8":{
+        "Nombre": "Canción de libertad", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "9":{
+        "Nombre": "Castigar al mal", 
+        "Clase": ["Pld"], 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
+        "Aptitud":"Ataque especial"
+    },
+    "10":{
+        "Nombre": "Compañero animal",
+        "Clase": ["Drd"], 
+        "Tipo": "u", 
+        "Aptitud":"Cualidad especial"
+    }, 
+    "11":{
+        "Nombre": "Compañero animal",
+        "Clase": ["Exp"],
+        "Tipo": "u", 
+        "Aptitud":"Cualidad especial"
+    }, 
+    "16":{
+        "Nombre": "Conocimiento de bardo", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "17":{
+        "Nombre": "Contraoda", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "18":{
+        "Nombre": "Convocar a un familiar",
+        "Clase": ["Hcr", "Mag"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "19":{
+        "Nombre": "Cuerpo diamantino", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "20":{
+        "Nombre": "Cuerpo eterno", 
+        "Clase": ["Drd, Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "21":{
+        "Nombre": "Cuerpo vacío", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "22":{
+        "Nombre": "Detectar el mal", 
+        "Clase": ["Pld"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    },
+    "23":{
+        "Nombre":"Dominios",
+        "Clase": ["Clr"],
+        "Tipo": "s",
+        "Aptitud":"Cualidad especial"
+    },    
+    "24":{
+        "Nombre": "Dote adicional",
+        "Clase": ["3"], 
+        "Tipo": "d"
+    }, 
+    "25":{
+        "Nombre": "Dote adicional",
+        "Clase": ["Gue"], 
+        "Tipo": "d"
+    }, 
+    "26":{
+        "Nombre": "Dote adicional",
+        "Clase": ["Mag"], 
+        "Tipo": "d"
+    }, 
+    "27":{
+        "Intro": "Debes elegir una de estas dotes, aunque no cumplas sus prerrequisitos",
+        "Clase": ["Mnj"], 
+        "Tipo": "a", 
+        "Formato": "{2}", 
+        "Sublista": ["Presa mejorada", "Puñetazo aturdidor"],
+        "Sub_Sel": "Dote"
+    }, 
+    "28":{
+        "Intro": "Debes elegir una de estas dotes, aunque no cumplas sus prerrequisitos",
+        "Clase": ["Mnj"], 
+        "Tipo": "a", 
+        "Formato": "{2}", 
+        "Sublista": ["Reflejos de combate", "Desviar flechas"],
+        "Sub_Sel": "Dote"
+    }, 
+    "29":{
+        "Intro": "Debes elegir una de estas dotes, aunque no cumplas sus prerrequisitos",
+        "Clase": ["Mnj"], 
+        "Tipo": "a", 
+        "Formato": "{2}", 
+        "Sublista": ["Derribo mejorado", "Desarme mejorado"],
+        "Sub_Sel": "Dote"
+    }, 
+    "30":{
+        "Nombre": "Empatía salvaje", 
+        "Clase": ["Drd", "Exp"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "31":{
+        "Nombre": "Encontrar trampas", 
+        "Clase": ["Pcr"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "32":{
+        "Nombre": "Enemigo predilecto",
+        "Intro": "Debes elegir un enemigo predilecto, si ya elegiste uno, puedes volver\na seleccionarlo.",
+        "Clase": ["Exp"], 
+        "Tipo": "v", 
+        "Formato": "{1!s}º {0} ({2})",
+        "Valor_Inicial": 1,
+        "Sub_Sel": "Enemigo Predilecto",
+        "Sublista": ["Aberraciones", "Ajenos (agua)", "Ajenos (aire)", "Ajenos (buenos)","Ajenos (caóticos)", "Ajenos (fuego)", "Ajenos (malignos)","Ajenos (nativos)", "Ajenos (tierra)", "Animales", "Bestias mágicas","Cienos", "Constructos", "Dragones", "Elementales", "Fatas","Gigantes", "Humanoides (acuáticos)", "Humanoides (elfos)","Humanoides (enanos)", "Humanoides (gnolls)", "Humanoides (gnomos)","Humanoides (humanos)", "Humanoides (medianos)", "Humanoides (orcos)","Humanoides (reptilianos)", "Humanoides (trasgoides)","Humanoides monstruosos", "Muertos vivientes", "Plantas", "Sabandijas"],
+        "Aptitud":"Cualidad especial"
+    }, 
+    "33":{
+        "Nombre": "Esconderse a plena vista", 
+        "Clase": ["Exp"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "34":{
+        "Nombre": "Esquiva asombrosa", 
+        "Clase": ["Brb", "Pcr"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "35":{
+        "Nombre": "Esquiva asombrosa mejorada", 
+        "Clase": ["Brb", "Pcr"], 
+        "Tipo": "r:33",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "36":{
+        "Nombre": "Estilo de combate",
+        "Intro": "Debes elegir un estilo de combate. Esta elección no se puede cambiar.",
+        "Clase": ["Exp"], 
+        "Tipo": "u",
+        "Sub_Sel": "Estilo",
+        "Formato": "{0} ({2})",
+        "Sublista": ["Tiro con arco", "Combate con dos armas"],
+        "Aptitud":"Cualidad especial"
+    }, 
+    "37":{
+        "Nombre": "Estilo de combate mejorado", 
+        "Clase": ["Exp"], 
+        "Tipo": "r:35",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "38":{
+        "Nombre": "Evasión", 
+        "Clase": ["Exp", "Mnj", "Pcr"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "39":{
+        "Nombre": "Evasión mejorada", 
+        "Clase": ["Mnj", "3"], 
+        "Tipo": "r:38",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "40":{
+        "Nombre": "Expulsar muertos vivientes", 
+        "Clase": ["Clr", "Pld"],
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    },
+    "41":{
+        "Nombre": "Reprender muertos vivientes", 
+        "Clase": ["Clr"],
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    },
+    "42":{
+        "Nombre": "Fascinar", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "43":{
+        "Nombre": "Forma salvaje", 
+        "Clase": ["Drd"], 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
+        "Aptitud":"Cualidad especial"
+    }, 
+    "44":{
+        "Nombre": "Forma salvaje (elemental Enorme)", 
+        "Clase": ["Drd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "45":{
+        "Nombre": "Forma salvaje (elemental)", 
+        "Clase": ["Drd"], 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
+        "Aptitud":"Cualidad especial"
+    }, 
+    "46":{
+        "Nombre": "Forma salvaje (Grande, Menuda, Enorme)", 
+        "Clase": ["Drd"], 
+        "Tipo": "r:48",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "47":{
+        "Nombre": "Forma salvaje (Grande)", 
+        "Clase": ["Drd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "48":{
+        "Nombre": "Forma salvaje (Grande, Menuda)", 
+        "Clase": ["Drd"], 
+        "Tipo": "r:47",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "49":{
+        "Nombre": "Forma salvaje (Grande, Menuda, Enorme, tipo planta)", 
+        "Clase": ["Drd"], 
+        "Tipo": "r:46",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "50":{
+        "Nombre": "Furia", 
+        "Clase": ["Brb"], 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
+        "Aptitud":"Cualidad especial"
+    }, 
+    "51":{
+        "Nombre": "Furia incansable", 
+        "Clase": ["Brb"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "52":{
+        "Nombre": "Furia mayor", 
+        "Clase": ["Brb"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "53":{
+        "Nombre": "Furia poderosa", 
+        "Clase": ["Brb"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "54":{
+        "Nombre": "Gracia divina", 
+        "Clase": ["Pld"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "55":{
+        "Nombre": "Impacto ki (adamantino)", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Ataque especial"
+    }, 
+    "56":{
+        "Nombre": "Impacto ki (legal)", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Ataque especial"
+    }, 
+    "57":{
+        "Nombre": "Impacto ki (mágico)", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Ataque especial"
+    }, 
+    "58":{
+        "Nombre": "Impacto sin arma mejorado",
+        "ID_dt": 77,
+        "Clase": ["Mnj"], 
+        "Tipo": "a"
+    }, 
+    "59":{
+        "Nombre": "Imposición de manos", 
+        "Clase": ["Pld"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "60":{
+        "Nombre": "Infundir gran aptitud", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "61":{
+        "Nombre": "Infundir grandeza", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "62":{
+        "Nombre": "Infundir heroicidad", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "63":{
+        "Nombre": "Infundir valor", 
+        "Clase": ["Brd"], 
+        "Tipo": "v", 
+        "Formato": "{0} +{1!s}",
+        "Valor_Inicial": 1,
+        "Aptitud":"Cualidad especial"
+    }, 
+    "64":{
+        "Nombre": "Inmunidad al veneno", 
+        "Clase": ["Drd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "65":{
+        "Nombre": "Inscribir rollo de pergamino",
+        "ID_dt": 79,
+        "Clase": ["Mag"], 
+        "Tipo": "a"
+    }, 
+    "66":{
+        "Nombre": "Las mil caras", 
+        "Clase": ["Drd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "67":{
+        "Nombre": "Lengua del sol y la luna", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "68":{
+        "Nombre": "Lisiar con un impacto", 
+        "Clase": ["3"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "69":{
+        "Nombre": "Maestría con estilo de combate", 
+        "Clase": ["Exp"], 
+        "Tipo": "r:36",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "70":{
+        "Nombre": "Maestria en habilidades", 
+        "Clase": ["3"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "71":{
+        "Nombre": "Mente en calma", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "72":{
+        "Nombre": "Mente escurridiza", 
+        "Clase": ["3"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "73":{
+        "Nombre": "Montura especial", 
+        "Clase": ["Pld"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "74":{
+        "Nombre": "Movimiento rápido", 
+        "Clase": ["Brb"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "75":{
+        "Nombre": "Música de bardo", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "76":{
+        "Nombre": "Oportunismo", 
+        "Clase": ["3"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "77":{
+        "Nombre": "Palma temblorosa", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Ataque especial"
+    }, 
+    "78":{
+        "Nombre": "Paso abundante", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "79":{
+        "Nombre": "Pisada sin rastro", 
+        "Clase": ["Drd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "80":{
+        "Nombre": "Plenitud corporal", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "81":{
+        "Nombre": "Pureza corporal", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "82":{
+        "Nombre": "Quitar enfermedad", 
+        "Clase": ["Pld"], 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/semana",
+        "Valor_Inicial": 1,
+        "Aptitud":"Cualidad especial"
+    }, 
+    "83":{
+        "Nombre": "Ráfaga de golpes", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Ataque especial"
+    }, 
+    "84":{
+        "Nombre": "Ráfaga mayor", 
+        "Clase": ["Mnj"], 
+        "Tipo": "r:83",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "85":{
+        "Nombre": "Ralentizar caída", 
+        "Clase": ["Mnj"], 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}0'",
+        "Valor_Inicial": 2,
+        "Aptitud":"Cualidad especial"
+    }, 
+    "86":{
+        "Nombre": "Ralentizar caída cualquier distancia", 
+        "Clase": ["Mnj"], 
+        "Tipo": "r:83",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "87":{
+        "Nombre": "Rastreador veloz", 
+        "Clase": ["Exp"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "88":{
+        "Nombre": "Rastrear",
+        "ID_dt": 96,
+        "Clase": ["Exp"], 
+        "Tipo": "a"
+    }, 
+    "89":{
+        "Nombre": "Reducción de daño", 
+        "Clase": ["Brb"], 
+        "Tipo": "v", 
+        "Formato": "{0} {1!s}/-",
+        "Valor_Inicial": 1,
+        "Aptitud":"Cualidad especial"
+    }, 
+    "90":{
+        "Nombre": "Resistir la atracción de la naturaleza", 
+        "Clase": ["Drd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "91":{
+        "Nombre": "Rodar a la defensiva", 
+        "Clase": ["3"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "92":{
+        "Nombre": "Salud divina", 
+        "Clase": ["Pld"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "93":{
+        "Nombre": "Sentido de la naturaleza", 
+        "Clase": ["Drd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "94":{
+        "Nombre": "Sentido de las trampas", 
+        "Clase": ["Brb", "Pcr"],
+        "Tipo": "v", 
+        "Formato": "{0} +{1!s}",
+        "Valor_Inicial": 1,
+        "Aptitud":"Cualidad especial"
+    }, 
+    "95":{
+        "Nombre": "Sugestión", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "96":{
+        "Nombre": "Sugestión en grupo", 
+        "Clase": ["Brd"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "97":{
+        "Nombre": "Voluntad indomable", 
+        "Clase": ["Brb"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "98":{
+        "Nombre": "Yo perfecto", 
+        "Clase": ["Mnj"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }, 
+    "99":{
+        "Nombre": "Zancada forestal", 
+        "Clase": ["Drd", "Exp"], 
+        "Tipo": "u",
+        "Aptitud":"Cualidad especial"
+    }
+}

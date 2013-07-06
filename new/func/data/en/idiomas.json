@@ -1,0 +1,62 @@
+{
+    "0":{
+        "Nombre": "Abyssal"
+    },
+    "1":{
+        "Nombre": "Acuan"
+    },
+    "2":{
+        "Nombre": "Auran"
+    },
+    "3":{
+        "Nombre": "Celestial"
+    },
+    "4":{
+        "Nombre": "Common"
+    },
+    "5":{
+        "Nombre": "Draconic"
+    },
+    "6":{
+        "Nombre": "Druidic"
+    },
+    "7":{
+        "Nombre": "Elven"
+    },
+    "8":{
+        "Nombre": "Dwarven"
+    },
+    "9":{
+        "Nombre": "Giant"
+    },
+    "10":{
+        "Nombre": "Gnoll"
+    },
+    "11":{
+        "Nombre": "Gnome"
+    },
+    "12":{
+        "Nombre": "Ignan"
+    },
+    "13":{
+        "Nombre": "Infernal"
+    },
+    "14":{
+        "Nombre": "Undercommon"
+    },
+    "15":{
+        "Nombre": "Halfling"
+    },
+    "16":{
+        "Nombre": "Orc"
+    },
+    "17":{
+        "Nombre": "Sylvan"
+    },
+    "18":{
+        "Nombre": "Terran"
+    },
+    "19":{
+        "Nombre": "Goblin"
+    }
+}

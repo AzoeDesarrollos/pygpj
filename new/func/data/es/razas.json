@@ -1,0 +1,69 @@
+{
+    "0":{
+        "Nombre": "Humano",
+        "Tamaño": "Mediano",
+        "Subtipo": "humano",
+        "Dt_rcl": true,
+        "Velocidad": "30'",
+        "Idioma_auto":[4],
+        "Idioma_adic": [0,1,2,3,5,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    },
+    "1":{
+        "Nombre": "Elfo",
+        "Ajustes": {"Destreza": 2,"Constitución":-2},
+        "Tamaño": "Mediano",
+        "Subtipo": "elfo",
+        "Hab_rcl": {"3":2,"4":2,"14":2},
+        "Velocidad": "30'",
+        "Idioma_auto": [4, 7],
+        "Idioma_adic": [5,10,11,16,17,19]
+    },
+    "2":{
+        "Nombre": "Enano",
+        "Ajustes": {"Constitución":2,"Carisma":-2},
+        "Tamaño": "Mediano",
+        "Subtipo": "enano",
+        "Hab_rcl": {"1":2,"4":2,"40":2},
+        "Velocidad": "20'",
+        "Idioma_auto": [4,8],
+        "Idioma_adic": [9,11,14,16,18,19]
+    },
+    "3":{
+        "Nombre": "Gnomo",
+        "Ajustes": {"Fuerza":-2,"Constitución":2},
+        "Tamaño": "Pequeño",
+        "Subtipo": "gnomo",
+        "Hab_rcl": {"1":2,"14":2},
+        "Velocidad": "20'",
+        "Idioma_auto": [4,11],
+        "Idioma_adic": [5,7,8,9,16,19]
+    },
+    "4":{
+        "Nombre": "Mediano",
+        "Ajustes": {"Fuerza":-2,"Destreza":2},
+        "Tamaño": "Pequeño",
+        "Subtipo": "mediano",
+        "Hab_rcl": {"14":2,"21":2,"36":2,"41":2},
+        "Velocidad": "20'",
+        "Idioma_auto": [4,15],
+        "Idioma_adic": [7,8,11,16,19]
+    },
+    "5":{
+        "Nombre": "Semielfo",
+        "Tamaño": "Mediano",
+        "Subtipo": "elfo",
+        "Hab_rcl": {"3":1,"4":1,"8":2,"14":1,"25":2},
+        "Velocidad": "30'",
+        "Idioma_auto": [4,7],
+        "Idioma_adic": [0,1,2,3,5,7,8,9,10,11,12,13,14,15,16,17,18,19]
+    },
+    "6":{
+        "Nombre": "Semiorco",
+        "Ajustes": {"Fuerza":2,"Inteligencia":-2,"Carisma":-2},
+        "Tamaño": "Mediano",
+        "Subtipo": "orco",
+        "Velocidad": "30'",
+        "Idioma_auto": [4,16],
+        "Idioma_adic": [0,5,9,10,19]
+    }
+}

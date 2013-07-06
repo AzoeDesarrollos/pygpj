@@ -1,0 +1,668 @@
+{
+    "0":{
+        "Nombre": "Endurance",
+        "Clase": ["Exp"],
+        "Tipo": "a",
+        "ID_dt": 4
+    },
+    "1":{
+        "Nombre": "Diamond soul",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "2":{
+        "Nombre": "Illiteracy",
+        "Clase": ["Brb"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "3":{
+        "Nombre": "Special ability",
+        "Intro": "You must choose a special ability from among the following",
+        "Clase": ["Pcr"],
+        "Tipo": "x"
+    },
+    "4":{
+        "Nombre": "Sneak attack",
+        "Formato": "{0} +{1!s}d6",
+        "Valor_Inicial": 1,
+        "Clase": ["Pcr"],
+        "Aptitud": "Ataque especial",
+        "Tipo": "v"
+    },
+    "5":{
+        "Nombre": "Aura of good",
+        "Clase": ["Pld"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "6":{
+        "Nombre": "Aura of courage",
+        "Clase": ["Pld"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "7":{
+        "Nombre": "Camouflage",
+        "Clase": ["Exp"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"},
+    "8":{
+        "Nombre": "Song of freedom",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+        },
+    "9":{
+        "Nombre": "Smite evil",
+        "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
+        "Clase": ["Pld"],
+        "Aptitud": "Ataque especial",
+        "Tipo": "v"
+    },
+    "10":{
+        "Nombre": "Animal companion",
+        "Intro": "You may choose an animal companion from the following list",
+        "Tipo": "u",
+        "Sublista": ["<None>", "Eagle", "Owl", "Light horse", "Heavy horse", "Camel",
+                     "Hawk", "Wolf", "Dog", "Riding dog", "Pony", "Dire rat",
+                     "Small viper Snake", "Medium viper Snake", "Badger"],
+        "Sub_Sel": "Animal companion",
+        "Formato": "{0} ({2})",
+        "Clase": ["Drd", "Exp"],
+        "Aptitud": "Cualidad especial"
+    },
+    "11":{
+        "Nombre": "Animal companion",
+        "Sub_Sel": "Animal companion",
+        "Intro": "You may choose an animal companion from the following list",
+        "Tipo": "r:10",
+        "Sublista": ["<None>", "Bison", "Dire Weasel", "Wolverine", "Leopard", "Cheetah",
+                     "Boar", "Monitor lizard", "Dire bat", "Black bear", "Constrictor snake",
+                     "Large viper Snake", "Ape", "Dire badger"],
+        "Formato": "{0} ({2})",
+        "Clase": ["Drd", "Exp"],
+        "Aptitud": "Cualidad especial"
+    },
+    "12":{
+        "Nombre": "Animal companion",
+        "Intro": "You may choose an animal companion from the following list",
+        "Tipo": "r:11",
+        "Sublista": ["<None>", "Giant crocodile", "Deinonychus", "Dire wolverine",
+                     "Dire boar", "Lion", "Dire wolf", "Brown bear", "Rhinoceros",
+                     "Huge viper Snake", "Dire Ape", "Tiger"],
+        "Sub_Sel": "Animal companion",
+        "Formato": "{0} ({2})",
+        "Clase": ["Drd", "Exp"],
+        "Aptitud": "Cualidad especial"
+    },
+    "13":{
+        "Nombre": "Animal companion",
+        "Intro": "You may choose an animal companion from the following list",
+        "Tipo": "r:12", "Sublista": ["<None>", "Dire Lion", "Megaraptor", "Polar bear",
+                                     "Giant constrictor Snake"],
+        "Sub_Sel": "Animal companion",
+        "Formato": "{0} ({2})",
+        "Clase": ["Drd", "Exp"],
+        "Aptitud": "Cualidad especial"
+    },
+    "14":{
+        "Nombre": "Animal companion",
+        "Intro": "You may choose an animal companion from the following list",
+        "Tipo": "r:13", "Sublista": ["<None>", "Elephant", "Dire bear"],
+        "Sub_Sel": "Animal companion",
+        "Formato": "{0} ({2})",
+        "Clase": ["Drd", "Exp"],
+        "Aptitud": "Cualidad especial"
+    },
+    "15":{
+        "Nombre": "Animal companion",
+        "Intro": "You may choose an animal companion from the following list",
+        "Tipo": "r:14",
+        "Sublista": ["<None>", "Dire Tiger", "Tyrannosaurus", "Triceratops"],
+        "Sub_Sel": "Animal companion",
+        "Formato": "{0} ({2})",
+        "Clase": ["Drd", "Exp"],
+        "Aptitud": "Cualidad especial"
+    },
+    "16":{
+        "Nombre": "Bardic knowledge",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"},
+    "17":{
+        "Nombre": "Countersong",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "18":{
+        "Nombre": "Summon familiar",
+        "Intro": "You may choose a familiar from the following list",
+        "Tipo": "u",
+        "Sublista": ["Owl", "Weasel", "Crow", "Cat", "Hawk", "Lizard", "Bat", "Rat",
+                     "Toad", "Snake"],
+        "Sub_Sel": "Familiar",
+        "Formato": "Familiar: {2}",
+        "Clase": ["Hcr", "Mag"],
+        "Aptitud": "Cualidad especial"
+    },
+    "19":{
+        "Nombre": "Diamond body",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "20":{
+        "Nombre": "Timeless body",
+        "Clase": ["Drd", "Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "21":{
+        "Nombre": "Empty body",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"},
+    "22":{
+        "Nombre": "Detect evil",
+        "Clase": ["Pld"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "23":{
+        "Nombre": "Extra feat",
+        "Clase": ["3"],
+        "Tipo": "d"
+    },
+    "24":{
+        "Nombre": "Extra feat",
+        "Clase": ["Gue"],
+        "Tipo": "d"
+    },
+    "25":{
+        "Nombre": "Extra feat",
+        "Clase": ["Mag"],
+        "Tipo": "d"
+    },
+    "26":{
+        "Nombre": "Feat:Mnk 1",
+        "Intro": "You must choose one of these feats, even if you don't fulfill their prerequisites",
+        "Clase": ["Mnj"],
+        "Tipo": "a",
+        "Formato": "{2}",
+        "Sub_Sel": "Feat",
+        "Sublista": ["Improved Grapple", "Stunning Fist"]
+    },
+    "27":{
+        "Nombre": "Feat:Mnk 2",
+        "Intro": "You must choose one of these feats, even if you don't fulfill their prerequisites",
+        "Clase": ["Mnj"],
+        "Tipo": "a",
+        "Formato": "{2}",
+        "Sub_Sel": "Feat",
+        "Sublista": ["Combat Reflexes", "Deflect Arrows"]
+    },
+    "28":{
+        "Nombre": "Feat:Mnk 6",
+        "Intro": "You must choose one of these feats, even if you don't fulfill their prerequisites",
+        "Clase": ["Mnj"],
+        "Tipo": "a",
+        "Formato": "{2}",
+        "Sub_Sel": "Feat",
+        "Sublista": ["Improved Disarm", "Improved Trip"]
+    },
+    "29":{
+        "Nombre": "Wild empathy",
+        "Clase": ["Drd", "Exp"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "30":{
+        "Nombre": "Trapfinding",
+        "Clase": ["Pcr"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "31":{
+        "Nombre": "Favored enemy",
+        "Clase": ["Exp"],
+        "Formato": "{1!s}º {0}",
+        "Valor_Inicial": 1,
+        "Intro": "You must choose a favored enemy, if you've already chosen one, you can reselect it.",
+        "Tipo": "v",
+        "Sublista": ["Aberration", "Animal ", "Construct ", "Dragon ", "Elemental ",
+                     "Fey ", "Giant ", "Humanoid (aquatic) ", "Humanoid (dwarf) ",
+                     "Humanoid (elf) ", "Humanoid (gnoll) ", "Humanoid (gnome) ",
+                     "Humanoid (goblinoid) ", "Humanoid (halfling)", "Humanoid (human)",
+                     "Humanoid (orc) ", "Humanoid (reptilian)", "Magical beast",
+                     "Monstrous Humanoid", "Ooze", "Outsider (air)", "Outsider (chaotic)",
+                     "Outsider (earth)", "Outsider (evil)", "Outsider (fire)",
+                     "Outsider (good)", "Outsider (lawful)", "Outsider (native)",
+                     "Outsider (water)", "Plant", "Undead", "Vermin"],
+        "Sub_Sel": "Favored enemy",
+        "Aptitud": "Cualidad especial"
+    },
+    "32":{
+        "Nombre": "Hide in plain sight",
+        "Clase": ["Exp"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "33":{
+        "Nombre": "Uncanny dodge",
+        "Clase": ["Brb", "Pcr"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"},
+    "34":{
+        "Nombre": "Improved uncanny dodge",
+        "Clase": ["Brb", "Pcr"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "r:33"
+    },
+    "35":{
+        "Nombre": "Combat style",
+        "Tipo": "u",
+        "Clase": ["Exp"],
+        "Aptitud": "Cualidad especial",
+        "Intro": "You must choose a combat style. This choice can not be changed.",
+        "Sublista": ["Archery", "Two-weapon combat"],
+        "Sub_Sel": "Style"
+    },
+    "36":{
+        "Nombre": "Improved combat style",
+        "Clase": ["Exp"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "r:35"
+    },
+    "37":{
+        "Nombre": "Evasion",
+        "Clase": ["Exp", "Mnj", "Pcr"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "38":{
+        "Nombre": "Improved evasion",
+        "Clase": ["Mnj","3"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "r:37"
+    },
+    "39":{
+        "Nombre": "Turn undead",
+        "Clase": ["Clr", "Pld"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "40":{
+        "Nombre": "Rebuke undead",
+        "Clase": ["Clr"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "41":{
+        "Nombre": "Fascinate",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "42":{
+        "Nombre": "Wild shape",
+        "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "v"
+    },
+    "43":{
+        "Nombre": "Wild shape (Huge elemental)",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "44":{
+        "Nombre": "Wild shape (elemental)",
+        "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "v"
+    },
+    "45":{
+        "Nombre": "Wild shape (Huge)",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "r:45"
+    },
+    "46":{
+        "Nombre": "Wild shape (Large)",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "r:46"
+    },
+    "47":{
+        "Nombre": "Wild shape (Tiny)",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "48":{
+        "Nombre": "Wild shape (plant)",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "49":{
+        "Nombre": "Rage",
+        "Formato": "{0} {1!s}/día",
+        "Valor_Inicial": 1,
+        "Clase": ["Brb"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "v"
+    },
+    "50":{
+        "Nombre": "Tireless rage",
+        "Clase": ["Brb"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "51":{
+        "Nombre": "Greater rage",
+        "Clase": ["Brb"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "52":{
+        "Nombre": "Mighty rage",
+        "Clase": ["Brb"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "53":{
+        "Nombre": "Divine grace",
+        "Clase": ["Pld"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "54":{
+        "Nombre": "Ki strike (adamantine)",
+        "Clase": ["Mnj"],
+        "Aptitud": "Ataque especial",
+        "Tipo": "u"
+    },
+    "55":{
+        "Nombre": "Ki strike (lawful)",
+        "Clase": ["Mnj"],
+        "Aptitud": "Ataque especial",
+        "Tipo": "u"
+    },
+    "56":{
+        "Nombre": "Ki strike (magic)",
+        "Clase": ["Mnj"],
+        "Aptitud": "Ataque especial",
+        "Tipo": "u"
+    },
+    "57":{
+        "Nombre": "Improved unarmed strike",
+        "Clase": ["Mnj"],
+        "Tipo": "a",
+        "ID_dt": 77
+    },
+    "58":{
+        "Nombre": "Lay on hands",
+        "Clase": ["Pld"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "59":{
+        "Nombre": "Inspire competence",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "60":{
+        "Nombre": "Inspire greatness",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "61":{
+        "Nombre": "Inspire heroics",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "62":{
+        "Nombre": "Inspire courage",
+        "Formato": "{0} +{1!s}",
+        "Valor_Inicial": 1,
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "v"
+    },
+    "63":{
+        "Nombre": "Venom immunity",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "64":{
+        "Nombre": "Scribe Scroll",
+        "Clase": ["Mag"],
+        "Tipo": "a",
+        "ID_dt": 79
+    },
+    "65":{
+        "Nombre": "A thousand faces",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "66":{
+        "Nombre": "Tongue of the sun and moon",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "67":{
+        "Nombre": "Crippling Strike",
+        "Clase": ["3"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "68":{
+        "Nombre": "Combat style mastery",
+        "Clase": ["Exp"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "r:36"
+    },
+    "69":{
+        "Nombre": "Skill Mastery",
+        "Clase": ["3"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "70":{
+        "Nombre": "Still mind",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "71":{
+        "Nombre": "Slippery Mind",
+        "Clase": ["3"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "72":{
+        "Nombre": "Special mount",
+        "Clase": ["Pld"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "73":{
+        "Nombre": "Fast movement",
+        "Clase": ["Brb"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "74":{
+        "Nombre": "Bardic music",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "75":{
+        "Nombre": "Opportunist",
+        "Clase": ["3"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "76":{
+        "Nombre": "Quivering palm",
+        "Clase": ["Mnj"],
+        "Aptitud": "Ataque especial",
+        "Tipo": "u"
+    },
+    "77":{
+        "Nombre": "Abundant step",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "78":{
+        "Nombre": "Trackless step",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "79":{
+        "Nombre": "Wholeness of body",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "80":{
+        "Nombre": "Purity of body",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "81":{
+        "Nombre": "Remove disease",
+        "Formato": "{0} {1!s}/week",
+        "Valor_Inicial": 1,
+        "Clase": ["Pld"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "v"
+    },
+    "82":{
+        "Nombre": "Flurry of blows",
+        "Clase": ["Mnj"],
+        "Aptitud": "Ataque especial",
+        "Tipo": "u"
+    },
+    "83":{
+        "Nombre": "Greater flurry",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "r:81"
+    },
+    "84":{
+        "Nombre": "Slow fall",
+        "Formato": "{0} {1!s}0'",
+        "Clase": ["Mnj"],
+        "Valor_Inicial": 2,
+        "Aptitud": "Cualidad especial",
+        "Tipo": "v"
+    },
+    "85":{
+        "Nombre": "Slow fall any distance",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "r:83"
+    },
+    "86":{
+        "Nombre": "Swift tracker",
+        "Clase": ["Exp"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "87":{
+        "Nombre": "Track",
+        "Clase": ["Exp"],
+        "Tipo": "a",
+        "ID_dt": 96
+    },
+    "88":{
+        "Nombre": "Damage reduction",
+        "Formato": "{0} {1!s}/-",
+        "Clase": ["Brb"],
+        "Valor_Inicial": 1,
+        "Aptitud": "Cualidad especial",
+        "Tipo": "v"
+    },
+    "89":{
+        "Nombre": "Resist nature’s lure",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "90":{
+        "Nombre": "Defensive Roll",
+        "Clase": ["3"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "91":{
+        "Nombre": "Divine health",
+        "Clase": ["Pld"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "92":{
+        "Nombre": "Nature sense",
+        "Clase": ["Drd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "93":{
+        "Nombre": "Trap sense",
+        "Formato": "{0} +{1!s}",
+        "Clase": ["Brb", "Pcr"],
+        "Valor_Inicial": 1,
+        "Aptitud": "Cualidad especial",
+        "Tipo": "v"
+    },
+    "94":{
+        "Nombre": "Suggestion",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "95":{
+        "Nombre": "Mass suggestion",
+        "Clase": ["Brd"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "96":{
+        "Nombre": "Indomitable will",
+        "Clase": ["Brb"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "97":{
+        "Nombre": "Perfect self",
+        "Clase": ["Mnj"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    },
+    "98":{
+        "Nombre": "Woodland stride",
+        "Clase": ["Drd", "Exp"],
+        "Aptitud": "Cualidad especial",
+        "Tipo": "u"
+    }
+}

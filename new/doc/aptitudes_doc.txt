@@ -1,0 +1,57 @@
+***Etrucutra básica de los archivos de datos JSON***
+
+Los archivos *.json que se usan en este programa están estructurados de la siguiente manera básica:
+
+{
+    "<index>": {
+        "Nombre": "<Nombre del dato>",
+        "<Dato1>": "<detalles>",
+        "<Dato2>": "<detalles>",
+        ...
+    },
+    ...
+}
+
+Cada vez que aparezca un numero contenido en un detalle, dicho numero representa el index de uno u otro archivo
+json de este programa.
+
+A continuación, las especificaciones sobre el archivo **apts.json**
+
+    "Clase": una lista de strigs. Cada elemento de la lista es una clase que tiene esta aptitud como aptitud de clase
+    
+    "Tipo": un string de un caracter. El tipo determina cómo el programa interpreta la aptitud. Este detalle no se
+    imprime. Los tipos de aptitud son los siguientes:
+        
+        "u": esta es una aptitud única, que solo se puede tener una vez.
+        "v": esta aptitud puede agregarse varias veces y sus efectos se apilan. Ejemplos son el ataque furtivo del pícaro
+        o los usos de forma salvaje del druida.
+        "d": es un espacio de dote adicional, ya sea de guerrero, de mago o a través de la aptitud especial de pícaro.
+        "a": esta aptitud es una dote adicional que se agrega aunque el personaje no cumpliere sus prerrequistos.
+        "r:#": una aptitud de este tipo reemplaza a otra ya existente. El índice de la aptitud a reemplazar figura luego
+        del signo ':'.
+        "x": este tipo especial existe solo para la Aptitud Especial de pícaro. A través de esta aptitud se pueden
+        agregar otras (de cualquier tipo).
+        "s": es un tipo especial para la elección de dominios del clérigo. Dispara el selector de dominios.
+        
+    "Aptitud": si la aptitud no es del tipo a o d, entonces se imprime o bien en Ataques especiales o bien en Cualidades
+    especiales. Este detalle representa esta información.
+    
+    "ID_dt": las aptitudes tipo a que no permiten una elección (como Inscribir rollo de pergamino, de mago), indican un
+    número (int) que representa el índice de esa dote en dotes.json.
+    
+    Si la aptitud en cuestión permite una subselección (por ejemplo, el estilo de combate del explorador), entonces tendrá
+    los siguientes detalles:
+        
+        "Intro": es la introducción a la subselección que permite esta aptitud
+        
+        "Sublista": es la lista sobre la que se realiza la selección. Es una lista de strings.
+        
+        "Sub_Sel": es el prompt que se usará para realizar la subselección. Es un string.
+        
+        "Formato": es un string con el que usará el método .format() para imprimir la aptitud.
+        
+    
+    "Valor_Inicial": las aptitudes tipo v tienen este detalle, que especifica el numero incial de repeticiones (ej.
+    d6s de daño en ataque furtivo) que tendrá la aptitud. Es un integrer.
+    
+    

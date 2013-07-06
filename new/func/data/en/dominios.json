@@ -1,0 +1,124 @@
+{
+    "0":{
+        "Nombre":"Agua",
+        "Conjuros":[399,402,505,116,567,104,57,297,220],
+        "Aptitudes":["Expulsar criaturas de Fuego","Reprender criaturas de Agua"]
+    },
+    "1":{
+        "Nombre":"Aire",
+        "Conjuros":[399,393,268,67,117,492,115,564,220],
+        "Aptitudes":["Expulsar criaturas de Tierra","Reprender criaturas de Agua"]
+    },
+    "2":{
+        "Nombre":"Animal",
+        "Conjuros":[63,320,208,124,99,75,269,129,65],
+        "Aptitudes":["Hablar con los animaes 1/día"],
+        "Hab_cls":[34]
+    },
+    "3":{
+        "Nombre":"Bien",
+        "Conjuros":[455,42,87,77,202,45,422,41,136],
+        "Aptitudes":["Aura buena"],
+        "NL":"buenos",
+        "Req_AL":[0,1,2]
+    },
+    "4":{
+        "Nombre":"Caos",
+        "Conjuros":[457,247,88,376,203,20,421,73,136],
+        "Aptitudes":["Aura caótica"],
+        "NL":"caóticos",
+        "Req_AL":[2,5,8]
+    },
+    "5":{
+        "Nombre":"Curación",
+        "Conjuros":[158,161,156,154,159,525,491,155,527],
+        "NL":"curación"
+    },
+    "6":{
+        "Nombre":"Destrucción",
+        "Conjuros":[315,247,112,311,316,164,176,556,308],
+        "Aptitudes":["Castigar +4; daño +{0!s}; 1/día"]
+    },
+    "7":{
+        "Nombre":"Fuego",
+        "Conjuros":[372,264,504,388,228,530,566,403,220],
+        "Aptitudes":["Expulsar criaturas de Agua","Reprender criaturas de Fuego"]
+    },
+    "8":{
+        "Nombre":"Fuerza",
+        "Conjuros":[5,271,589,325,443,438,365,464,366],
+        "Aptitudes":["Proeza de fuerza 1/día"]
+    },
+    "9":{
+        "Nombre":"Guerra",
+        "Conjuros":[28,27,589,444,172,45,418,417,419],
+        "Dotes":["24:sub","102:sub"]
+    },
+    "10":{
+        "Nombre":"Ley",
+        "Conjuros":[454,64,86,335,201,321,379,230,136],
+        "Aptitudes":["Aura legal"],
+        "NL":"legales",
+        "Req_AL":[0,3,6]
+    },
+    "11":{
+        "Nombre":"Magia",
+        "Conjuros":[39,298,204,306,501,71,512,452,206],
+        "Aptitudes":["NL Mago +{0!s} para varitas y pergaminos"]
+    },
+    "12":{
+        "Nombre":"Mal",
+        "Conjuros":[453,451,85,43,200,147,51,40,136],
+        "Aptitudes":["Aura maligna"],
+        "NL":"malignos",
+        "Req_AL":[6,7,8]
+    },
+    "13":{
+        "Nombre":"Muerte",
+        "Conjuros":[78,70,481,163,494,147,181,148,339],
+        "Aptitudes":["Toque mortal 1/día; {0!s}d6"]
+    },
+    "14":{
+        "Nombre":"Protección",
+        "Conjuros":[529,225,456,325,501,71,483,381,238],
+        "Aptitudes":["Custodia protectora 1/día"]
+    },
+    "15":{
+        "Nombre":"Saber",
+        "Conjuros":[191,190,89,3,598,217,106,197,449],
+        "NL":"adivinación",
+        "Hab_cls":[27,28,29,30,31,32,33,34,35,36]
+    },
+    "16":{
+        "Nombre":"Sol",
+        "Conjuros":[546,62,360,228,172,530,480,258,238],
+        "Aptitudes":["Expulsión mayor 1/día"]
+    },
+    "17":{
+        "Nombre":"Suerte",
+        "Conjuros":[227,42,456,345,517,207,512,327,383],
+        "Aptitudes":["Buena fortuna 1/día"]
+    },
+    "18":{
+        "Nombre":"Superchería",
+        "Conjuros":[199,332,310,100,405,207,423,446,194],
+        "Hab_cls":[9,10,13]
+    },
+    "19":{
+        "Nombre":"Tierra",
+        "Conjuros":[435,0,577,437,392,438,556,153,220],
+        "Aptitudes":["Expulsar criaturas de Aire","Reprender criaturas de Tierra"]
+    },
+    "20":{
+        "Nombre":"Vegetal",
+        "Conjuros":[221,439,150,96,387,497,19,119,171],
+        "Aptitudes":["Expulsar criaturas vegetales"],
+        "Hab_cls":[34]
+    },
+    "21":{
+        "Nombre":"Viaje",
+        "Conjuros":[603,356,601,462,552,217,553,463,459],
+        "Aptitudes":["Libertad de movimiento {0!s} asaltos"],
+        "Hab_cls":[39]
+    }
+}
