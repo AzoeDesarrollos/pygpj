@@ -1,7 +1,0 @@
-Ver 39
-- Nuevas Funcionalidades
-** Primer instalador proporcionado.
-
-- Cambios menores y bugs reparados
-** debido a que el archivo config.json puede cambiar en cualqueir momento, subirlo en cada release es inútil.
-** creación automática de carpetas 'guardar' y 'personajes' cuando se crea el primer pj.
